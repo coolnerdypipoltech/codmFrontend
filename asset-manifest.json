@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/codmFrontend/static/css/main.b476b02e.css",
+    "main.js": "/codmFrontend/static/js/main.692d51bc.js",
+    "static/js/453.de38a1bf.chunk.js": "/codmFrontend/static/js/453.de38a1bf.chunk.js",
+    "index.html": "/codmFrontend/index.html",
+    "main.b476b02e.css.map": "/codmFrontend/static/css/main.b476b02e.css.map",
+    "main.692d51bc.js.map": "/codmFrontend/static/js/main.692d51bc.js.map",
+    "453.de38a1bf.chunk.js.map": "/codmFrontend/static/js/453.de38a1bf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b476b02e.css",
+    "static/js/main.692d51bc.js"
+  ]
+}
