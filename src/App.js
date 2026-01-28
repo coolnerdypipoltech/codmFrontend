@@ -6,7 +6,7 @@ import TestPage from './pages/TestPage';
 
 function App() {
   return (
-    <Router basename="/codmFrontend">
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/registro" element={<RegistroPage />} />
