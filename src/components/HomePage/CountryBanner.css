@@ -1,0 +1,33 @@
+.countrybanner-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+.countrybanner-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.countrybanner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.countrybanner-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.countrybanner-image:hover {
+  transform: scale(1.05);
+}
