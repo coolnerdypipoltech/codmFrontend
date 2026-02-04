@@ -1,15 +1,32 @@
 {
   "files": {
-    "main.css": "/codmFrontend/static/css/main.b476b02e.css",
-    "main.js": "/codmFrontend/static/js/main.692d51bc.js",
-    "static/js/453.de38a1bf.chunk.js": "/codmFrontend/static/js/453.de38a1bf.chunk.js",
-    "index.html": "/codmFrontend/index.html",
-    "main.b476b02e.css.map": "/codmFrontend/static/css/main.b476b02e.css.map",
-    "main.692d51bc.js.map": "/codmFrontend/static/js/main.692d51bc.js.map",
-    "453.de38a1bf.chunk.js.map": "/codmFrontend/static/js/453.de38a1bf.chunk.js.map"
+    "main.css": "/static/css/main.fc939ad9.css",
+    "main.js": "/static/js/main.3cc393ac.js",
+    "static/js/453.730ac058.chunk.js": "/static/js/453.730ac058.chunk.js",
+    "static/media/Fondo.png": "/static/media/Fondo.0130a1b79eb42a1cde8b.png",
+    "static/media/InterVariable-Italic.woff2": "/static/media/InterVariable-Italic.e295f70fe3e2df296c7b.woff2",
+    "static/media/InterVariable.woff2": "/static/media/InterVariable.a0e477f2f1f9d2376fde.woff2",
+    "static/media/primeicons.svg": "/static/media/primeicons.6ed59f962963a4a73af2.svg",
+    "static/media/primeicons.eot": "/static/media/primeicons.ff0c4cd79b2ffca2de54.eot",
+    "static/media/primeicons.woff": "/static/media/primeicons.8931fda1930c3bd21e96.woff",
+    "static/media/primeicons.ttf": "/static/media/primeicons.a5c2a53d1ff7a9ff5933.ttf",
+    "static/media/logoBarrios.png": "/static/media/logoBarrios.4f8178175846b0a70677.png",
+    "static/media/primeicons.woff2": "/static/media/primeicons.024b32cc7bf399b1a847.woff2",
+    "static/media/CNPLogo.png": "/static/media/CNPLogo.d5208e1a267212a9a9d7.png",
+    "static/media/InstagramLogo.svg": "/static/media/InstagramLogo.b4cb59c6a82eef730882ed13d3816e5e.svg",
+    "static/media/facebookLogo.svg": "/static/media/facebookLogo.1f134d9e45a4d41e45acde89f5410f1c.svg",
+    "index.html": "/index.html",
+    "static/media/YtLogo.svg": "/static/media/YtLogo.7df54075e04408f2b16cf0c0719770df.svg",
+    "static/media/TiktokLogo.svg": "/static/media/TiktokLogo.9fdf83dd5f79d8f7fc9864ab91ea6282.svg",
+    "static/media/TwitterLogo.svg": "/static/media/TwitterLogo.c87ae8dfb7f8247e6e94e22f8a67b96f.svg",
+    "static/media/diamondOff.svg": "/static/media/diamondOff.5f97a279551eea0aeceab2d7fdc0a14e.svg",
+    "static/media/diamondOn.svg": "/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
+    "main.fc939ad9.css.map": "/static/css/main.fc939ad9.css.map",
+    "main.3cc393ac.js.map": "/static/js/main.3cc393ac.js.map",
+    "453.730ac058.chunk.js.map": "/static/js/453.730ac058.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b476b02e.css",
-    "static/js/main.692d51bc.js"
+    "static/css/main.fc939ad9.css",
+    "static/js/main.3cc393ac.js"
   ]
 }
