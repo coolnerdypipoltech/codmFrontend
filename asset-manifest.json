@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/codmFrontend/static/css/main.b15c50c0.css",
-    "main.js": "/codmFrontend/static/js/main.85ad52cb.js",
+    "main.js": "/codmFrontend/static/js/main.3827e2f3.js",
     "static/js/453.730ac058.chunk.js": "/codmFrontend/static/js/453.730ac058.chunk.js",
     "static/media/Fondo.png": "/codmFrontend/static/media/Fondo.0130a1b79eb42a1cde8b.png",
     "static/media/InterVariable-Italic.woff2": "/codmFrontend/static/media/InterVariable-Italic.e295f70fe3e2df296c7b.woff2",
@@ -26,11 +26,11 @@
     "static/media/arrow.svg": "/codmFrontend/static/media/arrow.7642281869f72253171e2b5cd0bb1320.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
     "main.b15c50c0.css.map": "/codmFrontend/static/css/main.b15c50c0.css.map",
-    "main.85ad52cb.js.map": "/codmFrontend/static/js/main.85ad52cb.js.map",
+    "main.3827e2f3.js.map": "/codmFrontend/static/js/main.3827e2f3.js.map",
     "453.730ac058.chunk.js.map": "/codmFrontend/static/js/453.730ac058.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b15c50c0.css",
-    "static/js/main.85ad52cb.js"
+    "static/js/main.3827e2f3.js"
   ]
 }
