@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/codmFrontend/static/css/main.15d02072.css",
-    "main.js": "/codmFrontend/static/js/main.7b4a1d49.js",
+    "main.css": "/codmFrontend/static/css/main.b15c50c0.css",
+    "main.js": "/codmFrontend/static/js/main.85ad52cb.js",
     "static/js/453.730ac058.chunk.js": "/codmFrontend/static/js/453.730ac058.chunk.js",
     "static/media/Fondo.png": "/codmFrontend/static/media/Fondo.0130a1b79eb42a1cde8b.png",
     "static/media/InterVariable-Italic.woff2": "/codmFrontend/static/media/InterVariable-Italic.e295f70fe3e2df296c7b.woff2",
@@ -13,6 +13,9 @@
     "static/media/logoBarrios.png": "/codmFrontend/static/media/logoBarrios.4f8178175846b0a70677.png",
     "static/media/primeicons.woff2": "/codmFrontend/static/media/primeicons.024b32cc7bf399b1a847.woff2",
     "static/media/CNPLogo.png": "/codmFrontend/static/media/CNPLogo.d5208e1a267212a9a9d7.png",
+    "static/media/revicons.eot": "/codmFrontend/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/codmFrontend/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/codmFrontend/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/InstagramLogo.svg": "/codmFrontend/static/media/InstagramLogo.b4cb59c6a82eef730882ed13d3816e5e.svg",
     "static/media/facebookLogo.svg": "/codmFrontend/static/media/facebookLogo.1f134d9e45a4d41e45acde89f5410f1c.svg",
     "index.html": "/codmFrontend/index.html",
@@ -20,13 +23,14 @@
     "static/media/TiktokLogo.svg": "/codmFrontend/static/media/TiktokLogo.9fdf83dd5f79d8f7fc9864ab91ea6282.svg",
     "static/media/TwitterLogo.svg": "/codmFrontend/static/media/TwitterLogo.c87ae8dfb7f8247e6e94e22f8a67b96f.svg",
     "static/media/diamondOff.svg": "/codmFrontend/static/media/diamondOff.5f97a279551eea0aeceab2d7fdc0a14e.svg",
+    "static/media/arrow.svg": "/codmFrontend/static/media/arrow.7642281869f72253171e2b5cd0bb1320.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
-    "main.15d02072.css.map": "/codmFrontend/static/css/main.15d02072.css.map",
-    "main.7b4a1d49.js.map": "/codmFrontend/static/js/main.7b4a1d49.js.map",
+    "main.b15c50c0.css.map": "/codmFrontend/static/css/main.b15c50c0.css.map",
+    "main.85ad52cb.js.map": "/codmFrontend/static/js/main.85ad52cb.js.map",
     "453.730ac058.chunk.js.map": "/codmFrontend/static/js/453.730ac058.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.15d02072.css",
-    "static/js/main.7b4a1d49.js"
+    "static/css/main.b15c50c0.css",
+    "static/js/main.85ad52cb.js"
   ]
 }
