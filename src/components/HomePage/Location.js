@@ -1,16 +1,14 @@
 import React from 'react';
 import './Location.css';
-
+import fondo from "../../assets/Fondo.png";
 const Location = () => {
   return (
     <section id="locacion" className="locacion-section">
-      <h2>Locación</h2>
       <div className="locacion-container">
-        <div className="locacion-info">
-          <h3>Lugar de Encuentro</h3>
-          <p className="venue-name">Centro de Convenciones Principal</p>
-          <p className="venue-address">Calle Principal 123, Ciudad Principal</p>
-          <p className="venue-details">Teléfono: +1 (555) 123-4567</p>
+        <div className="locacion-info" style={{backgroundImage: `url(${fondo})`}}>
+          <h3>UBICACIÓN</h3>
+          <p className="venue-name">CIUDAD DE MÉXICO, CDMX</p>
+          <p className="venue-address">Frontón Bucareli es un antiguo frontón ubicado en colonia Juárez. Ahora transformado, en la sede principal de Barrios latinos.</p>
         </div>
         <div className="map-container">
           <iframe

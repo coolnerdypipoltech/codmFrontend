@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Grupo_574" data-name="Grupo 574" transform="translate(0 -0.239)">
+    <g id="Grupo_586" data-name="Grupo 586" transform="translate(0 0.239)">
+      <path id="Trazado_5174" data-name="Trazado 5174" d="M0,23.63V8.37A8.4,8.4,0,0,1,8.37,0H23.63A8.4,8.4,0,0,1,32,8.37V23.63A8.4,8.4,0,0,1,23.63,32H18.5l-2.687-.654L13.5,32H8.37A8.4,8.4,0,0,1,0,23.63" transform="translate(0 0)" fill="#1d1d1d"/>
+    </g>
+    <g id="Grupo_589" data-name="Grupo 589" transform="translate(7 6.24)">
+      <path id="Trazado_5174-2" data-name="Trazado 5174" d="M0,13.853V4.907A4.922,4.922,0,0,1,4.907,0h8.946A4.922,4.922,0,0,1,18.76,4.907v8.946a4.922,4.922,0,0,1-4.907,4.907H10.846l-1.575-.384-1.357.384H4.907A4.922,4.922,0,0,1,0,13.853" transform="translate(0 0)" fill="#fff"/>
+      <path id="Trazado_5175" data-name="Trazado 5175" d="M16.123,14.619l.416-2.712h-2.6v-1.76a1.356,1.356,0,0,1,1.529-1.465h1.183V6.374a14.4,14.4,0,0,0-2.1-.183,3.31,3.31,0,0,0-3.543,3.65v2.066H8.625v2.712h2.381V20.98h2.931V14.619Z" transform="translate(-3.092 -2.219)" fill="#1d1d1d"/>
+    </g>
+  </g>
+</svg>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './RegistrationForm.css';
+import diamondOff from '../assets/registration/diamondOff.svg';
+import diamondOn from '../assets/registration/diamondOn.svg';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -9,9 +11,10 @@ const RegistrationForm = () => {
     uid: '',
     passport: false,
     legalAge: false,
-    visa: false,
+    visa: true,
     availabilityToTravel: false,
-    codmEventCompletion: false
+    codmEventCompletion: true,
+    termsAndConditions: false
   });
 
   const [errors, setErrors] = useState({});
@@ -51,6 +54,22 @@ const RegistrationForm = () => {
 
     if (!formData.uid) {
       newErrors.uid = 'El UID es requerido';
+    }
+
+    if(!formData.termsAndConditions){
+      newErrors.termsAndConditions = "Se necesita aceptar los terminos y condiciones";
+    }
+
+    if(!formData.legalAge) {
+      newErrors.legalAge = "Debes ser mayor de edad para registrarte";
+    }
+      
+    if(!formData.passport){
+      newErrors.passport = "Se necesita cumplir con los requisitos para viajar en tu país";
+    }
+
+    if(!formData.availabilityToTravel){
+      newErrors.availabilityToTravel = "Se necesita disponibilidad para viajar";
     }
 
     setErrors(newErrors);
@@ -102,9 +121,9 @@ const RegistrationForm = () => {
           uid: '',
           passport: false,
           legalAge: false,
-          visa: false,
+          visa: true,
           availabilityToTravel: false,
-          codmEventCompletion: false
+          codmEventCompletion: true,
         });
       } else if (response.status === 400) {
         setPopup({
@@ -174,7 +193,22 @@ const RegistrationForm = () => {
       )}
 
       <form className="registration-form" onSubmit={handleSubmit}>
-        <h1>Registro CODM</h1>
+        <h1>REGISTRO</h1>
+
+                {/* UID */}
+        <div className="form-group">
+          <label htmlFor="uid">UID *</label>
+          <input
+            type="text"
+            id="uid"
+            name="uid"
+            value={formData.uid}
+            onChange={handleChange}
+            placeholder="Tu identificador único"
+            className={errors.uid ? 'error' : ''}
+          />
+          {errors.uid && <span className="error-message">{errors.uid}</span>}
+        </div>
 
         {/* Email */}
         <div className="form-group">
@@ -226,20 +260,8 @@ const RegistrationForm = () => {
           {errors.zipCode && <span className="error-message">{errors.zipCode}</span>}
         </div>
 
-        {/* UID */}
-        <div className="form-group">
-          <label htmlFor="uid">UID *</label>
-          <input
-            type="text"
-            id="uid"
-            name="uid"
-            value={formData.uid}
-            onChange={handleChange}
-            placeholder="Tu identificador único"
-            className={errors.uid ? 'error' : ''}
-          />
-          {errors.uid && <span className="error-message">{errors.uid}</span>}
-        </div>
+        <h3>Requisitos de elegibilidad</h3>
+        <p>Consulta los requisitos para tu país</p>
 
         {/* Checkboxes */}
         <div className="checkbox-group">
@@ -249,10 +271,15 @@ const RegistrationForm = () => {
               name="passport"
               checked={formData.passport}
               onChange={handleChange}
+              className='inputDiamond'
             />
-            <span className="checkmark"></span>
-            Tengo pasaporte
+            <span
+              className="checkmark"
+              style={{ backgroundImage: `url(${formData.passport ? diamondOn : diamondOff})` }}
+            ></span>
+            Requisitos para viajar cumplidos
           </label>
+          {errors.passport && <span className="error-message" style={{marginBottom: "10px"}}>{errors.passport}</span>}
 
           <label className="checkbox-label">
             <input
@@ -260,21 +287,16 @@ const RegistrationForm = () => {
               name="legalAge"
               checked={formData.legalAge}
               onChange={handleChange}
+              className='inputDiamond'
+              
             />
-            <span className="checkmark"></span>
+            <span
+              className="checkmark"
+              style={{ backgroundImage: `url(${formData.legalAge ? diamondOn : diamondOff})` }}
+            ></span>
             Soy mayor de edad
           </label>
-
-          <label className="checkbox-label">
-            <input
-              type="checkbox"
-              name="visa"
-              checked={formData.visa}
-              onChange={handleChange}
-            />
-            <span className="checkmark"></span>
-            Tengo visa
-          </label>
+          {errors.legalAge && <span className="error-message" style={{marginBottom: "10px"}}>{errors.legalAge}</span>}
 
           <label className="checkbox-label">
             <input
@@ -282,26 +304,40 @@ const RegistrationForm = () => {
               name="availabilityToTravel"
               checked={formData.availabilityToTravel}
               onChange={handleChange}
+              className='inputDiamond'
             />
-            <span className="checkmark"></span>
+            <span
+              className="checkmark"
+              style={{ backgroundImage: `url(${formData.availabilityToTravel ? diamondOn : diamondOff})` }}
+            ></span>
             Disponibilidad para viajar
           </label>
+          {errors.availabilityToTravel && <span className="error-message" style={{marginBottom: "10px"}}>{errors.availabilityToTravel}</span>}
 
           <label className="checkbox-label">
             <input
               type="checkbox"
-              name="codmEventCompletion"
-              checked={formData.codmEventCompletion}
+              name="termsAndConditions"
+              checked={formData.termsAndConditions}
               onChange={handleChange}
+              className='inputDiamond'
             />
-            <span className="checkmark"></span>
-            Evento CODM completado
+            <span
+              className="checkmark"
+              style={{
+                marginBottom: "10px",
+                backgroundImage: `url(${formData.termsAndConditions ? diamondOn : diamondOff})`
+              }}
+            ></span>
+            He leído y acepto las Condiciones y Politícas de Privacidad
           </label>
+          {errors.termsAndConditions && <span className="error-message">{errors.termsAndConditions}</span>}
         </div>
 
         <button type="submit" className="submit-button" disabled={isLoading}>
-          Registrarse
+          Continuar
         </button>
+        <p> No se solicitaan documentos en esta etapa</p>
       </form>
     </div>
   );

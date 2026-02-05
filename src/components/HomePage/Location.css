@@ -1,6 +1,6 @@
 .locacion-section {
   width: 100%;
-  padding: 4rem 2rem;
+
   background: white;
   text-align: center;
 }
@@ -28,18 +28,17 @@
 }
 
 .locacion-info {
-  text-align: left;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding: 26px;
 }
 
 .locacion-info h3 {
   font-size: 1.8rem;
   margin: 0 0 1.5rem 0;
   font-weight: bold;
+  text-align: center;
+  color: purple;
 }
 
 .venue-name {

@@ -74,3 +74,46 @@
   font-size: 1.5rem;
   color: #333;
 }
+
+
+
+.react-multi-carousel-dot button {
+  background-color: #d1d1d1cc !important;
+  border-color: white !important;
+  border-width: 1px !important;
+  height: 8px !important;
+  width: 8px !important;
+}
+
+.react-multi-carousel-dot--active button
+{
+  background-color: #eeff00 !important;
+}
+
+.react-multiple-carousel__arrow{
+  background: transparent !important
+}
+
+.react-multiple-carousel__arrow:hover{
+  background: transparent !important
+}
+
+.main-host-option-selected{
+  background-image: url("../../assets/Fondo.png") !important;
+  color: white !important;
+  height: 40px;
+  padding-top: 8px;
+  width: 80px;
+}
+
+.main-host-option-selected:hover{
+  background-image: url("../../assets/Fondo.png") !important;
+  color: white !important;
+}
+
+.main-host-option-unselected{
+  border: 2px solid transparent !important;
+  height: 40px;
+  padding-top: 8px;
+  width: 80px;
+}

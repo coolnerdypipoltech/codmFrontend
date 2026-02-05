@@ -1,7 +1,6 @@
 .calendario-section {
   width: 100%;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   text-align: center;
 }
 
@@ -55,7 +54,7 @@
 }
 
 .countdown {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1.5rem;
 }
@@ -64,7 +63,8 @@
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 12px;
-  padding: 2rem 1rem;
+  width: 60px;
+  height: 60px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -73,15 +73,21 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.countdown-container{
+  display: flex;
+  flex-direction: column;
+}
+
 .countdown-value {
-  font-size: 2.5rem;
+  font-size: 28px;
   font-weight: bold;
   display: block;
 }
 
 .countdown-label {
-  font-size: 0.9rem;
+  font-size: 10px;
   margin-top: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: #f0f0f0;
 }

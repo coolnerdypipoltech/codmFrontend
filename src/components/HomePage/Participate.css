@@ -1,8 +1,9 @@
 .como-participar-section {
   width: 100%;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 4rem 0rem;
+  background: #1D1D1D;
   text-align: center;
+  overflow-y: visible;
 }
 
 .como-participar-section h2 {
@@ -14,12 +15,33 @@
 
 .participar-cards-container {
   display: flex;
-  overflow-x: scroll ;
+  overflow-x: overlay ;
   flex-direction: row;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
+  overflow-y: visible;
+  padding-top: 16px;
+}
+
+.title-participate{
+  color: yellow;
+  font-size: 28px;
+  
+}
+
+.text-participate{
+  color: white;
+  font-size: 14px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
+.card-text-participate{
+  color: #CCCCCC;
+  font-size: 14px;
+  padding-top: 0px;
 }
 
 .participar-card {
@@ -27,6 +49,7 @@
   border-radius: 8px;
   padding: 2rem;
   transition: all 0.3s ease;
+  overflow-y: visible;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -38,7 +61,7 @@
 .card-icon {
   font-size: 3rem;
   color: #667eea;
-  margin-bottom: 1rem;
+  
 }
 
 .participar-card h3 {
