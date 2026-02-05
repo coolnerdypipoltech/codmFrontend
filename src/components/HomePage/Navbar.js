@@ -103,12 +103,12 @@ const Navbar = ({ onNavigate }) => {
               <span className="hamburger-icon">☰</span>
             </button>
           ) : (
-            <Link
-              style={{ paddingRight: "1rem" }}
+            <p
+              style={{ paddingRight: "1rem", textDecoration: "underline", cursor: "pointer", color: "white" }}
               onClick={() => navigate("/codmFrontend/registro")}
             >
               {"Registro"}
-            </Link>
+            </p>
           )
         }
         className="navbar-menu"
