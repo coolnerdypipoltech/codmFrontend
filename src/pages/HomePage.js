@@ -12,6 +12,7 @@ import MainHost from "../components/HomePage/MainHost";
 import Register from '../components/HomePage/Register';
 import './HomePage.css';
 import BuyTickets from '../components/HomePage/BuyTickets';
+import RegisterTournament from '../components/HomePage/RegisterTournament';
 const HomePage = () => {
   return (
     <div className="home-page">
@@ -23,6 +24,7 @@ const HomePage = () => {
 
       <Participate />
       <Prize />
+      <RegisterTournament/>
       <Calendary />
       <Partners />
       <Location />

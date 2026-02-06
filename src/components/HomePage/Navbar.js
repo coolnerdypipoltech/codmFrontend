@@ -3,9 +3,15 @@ import { Toolbar } from "primereact/toolbar";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useNavigate } from "react-router";
-import logoBarrios from "../../assets/logoBarrios.png";
-import fondoBarrios from "../../assets/Fondo.png";
-import fondoMobile from "../../assets/Fondo.png";
+import brush from "../../assets/header/Brush_menu.png";
+import logoBarrios from "../../assets/header/Compo header.png";
+import fondoBarrios from "../../assets/header/Header_70.png";
+import fondoMobile from "../../assets/navMenu/IMG_Background_Menu.png";
+
+import logoNavMenu from "../../assets/navMenu/IMG_BRAND_BarriosLatinos-CODM.png";
+import brushNavMenu from "../../assets/navMenu/IMG_BRUSH.png";
+import buttonImage from "../../assets/navMenu/IMG_BUTTON_BACK.png";
+
 
 import { useLocation } from "react-router-dom";
 const Navbar = ({ onNavigate }) => {
@@ -81,14 +87,17 @@ const Navbar = ({ onNavigate }) => {
       <Toolbar
         style={{
           height: "100px",
+          width: "100%",
           borderRadius: "0px",
+          backgroundRepeat: "repeat-x",
           backgroundImage: `url(${fondoBarrios})`,
+          backgroundSize: "auto 100%",
           border: "none",
         }}
         start={
           <img
             src={logoBarrios}
-            style={{ height: "50px", paddingLeft: "25px" }}
+            style={{ height: "60px", paddingLeft: "25px" }}
             alt="Logo"
           />
         }
@@ -100,7 +109,13 @@ const Navbar = ({ onNavigate }) => {
               onClick={toggleDrawer}
               aria-label="Toggle menu"
             >
-              <span className="hamburger-icon">☰</span>
+              <div>
+                <img
+                src={brush}
+                style={{ height: "50px", paddingLeft: "10px" }}
+                alt="Logo"/>
+
+              </div>
             </button>
           ) : (
             <p
@@ -124,24 +139,29 @@ const Navbar = ({ onNavigate }) => {
           />
           <div
             className={`drawer ${isDrawerOpen ? "open" : ""}`}
-            style={{ backgroundImage: `url(${fondoMobile})` }}
+            style={{ backgroundImage: `url(${fondoMobile})`, backgroundSize: "auto 100%", }}
           >
             <nav className="drawer-nav">
+              <img src={logoNavMenu} style={{width: "40%", minWidth: "150px", paddingBottom: "50px", alignSelf: "center"}} alt="Close" />
               {items.map((item, index) => (
                 <button
                   key={index}
                   onClick={item.command}
                   className="drawer-item"
+
                 >
-                  {item.label}
+                  <img src={brushNavMenu} style={{width: "250px", height: "50px", overflowY: "visible", objectFit: "cover"}} alt="Close" />
+                  <p className="navMenu-text">{item.label}</p>
                 </button>
               ))}
               <button
                 className="close-button"
                 onClick={toggleDrawer}
                 aria-label="Close menu"
+                style={{display: "flex", alignItems: "center", alignContent: "center", justifyContent: "center"}}
               >
-                ×
+                <img src={buttonImage} style={{width: "80px", paddingTop: "20px"}} alt="Close" />
+                
               </button>
             </nav>
           </div>

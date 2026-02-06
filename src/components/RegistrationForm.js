@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./RegistrationForm.css";
 import diamondOff from "../assets/registration/diamondOff.svg";
 import diamondOn from "../assets/registration/diamondOn.svg";
 import { Captcha } from "recaptz";
+import PopUp from "./PopUp";
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -16,11 +17,21 @@ const RegistrationForm = () => {
     codmEventCompletion: true,
     termsAndConditions: false,
   });
+  const [forceReloadCaptcha, setForceReloadCaptcha] = useState(0);
   const [captchaError, setCaptchaError] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
+  const [isFormCompleted, setIsFormCompleted] = useState(false);
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [popup, setPopup] = useState({ show: false, type: "", message: "" });
+  const firstRender = React.useRef(true);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      setCaptchaError(false);
+      setTimeout(changeText, 100);
+    }
+  }, [isVerified]);
 
   const countries = [
     { value: "MEX", label: "México" },
@@ -35,6 +46,8 @@ const RegistrationForm = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
+
+  
 
   const validateForm = () => {
     const newErrors = {};
@@ -74,17 +87,24 @@ const RegistrationForm = () => {
     if (!formData.availabilityToTravel) {
       newErrors.availabilityToTravel = "Se necesita disponibilidad para viajar";
     }
-
+    if (!isVerified) {
+      setCaptchaError(true);
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const changeText = () => {
-    const successElement = document.querySelector('h3.text-lg.font-semibold.mb-1.text-green-700');
-    if (successElement && successElement.textContent === 'Verification Successful!') {
-      successElement.textContent = 'Verificación Exitosa';
+    const successElement = document.querySelector(
+      "h3.text-lg.font-semibold.mb-1.text-green-700",
+    );
+    if (
+      successElement &&
+      successElement.textContent === "Verification Successful!"
+    ) {
+      successElement.textContent = "Verificación Exitosa";
     }
-  }
+  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -99,15 +119,12 @@ const RegistrationForm = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const actualSubmit = async () => {
     if (!validateForm()) {
       return;
     }
-
+    setForceReloadCaptcha((prev) => prev + 1);
     setIsLoading(true);
-
     try {
       const response = await fetch("http://138.197.232.79/register", {
         method: "POST",
@@ -167,11 +184,34 @@ const RegistrationForm = () => {
       setPopup({
         show: true,
         type: "error",
-        message: "Error de conexión. Verifica tu conexión a internet.",
+        message:
+          error.message || "Ocurrió un error de red. Intenta nuevamente.",
       });
     } finally {
+      setIsFormCompleted(false);
       setIsLoading(false);
+      setCaptchaError(false);
     }
+  };
+
+  const handleSubmit = async (e) => {
+    if (isVerified) {
+      setIsFormCompleted(true);
+      return;
+    }
+    e.preventDefault();
+
+    const captchaButton = document.querySelector(
+      ".my-custom-captcha button.bg-blue-600",
+    );
+    if (captchaButton) {
+      captchaButton.click();
+    }
+
+    if (!validateForm()) {
+      return;
+    }
+    setIsFormCompleted(true);
   };
 
   const closePopup = () => {
@@ -179,249 +219,274 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="registration-container">
-      {/* Loading Overlay */}
-      {isLoading && (
-        <div className="loading-overlay">
-          <div className="loading-spinner">
-            <div className="spinner"></div>
-            <p>Procesando registro...</p>
-          </div>
-        </div>
-      )}
-
-      {/* Result Popup */}
-      {popup.show && (
-        <div className="popup-overlay" onClick={closePopup}>
-          <div
-            className={`popup-content ${popup.type}`}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="popup-icon">
-              {popup.type === "success" ? "✓" : "✕"}
+    <>
+      <div className="registration-container">
+        {/* Loading Overlay */}
+        {isLoading && (
+          <div className="loading-overlay">
+            <div className="loading-spinner">
+              <div className="spinner"></div>
+              <p>Procesando registro...</p>
             </div>
-            <p>{popup.message}</p>
-            <button className="popup-button" onClick={closePopup}>
-              Cerrar
-            </button>
           </div>
-        </div>
-      )}
+        )}
 
-      <div className="registration-form" onSubmit={handleSubmit}>
-        <form  onSubmit={handleSubmit}>
-          <h1>REGISTRO</h1>
+        {/* Result Popup */}
+        {popup.show && (
+          <div className="popup-overlay" onClick={closePopup}>
+            <div
+              className={`popup-content ${popup.type}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="popup-icon">
+                {popup.type === "success" ? "✓" : "✕"}
+              </div>
+              <p>{popup.message}</p>
+              <button className="popup-button" onClick={closePopup}>
+                Cerrar
+              </button>
+            </div>
+          </div>
+        )}
 
-        {/* UID */}
-        <div className="form-group">
-          <label htmlFor="uid">UID *</label>
-          <input
-            type="text"
-            id="uid"
-            name="uid"
-            value={formData.uid}
-            onChange={handleChange}
-            placeholder="Tu identificador único"
-            className={errors.uid ? "error" : ""}
+        <div className="registration-form" onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
+            <h1>REGISTRO</h1>
+
+            {/* UID */}
+            <div className="form-group">
+              <label htmlFor="uid">UID *</label>
+              <input
+                type="text"
+                id="uid"
+                name="uid"
+                value={formData.uid}
+                onChange={handleChange}
+                placeholder="Tu identificador único"
+                className={errors.uid ? "error" : ""}
+              />
+              {errors.uid && (
+                <span className="error-message">{errors.uid}</span>
+              )}
+            </div>
+
+            {/* Email */}
+            <div className="form-group">
+              <label htmlFor="email">Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="tucorreo@ejemplo.com"
+                className={errors.email ? "error" : ""}
+              />
+              {errors.email && (
+                <span className="error-message">{errors.email}</span>
+              )}
+            </div>
+
+            {/* Country */}
+            <div className="form-group">
+              <label htmlFor="country">País *</label>
+              <select
+                id="country"
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                className={errors.country ? "error" : ""}
+              >
+                <option value="">Selecciona un país</option>
+                {countries.map((country) => (
+                  <option key={country.value} value={country.value}>
+                    {country.label}
+                  </option>
+                ))}
+              </select>
+              {errors.country && (
+                <span className="error-message">{errors.country}</span>
+              )}
+            </div>
+
+            {/* Zip Code */}
+            <div className="form-group">
+              <label htmlFor="zipCode">Código Postal *</label>
+              <input
+                type="text"
+                id="zipCode"
+                name="zipCode"
+                value={formData.zipCode}
+                onChange={handleChange}
+                placeholder="12345"
+                className={errors.zipCode ? "error" : ""}
+              />
+              {errors.zipCode && (
+                <span className="error-message">{errors.zipCode}</span>
+              )}
+            </div>
+
+            <h3>Requisitos de elegibilidad</h3>
+            <p>Consulta los requisitos para tu país</p>
+
+            {/* Checkboxes */}
+            <div className="checkbox-group">
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="passport"
+                  checked={formData.passport}
+                  onChange={handleChange}
+                  className="inputDiamond"
+                />
+                <span
+                  className="checkmark"
+                  style={{
+                    backgroundImage: `url(${formData.passport ? diamondOn : diamondOff})`,
+                  }}
+                ></span>
+                Requisitos para viajar cumplidos
+              </label>
+              {errors.passport && (
+                <span
+                  className="error-message"
+                  style={{ marginBottom: "10px" }}
+                >
+                  {errors.passport}
+                </span>
+              )}
+
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="legalAge"
+                  checked={formData.legalAge}
+                  onChange={handleChange}
+                  className="inputDiamond"
+                />
+                <span
+                  className="checkmark"
+                  style={{
+                    backgroundImage: `url(${formData.legalAge ? diamondOn : diamondOff})`,
+                  }}
+                ></span>
+                Soy mayor de edad
+              </label>
+              {errors.legalAge && (
+                <span
+                  className="error-message"
+                  style={{ marginBottom: "10px" }}
+                >
+                  {errors.legalAge}
+                </span>
+              )}
+
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="availabilityToTravel"
+                  checked={formData.availabilityToTravel}
+                  onChange={handleChange}
+                  className="inputDiamond"
+                />
+                <span
+                  className="checkmark"
+                  style={{
+                    backgroundImage: `url(${formData.availabilityToTravel ? diamondOn : diamondOff})`,
+                  }}
+                ></span>
+                Disponibilidad para viajar
+              </label>
+              {errors.availabilityToTravel && (
+                <span
+                  className="error-message"
+                  style={{ marginBottom: "10px" }}
+                >
+                  {errors.availabilityToTravel}
+                </span>
+              )}
+
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="termsAndConditions"
+                  checked={formData.termsAndConditions}
+                  onChange={handleChange}
+                  className="inputDiamond"
+                />
+                <span
+                  className="checkmark"
+                  style={{
+                    marginBottom: "10px",
+                    backgroundImage: `url(${formData.termsAndConditions ? diamondOn : diamondOff})`,
+                  }}
+                ></span>
+                He leído y acepto las Condiciones y Politícas de Privacidad
+              </label>
+              {errors.termsAndConditions && (
+                <span className="error-message">
+                  {errors.termsAndConditions}
+                </span>
+              )}
+            </div>
+          </form>
+
+          <Captcha
+            key={forceReloadCaptcha}
+            type="mixed"
+            className="my-custom-captcha"
+            length={6}
+            onValidate={setIsVerified}
+            showSuccessAnimation
+            enableAudio={false}
+            i18n={{
+              securityCheck: "Verificación de seguridad",
+              listenToCaptcha: "Escuchar CAPTCHA",
+              refreshCaptcha: "Actualizar CAPTCHA ",
+              inputPlaceholder: "Ingrese el código",
+              verifyButton: "Verificar",
+              verificationSuccessful: "¡Éxito!",
+              captchaRequired: "Por favor ingrese el CAPTCHA",
+              captchaDoesNotMatch: "El CAPTCHA no coincide",
+              error: " Error al cargar el CAPTCHA",
+              pressSpaceToHearCode: "",
+              enterToValidate: "",
+              escToClear: "",
+            }}
+            onError={() => setCaptchaError(true)}
+            onFail={() => setCaptchaError(true)}
           />
-          {errors.uid && <span className="error-message">{errors.uid}</span>}
-        </div>
 
-        {/* Email */}
-        <div className="form-group">
-          <label htmlFor="email">Email *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="tucorreo@ejemplo.com"
-            className={errors.email ? "error" : ""}
-          />
-          {errors.email && (
-            <span className="error-message">{errors.email}</span>
+          {captchaError && (
+            <span className="error-message">
+              Por favor complete la verificación CAPTCHA
+            </span>
           )}
-        </div>
 
-        {/* Country */}
-        <div className="form-group">
-          <label htmlFor="country">País *</label>
-          <select
-            id="country"
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            className={errors.country ? "error" : ""}
+          <button
+            type="submit"
+            className="submit-button"
+              disabled={isLoading}
+              onClick={handleSubmit}
           >
-            <option value="">Selecciona un país</option>
-            {countries.map((country) => (
-              <option key={country.value} value={country.value}>
-                {country.label}
-              </option>
-            ))}
-          </select>
-          {errors.country && (
-            <span className="error-message">{errors.country}</span>
-          )}
+            Continuar
+          </button>
+          {Object.keys(errors).length > 0 && <span className="error-message">Porfavor revisa sus datos</span>}
+          <p> No se solicitan documentos en esta etapa</p>
         </div>
-
-        {/* Zip Code */}
-        <div className="form-group">
-          <label htmlFor="zipCode">Código Postal *</label>
-          <input
-            type="text"
-            id="zipCode"
-            name="zipCode"
-            value={formData.zipCode}
-            onChange={handleChange}
-            placeholder="12345"
-            className={errors.zipCode ? "error" : ""}
-          />
-          {errors.zipCode && (
-            <span className="error-message">{errors.zipCode}</span>
-          )}
-        </div>
-
-        <h3>Requisitos de elegibilidad</h3>
-        <p>Consulta los requisitos para tu país</p>
-
-        {/* Checkboxes */}
-        <div className="checkbox-group">
-          <label className="checkbox-label">
-            <input
-              type="checkbox"
-              name="passport"
-              checked={formData.passport}
-              onChange={handleChange}
-              className="inputDiamond"
-            />
-            <span
-              className="checkmark"
-              style={{
-                backgroundImage: `url(${formData.passport ? diamondOn : diamondOff})`,
-              }}
-            ></span>
-            Requisitos para viajar cumplidos
-          </label>
-          {errors.passport && (
-            <span className="error-message" style={{ marginBottom: "10px" }}>
-              {errors.passport}
-            </span>
-          )}
-
-          <label className="checkbox-label">
-            <input
-              type="checkbox"
-              name="legalAge"
-              checked={formData.legalAge}
-              onChange={handleChange}
-              className="inputDiamond"
-            />
-            <span
-              className="checkmark"
-              style={{
-                backgroundImage: `url(${formData.legalAge ? diamondOn : diamondOff})`,
-              }}
-            ></span>
-            Soy mayor de edad
-          </label>
-          {errors.legalAge && (
-            <span className="error-message" style={{ marginBottom: "10px" }}>
-              {errors.legalAge}
-            </span>
-          )}
-
-          <label className="checkbox-label">
-            <input
-              type="checkbox"
-              name="availabilityToTravel"
-              checked={formData.availabilityToTravel}
-              onChange={handleChange}
-              className="inputDiamond"
-            />
-            <span
-              className="checkmark"
-              style={{
-                backgroundImage: `url(${formData.availabilityToTravel ? diamondOn : diamondOff})`,
-              }}
-            ></span>
-            Disponibilidad para viajar
-          </label>
-          {errors.availabilityToTravel && (
-            <span className="error-message" style={{ marginBottom: "10px" }}>
-              {errors.availabilityToTravel}
-            </span>
-          )}
-
-          <label className="checkbox-label">
-            <input
-              type="checkbox"
-              name="termsAndConditions"
-              checked={formData.termsAndConditions}
-              onChange={handleChange}
-              className="inputDiamond"
-            />
-            <span
-              className="checkmark"
-              style={{
-                marginBottom: "10px",
-                backgroundImage: `url(${formData.termsAndConditions ? diamondOn : diamondOff})`,
-              }}
-            ></span>
-            He leído y acepto las Condiciones y Politícas de Privacidad
-          </label>
-          {errors.termsAndConditions && (
-            <span className="error-message">{errors.termsAndConditions}</span>
-          )}
-        </div>
-        </form>
-
-        <Captcha
-          type="mixed"
-          className="my-custom-captcha"
-          length={6}
-          onValidate={setIsVerified}
-          showSuccessAnimation
-          i18n={{
-            securityCheck: "Verificación de seguridad",
-            listenToCaptcha: "Escuchar CAPTCHA",
-            refreshCaptcha: "Actualizar CAPTCHA ",
-            inputPlaceholder: "Ingrese el código",
-            verifyButton: "Verificar",
-            verificationSuccessful: "¡Éxito!",
-            captchaRequired: "Por favor ingrese el CAPTCHA",
-            captchaDoesNotMatch: "El CAPTCHA no coincide",
-            error:" Error al cargar el CAPTCHA",
-            pressSpaceToHearCode: "",
-            enterToValidate: "",
-            escToClear: "",
-          }}
-          onError={() => setCaptchaError(true)}
-          onFail={() => setCaptchaError(true)}
-          onSuccess={() => {
-            setCaptchaError(false);
-            setTimeout(changeText, 100);
-          }}
-        />
-
-        {captchaError && (
-          <span className="error-message">
-            Por favor complete la verificación CAPTCHA
-          </span>
-        ) }
-
-        <button
-          type="submit"
-          className="submit-button"
-          disabled={isLoading || !isVerified}
-          onClick={handleSubmit}
-        >
-          Continuar
-        </button>
-        <p> No se solicitan documentos en esta etapa</p>
       </div>
-    </div>
+      {isFormCompleted && (
+        <PopUp
+          action={() => {
+            actualSubmit();
+          }}
+          closePopUp={() => {
+            setIsFormCompleted(false);
+          }}
+          text={"Porfavor revisa tu información antes de continuar"}
+        ></PopUp>
+      )}
+    </>
   );
 };
 

@@ -326,10 +326,10 @@
 .my-custom-captcha button {
   color: rgb(0, 0, 0);
   border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
   cursor: pointer;
   transition: all 0.2s;
+  height: 0px;
+  font-size: 0px;
 }
 
 .max-w-md{
@@ -346,4 +346,12 @@
 .text-gray-600{
   font-size: 0px;
   height: 10px;
+}
+
+.h-4{
+  height: 0px;
+}
+
+.p-1\.5{
+  height: 20px !important;
 }

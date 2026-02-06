@@ -1,6 +1,6 @@
 .calendario-section {
   width: 100%;
-  padding: 4rem 2rem;
+  
   text-align: center;
 }
 
@@ -26,7 +26,7 @@
   left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(0, 0, 0);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -43,12 +43,16 @@
 
 .countdown-container {
   max-width: 800px;
-  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .countdown-container h3 {
   font-size: 2rem;
-  color: white;
+  color: rgb(0, 0, 0);
   margin-bottom: 2rem;
   font-weight: bold;
 }
@@ -56,21 +60,22 @@
 .countdown {
   display: flex;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 1.5rem;
+  gap: 15px;
 }
 
 .countdown-item {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
   border-radius: 12px;
   width: 60px;
   height: 60px;
-  color: white;
+  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-image: url("../../assets/main/Button_Comprar\ Boletos.png");
+  background-size: cover;
+  background-position: center;
+  background-size: auto 100%;
 }
 
 .countdown-container{
@@ -79,9 +84,11 @@
 }
 
 .countdown-value {
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bold;
   display: block;
+  font-family: "guildhall-wide", sans-serif;
+  color: #FFB838;
 }
 
 .countdown-label {
@@ -89,5 +96,14 @@
   margin-top: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #f0f0f0;
+  color: #000000;
+  font-family: "guildhall-wide", sans-serif;
+}
+
+
+.brush-text{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
 }

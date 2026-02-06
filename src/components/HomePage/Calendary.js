@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Calendary.css";
-import fondo from "../../assets/Fondo.png";
+import fondo from "../../assets/main/IMG_Texture_Gran_final.png";
+import brushNavMenu from "../../assets/main/IMG_BRUSH.png";
 const Calendary = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -34,13 +35,29 @@ const Calendary = () => {
     <section
       id="calendario"
       className="calendario-section"
-      style={{ backgroundImage: `url(${fondo})` }}
+      style={{
+        backgroundImage: `url(${fondo})`,
+        backgroundSize: "100% auto",
+        objectFit: "contain",
+        overflow: "clip",
+        overflowClipMargin: "content-box",
+      }}
     >
-      <div className="calendario-content">
-        <div className="fecha-text">
-          <h2>Gran Final</h2>
+      <div className="brush-text">
+          <img
+            src={brushNavMenu}
+            style={{
+              width: "300px",
+              height: "50px",
+              overflowY: "visible",
+              objectFit: "cover",
+              paddingTop: "40px",
+              alignSelf: "center"
+            }}
+            alt="Close"
+          />
+          <p style={{color: "white", fontSize: "28px", position: "relative", top: "-25px"}} className="guild-font">Gran Final</p>
         </div>
-      </div>
 
       <div className="countdown-container">
         <div className="countdown">
