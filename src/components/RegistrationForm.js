@@ -3,7 +3,10 @@ import "./RegistrationForm.css";
 import diamondOff from "../assets/registration/diamondOff.svg";
 import diamondOn from "../assets/registration/diamondOn.svg";
 import { Captcha } from "recaptz";
+import buttonlayout from "../assets/registration/Button_Continuar.png";
 import PopUp from "./PopUp";
+import icon from "../assets/registration/Icon_Importante.png";
+import InfoTooltip from "./InfoTooltip";
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -46,8 +49,6 @@ const RegistrationForm = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
-
-  
 
   const validateForm = () => {
     const newErrors = {};
@@ -226,7 +227,7 @@ const RegistrationForm = () => {
           <div className="loading-overlay">
             <div className="loading-spinner">
               <div className="spinner"></div>
-              <p>Procesando registro...</p>
+              <p className="inter-font">Procesando registro...</p>
             </div>
           </div>
         )}
@@ -241,7 +242,7 @@ const RegistrationForm = () => {
               <div className="popup-icon">
                 {popup.type === "success" ? "✓" : "✕"}
               </div>
-              <p>{popup.message}</p>
+              <p className="inter-font">{popup.message}</p>
               <button className="popup-button" onClick={closePopup}>
                 Cerrar
               </button>
@@ -251,20 +252,50 @@ const RegistrationForm = () => {
 
         <div className="registration-form" onSubmit={handleSubmit}>
           <form onSubmit={handleSubmit}>
-            <h1>REGISTRO</h1>
+            <p
+              className="guild-font"
+              style={{
+                fontSize: "20px",
+                textAlign: "center",
+                paddingBottom: "30px",
+              }}
+            >
+              REGISTRO
+            </p>
 
             {/* UID */}
             <div className="form-group">
-              <label htmlFor="uid">UID *</label>
+              <div style={{ display: "flex", flexDirection: "row" }}>
+                <label className="inter-font" htmlFor="uid">
+                  UID de CODM
+                </label>
+                <InfoTooltip
+                  text={
+                    "El UID es un número único que\nidentifica tu cuenta de Call of Duty Mobile."
+                  }
+                />
+              </div>
+
               <input
                 type="text"
                 id="uid"
                 name="uid"
                 value={formData.uid}
                 onChange={handleChange}
-                placeholder="Tu identificador único"
+                placeholder=""
                 className={errors.uid ? "error" : ""}
               />
+              <p
+                className="inter-font"
+                style={{
+                  color: "grey",
+                  textDecoration: "underline",
+                  fontSize: "14px",
+                  paddingTop: "10px",
+                }}
+              >
+                ¿Dónde está el UID?
+              </p>
               {errors.uid && (
                 <span className="error-message">{errors.uid}</span>
               )}
@@ -272,14 +303,16 @@ const RegistrationForm = () => {
 
             {/* Email */}
             <div className="form-group">
-              <label htmlFor="email">Email *</label>
+              <label className="inter-font" htmlFor="email">
+                Email{" "}
+              </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="tucorreo@ejemplo.com"
+                placeholder="example@email.com"
                 className={errors.email ? "error" : ""}
               />
               {errors.email && (
@@ -289,7 +322,9 @@ const RegistrationForm = () => {
 
             {/* Country */}
             <div className="form-group">
-              <label htmlFor="country">País *</label>
+              <label className="inter-font" htmlFor="country">
+                País
+              </label>
               <select
                 id="country"
                 name="country"
@@ -297,7 +332,9 @@ const RegistrationForm = () => {
                 onChange={handleChange}
                 className={errors.country ? "error" : ""}
               >
-                <option value="">Selecciona un país</option>
+                <option className="inter-font" style={{ color: "grey" }}>
+                  Selecciona país
+                </option>
                 {countries.map((country) => (
                   <option key={country.value} value={country.value}>
                     {country.label}
@@ -311,7 +348,9 @@ const RegistrationForm = () => {
 
             {/* Zip Code */}
             <div className="form-group">
-              <label htmlFor="zipCode">Código Postal *</label>
+              <label className="inter-font" htmlFor="zipCode">
+                Código Postal
+              </label>
               <input
                 type="text"
                 id="zipCode"
@@ -325,9 +364,31 @@ const RegistrationForm = () => {
                 <span className="error-message">{errors.zipCode}</span>
               )}
             </div>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <p
+                className="inter-font"
+                style={{ fontWeight: "bold", fontSize: "15px" }}
+              >
+                Requisitos de elegibilidad
+              </p>
+              <InfoTooltip
+                text={
+                  "El UID es un número único que\nidentifica tu cuenta de\nCall of Duty Mobile."
+                }
+              />
+            </div>
 
-            <h3>Requisitos de elegibilidad</h3>
-            <p>Consulta los requisitos para tu país</p>
+            <p
+              className="inter-font"
+              style={{
+                color: "grey",
+                textDecoration: "underline",
+                paddingTop: "10px",
+                fontSize: "14px",
+              }}
+            >
+              Consulta los requisitos para tu país
+            </p>
 
             {/* Checkboxes */}
             <div className="checkbox-group">
@@ -345,7 +406,7 @@ const RegistrationForm = () => {
                     backgroundImage: `url(${formData.passport ? diamondOn : diamondOff})`,
                   }}
                 ></span>
-                Requisitos para viajar cumplidos
+                <p className="inputDiamond">Requisitos para viajar cumplidos</p>
               </label>
               {errors.passport && (
                 <span
@@ -370,7 +431,7 @@ const RegistrationForm = () => {
                     backgroundImage: `url(${formData.legalAge ? diamondOn : diamondOff})`,
                   }}
                 ></span>
-                Soy mayor de edad
+                <p className="inputDiamond">Soy mayor de edad</p>
               </label>
               {errors.legalAge && (
                 <span
@@ -395,7 +456,7 @@ const RegistrationForm = () => {
                     backgroundImage: `url(${formData.availabilityToTravel ? diamondOn : diamondOff})`,
                   }}
                 ></span>
-                Disponibilidad para viajar
+                <p className="inputDiamond">Disponibilidad para viajar</p>
               </label>
               {errors.availabilityToTravel && (
                 <span
@@ -421,7 +482,9 @@ const RegistrationForm = () => {
                     backgroundImage: `url(${formData.termsAndConditions ? diamondOn : diamondOff})`,
                   }}
                 ></span>
-                He leído y acepto las Condiciones y Politícas de Privacidad
+                <p className="inputDiamond">
+                  He leído y acepto las Condiciones y Politícas de Privacidad
+                </p>
               </label>
               {errors.termsAndConditions && (
                 <span className="error-message">
@@ -464,15 +527,52 @@ const RegistrationForm = () => {
           )}
 
           <button
-            type="submit"
-            className="submit-button"
-              disabled={isLoading}
-              onClick={handleSubmit}
+            disabled={isLoading}
+            onClick={handleSubmit}
+            style={{
+              height: "64px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              paddingTop: "20px",
+            }}
           >
-            Continuar
+            <img
+              src={buttonlayout}
+              style={{ height: "64px" }}
+              alt="Continuar"
+            />
+
+            <p
+              className="guild-font"
+              style={{
+                fontSize: "12px",
+                color: "#EDCC00",
+                position: "relative",
+                bottom: "45px",
+              }}
+            >
+              CONTINUAR
+            </p>
           </button>
-          {Object.keys(errors).length > 0 && <span className="error-message">Porfavor revisa sus datos</span>}
-          <p> No se solicitan documentos en esta etapa</p>
+
+          <div style={{ minHeight: "30px" }}></div>
+
+          {Object.keys(errors).length > 0 && (
+            <span className="error-message">Porfavor revisa sus datos</span>
+          )}
+          <div style={{ display: "flex", flexDirection: "row", gap: "5px" }}>
+            <img
+              src={icon}
+              alt="Importante"
+              style={{ height: "12px", marginTop: "5px" }}
+            />
+            <p className="inter-font">
+              No se solicitan documentos en esta etapa
+            </p>
+          </div>
         </div>
       </div>
       {isFormCompleted && (

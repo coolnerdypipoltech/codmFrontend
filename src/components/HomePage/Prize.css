@@ -12,16 +12,18 @@
 }
 
 .title-prize {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 1rem;
   color: #F9DD33;
+  font-family: "guildhall-wide", sans-serif;
 }
 .text-prize {
   font-size: 14px;
   text-align: center;
   margin-bottom: 2rem;
   color: #666;
+    font-family: "Inter", sans-serif;
 }
 
 .premio-container {

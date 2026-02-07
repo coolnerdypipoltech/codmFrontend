@@ -27,10 +27,9 @@ const Footer = () => {
           <button className="footer-link-btn">Política de privacidad</button>
           
         </div>
-        <div style={{minHeight: "32px"}}></div>
+        <div style={{minHeight: "10px"}}></div>
         <p className="footer-text">©/TM/®2025 Activision Publishing, Inc.</p>
-        <p className="footer-text">©2026 Activision Publishing, INC. ACTIVISION, CALL OF DUTY, y la letra estilizada M son marcas registradas de Activision Publishing, INC. Las demás marcas comerciales y nombres comerciales son propiedad de sus respectivos dueños.</p>
-        <div style={{minHeight: "30px"}}></div>
+       <div style={{minHeight: "30px"}}></div>
       </div>
     </footer>
   );

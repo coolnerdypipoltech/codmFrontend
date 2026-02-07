@@ -34,7 +34,7 @@ const BuyTickets = () => {
               fontSize: "12px",
               color: "#EDCC00",
               position: "absolute",
-              marginTop: "40px",
+              marginTop: "35px",
             }}
           >
             COMPRAR BOLETOS

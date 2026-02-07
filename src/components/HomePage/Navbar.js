@@ -21,14 +21,16 @@ const Navbar = ({ onNavigate }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1300);
 
   const items = [
-    { label: "BARRIOS LATINOS", command: () => handleScroll("patrocinadores") },
-    { label: "LOS BARRIOS", command: () => handleScroll("los-barrios") },
+    { label: "BARRIOS LATINOS", command: () => handleScroll("patrocinadores"), width: "275px", height: "50px" },
+    { label: "LOS BARRIOS", command: () => handleScroll("los-barrios") , width: "200px", height: "50px" },
     {
       label: "¿CÓMO PARTICIPAR?",
       command: () => handleScroll("como-participar"),
+      width: "275px",
+      height: "50px"
     },
-    { label: "CALENDARIO", command: () => handleScroll("calendario") },
-    { label: "UBICACIÓN", command: () => handleScroll("locacion") },
+    { label: "CALENDARIO", command: () => handleScroll("calendario"), width: "230px", height: "50px" },
+    { label: "UBICACIÓN", command: () => handleScroll("locacion"), width: "200px", height: "50px" },
   ];
 
   useEffect(() => {
@@ -76,7 +78,7 @@ const Navbar = ({ onNavigate }) => {
 
   const itemsToolbar = (items) => {
     return items.map((item, index) => (
-      <Link key={index} onClick={item.command} className="navbar-item">
+      <Link key={index} onClick={item.command} className="navbar-item" >
         {item.label}
       </Link>
     ));
@@ -91,7 +93,7 @@ const Navbar = ({ onNavigate }) => {
           borderRadius: "0px",
           backgroundRepeat: "repeat-x",
           backgroundImage: `url(${fondoBarrios})`,
-          backgroundSize: "auto 100%",
+          backgroundSize: "100% 100%",
           border: "none",
         }}
         start={
@@ -148,9 +150,8 @@ const Navbar = ({ onNavigate }) => {
                   key={index}
                   onClick={item.command}
                   className="drawer-item"
-
                 >
-                  <img src={brushNavMenu} style={{width: "250px", height: "50px", overflowY: "visible", objectFit: "cover"}} alt="Close" />
+                  <img src={brushNavMenu} style={{width: item.width, height: item.height, overflow: "visible", objectFit: "cover"}} alt="Close" />
                   <p className="navMenu-text">{item.label}</p>
                 </button>
               ))}
@@ -160,7 +161,7 @@ const Navbar = ({ onNavigate }) => {
                 aria-label="Close menu"
                 style={{display: "flex", alignItems: "center", alignContent: "center", justifyContent: "center"}}
               >
-                <img src={buttonImage} style={{width: "80px", paddingTop: "20px"}} alt="Close" />
+                <img src={buttonImage} style={{width: "60px", paddingTop: "20px"}} alt="Close" />
                 
               </button>
             </nav>

@@ -1,6 +1,5 @@
 .los-barrios-section {
   width: 100%;
-  padding: 4rem 0rem;
   background: #fff;
   text-align: center;
 }
@@ -19,6 +18,9 @@
   gap: 2rem;
   width: 100%;
   margin: 0 auto;
+  position: relative;
+  height: 100vw;
+  top: -100vh;
 }
 
 .barrios-selector {
@@ -91,7 +93,8 @@
 }
 
 .react-multiple-carousel__arrow{
-  background: transparent !important
+  background: transparent !important;
+  z-index: 10 !important;
 }
 
 .react-multiple-carousel__arrow:hover{
@@ -104,6 +107,7 @@
   height: 40px;
   padding-top: 8px;
   width: 80px;
+  z-index: 10 !;
 }
 
 .main-host-option-selected:hover{
@@ -116,4 +120,8 @@
   height: 40px;
   padding-top: 8px;
   width: 80px;
+}
+
+.react-multi-carousel-list{
+  height: 100% !important;
 }

@@ -3,8 +3,10 @@ import "./LosBarrios.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import arrow from "../../assets/registration/arrow.svg";
+import arrow from "../../assets/main/Icon_next-white.png";
 import fondo from "../../assets/Fondo.png"
+import actualFondo from "../../assets/main/IMG_Splash_RepresentaTuBarrio.png";
+import imgband from "../../assets/main/IMG_Band.png";
 const LosBarrios = () => {
   let tempArray = [];
   if (true) {
@@ -43,11 +45,11 @@ const LosBarrios = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
-        style={{ left: "4%" }}
+        style={{ left: "2%" }}
         onClick={() => onClick()}
       >
         <img
-          style={{ height: "20px", width: "20px" }}
+          style={{ height: "40px", width: "40px" }}
           src={arrow}
           alt="Left Arrow"
         />
@@ -64,11 +66,11 @@ const LosBarrios = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
-        style={{ right: "4%" }}
+        style={{ right: "2%" }}
         onClick={() => onClick()}
       >
         <img
-          style={{ height: "20px", width: "20px" }}
+          style={{ height: "40px", width: "40px", transform: "rotate(180deg)", marginTop: "-15px" }}
           src={arrow}
           alt="Left Arrow"
         />
@@ -78,14 +80,16 @@ const LosBarrios = () => {
 
   return (
     <section id="los-barrios" className="los-barrios-section">
+      <img src={actualFondo}  alt="Splash Art" />
+      <div style={{position: "absolute", height: "100%", width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+      <div style={{minHeight: "200px"}}></div>
       <div className="barrios-container">
         <div
           style={{
-            maxHeight: "225px",
-            height: "225px",
             borderRadius: "8px",
             paddingBottom: "20px",
             width: "100%",
+            minHeight: "50vh",
           }}
         >
           <Carousel
@@ -98,7 +102,7 @@ const LosBarrios = () => {
             itemClass="carousel-item-padding-40-px"
           >
             {tempArray.map((url, index) => (
-              <div key={index}>
+              <div key={index} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <img
                   src={url}
                   alt={`Imagen ${index + 1}`}
@@ -114,6 +118,9 @@ const LosBarrios = () => {
           </Carousel>
         </div>
       </div>
+      </div>
+      <div style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse"}}> <img src={imgband} alt="Band" style={{position: "relative", width: "100%", height: "80px", top: "-7vh"}} /></div>
+      
     </section>
   );
 };

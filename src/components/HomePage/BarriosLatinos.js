@@ -6,8 +6,8 @@ const BarriosLatinos = () => {
     <section
       id="barrios-latinos"
       className="barrios-latinos-section"
-      style={{backgroundImage: `url(${splashArt})`, marginTop: "80px", backgroundPosition: "center", backgroundSize: "100% auto", objectFit:"contain", overflow: "clip", overflowClipMargin: "content-box"}}
     >
+      <img src={splashArt} style={{marginTop: "80px"}} alt="Splash Art" />
 
     </section>
   );

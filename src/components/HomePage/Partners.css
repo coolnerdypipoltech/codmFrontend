@@ -1,7 +1,7 @@
 .patrocinadores-section {
   width: 100%;
   padding: 10px 10px;
-  background: #000000;
+  background: #1D1D1D;
   text-align: center;
 }
 
@@ -17,11 +17,12 @@
 }
 
 .text-partners{
-  color: grey;
+  color: #707070;
   font-size: 12px;
   margin-bottom: 1rem;
   letter-spacing: 2px;
   padding-top: 30px;
+  font-family: "guildhall-wide", sans-serif;
 }
 
 .sponsors-scroll-container {

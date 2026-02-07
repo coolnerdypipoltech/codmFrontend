@@ -8,5 +8,9 @@
   right: 0px;
   bottom: 10%;
   height: 50px;
-  width: 100px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

@@ -1,23 +1,36 @@
 .mainhost-section {
   width: 100%;
-  padding: 4rem 2rem;
   background: #fff;
   text-align: center;
 }
 
 .mainhost-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 24px;
+  
   color: #333;
   font-weight: bold;
 }
 
 .mainhost-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 90%;
+  gap: 10px;
+  width: 100%;
   margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+
+.barrios2-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .mainhost-image {
@@ -30,4 +43,22 @@
 
 .mainhost-image:hover {
   transform: scale(1.05);
+}
+
+.mainhost-text {
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: bold;
+  position: relative;
+  top: -42px;
+}
+
+.heighModifier{
+  height: 100vw;
+}
+
+@media screen and (max-width: 400px) {
+  .heighModifier{
+  height: 80vw;
+}
 }

@@ -17,7 +17,6 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
   align-items: center;
 }
 
@@ -31,26 +30,32 @@
   text-align: center;
   color: rgb(0, 0, 0);
   padding: 26px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .locacion-info h3 {
-  font-size: 1.8rem;
-  margin: 0 0 1.5rem 0;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
-  color: purple;
+  color: #F201B7;
 }
 
 .venue-name {
-  font-size: 1.3rem;
+  font-family: "guildhall-wide", sans-serif;
+  font-size: 12px;
   font-weight: bold;
-  margin: 1rem 0;
+  margin: 10px 0;
+  
 }
 
 .venue-address {
-  font-size: 1rem;
+  font-size: 14px;
   margin: 0.5rem 0;
   opacity: 0.9;
+  font-family: "Inter", sans-serif;
 }
 
 .venue-details {
@@ -60,12 +65,13 @@
 }
 
 .map-container {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-image{
+  width: 50px;
+  position: relative;
+  top: -20px;
 }
 
-.map-container iframe {
-  border: none;
-  border-radius: 12px;
-}
