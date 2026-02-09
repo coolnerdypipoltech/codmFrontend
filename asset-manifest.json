@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/codmFrontend/static/css/main.c0b2b995.css",
-    "main.js": "/codmFrontend/static/js/main.0d97bc83.js",
+    "main.css": "/codmFrontend/static/css/main.d5766584.css",
+    "main.js": "/codmFrontend/static/js/main.b97e468e.js",
     "static/js/453.fba03efc.chunk.js": "/codmFrontend/static/js/453.fba03efc.chunk.js",
+    "static/media/videoPrize.mp4": "/codmFrontend/static/media/videoPrize.0d8b27681d497bd222cb.mp4",
     "static/media/IMG_Background_Menu.png": "/codmFrontend/static/media/IMG_Background_Menu.e06008f06da6ea69fc60.png",
     "static/media/IMG_Splash_1Home.png": "/codmFrontend/static/media/IMG_Splash_1Home.ad195cdf549d8ce46506.png",
     "static/media/IMG_Background_Los barrios.png": "/codmFrontend/static/media/IMG_Background_Los barrios.048c0d8f1e63156c8178.png",
@@ -23,19 +24,18 @@
     "static/media/InterVariable.woff2": "/codmFrontend/static/media/InterVariable.a0e477f2f1f9d2376fde.woff2",
     "static/media/primeicons.svg": "/codmFrontend/static/media/primeicons.6ed59f962963a4a73af2.svg",
     "static/media/TAGS_BLACK.png": "/codmFrontend/static/media/TAGS_BLACK.5ba4656c037dc30aa2e9.png",
-    "static/media/IMG_BRAND_BarriosLatinos-CODM.png": "/codmFrontend/static/media/IMG_BRAND_BarriosLatinos-CODM.5c7f35352df586906e5b.png",
     "static/media/TAGS_graffitii_replica.png": "/codmFrontend/static/media/TAGS_graffitii_replica.4caa7d5d9a1c57548800.png",
     "static/media/Button_Comprar Boletos.png": "/codmFrontend/static/media/Button_Comprar Boletos.cef3cd6fbbccdf846675.png",
     "static/media/IMG_BRUSH.png": "/codmFrontend/static/media/IMG_BRUSH.409f6f7acc459c377af2.png",
     "static/media/STICKERS_CODM_03.png": "/codmFrontend/static/media/STICKERS_CODM_03.b83dd750a972cf22f3ac.png",
     "static/media/Button_Continuar.png": "/codmFrontend/static/media/Button_Continuar.1d39313df767cbe85074.png",
-    "static/media/Compo header.png": "/codmFrontend/static/media/Compo header.de43be808f60c606bcbe.png",
     "static/media/STICKER BOCA.png": "/codmFrontend/static/media/STICKER BOCA.a0a31ae078ed66ff7dd2.png",
     "static/media/IMG_Band.png": "/codmFrontend/static/media/IMG_Band.643e85f3b6bcc426098f.png",
     "static/media/primeicons.eot": "/codmFrontend/static/media/primeicons.ff0c4cd79b2ffca2de54.eot",
     "static/media/primeicons.woff": "/codmFrontend/static/media/primeicons.8931fda1930c3bd21e96.woff",
     "static/media/primeicons.ttf": "/codmFrontend/static/media/primeicons.a5c2a53d1ff7a9ff5933.ttf",
     "static/media/TAGS_graffitii_Barras.png": "/codmFrontend/static/media/TAGS_graffitii_Barras.8c4cf645088bc05f1b8e.png",
+    "static/media/logoBarrios.png": "/codmFrontend/static/media/logoBarrios.d367fd7d3d4f43e46b9c.png",
     "static/media/IMG_BUTTON_BACK.png": "/codmFrontend/static/media/IMG_BUTTON_BACK.7bc188bf5d48760882b7.png",
     "static/media/primeicons.woff2": "/codmFrontend/static/media/primeicons.024b32cc7bf399b1a847.woff2",
     "static/media/Brush_menu.png": "/codmFrontend/static/media/Brush_menu.91c42ef149f5a879891a.png",
@@ -53,12 +53,12 @@
     "static/media/TwitterLogo.svg": "/codmFrontend/static/media/TwitterLogo.c87ae8dfb7f8247e6e94e22f8a67b96f.svg",
     "static/media/diamondOff.svg": "/codmFrontend/static/media/diamondOff.5f97a279551eea0aeceab2d7fdc0a14e.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
-    "main.c0b2b995.css.map": "/codmFrontend/static/css/main.c0b2b995.css.map",
-    "main.0d97bc83.js.map": "/codmFrontend/static/js/main.0d97bc83.js.map",
+    "main.d5766584.css.map": "/codmFrontend/static/css/main.d5766584.css.map",
+    "main.b97e468e.js.map": "/codmFrontend/static/js/main.b97e468e.js.map",
     "453.fba03efc.chunk.js.map": "/codmFrontend/static/js/453.fba03efc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0b2b995.css",
-    "static/js/main.0d97bc83.js"
+    "static/css/main.d5766584.css",
+    "static/js/main.b97e468e.js"
   ]
 }
