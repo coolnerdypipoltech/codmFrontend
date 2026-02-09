@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/codmFrontend/static/css/main.10847616.css",
-    "main.js": "/codmFrontend/static/js/main.3b6cadbd.js",
+    "main.css": "/codmFrontend/static/css/main.886a295b.css",
+    "main.js": "/codmFrontend/static/js/main.a1885a0d.js",
     "static/js/453.fba03efc.chunk.js": "/codmFrontend/static/js/453.fba03efc.chunk.js",
     "static/media/IMG_Background_Menu.png": "/codmFrontend/static/media/IMG_Background_Menu.e06008f06da6ea69fc60.png",
     "static/media/IMG_Splash_1Home.png": "/codmFrontend/static/media/IMG_Splash_1Home.ad195cdf549d8ce46506.png",
@@ -14,8 +14,11 @@
     "static/media/IMG_texture_RG.png": "/codmFrontend/static/media/IMG_texture_RG.b46a81296d55a56b8cca.png",
     "static/media/IMG_Texture_Gran_final.png": "/codmFrontend/static/media/IMG_Texture_Gran_final.c095e054f5540dce874d.png",
     "static/media/IMG_Background_comoparticipar.png": "/codmFrontend/static/media/IMG_Background_comoparticipar.6ce00b35282931e249a7.png",
+    "static/media/IMG_BATTLE ROYALE.png": "/codmFrontend/static/media/IMG_BATTLE ROYALE.03935ba8fbda6a45111d.png",
+    "static/media/IMG_ENTRA AL JUEGO.png": "/codmFrontend/static/media/IMG_ENTRA AL JUEGO.914b93972cf7d62667f3.png",
     "static/media/Fondo.png": "/codmFrontend/static/media/Fondo.0130a1b79eb42a1cde8b.png",
     "static/media/Header_70.png": "/codmFrontend/static/media/Header_70.098a7487ac3e0951008d.png",
+    "static/media/IMG_GRAN FINAL.png": "/codmFrontend/static/media/IMG_GRAN FINAL.f8701be49d3571c90886.png",
     "static/media/InterVariable-Italic.woff2": "/codmFrontend/static/media/InterVariable-Italic.e295f70fe3e2df296c7b.woff2",
     "static/media/InterVariable.woff2": "/codmFrontend/static/media/InterVariable.a0e477f2f1f9d2376fde.woff2",
     "static/media/primeicons.svg": "/codmFrontend/static/media/primeicons.6ed59f962963a4a73af2.svg",
@@ -50,12 +53,12 @@
     "static/media/TwitterLogo.svg": "/codmFrontend/static/media/TwitterLogo.c87ae8dfb7f8247e6e94e22f8a67b96f.svg",
     "static/media/diamondOff.svg": "/codmFrontend/static/media/diamondOff.5f97a279551eea0aeceab2d7fdc0a14e.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
-    "main.10847616.css.map": "/codmFrontend/static/css/main.10847616.css.map",
-    "main.3b6cadbd.js.map": "/codmFrontend/static/js/main.3b6cadbd.js.map",
+    "main.886a295b.css.map": "/codmFrontend/static/css/main.886a295b.css.map",
+    "main.a1885a0d.js.map": "/codmFrontend/static/js/main.a1885a0d.js.map",
     "453.fba03efc.chunk.js.map": "/codmFrontend/static/js/453.fba03efc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.10847616.css",
-    "static/js/main.3b6cadbd.js"
+    "static/css/main.886a295b.css",
+    "static/js/main.a1885a0d.js"
   ]
 }
