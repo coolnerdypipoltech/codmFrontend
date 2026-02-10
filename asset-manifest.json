@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/codmFrontend/static/css/main.115d03ac.css",
-    "main.js": "/codmFrontend/static/js/main.3eaae571.js",
+    "main.css": "/codmFrontend/static/css/main.95877ea8.css",
+    "main.js": "/codmFrontend/static/js/main.066f9f5e.js",
     "static/js/453.fba03efc.chunk.js": "/codmFrontend/static/js/453.fba03efc.chunk.js",
     "static/media/videoPrize.mp4": "/codmFrontend/static/media/videoPrize.0d8b27681d497bd222cb.mp4",
     "static/media/IMG_Background_Menu.png": "/codmFrontend/static/media/IMG_Background_Menu.e06008f06da6ea69fc60.png",
@@ -53,12 +53,12 @@
     "static/media/TwitterLogo.svg": "/codmFrontend/static/media/TwitterLogo.c87ae8dfb7f8247e6e94e22f8a67b96f.svg",
     "static/media/diamondOff.svg": "/codmFrontend/static/media/diamondOff.5f97a279551eea0aeceab2d7fdc0a14e.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
-    "main.115d03ac.css.map": "/codmFrontend/static/css/main.115d03ac.css.map",
-    "main.3eaae571.js.map": "/codmFrontend/static/js/main.3eaae571.js.map",
+    "main.95877ea8.css.map": "/codmFrontend/static/css/main.95877ea8.css.map",
+    "main.066f9f5e.js.map": "/codmFrontend/static/js/main.066f9f5e.js.map",
     "453.fba03efc.chunk.js.map": "/codmFrontend/static/js/453.fba03efc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.115d03ac.css",
-    "static/js/main.3eaae571.js"
+    "static/css/main.95877ea8.css",
+    "static/js/main.066f9f5e.js"
   ]
 }
