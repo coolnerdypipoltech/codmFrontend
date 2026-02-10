@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/codmFrontend/static/css/main.234e229b.css",
-    "main.js": "/codmFrontend/static/js/main.c6f3609f.js",
+    "main.js": "/codmFrontend/static/js/main.d5397b9b.js",
     "static/js/453.fba03efc.chunk.js": "/codmFrontend/static/js/453.fba03efc.chunk.js",
     "static/media/videoPrize.mp4": "/codmFrontend/static/media/videoPrize.057df456b81036b2c986.mp4",
     "static/media/IMG_Background_Menu.png": "/codmFrontend/static/media/IMG_Background_Menu.e06008f06da6ea69fc60.png",
@@ -63,11 +63,11 @@
     "static/media/arrow.svg": "/codmFrontend/static/media/arrow.7642281869f72253171e2b5cd0bb1320.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
     "main.234e229b.css.map": "/codmFrontend/static/css/main.234e229b.css.map",
-    "main.c6f3609f.js.map": "/codmFrontend/static/js/main.c6f3609f.js.map",
+    "main.d5397b9b.js.map": "/codmFrontend/static/js/main.d5397b9b.js.map",
     "453.fba03efc.chunk.js.map": "/codmFrontend/static/js/453.fba03efc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.234e229b.css",
-    "static/js/main.c6f3609f.js"
+    "static/js/main.d5397b9b.js"
   ]
 }
