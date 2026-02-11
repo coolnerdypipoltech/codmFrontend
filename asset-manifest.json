@@ -1,17 +1,24 @@
 {
   "files": {
-    "main.css": "/codmFrontend/static/css/main.234e229b.css",
-    "main.js": "/codmFrontend/static/js/main.d5397b9b.js",
+    "main.css": "/codmFrontend/static/css/main.0839816d.css",
+    "main.js": "/codmFrontend/static/js/main.0b8690e1.js",
     "static/js/453.fba03efc.chunk.js": "/codmFrontend/static/js/453.fba03efc.chunk.js",
+    "static/media/IMG_Splash_1Home_web.png": "/codmFrontend/static/media/IMG_Splash_1Home_web.6ee6cc62b10c38fcf84b.png",
+    "static/media/IMG_Background_Los barrios_WEB.png": "/codmFrontend/static/media/IMG_Background_Los barrios_WEB.1a9481b50d17f5392f8d.png",
+    "static/media/IMG_Splash_RepresentaTuBarrio_web.png": "/codmFrontend/static/media/IMG_Splash_RepresentaTuBarrio_web.f1933e539854a5d05d52.png",
+    "static/media/IMG_Regional Qualifiers.png": "/codmFrontend/static/media/IMG_Regional Qualifiers.37bb6fb60ac19332af2b.png",
+    "static/media/Background_Registro_web.png": "/codmFrontend/static/media/Background_Registro_web.2b7ae0b2cd3866ef94a1.png",
     "static/media/videoPrize.mp4": "/codmFrontend/static/media/videoPrize.057df456b81036b2c986.mp4",
     "static/media/IMG_Background_Menu.png": "/codmFrontend/static/media/IMG_Background_Menu.e06008f06da6ea69fc60.png",
     "static/media/IMG_Splash_1Home.png": "/codmFrontend/static/media/IMG_Splash_1Home.ad195cdf549d8ce46506.png",
     "static/media/IMG_Background_Los barrios.png": "/codmFrontend/static/media/IMG_Background_Los barrios.048c0d8f1e63156c8178.png",
+    "static/media/IMG_texture_RG_web.png": "/codmFrontend/static/media/IMG_texture_RG_web.d6297a6d473a9e4b1f03.png",
     "static/media/IMG_Splash_RepresentaTuBarrio.png": "/codmFrontend/static/media/IMG_Splash_RepresentaTuBarrio.50f37df7c9fe34139ddb.png",
     "static/media/IMG_Texture_Instrucciones_PP.png": "/codmFrontend/static/media/IMG_Texture_Instrucciones_PP.22118329157fe133b7fa.png",
     "static/media/background_Losbarrios.png": "/codmFrontend/static/media/background_Losbarrios.c3c8c6d5a482d9685305.png",
-    "static/media/IMG_Regional Qualifiers.png": "/codmFrontend/static/media/IMG_Regional Qualifiers.37bb6fb60ac19332af2b.png",
+    "static/media/IMG_Texture_Granfinal_web.png": "/codmFrontend/static/media/IMG_Texture_Granfinal_web.a43615035ac13e174c2c.png",
     "static/media/Background_Registro.png": "/codmFrontend/static/media/Background_Registro.214589753daf2057f1e7.png",
+    "static/media/IMG_Background_¿Cómo participar_web.png": "/codmFrontend/static/media/IMG_Background_¿Cómo participar_web.c003d5b9fa4892aaafc3.png",
     "static/media/IMG_Venue.png": "/codmFrontend/static/media/IMG_Venue.f8827258034d9afab8a6.png",
     "static/media/Poster_Losbarrios_MEX.png": "/codmFrontend/static/media/Poster_Losbarrios_MEX.48284e1a8c49004fb859.png",
     "static/media/IMG_texture_RG.png": "/codmFrontend/static/media/IMG_texture_RG.b46a81296d55a56b8cca.png",
@@ -26,6 +33,8 @@
     "static/media/InterVariable-Italic.woff2": "/codmFrontend/static/media/InterVariable-Italic.e295f70fe3e2df296c7b.woff2",
     "static/media/InterVariable.woff2": "/codmFrontend/static/media/InterVariable.a0e477f2f1f9d2376fde.woff2",
     "static/media/primeicons.svg": "/codmFrontend/static/media/primeicons.6ed59f962963a4a73af2.svg",
+    "static/media/IMG_Band_web.png": "/codmFrontend/static/media/IMG_Band_web.e8d5acd91949022c6470.png",
+    "static/media/Header_Desktop120.png": "/codmFrontend/static/media/Header_Desktop120.5f6127fd066d30e7623d.png",
     "static/media/Preguntas frecuentes.png": "/codmFrontend/static/media/Preguntas frecuentes.12c0774a722e982abdfa.png",
     "static/media/TAGS_BLACK.png": "/codmFrontend/static/media/TAGS_BLACK.5ba4656c037dc30aa2e9.png",
     "static/media/IMG_BRAND_BarriosLatinos-CODM.png": "/codmFrontend/static/media/IMG_BRAND_BarriosLatinos-CODM.5c7f35352df586906e5b.png",
@@ -48,6 +57,7 @@
     "static/media/IMG_BUTTON_BACK.png": "/codmFrontend/static/media/IMG_BUTTON_BACK.7bc188bf5d48760882b7.png",
     "static/media/primeicons.woff2": "/codmFrontend/static/media/primeicons.024b32cc7bf399b1a847.woff2",
     "static/media/Brush_menu.png": "/codmFrontend/static/media/Brush_menu.91c42ef149f5a879891a.png",
+    "static/media/IMG_Fecha_web.png": "/codmFrontend/static/media/IMG_Fecha_web.c038955ff02ddbe371c0.png",
     "static/media/IMG_Fecha.png": "/codmFrontend/static/media/IMG_Fecha.18347fafa21ade709df6.png",
     "static/media/Brush_selector.png": "/codmFrontend/static/media/Brush_selector.f215e0e56ce753b5d281.png",
     "static/media/revicons.eot": "/codmFrontend/static/media/revicons.a77de540a38981833f9e.eot",
@@ -62,12 +72,12 @@
     "static/media/diamondOff.svg": "/codmFrontend/static/media/diamondOff.5f97a279551eea0aeceab2d7fdc0a14e.svg",
     "static/media/arrow.svg": "/codmFrontend/static/media/arrow.7642281869f72253171e2b5cd0bb1320.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
-    "main.234e229b.css.map": "/codmFrontend/static/css/main.234e229b.css.map",
-    "main.d5397b9b.js.map": "/codmFrontend/static/js/main.d5397b9b.js.map",
+    "main.0839816d.css.map": "/codmFrontend/static/css/main.0839816d.css.map",
+    "main.0b8690e1.js.map": "/codmFrontend/static/js/main.0b8690e1.js.map",
     "453.fba03efc.chunk.js.map": "/codmFrontend/static/js/453.fba03efc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.234e229b.css",
-    "static/js/main.d5397b9b.js"
+    "static/css/main.0839816d.css",
+    "static/js/main.0b8690e1.js"
   ]
 }
