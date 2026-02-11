@@ -6,7 +6,14 @@ import imagen1 from "../../assets/main/IMG_ENTRA AL JUEGO.png";
 import imagen3 from "../../assets/main/IMG_GRAN FINAL.png"
 
 import background from "../../assets/main/IMG_Background_comoparticipar.png"
+import backgroundDesktop from "../../assets/desktop/Main/IMG_Background_Participar.png"
+import { useViewport } from "../../context/ViewportContext";
 const Participate = () => {
+
+  const { isMobile } = useViewport();
+
+  const backgroundImage = isMobile ? background : backgroundDesktop;
+
   const steps = [
     {
       imagen: imagen1,
@@ -26,7 +33,7 @@ const Participate = () => {
   ];
 
   return (
-    <section id="como-participar" className="como-participar-section" style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section id="como-participar" className="como-participar-section" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'contain', backgroundPosition: 'center' }}>
       <p className='title-participate'>¿CÓMO PARTICIPAR?</p>
       <p className='text-participate' style={{paddingTop: "26px"}}>Sección que explica de manera muy breve </p>
       <p className='text-participate' style={{paddingBottom: "26px"}}>las diferentes fases del evento.</p>

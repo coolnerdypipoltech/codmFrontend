@@ -5,12 +5,21 @@ import "react-multi-carousel/lib/styles.css";
 
 import arrow from "../../assets/main/Icon_next-white.png";
 import actualFondo from "../../assets/main/IMG_Splash_RepresentaTuBarrio.png";
-import imgband from "../../assets/main/IMG_Band.png";
+import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.png";
+import imgband1 from "../../assets/main/IMG_Band.png";
+import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
+import { useViewport } from "../../context/ViewportContext";
+
 const LosBarrios = () => {
+  const { isMobile } = useViewport();
+
+  const imageBackgrond = isMobile ? actualFondo : actualFondoDesktop;
+  const imgband = isMobile ? imgband1 : imgband2; 
+
   let tempArray = [];
   if (true) {
     for (let index = 0; index < 3; index++) {
-      tempArray.push(actualFondo);
+      tempArray.push(imageBackgrond);
     }
   }
   const responsive = {

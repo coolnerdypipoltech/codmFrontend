@@ -19,10 +19,9 @@ const Partners = () => {
       <div className="sponsors-scroll-container">
         
         <div className="sponsors-scroll">
-          {/* Duplicamos el array para el efecto infinito */}
           {[...sponsors, ...sponsors].map((sponsor, index) => (
             <div key={index} className="sponsor-item">
-              <img loading="lazy" style={{height: "30px", width: "auto"}} src={Icon}  alt={sponsor.name} />
+              <img loading="lazy" className='partner-image' src={Icon}  alt={sponsor.name} />
             </div>
           ))}
         </div>

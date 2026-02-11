@@ -7,32 +7,36 @@ import InstructionsPage from "./pages/InstructionsPage";
 import Navbar from "./components/HomePage/Navbar";
 import PrivacyPage from "./pages/PrivacyPage";
 import FAQsPage from "./pages/FAQsPage";
+import { ViewportProvider } from "./context/ViewportContext";
+
 function App() {
   return (
-    <Router basename="/">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/registro" element={<RegistroPage />} />
-        <Route path="/instructions" element={<InstructionsPage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/faqs" element={<FAQsPage />} />
-        <Route path="/codmFrontend" element={<HomePage />} />
-        <Route path="/codmFrontend/registro" element={<RegistroPage />} />
-        <Route
-          path="/codmFrontend/instructions"
-          element={<InstructionsPage />}
-        />
-        <Route
-          path="/codmFrontend/privacy"
-          element={<PrivacyPage />}
-        />
-        <Route
-          path="/codmFrontend/faqs"
-          element={<FAQsPage />}
-        />
-      </Routes>
-    </Router>
+    <ViewportProvider>
+      <Router basename="/">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/registro" element={<RegistroPage />} />
+          <Route path="/instructions" element={<InstructionsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/faqs" element={<FAQsPage />} />
+          <Route path="/codmFrontend" element={<HomePage />} />
+          <Route path="/codmFrontend/registro" element={<RegistroPage />} />
+          <Route
+            path="/codmFrontend/instructions"
+            element={<InstructionsPage />}
+          />
+          <Route
+            path="/codmFrontend/privacy"
+            element={<PrivacyPage />}
+          />
+          <Route
+            path="/codmFrontend/faqs"
+            element={<FAQsPage />}
+          />
+        </Routes>
+      </Router>
+    </ViewportProvider>
   );
 }
 

@@ -5,6 +5,44 @@
   text-align: center;
 }
 
+
+
+.graffiti1{
+  position: relative;
+  top: 10%;
+  left: 45vw;
+  width: 100px;
+  height: auto;
+  margin-bottom: 10%;
+}
+
+.graffiti-container{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.graffiti2{
+  position: relative;
+  top: 10%;
+  right: 45vw;
+  width: 150px;
+  height: auto;
+  margin-bottom: 10%;
+}
+
+
+@media (min-width: 768px) {
+  .graffiti-container{
+    width: 0%;
+  }
+}
+
+
 .locacion-section h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;

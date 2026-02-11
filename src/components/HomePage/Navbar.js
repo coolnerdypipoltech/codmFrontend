@@ -5,21 +5,24 @@ import "./Navbar.css";
 import { useNavigate } from "react-router";
 import brush from "../../assets/header/Brush_menu.png";
 import logoBarrios from "../../assets/navMenu/IMG_BRAND_BarriosLatinos-CODM.png";
-import fondoBarrios from "../../assets/header/Header_70.png";
+import fondoBarriosMobil from "../../assets/header/Header_70.png";
 import fondoMobile from "../../assets/navMenu/IMG_Background_Menu.png";
-
+import fondoBarriosDesktop from "../../assets/desktop/Header/Header_Desktop120.png";
 import logoNavMenu from "../../assets/logoBarrios.png";
 import brushNavMenu from "../../assets/navMenu/IMG_BRUSH.png";
 import buttonImage from "../../assets/navMenu/IMG_BUTTON_BACK.png";
 import infinixLogo from "../../assets/partners/Logo_Infinix_Black.png";
-
+import { useViewport } from "../../context/ViewportContext";
 import { useLocation } from "react-router-dom";
 const Navbar = () => {
+
+  const { isMobile } = useViewport();
+  const fondoBarrios = isMobile ? fondoBarriosMobil : fondoBarriosDesktop;
   const navigate = useNavigate();
   const location = useLocation();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [forceReload, setForceReload] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1300);
+  const [isMobileCalc, setIsMobileCalc] = useState(window.innerWidth < 1300);
   const items = [
     {
       label: "BARRIOS LATINOS",
@@ -55,7 +58,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1300);
+      setIsMobileCalc(window.innerWidth < 1300);
     };
 
     window.addEventListener("resize", handleResize);
@@ -130,7 +133,7 @@ const Navbar = () => {
           />
         }
         center={
-          !isMobile ? (
+          !isMobileCalc ? (
             itemsToolbar(items)
           ) : (
             <div style={{width: "100%", position: "absolute", left: "10px", height: "0px", display: "flex", justifyContent: "center"}} className="infinixContainerLogo" >
@@ -150,7 +153,7 @@ const Navbar = () => {
           )
         }
         end={
-          isMobile ? (
+          isMobileCalc ? (
             <button
               className="menu-toggle"
               onClick={toggleDrawer}
@@ -167,16 +170,7 @@ const Navbar = () => {
               </div>
             </button>
           ) : (
-            <p
-              style={{
-                paddingRight: "1rem",
-                textDecoration: "underline",
-                color: "white",
-              }}
-              onClick={() => navigate("/codmFrontend/registro")}
-            >
-              {"Registro"}
-            </p>
+            <></>
           )
         }
         className="navbar-menu"
@@ -184,7 +178,7 @@ const Navbar = () => {
       />
 
       {/* Drawer for mobile */}
-      {isMobile && (
+      {isMobileCalc && (
         <>
           <div
             className={`drawer-overlay ${isDrawerOpen ? "active" : ""}`}
@@ -194,8 +188,7 @@ const Navbar = () => {
             className={`drawer ${isDrawerOpen ? "open" : ""}`}
             style={{
               backgroundImage: `url(${fondoMobile})`,
-              backgroundSize: "auto 100%",
-              backgroundPosition: "center",
+              
             }}
           >
             <div className="drawer-nav">

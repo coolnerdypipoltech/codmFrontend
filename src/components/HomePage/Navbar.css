@@ -8,6 +8,8 @@
 .navbar-item{
   margin: 0 1rem;
   cursor: pointer;
+  font-family: "guildhall-wide", sans-serif;
+  font-size: 16px;
 }
 
 .navbar-menu {
@@ -85,6 +87,16 @@
   align-items: center;
   align-content: center;
   justify-content: center;
+  background-size: auto 100%;
+  object-fit: cover;
+  background-position: center;
+}
+
+
+@media (min-width: 650px) {
+  .drawer.open {
+    background-size: 100%;
+  }
 }
 
 .drawer-header {

@@ -101,25 +101,7 @@
   background: transparent !important
 }
 
-.main-host-option-selected{
-  background-image: url("../../assets/Fondo.png") !important;
-  color: white !important;
-  height: 40px;
-  padding-top: 8px;
-  width: 80px;
-  z-index: 10 !;
-}
 
-.main-host-option-selected:hover{
-  background-image: url("../../assets/Fondo.png") !important;
-  color: white !important;
-}
-
-.main-host-option-unselected{
-  border: 2px solid transparent !important;
-  height: 50px;
-  width: 112px;
-}
 
 .react-multi-carousel-list{
   height: 100% !important;

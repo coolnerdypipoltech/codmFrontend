@@ -46,7 +46,8 @@
 }
 
 .mainhost-text {
-  font-size: 24px;
+  font-family: "guildhall-wide", sans-serif;
+  font-size: 20px;
   color: #ffffff;
   font-weight: bold;
   position: relative;
@@ -58,6 +59,35 @@
   height: 100vw;
   margin-top: 2.5vw;
 }
+
+.mainhost-background{
+  height: auto;
+  width: 100%;
+}
+
+.main-host-option-selected{
+  background-image: url("../../assets/Fondo.png") !important;
+  color: white !important;
+  height: 40px;
+  padding-top: 8px;
+  width: 80px;
+  z-index: 10 !;
+}
+
+.main-host-option-selected:hover{
+  background-image: url("../../assets/Fondo.png") !important;
+  color: white !important;
+}
+
+.main-host-option-unselected{
+  border: 2px solid transparent !important;
+  height: 50px;
+  width: 112px;
+}
+
+
+
+
 .mainhost-words{
   display: flex;
   flex-direction: row;
@@ -74,4 +104,29 @@
 }
 }
 
+
+@media screen and (min-width: 1001px) {
+  
+  .heighModifier{
+    height: 55vw;
+    margin-top: 2.5vw;
+  }
+
+  .mainhost-background{
+    height: 80vw;
+    object-fit: cover;
+  }
+  .main-host-option-unselected{
+    height: 80px;
+    width: 200px;
+  }
+  .mainhost-text{
+    top: -60px;
+    font-size: 30px;
+  }
+
+  .mainhost-words{
+    bottom: -10%;
+  }
+}
 

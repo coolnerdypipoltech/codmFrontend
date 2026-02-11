@@ -1,11 +1,17 @@
 import React, { useEffect } from 'react';
 import RegistrationForm from '../components/RegistrationForm';
 import './RegistroPage.css';
-import Navbar from '../components/HomePage/Navbar';
-import backgroundImage from "../assets/registration/Background_Registro.png";
+import backgroundImageMobile from "../assets/registration/Background_Registro.png";
+import backgroundImageDesktop from "../assets/desktop/Registro/Background_Registro_web.png";
 import graffiti1 from "../assets/registration/TAGS_graffitii_Barras.png"
 import graffiti2 from "../assets/registration/TAGS_graffitii_replica.png";
+import { useViewport } from "../context/ViewportContext";
 const RegistroPage = () => {
+
+  const { isMobile } = useViewport();
+
+  const backgroundImage = isMobile ? backgroundImageMobile : backgroundImageDesktop;
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -23,7 +29,7 @@ const RegistroPage = () => {
           <img loading="lazy" src={graffiti2} alt="Graffiti 2" style={{width: "300px", overflow: "visible", position: "relative", right: "-64vw"}} />
         </div>
         <div style={{minHeight: "40px"}}></div>
-        <div style={{position: "", overflow: "clip", zIndex: 2, top: "45px", minHeight: "100dvh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <div style={{position: "", overflow: "clip", zIndex: 2, top: "45px", minHeight: "100dvh", width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
           <RegistrationForm></RegistrationForm>
         </div>
         <div style={{minHeight: "20px"}}></div>

@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./Calendary.css";
 import fondo from "../../assets/main/IMG_Texture_Gran_final.png";
+import fondoDesktop from "../../assets/desktop/Main/IMG_Texture_Granfinal_web.png";
 import brushNavMenu from "../../assets/main/IMG_BRUSH.png";
-import fecha from "../../assets/main/IMG_Fecha.png";
+import fecha1 from "../../assets/main/IMG_Fecha.png";
+import fechaDesktop from "../../assets/desktop/Main/IMG_Fecha_web.png";
+
+import { useViewport } from "../../context/ViewportContext";
+
 const Calendary = () => {
+  const { isMobile } = useViewport();
+
+  const backgroundImage = isMobile ? fondo : fondoDesktop;
+  const fecha = isMobile ? fecha1 : fechaDesktop;
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -12,7 +22,6 @@ const Calendary = () => {
   });
 
   useEffect(() => {
-    // Fecha de la gran final (cambia esta fecha según sea necesario)
     const finalDate = new Date("2026-04-16T00:00:00").getTime();
 
     const timer = setInterval(() => {
@@ -37,8 +46,9 @@ const Calendary = () => {
       id="calendario"
       className="calendario-section"
       style={{
-        backgroundImage: `url(${fondo})`,
-        backgroundSize: "100% auto",
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: isMobile ? "100% auto" : " auto 100%",
+        height: isMobile ? "auto" : "50vw",
         objectFit: "contain",
         overflow: "clip",
         overflowClipMargin: "content-box",
@@ -49,19 +59,12 @@ const Calendary = () => {
         <img
           loading="lazy"
           src={brushNavMenu}
-          style={{
-            width: "300px",
-            height: "50px",
-            overflowY: "visible",
-            objectFit: "cover",
-            
-            alignSelf: "center", minHeight: "50px"
-          }}
+          className="calendary-brush"
           alt="Close"
         />
-        <p style={{color: "white", fontSize: "24px", position: "relative", top: "-40px"}} className="guild-font">LA GRAN FINAL</p>
+        <p className="calendary-title">LA GRAN FINAL</p>
       </div>
-      <img loading="lazy" src={fecha} alt="Fecha" style={{ width: "150px", height: "auto", position: "relative", top: "-45px" }} />
+      <img loading="lazy" src={fecha} alt="Fecha" className="calendary-date" />
       <div className="countdown-container">
         <div className="countdown">
           <div className="countdown-container">
@@ -71,21 +74,21 @@ const Calendary = () => {
             <span className="countdown-label">D</span>
           </div>
 
-          <div className="countdown-container" style={{left: "5px"}}>
+          <div className="countdown-container" style={{left: isMobile ? "5px" : "0px"}}> 
             <div className="countdown-item">
               <span className="countdown-value">{timeLeft.hours}</span>
             </div>
             <span className="countdown-label">HRS</span>
           </div>
-          <p className="guild-font" style={{color: "white", fontSize: "25px", position: "relative", left: "8px", top: "-12px"}}>:</p>
-          <div className="countdown-container" style={{left: "5px", width: "70px"}}>
+          <p className="guild-font" style={{color: "white", fontSize: isMobile ? "25px" : "45px", position: "relative", left: isMobile ? "8px" : "0px", top: isMobile ? "-12px" : "-4px"}}>:</p>
+          <div className="countdown-container" style={{left: isMobile ? "5px" : "0px", width: isMobile ? "70px" : "100px"}}>
             <div className="countdown-item">
               <span className="countdown-value">{timeLeft.minutes}</span>
             </div>
             <span className="countdown-label">MIN</span>
           </div>
-          <p className="guild-font" style={{color: "white", fontSize: "25px", position: "relative", left: "0px", top: "-12px"}}>:</p>
-          <div className="countdown-container" style={{left: "-0px", width: "60px"}}>
+          <p className="guild-font" style={{color: "white", fontSize: isMobile ? "25px" : "45px", position: "relative", left: "0px", top: isMobile ? "-12px" : "-4px"}}>:</p>
+          <div className="countdown-container" style={{left: isMobile ? "5px" : "0px", width: isMobile ? "60px" : "100px"}}>
             <div className="countdown-item">
               <span className="countdown-value">{timeLeft.seconds}</span>
             </div>

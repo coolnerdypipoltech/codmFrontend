@@ -37,9 +37,9 @@ const Footer = () => {
         transition: 'opacity 0.3s ease'
       }}
     >
-      <img loading="lazy" src={fondo} alt="img" style={{height: "70px", position: "relative", width: "auto", left: "50px"}}/>
-      <p className="guild-font" style={{position: "relative", color: "white", fontSize: "10px", left: "27.5PX", top: "-52.5px" }}>REGISTRO </p>
-      <p className="guild-font" style={{position: "relative", color: "white", fontSize: "10px", left: "27.5PX", top: "-52.5px" }}>AL TORNEO </p>
+      <img loading="lazy" src={fondo} alt="img" className="register-image"/>
+      <p className="guild-font register-text">REGISTRO </p>
+      <p className="guild-font register-text">AL TORNEO </p>
     </div>
   );
 };

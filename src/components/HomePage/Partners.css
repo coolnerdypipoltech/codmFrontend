@@ -25,6 +25,24 @@
   font-family: "guildhall-wide", sans-serif;
 }
 
+.partner-image{
+  height: 30px;
+  width: auto;
+}
+
+@media (min-width: 1001px) {
+  
+  
+  .text-partners{
+  font-size: 34px; 
+  }
+
+  .partner-image{
+    height: 60px;
+
+  }
+}
+
 .sponsors-scroll-container {
   width: 100%;
   overflow: hidden;

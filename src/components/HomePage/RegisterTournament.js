@@ -1,23 +1,29 @@
 import React from "react";
 import imagen2 from "../../assets/main/IMG_texture_RG.png";
+import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_web.png";
 import comprarBoletos from "../../assets/main/Button_Comprar Boletos.png";
+
+import { useViewport } from "../../context/ViewportContext";
 const RegisterTournament = () => {
+  const { isMobile } = useViewport();
+
+  const backgroundImage = isMobile ? imagen2 : imagen3;
+
   return (
+
     <section
       id="buyTickets"
-      className="premio-section"
-      style={{ height: "198px" }}
+      className="buyTickets-section"
     >
       <div
-        className="premio-container2"
-        style={{ backgroundImage: `url(${imagen2})`, minHeight: "198px", backgroundSize: "100% auto", paddingTop: "35px" }}
+        className="buyTickets-container"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <p className="guild-font" style={{ fontSize: "12px", color: "white", marginTop: "20px" }}>
+         <p className="buyTickets-text" style={{marginTop: isMobile ? "40px" : "80px"}}>
           SI LLEGASTE HASTA AQUÍ,
         </p>
         <p
-          className="guild-font"
-          style={{ fontSize: "12px", color: "white", paddingBottom: "5px" }}
+          className="buyTickets-text"
         >
           REGISTRATE EN EL TORNEO
         </p>
@@ -25,19 +31,12 @@ const RegisterTournament = () => {
           <img
             loading="lazy"
             src={comprarBoletos}
-            style={{ height: "64px" }}
+            className="buyTickets-Image"
             alt="Comprar Boletos"
           />
           ´
           <p
-            className="guild-font"
-            style={{
-              fontSize: "12px",
-              color: "#EDCC00",
-              position: "relative",
-              top: "-67px",
-              
-            }}
+            className={isMobile ? "buyTickets-buttonText" : "buyTickets-buttonText2"}
           >
             REGISTRO AL TORNEO
           </p>

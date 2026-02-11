@@ -74,41 +74,20 @@ const Location = () => {
             </p>
           </div>
           <div
-            style={{
-              position: "absolute",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              overflowX: "hidden",
-              width: "100%",
-            }}
+            className="graffiti-container"
           >
             <img
               loading="lazy"
               src={sticker2}
               alt="Sticker 2"
-              style={{
-                position: "relative",
-                top: "10%",
-                right: "45vw",
-                width: "150px",
-                height: "150px",
-                marginBottom: "10%",
-              }}
+              className="graffiti2"
             />
             <img
               loading="lazy"
               src={sticker1}
               alt="Sticker 1"
-              style={{
-                position: "relative",
-                top: "10px",
-                left: "45vw",
-                width: "100px",
-                height: "100px",
-                marginBottom: "10%",
-              }}
+              className="graffiti1"
+                
             />
           </div>
         </div>

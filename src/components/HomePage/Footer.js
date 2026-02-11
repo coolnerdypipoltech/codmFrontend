@@ -6,11 +6,19 @@ import twitter from "../../assets/footer/TwitterLogo.svg";
 import tiktok from "../../assets/footer/TiktokLogo.svg";
 import yt from "../../assets/footer/YtLogo.svg";
 import { useNavigate } from "react-router";
+
+import { useViewport } from "../../context/ViewportContext";
+
 const Footer = () => {
   const navigate = useNavigate();
+  const { isMobile } = useViewport();
+
+
+
+
   return (
     <footer id="footer" className="footer-section">
-      <div className="footer-content">
+      <div className="footer-content" style={{marginTop: isMobile ? "40px" : "80px"}}>
         {/* Social Media Icons */}
         <p className="footer-Title">MANTENTE AL DÍA</p>
         <div className="social-media">
@@ -29,8 +37,8 @@ const Footer = () => {
           
         </div>
         <div style={{minHeight: "10px"}}></div>
-        <p className="footer-text">©2026 Activision Publishing, INC. ACTIVISION, CALL OF DUTY, y la letra estilizada M son marcas registradas de Activision Publishing, INC. Las demás marcas comerciales y nombres comerciales son propiedad de sus respectivos dueños. </p>
-       <div style={{minHeight: "30px"}}></div>
+        <p className="footer-text">©/TM/®2026 Activision Publishing, Inc. </p>
+       <div style={{minHeight: isMobile ? "30px" : "0px"}}></div>
       </div>
     </footer>
   );

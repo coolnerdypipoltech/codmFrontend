@@ -31,12 +31,25 @@
   left: 0px;
 }
 
-@media (min-width: 980px) {
+.image-band4{
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  top: -15vw;
+  left: 0px;
+}
+
+@media (min-width: 1001px) {
   .image-band1{
-    top: -19vh;
+    top: -5vw;
   }
 
   .image-band2{
     top: -10vh;
+  }
+
+  .image-band4{
+    top: -5vw;
   }
 }

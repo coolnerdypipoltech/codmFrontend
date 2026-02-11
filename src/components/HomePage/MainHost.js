@@ -5,36 +5,24 @@ import "react-multi-carousel/lib/styles.css";
 
 import arrow from "../../assets/main/Icon_next.png";
 import fondo from "../../assets/main/Poster_Losbarrios_MEX.png";
-import actualFondo from "../../assets/main/IMG_Background_Los barrios.png";
+import actualFondo1 from "../../assets/main/IMG_Background_Los barrios.png";
+import actualFondoDesktop1 from "../../assets/desktop/Main/IMG_Background_Los barrios_WEB.png";
 import brushNavMenu from "../../assets/main/Brush_selector.png";
+import { useViewport } from "../../context/ViewportContext";
 const MainHost = () => {
+
+  const { isMobile } = useViewport();
+
+  const actualFondo = isMobile ? actualFondo1 : actualFondoDesktop1;
+
   const carrousel = useRef(null);
   const options = ["CHILE", "MEX", "PE/ECU", "ARG", "COL", "COD:M"];
   const [currentOption, setCurrentOption] = useState(0);
   let tempArray = [];
   if (true) {
     for (let index = 0; index < 6; index++) {
-      if (index === 0) {
-        tempArray.push(fondo);
-      }
-      if (index === 1) {
-        tempArray.push(brushNavMenu);
-      }
-      if (index === 2) {
-        tempArray.push(arrow);
-      }
-      if (index === 3) {
-        tempArray.push(fondo);
-      }
-      if (index === 4) {
-        tempArray.push(brushNavMenu);
-      }
-      if (index === 5) {
-        tempArray.push(arrow);
-      }
-      if (index === 6) {
-        tempArray.push(fondo);
-      }
+      tempArray.push(fondo);
+
     }
   }
 
@@ -279,7 +267,7 @@ const MainHost = () => {
           </div>
         </div>
       </div>
-      <img loading="lazy" src={actualFondo} style={{ height: "auto", width: "100%" }} alt="Splash Art" />
+      <img loading="lazy" src={actualFondo} className="mainhost-background" alt="Splash Art" />
     </section>
   );
 };
