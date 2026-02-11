@@ -1,6 +1,6 @@
 import React from 'react';
 import './Partners.css';
-import Icon from '../../assets/CNPLogo.png';
+import Icon from '../../assets/partners/INFINIX.png';
 const Partners = () => {
   const sponsors = [
     { name: 'Sponsor 1' },
@@ -22,7 +22,7 @@ const Partners = () => {
           {/* Duplicamos el array para el efecto infinito */}
           {[...sponsors, ...sponsors].map((sponsor, index) => (
             <div key={index} className="sponsor-item">
-              <img style={{width: "80px"}} src={Icon}  alt={sponsor.name} />
+              <img style={{height: "30px", width: "auto"}} src={Icon}  alt={sponsor.name} />
             </div>
           ))}
         </div>

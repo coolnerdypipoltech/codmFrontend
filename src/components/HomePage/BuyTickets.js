@@ -6,13 +6,13 @@ const BuyTickets = () => {
     <section
       id="buyTickets"
       className="premio-section"
-      style={{ height: "138px" }}
+      style={{ height: "183px" }}
     >
       <div
-        className="premio-container"
-        style={{ backgroundImage: `url(${imagen2})`, minHeight: "138px", backgroundSize: "100% auto", objectFit:"contain", overflow: "clip", overflowClipMargin: "content-box" }}
+        className="premio-container3"
+        style={{ backgroundImage: `url(${imagen2})`, minHeight: "183px", backgroundSize: "100% auto", objectFit:"contain", overflow: "clip", overflowClipMargin: "content-box" }}
       >
-        <p className="guild-font" style={{ fontSize: "12px", color: "white", marginTop: "20px" }}>
+        <p className="guild-font" style={{ fontSize: "12px", color: "white", marginTop: "40px" }}>
           COMPRAR BOLETOS
         </p>
         <p
@@ -34,7 +34,7 @@ const BuyTickets = () => {
               fontSize: "12px",
               color: "#EDCC00",
               position: "absolute",
-              marginTop: "35px",
+              marginTop: "51px",
             }}
           >
             COMPRAR BOLETOS

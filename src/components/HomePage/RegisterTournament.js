@@ -6,11 +6,11 @@ const RegisterTournament = () => {
     <section
       id="buyTickets"
       className="premio-section"
-      style={{ height: "138px" }}
+      style={{ height: "198px" }}
     >
       <div
-        className="premio-container"
-        style={{ backgroundImage: `url(${imagen2})`, minHeight: "138px", backgroundSize: "100% auto", objectFit:"contain", overflow: "clip", overflowClipMargin: "content-box" }}
+        className="premio-container2"
+        style={{ backgroundImage: `url(${imagen2})`, minHeight: "198px", backgroundSize: "100% auto", paddingTop: "35px" }}
       >
         <p className="guild-font" style={{ fontSize: "12px", color: "white", marginTop: "20px" }}>
           SI LLEGASTE HASTA AQUÍ,
@@ -33,8 +33,9 @@ const RegisterTournament = () => {
             style={{
               fontSize: "12px",
               color: "#EDCC00",
-              position: "absolute",
-              marginTop: "40px",
+              position: "relative",
+              top: "-67px",
+              
             }}
           >
             REGISTRO AL TORNEO

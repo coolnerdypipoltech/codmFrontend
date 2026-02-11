@@ -8,14 +8,36 @@ import fondo from "../../assets/main/Poster_Losbarrios_MEX.png";
 import actualFondo from "../../assets/main/IMG_Background_Los barrios.png";
 import brushNavMenu from "../../assets/main/Brush_selector.png";
 const MainHost = () => {
-  const [currentOption, setCurrentOption] = useState(0);
   const carrousel = useRef(null);
+  const options = ["CHILE", "MEX", "PE/ECU", "ARG", "COL", "COD:M"];
+  const [currentOption, setCurrentOption] = useState(0);
   let tempArray = [];
   if (true) {
-    for (let index = 0; index < 3; index++) {
-      tempArray.push(fondo);
+    for (let index = 0; index < 6; index++) {
+      if (index === 0) {
+        tempArray.push(fondo);
+      }
+      if (index === 1) {
+        tempArray.push(brushNavMenu);
+      }
+      if (index === 2) {
+        tempArray.push(arrow);
+      }
+      if (index === 3) {
+        tempArray.push(fondo);
+      }
+      if (index === 4) {
+        tempArray.push(brushNavMenu);
+      }
+      if (index === 5) {
+        tempArray.push(arrow);
+      }
+      if (index === 6) {
+        tempArray.push(fondo);
+      }
     }
   }
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -34,6 +56,49 @@ const MainHost = () => {
       breakpoint: { max: 464, min: 0 },
       items: 1,
     },
+  };
+
+  const optionHelperLeft = () => {
+    if (currentOption === -2) {
+      return options[options.length - 3];
+    }
+    if (currentOption === -1) {
+      return options[options.length - 2];
+    }
+    if (currentOption === 0) {
+      return options[options.length - 1];
+    } else {
+      return options[currentOption - 1];
+    }
+  };
+
+  const optionHelperMiddle = () => {
+    if (currentOption === -1) {
+      return options[options.length - 1];
+    }
+    if (currentOption === -2) {
+      return options[options.length - 2];
+    }
+    if (currentOption === options.length ) {
+      return options[0];
+    }
+
+    return options[currentOption];
+  };
+
+  const optionHelperRight = () => {
+    if (currentOption === -2) {
+      return options[options.length - 1];
+    }
+    if (currentOption === options.length ) {
+      return options[1];
+    }
+
+    if (currentOption === options.length - 1) {
+      return options[0];
+    } else {
+      return options[currentOption + 1];
+    }
   };
 
   const CustomLeftArrow = ({ onClick, ...rest }) => {
@@ -70,7 +135,12 @@ const MainHost = () => {
         onClick={() => onClick()}
       >
         <img
-          style={{ height: "40px", width: "40px", transform: "rotate(180deg)", marginTop: "-15px" }}
+          style={{
+            height: "40px",
+            width: "40px",
+            transform: "rotate(180deg)",
+            marginTop: "-15px",
+          }}
           src={arrow}
           alt="Left Arrow"
         />
@@ -78,9 +148,8 @@ const MainHost = () => {
     );
   };
 
-
   return (
-    <section id="los-barrios" className="mainhost-section">
+    <section  className="mainhost-section">
       <div
         style={{
           position: "absolute",
@@ -95,15 +164,10 @@ const MainHost = () => {
         }}
       >
         <div className="mainhost-container">
-          <h2 className="guild-font">LOS BARRIOS</h2>
-          <p className="inter-font" style={{ fontSize: "12px", width: "60%" }}>
-            CADA IMAGEN TIENE LA INFORMACIÓN DEL MC + KOL + 5 INTEGRANTES DEL
-            EQUIPO
-          </p>
+          <h2 id="main-host" className="guild-font" style={{paddingTop: "30px"}}>LOS BARRIOS</h2>
           <div
-          className="heighModifier"
+            className="heighModifier"
             style={{
-              borderRadius: "8px",
               paddingBottom: "20px",
               width: "100%",
             }}
@@ -114,10 +178,11 @@ const MainHost = () => {
                 var currentSlide = _ref.currentSlide;
                 // eslint-disable-next-line no-unused-expressions
                 _ref.onMove;
-                setCurrentOption(currentSlide);
+                setCurrentOption(currentSlide - 2);
               }}
               responsive={responsive}
               arrows
+              infinite
               customLeftArrow={<CustomLeftArrow />}
               customRightArrow={<CustomRightArrow />}
               itemClass="carousel-item-padding-40-px"
@@ -143,74 +208,72 @@ const MainHost = () => {
           </div>
 
           <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "10VW",
-            }}
+            id="participate"
+            className="mainhost-words"
           >
             <div
               onClick={() => {
-                carrousel.current.goToSlide(0);
+                carrousel.current.goToSlide(currentOption + 1);
               }}
               className="main-host-option-unselected"
             >
               <img
-                  src={brushNavMenu}
-                  style={{
-                      height: "45px",
-                    overflow: "visible",
-                    objectFit: "cover",
-                    opacity: currentOption === 0 ? 1 : 0
-                  }}
-                  alt="Close"
-                />
-              <p className="mainhost-text" style={{color: currentOption === 0 ? "white" : "black"}}>CHILE</p>
+                src={brushNavMenu}
+                style={{
+                  overflow: "visible",
+                  objectFit: "cover",
+                  opacity: 0,
+                }}
+                alt="Close"
+              />
+              <p className="mainhost-text" style={{ color: "black" }}>
+                {optionHelperLeft()}
+              </p>
             </div>
 
-                        <div
+            <div
               onClick={() => {
-                carrousel.current.goToSlide(1);
+                carrousel.current.goToSlide(currentOption + 2);
               }}
               className="main-host-option-unselected"
             >
               <img
-                  src={brushNavMenu}
-                  style={{
-                    height: "45px",
-                    overflow: "visible",
-                    objectFit: "cover",
-                    opacity: currentOption === 1 ? 1 : 0
-                  }}
-                  alt="Close"
-                />
-              <p className="mainhost-text" style={{color: currentOption === 1 ? "white" : "black"}}>MEX</p>
+                src={brushNavMenu}
+                style={{
+                  overflow: "visible",
+                  objectFit: "cover",
+                  opacity: 1,
+                }}
+                alt="Close"
+              />
+              <p className="mainhost-text" style={{ color: "white" }}>
+                {optionHelperMiddle()}
+              </p>
             </div>
 
-
-                        <div
+            <div
               onClick={() => {
-                carrousel.current.goToSlide(2);
+                carrousel.current.goToSlide(currentOption + 3);
               }}
               className="main-host-option-unselected"
             >
               <img
-                  src={brushNavMenu}
-                  style={{
-                    height: "45px",
-                    overflow: "visible",
-                    objectFit: "cover",
-                    opacity: currentOption === 2 ? 1 : 0
-                  }}
-                  alt="Close"
-                />
-              <p className="mainhost-text" style={{color: currentOption === 2 ? "white" : "black"}}>PERU</p>
+                src={brushNavMenu}
+                style={{
+                  overflow: "visible",
+                  objectFit: "cover",
+                  opacity: 0,
+                }}
+                alt="Close"
+              />
+              <p className="mainhost-text" style={{ color: "black" }}>
+                {optionHelperRight()}
+              </p>
             </div>
-
           </div>
         </div>
       </div>
-      <img src={actualFondo} style={{ height: "100%" }} alt="Splash Art" />
+      <img src={actualFondo} style={{ height: "auto", width: "100%" }} alt="Splash Art" />
     </section>
   );
 };

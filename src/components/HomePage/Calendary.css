@@ -47,12 +47,12 @@
 .countdown-container {
   max-width: 800px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   align-content: center;
   position: relative;
-  top: -5px;
+  top: -15px;
 }
 
 .countdown-container h3 {
@@ -70,23 +70,25 @@
 }
 
 .countdown-item {
-  border-radius: 12px;
-  width: 60px;
-  height: 60px;
+  margin-bottom: 10px;
+  width: 55px;
+  height: 55px;
   color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("../../assets/main/Button_Comprar\ Boletos.png");
+  border-radius: 9px;
+  background-color: #2B2D31;
+  border-color: #FFB838;
+  border-width: 1px;
   background-size: cover;
   background-position: center;
   background-size: auto 100%;
-}
-
-.countdown-container{
-  display: flex;
-  flex-direction: column;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
 }
 
 .countdown-value {

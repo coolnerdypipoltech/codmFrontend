@@ -1,23 +1,71 @@
-import React from 'react';
-
-
-const PopUp = ({text, closePopUp, action}) => {
+import React from "react";
+import buttonlayout from "../assets/registration/Button_Continuar.png";
+const PopUp = ({ text, children, closePopUp, action }) => {
   return (
     <div className="popup-overlay" onClick={closePopUp}>
-          <div
-            className={`popup-content`}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <p>{text}</p>
-            <button className="popup-button" onClick={closePopUp}>
-              Cerrar
-            </button>
-            <button onClick={action} style={{padding: "10px", backgroundColor: "lightblue", cursor: "pointer"}}>Aceptar</button>
+      <div className={`popup-content`} onClick={(e) => e.stopPropagation()}>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+        </div>
+        <div className="inter-font" style={{ textAlign: "left", width: "100%", padding: "0 20px" }}>
+          {children || <p>{text}</p>}
+        </div>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div onClick={closePopUp} style={{maxHeight: "70px"}}>
+            <img
+              src={buttonlayout}
+              style={{ height: "64px" }}
+              alt="Cerrar"
+              
+            />
+            
+            <p
+              className="guild-font"
+              style={{
+                fontSize: "12px",
+                color: "#EDCC00",
+                position: "relative",
+                top: "-43px",
+              }}
+            >
+              CERRAR
+            </p>
+          </div>
+          <div  onClick={action} style={{maxHeight: "70px"}}>
+            <img
+              src={buttonlayout}
+              style={{ height: "64px" }}
+              alt="Cerrar"
+             
+            />
+            
+            <p
+              className="guild-font"
+              style={{
+                fontSize: "12px",
+                color: "#EDCC00",
+                position: "relative",
+                top: "-43px",
+              }}
+            >
+              ACEPTAR
+            </p>
           </div>
         </div>
+      </div>
+    </div>
   );
 };
 
 export default PopUp;
-
-        

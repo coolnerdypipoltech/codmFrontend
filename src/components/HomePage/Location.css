@@ -18,6 +18,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -29,11 +30,12 @@
 .locacion-info {
   text-align: center;
   color: rgb(0, 0, 0);
-  padding: 26px;
+  padding: 35px 25px;
   min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 }
 
 .locacion-info h3 {

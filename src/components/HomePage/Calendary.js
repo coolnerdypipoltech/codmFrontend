@@ -42,9 +42,10 @@ const Calendary = () => {
         objectFit: "contain",
         overflow: "clip",
         overflowClipMargin: "content-box",
+        padding: "40px 0px 0px"
       }}
     >
-      <div className="brush-text">
+      <div className="brush-text" >
         <img
           src={brushNavMenu}
           style={{
@@ -52,42 +53,42 @@ const Calendary = () => {
             height: "50px",
             overflowY: "visible",
             objectFit: "cover",
-            paddingTop: "40px",
-            alignSelf: "center"
+            
+            alignSelf: "center", minHeight: "50px"
           }}
           alt="Close"
         />
-        <p style={{color: "white", fontSize: "24px", position: "relative", top: "-20px"}} className="guild-font">LA GRAN FINAL</p>
+        <p style={{color: "white", fontSize: "24px", position: "relative", top: "-40px"}} className="guild-font">LA GRAN FINAL</p>
       </div>
-      <img src={fecha} alt="Fecha" style={{ width: "130px", height: "auto", position: "relative", top: "-25px" }} />
+      <img src={fecha} alt="Fecha" style={{ width: "150px", height: "auto", position: "relative", top: "-45px" }} />
       <div className="countdown-container">
         <div className="countdown">
           <div className="countdown-container">
             <div className="countdown-item">
               <span className="countdown-value">{timeLeft.days}</span>
             </div>
-            <span className="countdown-label">DÍAS</span>
+            <span className="countdown-label">D</span>
           </div>
 
           <div className="countdown-container" style={{left: "5px"}}>
             <div className="countdown-item">
               <span className="countdown-value">{timeLeft.hours}</span>
             </div>
-            <span className="countdown-label">HORAS</span>
+            <span className="countdown-label">HRS</span>
           </div>
-          <p className="guild-font" style={{color: "white", paddingTop: "5px", fontSize: "25px", position: "relative", left: "8px"}}>:</p>
-          <div className="countdown-container" style={{left: "5px"}}>
+          <p className="guild-font" style={{color: "white", fontSize: "25px", position: "relative", left: "8px", top: "-12px"}}>:</p>
+          <div className="countdown-container" style={{left: "5px", width: "70px"}}>
             <div className="countdown-item">
               <span className="countdown-value">{timeLeft.minutes}</span>
             </div>
-            <span className="countdown-label">MINUTOS</span>
+            <span className="countdown-label">MIN</span>
           </div>
-          <p className="guild-font" style={{color: "white", paddingTop: "5px", fontSize: "25px", position: "relative", left: "-1px"}}>:</p>
-          <div className="countdown-container" style={{left: "-10px"}}>
+          <p className="guild-font" style={{color: "white", fontSize: "25px", position: "relative", left: "0px", top: "-12px"}}>:</p>
+          <div className="countdown-container" style={{left: "-0px", width: "60px"}}>
             <div className="countdown-item">
               <span className="countdown-value">{timeLeft.seconds}</span>
             </div>
-            <span className="countdown-label">SEGUNDOS</span>
+            <span className="countdown-label">SEG</span>
           </div>
         </div>
       </div>

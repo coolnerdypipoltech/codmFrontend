@@ -18,7 +18,7 @@ import Qualifiers from '../components/HomePage/Qualifiers';
 const HomePage = () => {
   return (
     <div className="home-page">
-      <Navbar />
+      
       <BarriosLatinos />
       <BuyTickets />
       <LosBarrios />

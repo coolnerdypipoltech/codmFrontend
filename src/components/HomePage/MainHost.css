@@ -46,19 +46,32 @@
 }
 
 .mainhost-text {
-  font-size: 28px;
+  font-size: 24px;
   color: #ffffff;
   font-weight: bold;
   position: relative;
   top: -42px;
+  line-height: 40px;
 }
 
 .heighModifier{
   height: 100vw;
+  margin-top: 2.5vw;
+}
+.mainhost-words{
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+  position: absolute;
+  bottom: -7.5%;
 }
 
 @media screen and (max-width: 400px) {
-  .heighModifier{
-  height: 80vw;
+  
+.mainhost-words{
+  bottom: -10%;
+  gap: 0px;
 }
 }
+
+

@@ -17,7 +17,6 @@
   padding: 12px 20px;
   background: linear-gradient(135deg, #ffffff, #f8f9fa);
   border-radius: 10px;
-  border-bottom-left-radius: 4px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   color: #1f2937;
   font-size: 14px;
@@ -29,11 +28,11 @@
   align-content: flex-end;
   justify-content: flex-end;
   align-items: flex-end;
-  transform: translateX(45%) translateY(10px);
-  -webkit-transform: translateX(45%) translateY(10px);
-  -moz-transform: translateX(45%) translateY(10px);
-  -ms-transform: translateX(45%) translateY(10px);
-  -o-transform: translateX(45%) translateY(10px);
+  transform: translateX(0%) translateY(10px);
+  -webkit-transform: translateX(0%) translateY(10px);
+  -moz-transform: translateX(0%) translateY(10px);
+  -ms-transform: translateX(0%) translateY(10px);
+  -o-transform: translateX(0%) translateY(10px);
 }
 
 
@@ -44,7 +43,7 @@
   position: relative;
   bottom: 0px;
   top: 15px;
-  right: 100%;
+  right: 48%;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -70,9 +69,9 @@
 .help-button:focus + .tooltip {
   opacity: 1;
   visibility: visible;
-  transform: translateX(45%) translateY(0);
-  -webkit-transform: translateX(45%) translateY(0);
-  -moz-transform: translateX(45%) translateY(0);
-  -ms-transform: translateX(45%) translateY(0);
-  -o-transform: translateX(45%) translateY(0);
+  transform: translateX(0%) translateY(0);
+  -webkit-transform: translateX(0%) translateY(0);
+  -moz-transform: translateX(0%) translateY(0);
+  -ms-transform: translateX(0%) translateY(0);
+  -o-transform: translateX(0%) translateY(0);
 }

@@ -1,6 +1,6 @@
 .footer-section {
   width: 100%;
-  padding: 3rem 2rem 2rem;
+  padding: 35px 25px;
   background: #1D1D1D;
 }
 
@@ -44,7 +44,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 12px;
   padding-top: 16px;
 }
 
@@ -82,10 +82,6 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .footer-section {
-    padding: 2rem 1rem 1.5rem;
-  }
-
   .social-media {
     gap: 1.5rem;
   }

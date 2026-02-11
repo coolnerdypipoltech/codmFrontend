@@ -7,12 +7,17 @@ import buttonlayout from "../assets/registration/Button_Continuar.png";
 import PopUp from "./PopUp";
 import icon from "../assets/registration/Icon_Importante.png";
 import InfoTooltip from "./InfoTooltip";
+import { useNavigate } from "react-router";
+import semaforo_of from "../assets/registration/Semaforo_Of.png";
+import semaforo_on from "../assets/registration/Semaforo_On.png";
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     email: "",
     country: "",
     zipCode: "",
     uid: "",
+    name: "",
+    surname: "",
     passport: false,
     legalAge: false,
     visa: true,
@@ -20,13 +25,18 @@ const RegistrationForm = () => {
     codmEventCompletion: true,
     termsAndConditions: false,
   });
+  const navigate = useNavigate();
   const [forceReloadCaptcha, setForceReloadCaptcha] = useState(0);
   const [captchaError, setCaptchaError] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
   const [isFormCompleted, setIsFormCompleted] = useState(false);
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [popup, setPopup] = useState({ show: false, type: "", message: "" });
+  const [popup, setPopup] = useState({
+    show: false,
+    type: "",
+    message: "",
+  });
   const firstRender = React.useRef(true);
 
   useEffect(() => {
@@ -34,6 +44,11 @@ const RegistrationForm = () => {
       setCaptchaError(false);
       setTimeout(changeText, 100);
     }
+    if (isVerified && Object.keys(errors).length === 0 && !isFormCompleted) {
+      setIsFormCompleted(true);
+      
+    }
+
   }, [isVerified]);
 
   const countries = [
@@ -65,6 +80,14 @@ const RegistrationForm = () => {
 
     if (!formData.zipCode) {
       newErrors.zipCode = "El código postal es requerido";
+    }
+
+    if (!formData.name) {
+      newErrors.name = "El nombre es requerido";
+    }
+
+    if (!formData.surname) {
+      newErrors.surname = "El apellido es requerido";
     }
 
     if (!formData.uid) {
@@ -147,6 +170,8 @@ const RegistrationForm = () => {
           email: "",
           country: "",
           zipCode: "",
+          name: "",
+          surname: "",
           uid: "",
           passport: false,
           legalAge: false,
@@ -166,6 +191,12 @@ const RegistrationForm = () => {
           show: true,
           type: "error",
           message: "Este email ya ha sido registrado anteriormente.",
+        });
+      } else if (response.status === 410) {
+        setPopup({
+          show: true,
+          type: "error",
+          message: "Este UID ya ha sido registrado anteriormente.",
         });
       } else if (response.status === 503) {
         setPopup({
@@ -196,23 +227,29 @@ const RegistrationForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    if (isVerified) {
+    console.log(isVerified)
+    if (isVerified && Object.keys(errors).length > 0) {
       setIsFormCompleted(true);
       return;
     }
     e.preventDefault();
-
-    const captchaButton = document.querySelector(
+    validateForm();
+    if(!isVerified) {
+      const captchaButton = document.querySelector(
       ".my-custom-captcha button.bg-blue-600",
-    );
-    if (captchaButton) {
-      captchaButton.click();
+      );
+      if (captchaButton) {
+        captchaButton.click();
+      }
     }
 
     if (!validateForm()) {
       return;
     }
-    setIsFormCompleted(true);
+    if(isVerified){
+       setIsFormCompleted(true);
+    }
+   
   };
 
   const closePopup = () => {
@@ -239,13 +276,44 @@ const RegistrationForm = () => {
               className={`popup-content ${popup.type}`}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="popup-icon">
-                {popup.type === "success" ? "✓" : "✕"}
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <img
+                  src={popup.type === "success" ? semaforo_on : semaforo_of}
+                  alt="img"
+                  style={{ height: "100px" }}
+                ></img>
               </div>
               <p className="inter-font">{popup.message}</p>
-              <button className="popup-button" onClick={closePopup}>
-                Cerrar
-              </button>
+              <div onClick={closePopup} style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}>
+                <img
+                  src={buttonlayout}
+                  style={{ height: "64px" }}
+                  alt="Cerrar"
+                  
+                />
+                ´
+                <p
+                  className="guild-font"
+                  style={{
+                    fontSize: "12px",
+                    color: "#EDCC00",
+                    position: "absolute",
+                    marginTop: "20px",
+                  }}
+                >
+                  CERRAR
+                </p>
+              </div>
             </div>
           </div>
         )}
@@ -286,6 +354,7 @@ const RegistrationForm = () => {
                 className={errors.uid ? "error" : ""}
               />
               <p
+                onClick={() => navigate("/codmFrontend/instructions")}
                 className="inter-font"
                 style={{
                   color: "grey",
@@ -298,6 +367,44 @@ const RegistrationForm = () => {
               </p>
               {errors.uid && (
                 <span className="error-message">{errors.uid}</span>
+              )}
+            </div>
+
+            {/* Surname */}
+            <div className="form-group">
+              <label className="inter-font" htmlFor="name">
+                Nombre
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder=""
+                className={errors.name ? "error" : ""}
+              />
+              {errors.name && (
+                <span className="error-message">{errors.name}</span>
+              )}
+            </div>
+
+            {/* Surname */}
+            <div className="form-group">
+              <label className="inter-font" htmlFor="surname">
+                Apellido
+              </label>
+              <input
+                type="text"
+                id="surname"
+                name="surname"
+                value={formData.surname}
+                onChange={handleChange}
+                placeholder=""
+                className={errors.name ? "error" : ""}
+              />
+              {errors.surname && (
+                <span className="error-message">{errors.surname}</span>
               )}
             </div>
 
@@ -509,7 +616,7 @@ const RegistrationForm = () => {
               inputPlaceholder: "Ingrese el código",
               verifyButton: "Verificar",
               verificationSuccessful: "¡Éxito!",
-              captchaRequired: "Por favor ingrese el CAPTCHA",
+              captchaRequired: "",
               captchaDoesNotMatch: "El CAPTCHA no coincide",
               error: " Error al cargar el CAPTCHA",
               pressSpaceToHearCode: "",
@@ -583,8 +690,17 @@ const RegistrationForm = () => {
           closePopUp={() => {
             setIsFormCompleted(false);
           }}
-          text={"Porfavor revisa tu información antes de continuar"}
-        ></PopUp>
+        >
+          <div style={{ marginBottom: "15px" }}>
+            <p style={{ fontWeight: "bold", marginBottom: "10px", textAlign: "center" }}>Por favor revisa tu información:</p>
+            <p><strong>UID:</strong> {formData.uid}</p>
+            <p><strong>Nombre:</strong> {formData.name}</p>
+            <p><strong>Apellido:</strong> {formData.surname}</p>
+            <p><strong>Email:</strong> {formData.email}</p>
+            <p><strong>País:</strong> {countries.find(c => c.value === formData.country)?.label || formData.country}</p>
+            <p><strong>Código Postal:</strong> {formData.zipCode}</p>
+          </div>
+        </PopUp>
       )}
     </>
   );
