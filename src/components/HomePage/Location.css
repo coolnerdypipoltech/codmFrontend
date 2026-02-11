@@ -5,7 +5,23 @@
   text-align: center;
 }
 
+.graffitiTag-container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow-x: clip;
+  left: 0px;
+  padding-top: 50px;
+}
 
+.graffitiTag{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  opacity: 0.21;
+  left: 85px;
+}
 
 .graffiti1{
   position: relative;
@@ -36,11 +52,6 @@
 }
 
 
-@media (min-width: 768px) {
-  .graffiti-container{
-    width: 0%;
-  }
-}
 
 
 .locacion-section h2 {
@@ -51,7 +62,7 @@
 }
 
 .locacion-container {
-  max-width: 1000px;
+  
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -91,6 +102,14 @@
   
 }
 
+.venue-name2 {
+  font-family: "guildhall-wide", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 10px 0;
+  
+}
+
 .venue-address {
   font-size: 14px;
   margin: 0.5rem 0;
@@ -115,3 +134,36 @@
   top: -20px;
 }
 
+
+@media (min-width: 768px) {
+  .graffiti-container{
+    width: 50%;
+    overflow-x: visible;
+  }
+  .graffitiTag-container{
+    width: 50%;
+  }
+  .graffitiTag{
+    width: 600px;
+    height: auto;
+    left: 15vw;
+  }
+  .graffiti1{
+    left: 15vw;
+    width: 200px;
+    margin-bottom: -30%;
+  }
+  .graffiti2{
+    right: 22vw;
+    width: 300px;
+  }
+  .venue-address{
+    font-size: 18px;
+  }
+  .venue-name{
+    font-size: 28px;
+  }
+  .venue-name2{
+    font-size: 32px;
+  }
+}

@@ -10,7 +10,7 @@ const Location = () => {
     <section id="locacion" className="locacion-section">
       <div className="locacion-container">
         <div className="locacion-info" style={{ backgroundColor: "white" }}>
-          <h3 className="guild-font">UBICACIÓN</h3>
+          <p className="venue-name2" style={{color: "#F201B7"}}>UBICACIÓN</p>
           <p className="venue-name">CIUDAD DE MÉXICO, CDMX</p>
           <p className="venue-address">
             House of Vans es el lugar donde la imaginación da rienda suelta con
@@ -22,28 +22,14 @@ const Location = () => {
             Rubens 6, San Juan, Benito Juárez, 03730 Ciudad de México, CDMX
           </p>
           <div
-            style={{
-              position: "absolute",
-              width: "100%",
-              display: "flex",
-              flexDirection: "row-reverse",
-              overflowX: "clip",
-              left: "0px",
-              paddingTop: "50px"
-            }}
+            className="graffitiTag-container"
           >
             {" "}
             <img
               loading="lazy"
               src={graffiti}
               alt="Graffiti"
-              style={{
-                position: "relative",
-                width: "200px",
-                height: "200px",
-                opacity: "0.21",
-                left: "85px",
-              }}
+              className="graffitiTag"
             />
           </div>
         </div>

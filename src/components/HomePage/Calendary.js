@@ -48,7 +48,7 @@ const Calendary = () => {
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: isMobile ? "100% auto" : " auto 100%",
-        height: isMobile ? "auto" : "50vw",
+        height: isMobile ? "auto" : "33vw",
         objectFit: "contain",
         overflow: "clip",
         overflowClipMargin: "content-box",

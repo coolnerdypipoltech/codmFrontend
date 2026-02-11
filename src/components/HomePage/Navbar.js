@@ -6,18 +6,22 @@ import { useNavigate } from "react-router";
 import brush from "../../assets/header/Brush_menu.png";
 import logoBarrios from "../../assets/navMenu/IMG_BRAND_BarriosLatinos-CODM.png";
 import fondoBarriosMobil from "../../assets/header/Header_70.png";
-import fondoMobile from "../../assets/navMenu/IMG_Background_Menu.png";
+import fondoMobile1 from "../../assets/navMenu/IMG_Background_Menu.png";
+import fondoMobile2 from "../../assets/desktop/Header/IMG_Background_Menu_web.png";
 import fondoBarriosDesktop from "../../assets/desktop/Header/Header_Desktop120.png";
 import logoNavMenu from "../../assets/logoBarrios.png";
 import brushNavMenu from "../../assets/navMenu/IMG_BRUSH.png";
 import buttonImage from "../../assets/navMenu/IMG_BUTTON_BACK.png";
 import infinixLogo from "../../assets/partners/Logo_Infinix_Black.png";
+import infinixLogoWhite from "../../assets/partners/INFINIX.png";
+import brushBackground from "../../assets/main/IMG_BRUSH.png";
 import { useViewport } from "../../context/ViewportContext";
 import { useLocation } from "react-router-dom";
 const Navbar = () => {
 
   const { isMobile } = useViewport();
   const fondoBarrios = isMobile ? fondoBarriosMobil : fondoBarriosDesktop;
+  const fondoMobile = isMobile ? fondoMobile1 : fondoMobile2;
   const navigate = useNavigate();
   const location = useLocation();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -106,7 +110,8 @@ const Navbar = () => {
   const itemsToolbar = (items) => {
     return items.map((item, index) => (
       <Link key={index} onClick={item.command} className="navbar-item">
-        {item.label}
+        <div>
+          {item.label}</div>
       </Link>
     ));
   };
@@ -143,6 +148,7 @@ const Navbar = () => {
                 style={{
                   height: "auto",
                   width: "50%",
+                  maxWidth: "285px",
                   marginTop: "15px",
                   alignSelf: "center",
                   cursor: "pointer",
@@ -176,6 +182,12 @@ const Navbar = () => {
         className="navbar-menu"
         itemTemplate={itemTemplate}
       />
+
+      {!isMobileCalc && ( 
+        <div style={{width: "100%", height: "45px", backgroundColor: "#F201B7", display: "flex", justifyContent: "center", alignItems: "center", position: "relative", top: "-10px"}}  >
+          <img src={infinixLogoWhite} alt="infinixLogo" style={{height: "45px"}}></img>
+        </div>
+      )}
 
       {/* Drawer for mobile */}
       {isMobileCalc && (
