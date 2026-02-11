@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/codmFrontend/static/css/main.0839816d.css",
-    "main.js": "/codmFrontend/static/js/main.0b8690e1.js",
+    "main.js": "/codmFrontend/static/js/main.4f837c74.js",
     "static/js/453.fba03efc.chunk.js": "/codmFrontend/static/js/453.fba03efc.chunk.js",
     "static/media/IMG_Splash_1Home_web.png": "/codmFrontend/static/media/IMG_Splash_1Home_web.6ee6cc62b10c38fcf84b.png",
     "static/media/IMG_Background_Los barrios_WEB.png": "/codmFrontend/static/media/IMG_Background_Los barrios_WEB.1a9481b50d17f5392f8d.png",
@@ -18,7 +18,7 @@
     "static/media/background_Losbarrios.png": "/codmFrontend/static/media/background_Losbarrios.c3c8c6d5a482d9685305.png",
     "static/media/IMG_Texture_Granfinal_web.png": "/codmFrontend/static/media/IMG_Texture_Granfinal_web.a43615035ac13e174c2c.png",
     "static/media/Background_Registro.png": "/codmFrontend/static/media/Background_Registro.214589753daf2057f1e7.png",
-    "static/media/IMG_Background_¿Cómo participar_web.png": "/codmFrontend/static/media/IMG_Background_¿Cómo participar_web.c003d5b9fa4892aaafc3.png",
+    "static/media/IMG_Background_Participar.png": "/codmFrontend/static/media/IMG_Background_Participar.c003d5b9fa4892aaafc3.png",
     "static/media/IMG_Venue.png": "/codmFrontend/static/media/IMG_Venue.f8827258034d9afab8a6.png",
     "static/media/Poster_Losbarrios_MEX.png": "/codmFrontend/static/media/Poster_Losbarrios_MEX.48284e1a8c49004fb859.png",
     "static/media/IMG_texture_RG.png": "/codmFrontend/static/media/IMG_texture_RG.b46a81296d55a56b8cca.png",
@@ -73,11 +73,11 @@
     "static/media/arrow.svg": "/codmFrontend/static/media/arrow.7642281869f72253171e2b5cd0bb1320.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
     "main.0839816d.css.map": "/codmFrontend/static/css/main.0839816d.css.map",
-    "main.0b8690e1.js.map": "/codmFrontend/static/js/main.0b8690e1.js.map",
+    "main.4f837c74.js.map": "/codmFrontend/static/js/main.4f837c74.js.map",
     "453.fba03efc.chunk.js.map": "/codmFrontend/static/js/453.fba03efc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0839816d.css",
-    "static/js/main.0b8690e1.js"
+    "static/js/main.4f837c74.js"
   ]
 }
