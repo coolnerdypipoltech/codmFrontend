@@ -114,6 +114,7 @@ const MainHost = () => {
         onClick={() => onClick()}
       >
         <img
+          loading="lazy"
           style={{ height: "40px", width: "40px" }}
           src={arrow}
           alt="Left Arrow"
@@ -135,6 +136,7 @@ const MainHost = () => {
         onClick={() => onClick()}
       >
         <img
+          loading="lazy"
           style={{
             height: "40px",
             width: "40px",
@@ -198,6 +200,7 @@ const MainHost = () => {
                   }}
                 >
                   <img
+                    loading="lazy"
                     src={url}
                     className="heighModifier"
                     alt={`Imagen ${index + 1}`}
@@ -218,6 +221,7 @@ const MainHost = () => {
               className="main-host-option-unselected"
             >
               <img
+                loading="lazy"
                 src={brushNavMenu}
                 style={{
                   overflow: "visible",
@@ -238,6 +242,7 @@ const MainHost = () => {
               className="main-host-option-unselected"
             >
               <img
+                loading="lazy"
                 src={brushNavMenu}
                 style={{
                   overflow: "visible",
@@ -258,6 +263,7 @@ const MainHost = () => {
               className="main-host-option-unselected"
             >
               <img
+                loading="lazy"
                 src={brushNavMenu}
                 style={{
                   overflow: "visible",
@@ -273,7 +279,7 @@ const MainHost = () => {
           </div>
         </div>
       </div>
-      <img src={actualFondo} style={{ height: "auto", width: "100%" }} alt="Splash Art" />
+      <img loading="lazy" src={actualFondo} style={{ height: "auto", width: "100%" }} alt="Splash Art" />
     </section>
   );
 };

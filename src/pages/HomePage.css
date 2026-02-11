@@ -3,3 +3,40 @@
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
+.image-band1{
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  top: -14vw;
+  left: 0px;
+}
+
+.image-band2{
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  top: -8vw;
+  left: 0px;
+}
+
+.image-band3{
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  top: -8vw;
+  left: 0px;
+}
+
+@media (min-width: 980px) {
+  .image-band1{
+    top: -19vh;
+  }
+
+  .image-band2{
+    top: -10vh;
+  }
+}

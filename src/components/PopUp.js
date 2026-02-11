@@ -24,6 +24,7 @@ const PopUp = ({ text, children, closePopUp, action }) => {
         >
           <div onClick={closePopUp} style={{maxHeight: "70px"}}>
             <img
+              loading="lazy"
               src={buttonlayout}
               style={{ height: "64px" }}
               alt="Cerrar"
@@ -44,6 +45,7 @@ const PopUp = ({ text, children, closePopUp, action }) => {
           </div>
           <div  onClick={action} style={{maxHeight: "70px"}}>
             <img
+              loading="lazy"
               src={buttonlayout}
               style={{ height: "64px" }}
               alt="Cerrar"

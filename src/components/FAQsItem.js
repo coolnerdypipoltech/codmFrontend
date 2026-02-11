@@ -13,6 +13,7 @@ function FAQsItem({title, text}) {
         <div onClick={() => setSelected(!selected)}  style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
           <p className="guild-font" style={{fontSize: "16px", paddingBottom: "8px"}}>{title}</p>
           <img 
+            loading="lazy"
             src={arrow} 
             
             alt="tooltip"

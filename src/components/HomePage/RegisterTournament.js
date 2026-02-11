@@ -23,6 +23,7 @@ const RegisterTournament = () => {
         </p>
         <>
           <img
+            loading="lazy"
             src={comprarBoletos}
             style={{ height: "64px" }}
             alt="Comprar Boletos"

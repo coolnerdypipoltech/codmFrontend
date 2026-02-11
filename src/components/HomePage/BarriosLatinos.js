@@ -7,7 +7,7 @@ const BarriosLatinos = () => {
       id="barrios-latinos"
       className="barrios-latinos-section"
     >
-      <img src={splashArt} style={{marginTop: "80px"}} alt="Splash Art" />
+      <img loading="lazy" src={splashArt} style={{marginTop: "80px"}} alt="Splash Art" />
 
     </section>
   );

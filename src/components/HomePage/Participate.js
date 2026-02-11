@@ -37,7 +37,7 @@ const Participate = () => {
           <Card key={index} className="participar-card">
             <p className='guild-font' style={{color: "white", fontSize: "18px", textAlign: "left", paddingBottom: "16px"}}>{step.title}</p>
             <div className="card-icon">
-              <img className='imageCard-participate' src={step.imagen} alt={step.title} />
+              <img loading="lazy" className='imageCard-participate' src={step.imagen} alt={step.title} />
             </div>
 
             <p className='card-text-participate'>{step.description}</p>

@@ -22,7 +22,7 @@ const Partners = () => {
           {/* Duplicamos el array para el efecto infinito */}
           {[...sponsors, ...sponsors].map((sponsor, index) => (
             <div key={index} className="sponsor-item">
-              <img style={{height: "30px", width: "auto"}} src={Icon}  alt={sponsor.name} />
+              <img loading="lazy" style={{height: "30px", width: "auto"}} src={Icon}  alt={sponsor.name} />
             </div>
           ))}
         </div>

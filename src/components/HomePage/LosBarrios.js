@@ -46,6 +46,7 @@ const LosBarrios = () => {
         onClick={() => onClick()}
       >
         <img
+          loading="lazy"
           style={{ height: "40px", width: "40px" }}
           src={arrow}
           alt="Left Arrow"
@@ -67,6 +68,7 @@ const LosBarrios = () => {
         onClick={() => onClick()}
       >
         <img
+          loading="lazy"
           style={{
             height: "40px",
             width: "40px",
@@ -104,6 +106,7 @@ const LosBarrios = () => {
               }}
             >
               <img
+                loading="lazy"
                 src={url}
                 alt={`Imagen ${index + 1}`}
                 style={{
@@ -128,15 +131,11 @@ const LosBarrios = () => {
       >
         {" "}
         <img
+          loading="lazy"
           src={imgband}
           id="MainHost2"
           alt="Band"
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "80px",
-            top: "-7vh",
-          }}
+          className="image-band1"
         />
       </div>
     </section>

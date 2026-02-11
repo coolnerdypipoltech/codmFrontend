@@ -21,6 +21,7 @@ const PrivacyPage = () => {
 
       <div style={{ height: "100%", display: "flex", justifyContent: "center" , flexDirection:"column", alignItems: "center"}}>
         <img
+          loading="lazy"
           src={brushNavMenu}
           style={{
             overflow: "visible",
@@ -50,7 +51,7 @@ const PrivacyPage = () => {
           className="buttonLayoutInstructions"
         >
           <div>
-            <img src={buttonlayout} style={{ height: "64px" }} alt="Cerrar" />
+            <img loading="lazy" src={buttonlayout} style={{ height: "64px" }} alt="Cerrar" />
 
             <p
               className="guild-font"

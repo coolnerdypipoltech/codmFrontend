@@ -1,41 +1,36 @@
 import React from "react";
 import imagen2 from "../../assets/main/IMG_texture_RG.png";
 import comprarBoletos from "../../assets/main/Button_Comprar Boletos.png";
+import "./BuyTickets.css"
 const BuyTickets = () => {
   return (
     <section
       id="buyTickets"
-      className="premio-section"
-      style={{ height: "183px" }}
+      className="buyTickets-section"
     >
       <div
-        className="premio-container3"
-        style={{ backgroundImage: `url(${imagen2})`, minHeight: "183px", backgroundSize: "100% auto", objectFit:"contain", overflow: "clip", overflowClipMargin: "content-box" }}
+        className="buyTickets-container"
+        style={{ backgroundImage: `url(${imagen2})` }}
       >
-        <p className="guild-font" style={{ fontSize: "12px", color: "white", marginTop: "40px" }}>
+        <p className="buyTickets-text" style={{marginTop: "40px"}}>
           COMPRAR BOLETOS
         </p>
         <p
-          className="guild-font"
-          style={{ fontSize: "12px", color: "white", paddingBottom: "5px" }}
+          className="buyTickets-text"
         >
           PARA LA FINAL EN VIVO
         </p>
         <>
           <img
+            loading="lazy"
             src={comprarBoletos}
-            style={{ height: "64px" }}
+           className="buyTickets-Image"
             alt="Comprar Boletos"
           />
           ´
           <p
-            className="guild-font"
-            style={{
-              fontSize: "12px",
-              color: "#EDCC00",
-              position: "absolute",
-              marginTop: "51px",
-            }}
+            className="buyTickets-buttonText"
+            
           >
             COMPRAR BOLETOS
           </p>

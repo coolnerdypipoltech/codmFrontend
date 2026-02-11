@@ -34,6 +34,7 @@ const Location = () => {
           >
             {" "}
             <img
+              loading="lazy"
               src={graffiti}
               alt="Graffiti"
               style={{
@@ -48,7 +49,7 @@ const Location = () => {
         </div>
 
         <div className="map-container">
-          <img src={venue} alt="Venue" className="venue-image" />
+          <img loading="lazy" src={venue} alt="Venue" className="venue-image" />
           <div
             style={{
               position: "absolute",
@@ -59,6 +60,7 @@ const Location = () => {
             }}
           >
             <img
+              loading="lazy"
               src={icon}
               alt="Icon"
               className="icon-image"
@@ -83,6 +85,7 @@ const Location = () => {
             }}
           >
             <img
+              loading="lazy"
               src={sticker2}
               alt="Sticker 2"
               style={{
@@ -95,6 +98,7 @@ const Location = () => {
               }}
             />
             <img
+              loading="lazy"
               src={sticker1}
               alt="Sticker 1"
               style={{

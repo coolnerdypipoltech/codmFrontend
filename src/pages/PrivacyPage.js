@@ -2300,7 +2300,7 @@ const PrivacyPage = () => {
           className="buttonLayoutInstructions"
         >
           <div>
-            <img src={buttonlayout} style={{ height: "64px" }} alt="Cerrar" />
+            <img loading="lazy" src={buttonlayout} style={{ height: "64px" }} alt="Cerrar" />
 
             <p
               className="guild-font"

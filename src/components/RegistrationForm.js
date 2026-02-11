@@ -284,6 +284,7 @@ const RegistrationForm = () => {
                 }}
               >
                 <img
+                  loading="lazy"
                   src={popup.type === "success" ? semaforo_on : semaforo_of}
                   alt="img"
                   style={{ height: "100px" }}
@@ -295,8 +296,7 @@ const RegistrationForm = () => {
                   display: "flex",
                   justifyContent: "center",
                 }}>
-                <img
-                  src={buttonlayout}
+                <img                  loading="lazy"                  src={buttonlayout}
                   style={{ height: "64px" }}
                   alt="Cerrar"
                   
@@ -647,6 +647,7 @@ const RegistrationForm = () => {
             }}
           >
             <img
+              loading="lazy"
               src={buttonlayout}
               style={{ height: "64px" }}
               alt="Continuar"
@@ -672,6 +673,7 @@ const RegistrationForm = () => {
           )}
           <div style={{ display: "flex", flexDirection: "row", gap: "5px" }}>
             <img
+              loading="lazy"
               src={icon}
               alt="Importante"
               style={{ height: "12px", marginTop: "5px" }}

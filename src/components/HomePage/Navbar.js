@@ -122,6 +122,7 @@ const Navbar = () => {
         }}
         start={
           <img
+            loading="lazy"
             src={logoBarrios}
             style={{ height: "70px", paddingLeft: "10px", cursor: "pointer", paddingTop: "10px" }}
             alt="Logo"
@@ -134,6 +135,7 @@ const Navbar = () => {
           ) : (
             <div style={{width: "100%", position: "absolute", left: "10px", height: "0px", display: "flex", justifyContent: "center"}} className="infinixContainerLogo" >
               <img
+                loading="lazy"
                 src={infinixLogo}
                 style={{
                   height: "auto",
@@ -157,6 +159,7 @@ const Navbar = () => {
             >
               <div>
                 <img
+                  loading="lazy"
                   src={brush}
                   style={{ height: "45px", paddingLeft: "10px" }}
                   alt="Logo"
@@ -197,6 +200,7 @@ const Navbar = () => {
           >
             <div className="drawer-nav">
               <img
+                loading="lazy"
                 src={logoNavMenu}
                 style={{
                   width: "40%",
@@ -211,6 +215,7 @@ const Navbar = () => {
               {items.map((item, index) => (
                 <div key={index} onClick={item.command} className="drawer-item">
                   <img
+                    loading="lazy"
                     src={brushNavMenu}
                     style={{
                       width: item.width,
@@ -245,6 +250,7 @@ const Navbar = () => {
                 }}
               >
                 <img
+                  loading="lazy"
                   src={buttonImage}
                   style={{ width: "60px", paddingTop: "20px" }}
                   alt="Close"

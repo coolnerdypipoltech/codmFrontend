@@ -20,7 +20,7 @@ const FAQsPage = () => {
       <div style={{minHeight: "30px"}}></div>
 
       <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-        <img src={image} alt="title" style={{width: "80%", maxWidth: "500px"}}></img>
+        <img loading="lazy" src={image} alt="title" style={{width: "80%", maxWidth: "500px"}}></img>
       </div>
     
       <div style={{width:"80%" , display: "flex", flexDirection: "column", alignContent: "center", justifyContent: "center", marginLeft: "10%", marginTop: "10%", gap: "16px", overflowY: "scroll", overflowX: "clip"}}>
@@ -44,7 +44,7 @@ const FAQsPage = () => {
           className="buttonLayoutInstructions"
         >
           <div>
-          <img src={buttonlayout} style={{ height: "64px" }} alt="Cerrar" />
+          <img loading="lazy" src={buttonlayout} style={{ height: "64px" }} alt="Cerrar" />
 
           <p
             className="guild-font"

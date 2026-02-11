@@ -47,6 +47,7 @@ const Calendary = () => {
     >
       <div className="brush-text" >
         <img
+          loading="lazy"
           src={brushNavMenu}
           style={{
             width: "300px",
@@ -60,7 +61,7 @@ const Calendary = () => {
         />
         <p style={{color: "white", fontSize: "24px", position: "relative", top: "-40px"}} className="guild-font">LA GRAN FINAL</p>
       </div>
-      <img src={fecha} alt="Fecha" style={{ width: "150px", height: "auto", position: "relative", top: "-45px" }} />
+      <img loading="lazy" src={fecha} alt="Fecha" style={{ width: "150px", height: "auto", position: "relative", top: "-45px" }} />
       <div className="countdown-container">
         <div className="countdown">
           <div className="countdown-container">

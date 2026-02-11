@@ -14,11 +14,11 @@ const Footer = () => {
         {/* Social Media Icons */}
         <p className="footer-Title">MANTENTE AL DÍA</p>
         <div className="social-media">
-          <img src={instagram} onClick={() => window.open("https://www.instagram.com/callofdutymobilelatam/")} className="social-icon" alt="Instagram" />
-          <img src={facebook} onClick={() => window.open("https://www.facebook.com/LATAMCallOfDutyMobile")} className="social-icon" alt="Facebook" />
-          <img src={tiktok} onClick={() => window.open("https://www.tiktok.com/@callofdutymobile_latam")} className="social-icon" alt="TikTok" />
-          <img src={yt} onClick={() => window.open("https://www.youtube.com/@LATAMCallOfDutyMobile")} className="social-icon" alt="YouTube" />
-          <img src={twitter} onClick={() => window.open("https://x.com/CODMobileLATAM")} className="social-icon" alt="Twitter" />
+          <img loading="lazy" src={instagram} onClick={() => window.open("https://www.instagram.com/callofdutymobilelatam/")} className="social-icon" alt="Instagram" />
+          <img loading="lazy" src={facebook} onClick={() => window.open("https://www.facebook.com/LATAMCallOfDutyMobile")} className="social-icon" alt="Facebook" />
+          <img loading="lazy" src={tiktok} onClick={() => window.open("https://www.tiktok.com/@callofdutymobile_latam")} className="social-icon" alt="TikTok" />
+          <img loading="lazy" src={yt} onClick={() => window.open("https://www.youtube.com/@LATAMCallOfDutyMobile")} className="social-icon" alt="YouTube" />
+          <img loading="lazy" src={twitter} onClick={() => window.open("https://x.com/CODMobileLATAM")} className="social-icon" alt="Twitter" />
         </div>
 
         {/* Bottom Section */}

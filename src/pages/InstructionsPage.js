@@ -16,6 +16,7 @@ const InstructionsPage = () => {
       <div style={{ width: "100%", minHeight: "100px" }}></div>
       <div className="instructions-content">
         <img
+          loading="lazy"
           src={image}
           alt="Instructions Background"
           className="instructions-image"
@@ -29,7 +30,7 @@ const InstructionsPage = () => {
           className="buttonLayoutInstructions"
         >
           <div>
-          <img src={buttonlayout} style={{ height: "64px" }} alt="Cerrar" />
+          <img loading="lazy" src={buttonlayout} style={{ height: "64px" }} alt="Cerrar" />
 
           <p
             className="guild-font"

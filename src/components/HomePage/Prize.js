@@ -5,7 +5,7 @@ import video from "../../assets/videoPrize.mp4";
 const Prize = () => {
   return (
     <section id="premio" className="premio-section">
-      <div style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse", zIndex: 2}}> <img src={imgband} alt="Band" style={{position: "relative", width: "100%", height: "80px", top: "-5vh"}} /></div>
+      <div style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse", zIndex: 2}}> <img loading="lazy" src={imgband} alt="Band" className="image-band2" /></div>
       <div className="premio-container">
         <video 
           autoPlay 

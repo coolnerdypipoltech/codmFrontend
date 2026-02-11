@@ -41,7 +41,7 @@ function FilterMenu({
         <p className="filterMenuSelectedItem">
           {getLabelFromKey(selectedValue)}
         </p>
-        <img className="filterMenuIcon" src={filterIcon} alt="filter" />
+        <img loading="lazy" className="filterMenuIcon" src={filterIcon} alt="filter" />
       </div>
 
       {isOpen && (
@@ -68,6 +68,7 @@ function FilterMenu({
                 {isSelected ? (
                   <>
                     <img
+                      loading="lazy"
                       src={checkMark}
                       alt="checkmark"
                       className="filterOverlayIcon"

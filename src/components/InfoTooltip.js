@@ -8,7 +8,7 @@ function InfoTooltip({text}) {
     <>
       <div className="tooltip-container">
         <div className= {classDark} style={{paddingBottom: "20px"}}>
-          <img  className= {classDark} src={imgHelper} alt="tooltip"></img>
+          <img loading="lazy" className= {classDark} src={imgHelper} alt="tooltip"></img>
         </div>
       <div role="tooltip" id="help-tooltip" className="tooltip">
         <pre className="toolTipText">{text} </pre>

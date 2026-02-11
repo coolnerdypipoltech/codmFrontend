@@ -9,7 +9,7 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
   // onMove means if dragging or swiping in progress.
   return (
     <div style={{height: "20px", width: "20px"}} onClick={() => onClick()}>
-      <img style={{height: "20px", width: "20px"}} src={arrow} alt="Left Arrow" />
+      <img loading="lazy" style={{height: "20px", width: "20px"}} src={arrow} alt="Left Arrow" />
     </div>
   );
 };

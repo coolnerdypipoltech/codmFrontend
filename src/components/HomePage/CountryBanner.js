@@ -6,6 +6,7 @@ const CountryBanner = () => {
     <section id="countrybanner" className="countrybanner-section">
       <div className="countrybanner-container">
         <img
+          loading="lazy"
           src= {imagen}
           alt="Country Banner"
           className="countrybanner-image"
