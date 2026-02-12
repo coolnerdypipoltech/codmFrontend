@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/codmFrontend/static/css/main.06c6faee.css",
-    "main.js": "/codmFrontend/static/js/main.321599d7.js",
+    "main.js": "/codmFrontend/static/js/main.e591d915.js",
     "static/js/453.fba03efc.chunk.js": "/codmFrontend/static/js/453.fba03efc.chunk.js",
     "static/media/IMG_Splash_1Home_web.png": "/codmFrontend/static/media/IMG_Splash_1Home_web.bcff47687236ddbdff6f.png",
     "static/media/IMG_Background_Los barrios_WEB.png": "/codmFrontend/static/media/IMG_Background_Los barrios_WEB.1a9481b50d17f5392f8d.png",
@@ -81,11 +81,11 @@
     "static/media/arrow.svg": "/codmFrontend/static/media/arrow.7642281869f72253171e2b5cd0bb1320.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
     "main.06c6faee.css.map": "/codmFrontend/static/css/main.06c6faee.css.map",
-    "main.321599d7.js.map": "/codmFrontend/static/js/main.321599d7.js.map",
+    "main.e591d915.js.map": "/codmFrontend/static/js/main.e591d915.js.map",
     "453.fba03efc.chunk.js.map": "/codmFrontend/static/js/453.fba03efc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.06c6faee.css",
-    "static/js/main.321599d7.js"
+    "static/js/main.e591d915.js"
   ]
 }
