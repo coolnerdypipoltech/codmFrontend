@@ -1,7 +1,7 @@
 import React from "react";
 import imagen2 from "../../assets/main/IMG_texture_RG.png";
 import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_web.png";
-import comprarBoletos from "../../assets/main/Button_Comprar Boletos.png";
+import comprarBoletos from "../../assets/desktop/Registro/Button_Registro al torneo_web.png";
 
 import { useViewport } from "../../context/ViewportContext";
 const RegisterTournament = () => {
@@ -19,13 +19,13 @@ const RegisterTournament = () => {
         className="buyTickets-container"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-         <p className="buyTickets-text" style={{marginTop: isMobile ? "40px" : "80px"}}>
+         <p className="buyTickets-text" style={{marginTop: isMobile ? "40px" : "90px"}}>
           SI LLEGASTE HASTA AQUÍ,
         </p>
         <p
           className="buyTickets-text"
         >
-          REGISTRATE EN EL TORNEO
+          REGÍSTRATE EN EL TORNEO
         </p>
         <>
           <img

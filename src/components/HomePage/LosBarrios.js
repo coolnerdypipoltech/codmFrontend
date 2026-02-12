@@ -8,6 +8,7 @@ import actualFondo from "../../assets/main/IMG_Splash_RepresentaTuBarrio.png";
 import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.png";
 import imgband1 from "../../assets/main/IMG_Band.png";
 import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
+
 import { useViewport } from "../../context/ViewportContext";
 
 const LosBarrios = () => {

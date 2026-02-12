@@ -1,10 +1,10 @@
 import React from "react";
 import "./Footer.css";
-import facebook from "../../assets/footer/facebookLogo.svg";
-import instagram from "../../assets/footer/InstagramLogo.svg";
-import twitter from "../../assets/footer/TwitterLogo.svg";
-import tiktok from "../../assets/footer/TiktokLogo.svg";
-import yt from "../../assets/footer/YtLogo.svg";
+import facebook from "../../assets/footer/Icon_Facebook.svg";
+import instagram from "../../assets/footer/Icon_instagram.svg";
+import twitter from "../../assets/footer/Icon_X.svg";
+import tiktok from "../../assets/footer/Icon_Tiktok.svg";
+import yt from "../../assets/footer/Icon_Youtube.svg";
 import { useNavigate } from "react-router";
 
 import { useViewport } from "../../context/ViewportContext";
@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <footer id="footer" className="footer-section">
-      <div className="footer-content" style={{marginTop: isMobile ? "40px" : "80px"}}>
+      <div className="footer-content" style={{marginTop: isMobile ? "40px" : "40px", marginBottom: isMobile ? "10px" : "40px"}}>
         {/* Social Media Icons */}
         <p className="footer-Title">MANTENTE AL DÍA</p>
         <div className="social-media">
@@ -31,8 +31,8 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="footer-bottom">
-          <button className="footer-link-btn" onClick={() => navigate("/codmFrontend/faqs")}>FAQ</button>
-          <button className="footer-link-btn" onClick={() => window.open("https://www.activision.com/legal/privacy-policy")} >Términos y condiciones</button>
+          <button className="footer-link-btn" onClick={() => navigate("/codmFrontend/faqs")}>Preguntas frecuentes</button>
+          <button className="footer-link-btn" onClick={() => navigate("/codmFrontend/terms")} >Términos y condiciones</button>
           <button className="footer-link-btn" onClick={() => navigate("/codmFrontend/privacy")}>Política de privacidad</button>
           
         </div>

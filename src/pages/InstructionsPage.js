@@ -1,11 +1,17 @@
 import React, { useEffect } from "react";
 
 import "./InstructionsPage.css";
-import image from "../assets/instrucctions/Instrucciones_paso a paso UID.png";
+import imageMobil from "../assets/instrucctions/Instrucciones_paso a paso UID.png";
+import imageDesktop from "../assets/desktop/Registro/InstruccionesUID.png"
 import buttonlayout from "../assets/registration/Button_Continuar.png";
+import { useViewport } from "../context/ViewportContext";
 import { useNavigate } from "react-router";
 const InstructionsPage = () => {
+  const { isMobile } = useViewport();
   const navigate = useNavigate();
+
+
+  const image = isMobile ? imageMobil : imageDesktop;
 
   useEffect(() => {
     window.scrollTo(0, 0);

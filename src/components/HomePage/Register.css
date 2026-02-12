@@ -36,11 +36,13 @@
 @media (min-width: 1001px) {
   .register-image{
     height: 90px;
-    left: 60px;
+    left: 20px;
   }
   .register-text{
     font-size: 14px;
-    left: 40px;
+    left: -35px;
     top: -69px;
+    text-align: right;
+    width: 100%;
   }
 }

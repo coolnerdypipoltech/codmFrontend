@@ -28,7 +28,7 @@ const RegistroPage = () => {
         <div style={{position: "absolute", overflow: "clip", zIndex: 1, top: "300px", width: "100%"}}>
           <img loading="lazy" src={graffiti2} alt="Graffiti 2" style={{width: "300px", overflow: "visible", position: "relative", right: "-64vw"}} />
         </div>
-        <div style={{minHeight: "40px"}}></div>
+        <div style={{minHeight: "100px"}}></div>
         <div style={{position: "", overflow: "clip", zIndex: 2, top: "45px", minHeight: "100dvh", width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
           <RegistrationForm></RegistrationForm>
         </div>

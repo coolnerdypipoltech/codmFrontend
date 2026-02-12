@@ -150,7 +150,7 @@ const RegistrationForm = () => {
     setForceReloadCaptcha((prev) => prev + 1);
     setIsLoading(true);
     try {
-      const response = await fetch("http://138.197.232.79/register", {
+      const response = await fetch("https://api.codmbarrioslatinos.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -480,7 +480,7 @@ const RegistrationForm = () => {
               </p>
               <InfoTooltip
                 text={
-                  "El UID es un número único que\nidentifica tu cuenta de\nCall of Duty Mobile."
+                  "Debes cumplir con los requisitos listados.\nSi resides fuera de México y resultas finalista,\ntambién deberás cumplir con los requisitos de viaje.\nConsulta el enlace “Requisitos para tu país”\npara más información."
                 }
               />
             </div>
@@ -671,7 +671,7 @@ const RegistrationForm = () => {
           {Object.keys(errors).length > 0 && (
             <span className="error-message">Porfavor revisa sus datos</span>
           )}
-          <div style={{ display: "flex", flexDirection: "row", gap: "5px" }}>
+          <div style={{ display: "flex", flexDirection: "row", gap: "5px", justifyContent: "center" }}>
             <img
               loading="lazy"
               src={icon}

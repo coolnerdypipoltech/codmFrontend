@@ -42,12 +42,13 @@ const Prize = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.8)",
+          backgroundColor: "#1d1d1dc7",
           zIndex: 1
         }}></div>
         <div style={{position: "relative", zIndex: 2}}>
           <p className='title-prize'>LA GLORIA DEL BARRIO</p>
-          <p className='text-prize'>*Descripción sobre el corazón del barrio.</p>
+          <p className='text-prize'>Vive la calle con Barrios Latinos, el torneo de Call of Duty: Mobile </p>
+          <p className='text-prize'>que honra el talento, el orgullo y la identidad de nuestra región.</p>
         </div>
       </div>
       

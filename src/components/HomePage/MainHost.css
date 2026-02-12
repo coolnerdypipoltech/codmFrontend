@@ -108,12 +108,12 @@
 @media screen and (min-width: 1001px) {
   
   .heighModifier{
-    height: 55vw;
-    margin-top: 2.5vw;
+    height: 30vw;
+    margin-top: 0.5vw;
   }
 
   .mainhost-background{
-    height: 80vw;
+    height: 50vw;
     object-fit: cover;
   }
   .main-host-option-unselected{
@@ -126,7 +126,7 @@
   }
 
   .mainhost-words{
-    bottom: -10%;
+    bottom: -15%;
   }
 }
 

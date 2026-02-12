@@ -8,6 +8,8 @@ import Navbar from "./components/HomePage/Navbar";
 import PrivacyPage from "./pages/PrivacyPage";
 import FAQsPage from "./pages/FAQsPage";
 import { ViewportProvider } from "./context/ViewportContext";
+import Footer from "./components/HomePage/Footer";
+import TermsPage from "./pages/TermsPage";
 
 function App() {
   return (
@@ -20,7 +22,12 @@ function App() {
           <Route path="/instructions" element={<InstructionsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/faqs" element={<FAQsPage />} />
+          <Route path="/terms" element={<TermsPage />} />
           <Route path="/codmFrontend" element={<HomePage />} />
+          <Route
+            path="/codmFrontend/terms"
+            element={<TermsPage />}
+          />
           <Route path="/codmFrontend/registro" element={<RegistroPage />} />
           <Route
             path="/codmFrontend/instructions"
@@ -35,6 +42,7 @@ function App() {
             element={<FAQsPage />}
           />
         </Routes>
+        <Footer/>
       </Router>
     </ViewportProvider>
   );

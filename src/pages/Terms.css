@@ -1,0 +1,33 @@
+.privacy-policy-text{
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    font-family: "guildhall-wide", sans-serif;
+    position: relative;
+    top: -60px;
+}
+
+@media (min-width: 340px) {
+    .privacy-policy-text{
+        top: -18.5vw;
+        font-size: 15px;
+    }
+    
+}
+
+@media (min-width:  442px) {
+    .privacy-policy-text{
+        top: -80px;
+        font-size: 16px;
+    }
+    
+}
+
+.privacy-policy-bodyText{
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    position: relative;
+    top: -50px;
+}

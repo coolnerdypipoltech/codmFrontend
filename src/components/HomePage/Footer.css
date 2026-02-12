@@ -17,7 +17,7 @@
   color: #EDCC00;
   font-size: 14px;
   margin-bottom: 8px;
-  font-family: "guildhall-wide", sans-serif;
+  font-family: "guildhall", sans-serif;
 }
 
 /* Social Media Icons */
@@ -34,8 +34,13 @@
   justify-content: center;
   width: 32px;
   height: 32px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
 }
 
+.social-icon:hover {
+  filter: brightness(0) saturate(100%) invert(79%) sepia(89%) saturate(1343%) hue-rotate(1deg) brightness(103%) contrast(101%);
+}
 
 /* Footer Bottom Section */
 .footer-bottom {

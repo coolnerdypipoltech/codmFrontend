@@ -33,7 +33,6 @@ const HomePage = () => {
       <Location />
       <BuyTickets />
       <Register />
-      <Footer />
     </div>
   );
 };

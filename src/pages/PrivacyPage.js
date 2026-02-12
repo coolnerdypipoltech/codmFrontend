@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 
 import "./PrivacyPage.css";
-import image from "../assets/registration/Background_Registro.png";
+import image from "../assets/desktop/Other/Texture_tail.png";
 import buttonlayout from "../assets/registration/Button_Continuar.png";
-import brushNavMenu from "../assets/navMenu/IMG_BRUSH.png";
+import brushNavMenu from "../assets/desktop/Registro/IMG_Politicas de privacidad.png";
 import { useNavigate } from "react-router";
 const PrivacyPage = () => {
   const navigate = useNavigate();
@@ -14,10 +14,9 @@ const PrivacyPage = () => {
 
   return (
     <div
-      className="instructions-page"
       style={{ backgroundImage: `url(${image})`, padding: "20px" }}
     >
-      <div style={{ width: "100%", minHeight: "100px" }}></div>
+      <div style={{ width: "100%", minHeight: "150px" }}></div>
 
       <div
         style={{
@@ -40,12 +39,9 @@ const PrivacyPage = () => {
           }}
           alt="Close"
         />
-        <p className="privacy-policy-text" style={{ color: "white" }}>
-          POLÍTICA DE PRIVACIDAD
-        </p>
       </div>
 
-      <div  style={{maxHeight: "80dvh", overflow: "scroll"}}>
+      <div  style={{ padding: "20px"}}>
         <div className="inter-font" style={{color: "white"}}>
           <p>
             <b>
@@ -2295,6 +2291,7 @@ const PrivacyPage = () => {
           style={{
             maxHeight: "70px",
             display: "flex",
+            marginTop: "40px",
             justifyContent: "center",
           }}
           className="buttonLayoutInstructions"

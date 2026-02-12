@@ -35,8 +35,6 @@ const Participate = () => {
   return (
     <section id="como-participar" className="como-participar-section" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'contain', backgroundPosition: 'center' }}>
       <p className='title-participate'>¿CÓMO PARTICIPAR?</p>
-      <p className='text-participate' style={{paddingTop: "26px"}}>Sección que explica de manera muy breve </p>
-      <p className='text-participate' style={{paddingBottom: "26px"}}>las diferentes fases del evento.</p>
       
       <div className="participar-cards-container">
         <div style={{ minWidth: '5px' }}></div>
@@ -52,7 +50,7 @@ const Participate = () => {
         ))}
         <div style={{ minWidth: '5px' }}></div>
       </div>
-      <p className='text-participate' style={{color:"#CDCDCD", paddingLeft: "25px", paddingRight: "25px", paddingTop: "20px"}}>*Si hay más registros que cupos disponibles, la selección se hará según país/código postal y nivel de engagement. Países participantes: México, Argentina, Chile, Colombia, Perú y Ecuador. El equipo mixto estará formado por participantes de Perú y Ecuador</p>
+      <p className='text-participate' style={{color:"#CDCDCD", paddingLeft: "25px", paddingRight: "25px", paddingTop: "20px"}}>*Los participantes serán elegidos aleatoreamente</p>
     </section>
   );
 };

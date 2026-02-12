@@ -20,12 +20,13 @@ const BuyTickets = () => {
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <p className="buyTickets-text" style={{marginTop: "40px"}}>
-          COMPRAR BOLETOS
+          COMPRA TUS BOLETOS
+
         </p>
         <p
           className="buyTickets-text"
         >
-          PARA LA FINAL EN VIVO
+          PARA LA GRAN FINAL EN VIVO
         </p>
         <>
           <img

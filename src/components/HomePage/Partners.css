@@ -3,6 +3,10 @@
   padding: 10px 10px;
   background: #1D1D1D;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .patrocinadores-section h2 {
@@ -30,18 +34,6 @@
   width: auto;
 }
 
-@media (min-width: 1001px) {
-  
-  
-  .text-partners{
-  font-size: 34px; 
-  }
-
-  .partner-image{
-    height: 60px;
-
-  }
-}
 
 .sponsors-scroll-container {
   width: 100%;
@@ -88,4 +80,24 @@
 
 .sponsor-item img:hover {
   transform: scale(1.1);
+}
+
+
+
+@media (min-width: 1001px) {
+  .text-partners{
+  font-size: 34px; 
+  }
+
+  .partner-image{
+    height: 60px;
+
+  }
+  .patrocinadores-section{
+    height: 300px;
+  }
+  .sponsors-scroll{
+    height: 150px;
+  }
+
 }

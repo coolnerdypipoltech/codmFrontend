@@ -28,6 +28,7 @@
 .title-participate{
   color: #EDCC00;
   font-size: 22px;
+  padding-bottom: 16px;
   font-family: "guildhall-wide", sans-serif;
 }
 
@@ -36,6 +37,8 @@
   font-size: 14px;
   font-weight: 200;
   font-family: "Inter", sans-serif;
+  padding-top: 32px !important;
+  padding-bottom: 48px;
 }
 
 .card-text-participate{

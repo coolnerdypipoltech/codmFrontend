@@ -14,11 +14,10 @@ import brushNavMenu from "../../assets/navMenu/IMG_BRUSH.png";
 import buttonImage from "../../assets/navMenu/IMG_BUTTON_BACK.png";
 import infinixLogo from "../../assets/partners/Logo_Infinix_Black.png";
 import infinixLogoWhite from "../../assets/partners/INFINIX.png";
-import brushBackground from "../../assets/main/IMG_BRUSH.png";
 import { useViewport } from "../../context/ViewportContext";
 import { useLocation } from "react-router-dom";
+import NavBarItem from "../NavBarItem"; 
 const Navbar = () => {
-
   const { isMobile } = useViewport();
   const fondoBarrios = isMobile ? fondoBarriosMobil : fondoBarriosDesktop;
   const fondoMobile = isMobile ? fondoMobile1 : fondoMobile2;
@@ -27,6 +26,8 @@ const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [forceReload, setForceReload] = useState(0);
   const [isMobileCalc, setIsMobileCalc] = useState(window.innerWidth < 1300);
+  const [showInfinixBar, setShowInfinixBar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const items = [
     {
       label: "BARRIOS LATINOS",
@@ -69,6 +70,46 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Ocultar barra de Infinix en la página de registro
+  useEffect(() => {
+    if (location.pathname.includes("registro")) {
+      setShowInfinixBar(false);
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Si estamos en la página de registro, siempre ocultar la barra de Infinix
+      if (location.pathname.includes("registro")) {
+        setShowInfinixBar(false);
+        setLastScrollY(currentScrollY);
+        return;
+      }
+      
+      if(currentScrollY < 400) {
+        if(!showInfinixBar){
+          setShowInfinixBar(true);
+          return;
+        }
+      }
+
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setShowInfinixBar(false);
+      } else {
+        // Scrolling up
+        setShowInfinixBar(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY, location.pathname]);
+
   const handleScroll = (sectionId) => {
     if (location.pathname !== "/codmFrontend/") {
       navigate("/codmFrontend/");
@@ -94,7 +135,7 @@ const Navbar = () => {
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100);
-  }
+  };
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -109,10 +150,7 @@ const Navbar = () => {
 
   const itemsToolbar = (items) => {
     return items.map((item, index) => (
-      <Link key={index} onClick={item.command} className="navbar-item">
-        <div>
-          {item.label}</div>
-      </Link>
+      <NavBarItem key={index} text={item.label} command={item.command} index={index} />
     ));
   };
 
@@ -132,7 +170,15 @@ const Navbar = () => {
           <img
             loading="lazy"
             src={logoBarrios}
-            style={{ height: "70px", paddingLeft: "10px", cursor: "pointer", paddingTop: "10px" }}
+            style={{
+              height: "70px",
+              paddingLeft: "0px",
+              cursor: "pointer",
+              paddingTop: "10px",
+              position: "relative",
+              left: isMobile ? "20px" : "60px",
+              bottom: "5px",
+            }}
             alt="Logo"
             onClick={handleGoHome}
           />
@@ -141,21 +187,7 @@ const Navbar = () => {
           !isMobileCalc ? (
             itemsToolbar(items)
           ) : (
-            <div style={{width: "100%", position: "absolute", left: "10px", height: "0px", display: "flex", justifyContent: "center"}} className="infinixContainerLogo" >
-              <img
-                loading="lazy"
-                src={infinixLogo}
-                style={{
-                  height: "auto",
-                  width: "50%",
-                  maxWidth: "285px",
-                  marginTop: "15px",
-                  alignSelf: "center",
-                  cursor: "pointer",
-                }}
-                alt="Close"
-              />
-            </div>
+            <></>
           )
         }
         end={
@@ -164,7 +196,7 @@ const Navbar = () => {
               className="menu-toggle"
               onClick={toggleDrawer}
               aria-label="Toggle menu"
-              style={{paddingTop: "10px"}}
+              style={{ paddingTop: "10px" }}
             >
               <div>
                 <img
@@ -183,11 +215,28 @@ const Navbar = () => {
         itemTemplate={itemTemplate}
       />
 
-      {!isMobileCalc && ( 
-        <div style={{width: "100%", height: "45px", backgroundColor: "#F201B7", display: "flex", justifyContent: "center", alignItems: "center", position: "relative", top: "-10px"}}  >
-          <img src={infinixLogoWhite} alt="infinixLogo" style={{height: "45px"}}></img>
+    
+        <div
+          style={{
+            width: "100%",
+            height: isMobileCalc ? "30px" : "45px",
+            backgroundColor: "#F201B7",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "relative",
+            top: isMobileCalc ? "-16px" : "-10px",
+            opacity: showInfinixBar ? 1 : 0,
+            transition: "opacity 0.3s ease-in-out",
+          }}
+        >
+          <img
+            src={infinixLogoWhite}
+            alt="infinixLogo"
+            style={{ height: isMobileCalc ? "35px" : "45px" }}
+          ></img>
         </div>
-      )}
+      
 
       {/* Drawer for mobile */}
       {isMobileCalc && (
@@ -200,7 +249,6 @@ const Navbar = () => {
             className={`drawer ${isDrawerOpen ? "open" : ""}`}
             style={{
               backgroundImage: `url(${fondoMobile})`,
-              
             }}
           >
             <div className="drawer-nav">

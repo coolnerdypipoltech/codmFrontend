@@ -8,20 +8,22 @@ import fondo from "../../assets/main/Poster_Losbarrios_MEX.png";
 import actualFondo1 from "../../assets/main/IMG_Background_Los barrios.png";
 import actualFondoDesktop1 from "../../assets/desktop/Main/IMG_Background_Los barrios_WEB.png";
 import brushNavMenu from "../../assets/main/Brush_selector.png";
+import losbarriosTitle from "../../assets/main/Los barrios_web.png";
+import posterAczino from "../../assets/desktop/Main/poster_aczino.png"
 import { useViewport } from "../../context/ViewportContext";
 const MainHost = () => {
 
   const { isMobile } = useViewport();
 
   const actualFondo = isMobile ? actualFondo1 : actualFondoDesktop1;
-
+  const posters = isMobile ? fondo : posterAczino
   const carrousel = useRef(null);
   const options = ["CHILE", "MEX", "PE/ECU", "ARG", "COL", "COD:M"];
   const [currentOption, setCurrentOption] = useState(0);
   let tempArray = [];
   if (true) {
     for (let index = 0; index < 6; index++) {
-      tempArray.push(fondo);
+      tempArray.push(posters);
 
     }
   }
@@ -154,7 +156,7 @@ const MainHost = () => {
         }}
       >
         <div className="mainhost-container">
-          <h2 id="main-host" className="guild-font" style={{paddingTop: "30px"}}>LOS BARRIOS</h2>
+          <><img src={losbarriosTitle} style={{height: "15vw", maxHeight: "100px"}} alt="Los Barrios" /></>
           <div
             className="heighModifier"
             style={{
