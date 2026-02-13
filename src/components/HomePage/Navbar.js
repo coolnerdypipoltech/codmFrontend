@@ -111,8 +111,8 @@ const Navbar = () => {
   }, [lastScrollY, location.pathname]);
 
   const handleScroll = (sectionId) => {
-    if (location.pathname !== "/codmFrontend/") {
-      navigate("/codmFrontend/");
+    if (location.pathname !== "/") {
+      navigate("/");
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -131,7 +131,7 @@ const Navbar = () => {
   };
 
   const handleGoHome = () => {
-    navigate("/codmFrontend/");
+    navigate("/");
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100);

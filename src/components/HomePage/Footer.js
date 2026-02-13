@@ -31,9 +31,9 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="footer-bottom">
-          <button className="footer-link-btn" onClick={() => navigate("/codmFrontend/faqs")}>Preguntas frecuentes</button>
-          <button className="footer-link-btn" onClick={() => navigate("/codmFrontend/terms")} >Términos y condiciones</button>
-          <button className="footer-link-btn" onClick={() => navigate("/codmFrontend/privacy")}>Política de privacidad</button>
+          <button className="footer-link-btn" onClick={() => navigate("/faqs")}>Preguntas frecuentes</button>
+          <button className="footer-link-btn" onClick={() => navigate("/terms")} >Términos y condiciones</button>
+          <button className="footer-link-btn" onClick={() => navigate("/privacy")}>Política de privacidad</button>
           
         </div>
         <div style={{minHeight: "10px"}}></div>

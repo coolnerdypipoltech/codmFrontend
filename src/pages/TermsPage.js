@@ -2289,7 +2289,7 @@ const TermsPage = () => {
 
       <>
         <div
-          onClick={() => navigate("/codmFrontend/")}
+          onClick={() => navigate("/")}
           style={{
             maxHeight: "70px",
             display: "flex",

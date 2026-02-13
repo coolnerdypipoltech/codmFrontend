@@ -368,7 +368,7 @@ const RegistrationForm = () => {
                 className={errors.uid ? "error" : ""}
               />
               <p
-                onClick={() => navigate("/codmFrontend/instructions")}
+                onClick={() => navigate("/instructions")}
                 className="inter-font"
                 style={{
                   color: "grey",

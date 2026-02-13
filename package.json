@@ -1,7 +1,7 @@
 {
-  "name": "codmFrontend",
+  "name": "barrioslatinos",
   "version": "0.1.0",
-  "homepage": "https://coolnerdypipoltech.github.io/codmFrontend/",
+  "homepage": "https://codmbarrioslatinos.com/",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",

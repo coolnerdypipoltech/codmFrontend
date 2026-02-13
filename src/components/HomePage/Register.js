@@ -29,7 +29,7 @@ const Footer = () => {
 
   return (
     <div 
-      onClick={() => navigate('/codmFrontend/registro')} 
+      onClick={() => navigate('/registro')} 
       className="register-container"
       style={{
         opacity: isFooterVisible ? 0 : 1,

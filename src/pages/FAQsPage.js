@@ -39,7 +39,7 @@ const FAQsPage = () => {
 
       <div style={{paddingTop: "20px"}}>
         <div
-          onClick={() => navigate("/codmFrontend/")}
+          onClick={() => navigate("/")}
           style={{ maxHeight: "70px", display: "flex", justifyContent: "center" }}
           className="buttonLayoutInstructions"
         >

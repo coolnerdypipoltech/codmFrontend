@@ -31,7 +31,7 @@ const InstructionsPage = () => {
       </div>
       <>
         <div
-          onClick={() => navigate("/codmFrontend/registro")}
+          onClick={() => navigate("/registro")}
           style={{ maxHeight: "70px", display: "flex", justifyContent: "center" }}
           className="buttonLayoutInstructions"
         >
