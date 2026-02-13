@@ -51,6 +51,20 @@ const RegistrationForm = () => {
 
   }, [isVerified]);
 
+  useEffect(() => {
+    const navbarElement = document.querySelector('.navbar-container');
+    
+    if (navbarElement) {
+      if (isFormCompleted) {
+        navbarElement.style.zIndex = '0';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        navbarElement.style.zIndex = '1000';
+      }
+    }
+  }, [isFormCompleted])
+  
+
   const countries = [
     { value: "MEX", label: "México" },
     { value: "ARG", label: "Argentina" },

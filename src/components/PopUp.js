@@ -1,6 +1,9 @@
 import React from "react";
 import buttonlayout from "../assets/registration/Button_Continuar.png";
 const PopUp = ({ text, children, closePopUp, action }) => {
+
+
+
   return (
     <div className="popup-overlay" onClick={closePopUp}>
       <div className={`popup-content`} onClick={(e) => e.stopPropagation()}>
