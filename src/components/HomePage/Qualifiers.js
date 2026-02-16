@@ -17,7 +17,7 @@ const Qualifiers = () => {
     <section id="premio" className="premio-section">
       <div style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse", zIndex: 2}}> <img loading="lazy" src={imgband} alt="Band" className='image-band3'/></div>
       <div  className="premio-container" style={{padding: "0px", minHeight: "0px"}}>
-        <img loading="lazy" style={{ height: "50vw", objectFit: "cover", width: "100%"}} src={splashImage} alt="Regional Qualifiers" />
+        <img loading="lazy" style={{ height: isMobile ? "100%" : "50vw", objectFit: "cover", width: "100%"}} src={splashImage} alt="Regional Qualifiers" />
      </div>
       <div id='calendario' style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse"}}> <img loading="lazy" src={imgband} alt="Band" className='image-band4' /></div>
       
