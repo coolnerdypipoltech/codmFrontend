@@ -23,7 +23,7 @@ const FAQsPage = () => {
         <img loading="lazy" src={image} alt="title" style={{width: "80%", maxWidth: "500px"}}></img>
       </div>
     
-      <div style={{width:"80%" , display: "flex", flexDirection: "column", alignContent: "center", justifyContent: "center", marginLeft: "10%", marginTop: "60px", gap: "16px", overflowY: "scroll", overflowX: "clip"}}>
+      <div style={{width:"80%" , display: "flex", flexDirection: "column", alignContent: "center", justifyContent: "center", marginLeft: "10%", marginTop: "60px", gap: "16px", overflowX: "clip"}}>
         <FAQsItem title={"Qué es barrios latinos"} text={"Barrios Latinos es una comunidad que busca conectar y apoyar a los latinos en diferentes áreas."}></FAQsItem>
         <FAQsItem title={"Qué es barrios latinos"} text={"Barrios Latinos es una comunidad que busca conectar y apoyar a los latinos en diferentes áreas."}></FAQsItem>
         <FAQsItem title={"Qué es barrios latinos"} text={"Barrios Latinos es una comunidad que busca conectar y apoyar a los latinos en diferentes áreas."}></FAQsItem>

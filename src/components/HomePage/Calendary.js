@@ -143,7 +143,7 @@ const Calendary = () => {
             </div>
           </div>
         </div>
-        <div id='calendario' style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse"}}> <img loading="lazy" src={imgband} alt="Band" className='image-band5' /></div>
+        <div id='location' style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse"}}> <img loading="lazy" src={imgband} alt="Band" className='image-band5' /></div>
       
       </section>
     </>

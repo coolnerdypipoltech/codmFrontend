@@ -43,7 +43,7 @@ const Navbar = () => {
     },
     {
       label: "¿CÓMO PARTICIPAR?",
-      command: () => handleScroll("participate"),
+      command: () => handleScroll("participate2"),
       width: "275px",
       height: "50px",
     },
@@ -55,7 +55,7 @@ const Navbar = () => {
     },
     {
       label: "UBICACIÓN",
-      command: () => handleScroll("patrocinadores"),
+      command: () => handleScroll("location"),
       width: "200px",
       height: "50px",
     },

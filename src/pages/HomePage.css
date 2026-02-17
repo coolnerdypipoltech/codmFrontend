@@ -51,6 +51,16 @@
   z-index: 11;
 }
 
+.participate-handler{
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  top: -200px;
+  left: 0px;
+  z-index: 11;
+}
+
 @media (min-width: 1001px) {
   .image-band1{
     top: -5vw;
@@ -66,5 +76,8 @@
 
     .image-band5{
     top: 18vw;
+  }
+  .participate-handler{
+    top: -400px;
   }
 }

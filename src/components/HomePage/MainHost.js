@@ -14,7 +14,8 @@ import postermobil3 from "../../assets/posters/3_Poster ARG.png";
 import postermobil4 from "../../assets/posters/4_Poster CL.png";
 import postermobil5 from "../../assets/posters/5_Poster PE_EC.png";
 import postermobil6 from "../../assets/posters/6_host_and-main.png";
-
+import imgband1 from "../../assets/main/IMG_Band.png";
+import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
 
 import posterdesktop1 from "../../assets/desktop/PostersPais/1_Poster MX.png";
 import posterdesktop2 from "../../assets/desktop/PostersPais/2_Poster COL.png";
@@ -26,7 +27,7 @@ import { useViewport } from "../../context/ViewportContext";
 const MainHost = () => {
 
   const { isMobile } = useViewport();
-
+  const imgband = isMobile ? imgband1 : imgband2;
   const actualFondo = isMobile ? actualFondo1 : actualFondoDesktop1;
   const carrousel = useRef(null);
   let tempArray = [];
@@ -176,6 +177,7 @@ const MainHost = () => {
         </div>
       </div>
       <img loading="lazy" src={actualFondo} className="mainhost-background" alt="Splash Art" />
+      <div  style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse"}}> <img loading="lazy" id='participate2' alt="Band" className='participate-handler' /></div>
     </section>
   );
 };
