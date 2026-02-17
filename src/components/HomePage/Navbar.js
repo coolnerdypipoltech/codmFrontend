@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useNavigate } from "react-router";
 import brush from "../../assets/header/Brush_menu.png";
-import logoBarrios from "../../assets/navMenu/IMG_BRAND_BarriosLatinos-CODM.png";
+import logoBarrios from "../../assets/logoBarrios.png";
 import fondoBarriosMobil from "../../assets/header/Header_70.png";
 import fondoMobile1 from "../../assets/navMenu/IMG_Background_Menu.png";
 import fondoMobile2 from "../../assets/desktop/Header/IMG_Background_Menu_web.png";

@@ -16,7 +16,7 @@ const Location = () => {
       <div className="locacion-container"  style={{ flexDirection: isMobile ? "column" : "row"}}>
         <div className="locacion-info" style={{ backgroundColor: "white" }}>
           <p className="venue-name2" style={{color: "#F201B7"}}>UBICACIÓN</p>
-          <p className="venue-name">CIUDAD DE MÉXICO, CDMX</p>
+          <p className="venue-name">CIUDAD DE MÉXICO, MX</p>
           <p className="venue-address">
             House of Vans es el spot donde la imaginación se suelta sin freno, con arte chido, talleres que rifan y escenarios que prenden los conciertos; un lugar que inspira a toda la banda que corre, rueda o pisa fuerte cada rincón.
 

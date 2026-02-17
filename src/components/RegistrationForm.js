@@ -18,8 +18,9 @@ const RegistrationForm = () => {
     uid: "",
     name: "",
     surname: "",
-    gamertag: "",
+    username: "",
     discord: "",
+    age: "",
     passport: false,
     legalAge: false,
     visa: true,
@@ -110,12 +111,18 @@ const RegistrationForm = () => {
       newErrors.uid = "El UID es requerido";
     }
 
-    if (!formData.gamertag) {
-      newErrors.gamertag = "El gamertag es requerido";
+    if (!formData.username) {
+      newErrors.username = "El nombre de usuario es requerido";
     }
 
     if (!formData.discord) {
       newErrors.discord = "El Discord es requerido";
+    }
+
+    if (!formData.age) {
+      newErrors.age = "La edad es requerida";
+    } else if (isNaN(formData.age) || formData.age < 1 || formData.age > 120) {
+      newErrors.age = "La edad debe ser un número válido";
     }
 
     if (!formData.termsAndConditions) {
@@ -123,18 +130,6 @@ const RegistrationForm = () => {
         "Se necesita aceptar los terminos y condiciones";
     }
 
-    if (!formData.legalAge) {
-      newErrors.legalAge = "Debes ser mayor de edad para registrarte";
-    }
-
-    if (!formData.passport) {
-      newErrors.passport =
-        "Se necesita cumplir con los requisitos para viajar en tu país";
-    }
-
-    if (!formData.availabilityToTravel) {
-      newErrors.availabilityToTravel = "Se necesita disponibilidad para viajar";
-    }
     if (!isVerified) {
       setCaptchaError(true);
     }
@@ -182,8 +177,11 @@ const RegistrationForm = () => {
       uid: formData.uid,
       name: formData.name,
       surname: formData.surname,
-      gamertag: formData.gamertag,
+      username: formData.username,
       discord: formData.discord,
+      age: formData.age,
+      travel: formData.availabilityToTravel,
+      passport: formData.passport
     };
     
     try {
@@ -210,8 +208,9 @@ const RegistrationForm = () => {
           name: "",
           surname: "",
           uid: "",
-          gamertag: "",
+          username: "",
           discord: "",
+          age: "",
           passport: false,
           legalAge: false,
           visa: true,
@@ -440,29 +439,29 @@ const RegistrationForm = () => {
                 value={formData.surname}
                 onChange={handleChange}
                 placeholder=""
-                className={errors.name ? "error" : ""}
+                className={errors.surname ? "error" : ""}
               />
               {errors.surname && (
                 <span className="error-message">{errors.surname}</span>
               )}
             </div>
 
-            {/* Gamertag */}
+            {/* Username */}
             <div className="form-group">
-              <label className="inter-font" htmlFor="gamertag">
-                Gamertag
+              <label className="inter-font" htmlFor="username">
+                Username
               </label>
               <input
                 type="text"
-                id="gamertag"
-                name="gamertag"
-                value={formData.gamertag}
+                id="username"
+                name="username"
+                value={formData.username}
                 onChange={handleChange}
                 placeholder=""
-                className={errors.gamertag ? "error" : ""}
+                className={errors.username ? "error" : ""}
               />
-              {errors.gamertag && (
-                <span className="error-message">{errors.gamertag}</span>
+              {errors.username && (
+                <span className="error-message">{errors.username}</span>
               )}
             </div>
 
@@ -482,6 +481,26 @@ const RegistrationForm = () => {
               />
               {errors.discord && (
                 <span className="error-message">{errors.discord}</span>
+              )}
+            </div>
+
+            {/* Age */}
+            <div className="form-group">
+              <label className="inter-font" htmlFor="age">
+                Edad
+              </label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                style={{WebkitAppearance: "none"}}
+                value={formData.age}
+                onChange={handleChange}
+                placeholder=""
+                className={errors.age ? "error" : ""}
+              />
+              {errors.age && (
+                <span className="error-message">{errors.age}</span>
               )}
             </div>
 
@@ -775,8 +794,9 @@ const RegistrationForm = () => {
             <p><strong>UID:</strong> {formData.uid}</p>
             <p><strong>Nombre:</strong> {formData.name}</p>
             <p><strong>Apellido:</strong> {formData.surname}</p>
-            <p><strong>Gamertag:</strong> {formData.gamertag}</p>
+            <p><strong>Username:</strong> {formData.username}</p>
             <p><strong>Discord:</strong> {formData.discord}</p>
+            <p><strong>Edad:</strong> {formData.age}</p>
             <p><strong>Email:</strong> {formData.email}</p>
             <p><strong>País:</strong> {countries.find(c => c.value === formData.country)?.label || formData.country}</p>
             <p><strong>Código Postal:</strong> {formData.zipCode}</p>
