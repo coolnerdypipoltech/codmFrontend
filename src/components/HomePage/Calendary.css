@@ -96,7 +96,7 @@
   font-weight: bold;
   display: block;
   font-family: "guildhall-wide", sans-serif;
-  color: #FFB838;
+  color: #EDCC00;
 }
 
 .countdown-label {
@@ -146,13 +146,13 @@
 
 @media (min-width: 1001px) {
   .calendary-brush{
-    width: 500px;
+    width: 550px;
     height: auto;
   }
 
   .calendary-title{
     font-size: 36px;
-    top: -62px;
+    top: -67px;
   }
   .calendary-date{
     width: 250px;

@@ -16,6 +16,7 @@ const Partners = () => {
   return (
     <section id="patrocinadores" className="patrocinadores-section">
       <p className='text-partners'> OUR PARTNERS</p>
+      
       <div className="sponsors-scroll-container">
         
         <div className="sponsors-scroll">

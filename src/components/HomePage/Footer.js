@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
         <div style={{minHeight: "10px"}}></div>
         <p className="footer-text">©/TM/®2026 Activision Publishing, Inc. </p>
-       <div style={{minHeight: isMobile ? "30px" : "0px"}}></div>
+       <div style={{minHeight: isMobile ? "30px" : "15px", width: "100%"}}></div>
       </div>
     </footer>
   );

@@ -1,8 +1,8 @@
 import React from 'react';
 import './Prize.css';
-import imgband from "../../assets/main/IMG_Band.png";
-import video from "../../assets/videoPrize.mp4";
 
+import video from "../../assets/videoPrize.mp4";
+import imgTitle from "../../assets/main/La gloriadelbarrio.png";
 import imgband1 from "../../assets/main/IMG_Band.png";
 import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
 
@@ -45,9 +45,9 @@ const Prize = () => {
           backgroundColor: "#1d1d1dc7",
           zIndex: 1
         }}></div>
-        <div style={{position: "relative", zIndex: 2}}>
-          <p className='title-prize'>LA GLORIA DEL BARRIO</p>
-          <p className='text-prize'>Vive la calle con Barrios Latinos, el torneo de Call of Duty: Mobile </p>
+        <div style={{position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", padding: "0 20px"}}>
+          <img src={imgTitle} alt="La Gloria del Barrio" className='title-prize'/>
+          <p className='text-prize'>Vive la calle con Barrios Latinos, el torneo de <strong>Call of Duty: Mobile</strong> </p>
           <p className='text-prize'>que honra el talento, el orgullo y la identidad de nuestra región.</p>
         </div>
       </div>

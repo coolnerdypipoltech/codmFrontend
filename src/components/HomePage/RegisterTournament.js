@@ -1,46 +1,50 @@
 import React from "react";
-import imagen2 from "../../assets/main/IMG_texture_RG.png";
-import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_web.png";
+import imagen2 from "../../assets/main/IMG_texture_RGTM.png";
+import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_RegistrowebT.png";
 import comprarBoletos from "../../assets/desktop/Registro/Button_Registro al torneo_web.png";
 
 import { useViewport } from "../../context/ViewportContext";
+import { useNavigate } from "react-router-dom";
 const RegisterTournament = () => {
+  const navigate = useNavigate();
   const { isMobile } = useViewport();
 
   const backgroundImage = isMobile ? imagen2 : imagen3;
 
   return (
 
-    <section
-      id="buyTickets"
-      className="buyTickets-section"
-    >
-      <div
-        className="buyTickets-container"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-         <p className="buyTickets-text" style={{marginTop: isMobile ? "40px" : "90px"}}>
-          SI LLEGASTE HASTA AQUÍ,
-        </p>
-        <p
-          className="buyTickets-text"
+     <section id="buyTickets" className="buyTickets-section" style={{backgroundColor: "#cbc1b7"}}>
+      {!isMobile && <div style={{minHeight: "90px", width: "100%"}}></div>}
+      <div className="buyTickets-container" >
+        <img
+          className="buyTickets-background2"
+          src={backgroundImage}
+          alt="Background"
+        ></img>
+        <div
+          style={{
+            zIndex: "10",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
         >
-          REGÍSTRATE EN EL TORNEO
-        </p>
-        <>
-          <img
-            loading="lazy"
-            src={comprarBoletos}
-            className="buyTickets-Image"
-            alt="Comprar Boletos"
-          />
-          ´
-          <p
-            className={isMobile ? "buyTickets-buttonText" : "buyTickets-buttonText2"}
-          >
-            REGISTRO AL TORNEO
+          <p className="buyTickets-text" style={{ marginTop: isMobile ? "40px" : "50px", color: "black" }}>
+            SI LLEGASTE HASTA AQUÍ,
           </p>
-        </>
+          <p className="buyTickets-text" style={{ color: "black" }}>REGÍSTRATE EN EL TORNEO</p>
+          <div onClick={() => navigate('/registro')} style={{width: "100%"}}>
+            <img
+              loading="lazy"
+              src={comprarBoletos}
+              className="buyTickets-Image"
+              alt="Comprar Boletos"
+              style={{width: "100%"}}
+            />
+
+            <p className="buyTickets-buttonText">REGISTRO AL TORNEO</p>
+          </div>
+        </div>
       </div>
     </section>
   );

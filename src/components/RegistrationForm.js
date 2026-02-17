@@ -18,6 +18,8 @@ const RegistrationForm = () => {
     uid: "",
     name: "",
     surname: "",
+    gamertag: "",
+    discord: "",
     passport: false,
     legalAge: false,
     visa: true,
@@ -108,6 +110,14 @@ const RegistrationForm = () => {
       newErrors.uid = "El UID es requerido";
     }
 
+    if (!formData.gamertag) {
+      newErrors.gamertag = "El gamertag es requerido";
+    }
+
+    if (!formData.discord) {
+      newErrors.discord = "El Discord es requerido";
+    }
+
     if (!formData.termsAndConditions) {
       newErrors.termsAndConditions =
         "Se necesita aceptar los terminos y condiciones";
@@ -163,13 +173,26 @@ const RegistrationForm = () => {
     }
     setForceReloadCaptcha((prev) => prev + 1);
     setIsLoading(true);
+    
+    // Filtrar solo los campos no booleanos para enviar al servidor
+    const dataToSend = {
+      email: formData.email,
+      country: formData.country,
+      zipCode: formData.zipCode,
+      uid: formData.uid,
+      name: formData.name,
+      surname: formData.surname,
+      gamertag: formData.gamertag,
+      discord: formData.discord,
+    };
+    
     try {
       const response = await fetch("https://api.codmbarrioslatinos.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(dataToSend),
       });
 
       if (response.status === 200) {
@@ -187,6 +210,8 @@ const RegistrationForm = () => {
           name: "",
           surname: "",
           uid: "",
+          gamertag: "",
+          discord: "",
           passport: false,
           legalAge: false,
           visa: true,
@@ -419,6 +444,44 @@ const RegistrationForm = () => {
               />
               {errors.surname && (
                 <span className="error-message">{errors.surname}</span>
+              )}
+            </div>
+
+            {/* Gamertag */}
+            <div className="form-group">
+              <label className="inter-font" htmlFor="gamertag">
+                Gamertag
+              </label>
+              <input
+                type="text"
+                id="gamertag"
+                name="gamertag"
+                value={formData.gamertag}
+                onChange={handleChange}
+                placeholder=""
+                className={errors.gamertag ? "error" : ""}
+              />
+              {errors.gamertag && (
+                <span className="error-message">{errors.gamertag}</span>
+              )}
+            </div>
+
+            {/* Discord */}
+            <div className="form-group">
+              <label className="inter-font" htmlFor="discord">
+                Discord
+              </label>
+              <input
+                type="text"
+                id="discord"
+                name="discord"
+                value={formData.discord}
+                onChange={handleChange}
+                placeholder=""
+                className={errors.discord ? "error" : ""}
+              />
+              {errors.discord && (
+                <span className="error-message">{errors.discord}</span>
               )}
             </div>
 
@@ -712,6 +775,8 @@ const RegistrationForm = () => {
             <p><strong>UID:</strong> {formData.uid}</p>
             <p><strong>Nombre:</strong> {formData.name}</p>
             <p><strong>Apellido:</strong> {formData.surname}</p>
+            <p><strong>Gamertag:</strong> {formData.gamertag}</p>
+            <p><strong>Discord:</strong> {formData.discord}</p>
             <p><strong>Email:</strong> {formData.email}</p>
             <p><strong>País:</strong> {countries.find(c => c.value === formData.country)?.label || formData.country}</p>
             <p><strong>Código Postal:</strong> {formData.zipCode}</p>

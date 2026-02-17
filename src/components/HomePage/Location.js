@@ -1,15 +1,19 @@
 import React from "react";
 import "./Location.css";
-import venue from "../../assets/main/IMG_Venue.png";
+import venue1 from "../../assets/main/IMG_Venue.png";
+import venue2 from "../../assets/desktop/Main/IMG_Venue.png"
 import icon from "../../assets/main/Icon_Ubicación.png";
 import graffiti from "../../assets/main/TAGS_BLACK.png";
 import sticker1 from "../../assets/main/STICKER BOCA.png";
 import sticker2 from "../../assets/main/STICKERS_CODM_03.png";
-import { isMobile } from "pixi.js";
+import { useViewport } from "../../context/ViewportContext";
 const Location = () => {
+
+  const { isMobile } = useViewport();
+  const venue = isMobile ? venue2 : venue1; 
   return (
     <section id="locacion" className="locacion-section">
-      <div className="locacion-container">
+      <div className="locacion-container"  style={{ flexDirection: isMobile ? "column" : "row"}}>
         <div className="locacion-info" style={{ backgroundColor: "white" }}>
           <p className="venue-name2" style={{color: "#F201B7"}}>UBICACIÓN</p>
           <p className="venue-name">CIUDAD DE MÉXICO, CDMX</p>
@@ -20,17 +24,7 @@ const Location = () => {
           <p className="venue-address" style={{ paddingTop: "10px" }}>
             Rubens 6, San Juan, Benito Juárez, 03730 Ciudad de México, CDMX
           </p>
-          <div
-            className="graffitiTag-container"
-          >
-            {" "}
-            <img
-              loading="lazy"
-              src={graffiti}
-              alt="Graffiti"
-              className="graffitiTag"
-            />
-          </div>
+
         </div>
 
         <div className="map-container">
@@ -53,7 +47,7 @@ const Location = () => {
             />
             <p
               className="guild-regular-font"
-              style={{ position: "relative", color: "white", top: "-20px", fontSize: isMobile ? "32px" : "16px" }}
+              style={{ position: "relative", color: "white", top: "-20px", fontSize: isMobile ? "28px" : "34px" }}
             >
               [ HOUSE OF VANS ]
             </p>

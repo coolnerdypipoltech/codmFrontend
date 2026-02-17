@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Register.css";
 import fondo from "../../assets/registration/Button_Continuar.png";
+
 import { useNavigate } from "react-router";
 const Footer = () => {
   const navigate = useNavigate();

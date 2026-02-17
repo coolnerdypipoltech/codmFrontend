@@ -29,9 +29,8 @@ const HomePage = () => {
       <Qualifiers />
       <RegisterTournament/>
       <Calendary />
-      <Partners />
       <Location />
-      <BuyTickets />
+      <BuyTickets type={"1"} />
       <Register />
     </div>
   );

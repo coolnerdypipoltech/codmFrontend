@@ -3,6 +3,7 @@
 
   background: white;
   text-align: center;
+  
 }
 
 .graffitiTag-container {
@@ -27,7 +28,8 @@
   position: relative;
   top: 10%;
   left: 45vw;
-  width: 100px;
+  width: 20vw;
+  min-width: 100px;
   height: auto;
   margin-bottom: 10%;
 }
@@ -46,9 +48,10 @@
   position: relative;
   top: 10%;
   right: 45vw;
-  width: 150px;
+  width: 25vw;
+  min-width: 150px;
   height: auto;
-  margin-bottom: 10%;
+  margin-bottom: 4%;
 }
 
 
@@ -64,28 +67,21 @@
 .locacion-container {
   
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  display: flex;
+  height: 100%;
   overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .locacion-container {
-    grid-template-columns: 1fr;
-  }
 }
 
 .locacion-info {
   text-align: center;
   color: rgb(0, 0, 0);
   padding: 35px 25px;
-  min-height: 300px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  padding-bottom: 80px;
 }
 
 .locacion-info h3 {
@@ -95,17 +91,21 @@
   color: #F201B7;
 }
 
+.venue-image{
+  height: 100%;
+  object-fit:fill;
+}
+
 .venue-name {
-  font-family: "guildhall-wide", sans-serif;
-  font-size: 26px;
+  font-family: "guildhall", sans-serif;
+  font-size: 20px;
   margin: 10px 0;
   
 }
 
 .venue-name2 {
   font-family: "guildhall", sans-serif;
-  
-  font-size: 32px;
+  font-size: 28px;
   margin: 10px 0;
   
 }
@@ -115,6 +115,7 @@
   margin: 0.5rem 0;
   opacity: 0.9;
   font-family: "Inter", sans-serif;
+  
 }
 
 .venue-details {
@@ -127,6 +128,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .icon-image{
   width: 50px;
@@ -135,7 +137,7 @@
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .graffiti-container{
     width: 50%;
     overflow-x: visible;
@@ -149,22 +151,40 @@
     left: 15vw;
   }
   .graffiti1{
-    left: 15vw;
-    width: 200px;
-    margin-bottom: -30%;
+    left: 18vw;
+    width: 14vw;
+    max-width: 120px;
+    margin-bottom: 10%;
   }
   .graffiti2{
-    right: 22vw;
-    width: 300px;
+    right: 16vw;
+    width: 15vw;
+    max-width: 160px;
   }
   .venue-address{
-    font-size: 18px;
+    font-size: 16px;
     width: 75%;
   }
-  .venue-name{
-    font-size: 26px;
+
+  .venue-name2 {
+    font-size: 34px;
   }
-  .venue-name2{
-    font-size: 32px;
+  .venue-name {
+    font-size: 22px;
+  }
+  .map-container {
+  width: 100%;
+  
+  }
+
+  .venue-image{
+    width: 100%;
+    height: 100%;
+  }
+  .locacion-info{
+    width: 100%;
+  }
+  .locacion-section{
+  height: 700px;
   }
 }

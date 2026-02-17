@@ -38,6 +38,17 @@
   max-height: 200px;
   top: -15vw;
   left: 0px;
+  z-index: 11;
+}
+
+.image-band5{
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  top: 150px;
+  left: 0px;
+  z-index: 11;
 }
 
 @media (min-width: 1001px) {
@@ -50,6 +61,10 @@
   }
 
   .image-band4{
-    top: -5vw;
+    top: -3.5vw;
+  }
+
+    .image-band5{
+    top: 18vw;
   }
 }

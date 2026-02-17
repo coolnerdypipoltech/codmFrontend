@@ -1,8 +1,9 @@
 .buyTickets-section{
   width: 100%;
-  background: #fff;
+  background: #d6ba00;
   text-align: center;
-  height: 300px;
+  height: 250px;
+  
 }
 
 
@@ -15,18 +16,34 @@
   flex-direction: column;
   padding-left: 45px;
   padding-right: 45px;
-  min-height: 300px;
+  min-height: 250px;
   background-size:   100% ;
   object-fit: contain;
   overflow: clip;
   overflow-clip-margin: content-box;
 }
 
+.buyTickets-background{
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  position: absolute;
+  z-index: 10;
+}
+
+.buyTickets-background2{
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  position: absolute;
+  z-index: 10;
+}
+
 .buyTickets-text{
-  font-family: "guildhall-wide", sans-serif;
+  font-family: "guildhall", sans-serif;
   color: white;
 
-  font-size: 24px;
+  font-size: 34px;
 }
 
 .buyTickets-Image{
@@ -34,11 +51,11 @@
 }
 
 .buyTickets-buttonText{
-  position: absolute;
+  position: relative;
   font-family: "guildhall-wide", sans-serif;
   color: #EDCC00;
-  margin-top: 80px;
-    font-size: 16px;
+  font-size: 16px;
+  bottom: 55px;
 }
 
 
@@ -47,53 +64,56 @@
   font-family: "guildhall-wide", sans-serif;
   color: #EDCC00;
   margin-top: 130px;
-    font-size: 16px;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 1000px) {
 .buyTickets-container{
   background-size: 100% auto;
 }
+.buyTickets-background2{
+  height: 250px;
+}
 }
 
 
 
 @media screen and (max-width: 1100px) {
-  .buyTickets-text{
-    font-size: 2.5vw;
-  }
   .buyTickets-Image{
     height: 9vw;
   }
   .buyTickets-buttonText{
-
-    margin-top: 8.5vw;
     font-size: 1.7vw;
+  }
+  .buyTickets-buttonText{
+    bottom: 6vw;
   }
 }
 
 @media screen and (max-width: 750px) {
 
-  .buyTickets-buttonText{
-    margin-top: 9.5vw;
-  }
 }
 
-@media screen and (max-width: 429px) {
+@media screen and (max-width: 1000px) {
   .buyTickets-text{
-    font-size: 12px;
+    font-size: 20px;
+    
   }
   .buyTickets-Image{
     height: 64px;
   }
   .buyTickets-buttonText{
-    margin-top: 45px;
+    bottom: 45px;
     font-size: 12px;
   }
 
   .buyTickets-container {
     min-height: 183px;
     background-size: auto 100% !important;
+  }
+  .buyTickets-background {
+    height: 280px;
+    width: auto;
   }
   .buyTickets-section{
     height: 183px;

@@ -4,29 +4,50 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import arrow from "../../assets/main/Icon_next.png";
-import fondo from "../../assets/main/Poster_Losbarrios_MEX.png";
 import actualFondo1 from "../../assets/main/IMG_Background_Los barrios.png";
 import actualFondoDesktop1 from "../../assets/desktop/Main/IMG_Background_Los barrios_WEB.png";
-import brushNavMenu from "../../assets/main/Brush_selector.png";
 import losbarriosTitle from "../../assets/main/Los barrios_web.png";
-import posterAczino from "../../assets/desktop/Main/poster_aczino.png"
+
+import postermobil1 from "../../assets/posters/1_Poster MX.png";
+import postermobil2 from "../../assets/posters/2_Poster COL.png";
+import postermobil3 from "../../assets/posters/3_Poster ARG.png";
+import postermobil4 from "../../assets/posters/4_Poster CL.png";
+import postermobil5 from "../../assets/posters/5_Poster PE_EC.png";
+import postermobil6 from "../../assets/posters/6_host_and-main.png";
+
+
+import posterdesktop1 from "../../assets/desktop/PostersPais/1_Poster MX.png";
+import posterdesktop2 from "../../assets/desktop/PostersPais/2_Poster COL.png";
+import posterdesktop3 from "../../assets/desktop/PostersPais/3_Poster ARG.png";
+import posterdesktop4 from "../../assets/desktop/PostersPais/4_Poster CL.png";
+import posterdesktop5 from "../../assets/desktop/PostersPais/5_Poster PE_EC.png";
+import posterdesktop6 from "../../assets/desktop/PostersPais/6_host_and-main.png";
 import { useViewport } from "../../context/ViewportContext";
 const MainHost = () => {
 
   const { isMobile } = useViewport();
 
   const actualFondo = isMobile ? actualFondo1 : actualFondoDesktop1;
-  const posters = isMobile ? fondo : posterAczino
   const carrousel = useRef(null);
-  const options = ["CHILE", "MEX", "PE/ECU", "ARG", "COL", "COD:M"];
-  const [currentOption, setCurrentOption] = useState(0);
   let tempArray = [];
-  if (true) {
-    for (let index = 0; index < 6; index++) {
-      tempArray.push(posters);
-
-    }
+  
+  if(isMobile){
+    tempArray.push(postermobil1)
+    tempArray.push(postermobil2)
+    tempArray.push(postermobil3);
+    tempArray.push(postermobil4);
+    tempArray.push(postermobil5);
+    tempArray.push(postermobil6);
+  }else{
+    tempArray.push(posterdesktop1)
+    tempArray.push(posterdesktop2)
+    tempArray.push(posterdesktop3);
+    tempArray.push(posterdesktop4);
+    tempArray.push(posterdesktop5);
+    tempArray.push(posterdesktop6);
   }
+  
+
 
   const responsive = {
     superLargeDesktop: {
@@ -48,48 +69,6 @@ const MainHost = () => {
     },
   };
 
-  const optionHelperLeft = () => {
-    if (currentOption === -2) {
-      return options[options.length - 3];
-    }
-    if (currentOption === -1) {
-      return options[options.length - 2];
-    }
-    if (currentOption === 0) {
-      return options[options.length - 1];
-    } else {
-      return options[currentOption - 1];
-    }
-  };
-
-  const optionHelperMiddle = () => {
-    if (currentOption === -1) {
-      return options[options.length - 1];
-    }
-    if (currentOption === -2) {
-      return options[options.length - 2];
-    }
-    if (currentOption === options.length ) {
-      return options[0];
-    }
-
-    return options[currentOption];
-  };
-
-  const optionHelperRight = () => {
-    if (currentOption === -2) {
-      return options[options.length - 1];
-    }
-    if (currentOption === options.length ) {
-      return options[1];
-    }
-
-    if (currentOption === options.length - 1) {
-      return options[0];
-    } else {
-      return options[currentOption + 1];
-    }
-  };
 
   const CustomLeftArrow = ({ onClick, ...rest }) => {
     const {
@@ -100,7 +79,7 @@ const MainHost = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
-        style={{ left: "2%" }}
+        style={{ left: isMobile ? "0%" : "2%" }}
         onClick={() => onClick()}
       >
         <img
@@ -122,7 +101,7 @@ const MainHost = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
-        style={{ right: "2%" }}
+        style={{ right: isMobile ? "0%" : "2%" }}
         onClick={() => onClick()}
       >
         <img
@@ -161,17 +140,11 @@ const MainHost = () => {
             className="heighModifier"
             style={{
               paddingBottom: "20px",
-              width: "100%",
+              width: "90%",
             }}
           >
             <Carousel
               ref={carrousel}
-              afterChange={function (previousSlide, _ref) {
-                var currentSlide = _ref.currentSlide;
-                // eslint-disable-next-line no-unused-expressions
-                _ref.onMove;
-                setCurrentOption(currentSlide - 2);
-              }}
               responsive={responsive}
               arrows
               infinite
@@ -200,73 +173,6 @@ const MainHost = () => {
             </Carousel>
           </div>
 
-          <div
-            id="participate"
-            className="mainhost-words"
-          >
-            <div
-              onClick={() => {
-                carrousel.current.goToSlide(currentOption + 1);
-              }}
-              className="main-host-option-unselected"
-            >
-              <img
-                loading="lazy"
-                src={brushNavMenu}
-                style={{
-                  overflow: "visible",
-                  objectFit: "cover",
-                  opacity: 0,
-                }}
-                alt="Close"
-              />
-              <p className="mainhost-text" style={{ color: "black" }}>
-                {optionHelperLeft()}
-              </p>
-            </div>
-
-            <div
-              onClick={() => {
-                carrousel.current.goToSlide(currentOption + 2);
-              }}
-              className="main-host-option-unselected"
-            >
-              <img
-                loading="lazy"
-                src={brushNavMenu}
-                style={{
-                  overflow: "visible",
-                  objectFit: "cover",
-                  opacity: 1,
-                }}
-                alt="Close"
-              />
-              <p className="mainhost-text" style={{ color: "white" }}>
-                {optionHelperMiddle()}
-              </p>
-            </div>
-
-            <div
-              onClick={() => {
-                carrousel.current.goToSlide(currentOption + 3);
-              }}
-              className="main-host-option-unselected"
-            >
-              <img
-                loading="lazy"
-                src={brushNavMenu}
-                style={{
-                  overflow: "visible",
-                  objectFit: "cover",
-                  opacity: 0,
-                }}
-                alt="Close"
-              />
-              <p className="mainhost-text" style={{ color: "black" }}>
-                {optionHelperRight()}
-              </p>
-            </div>
-          </div>
         </div>
       </div>
       <img loading="lazy" src={actualFondo} className="mainhost-background" alt="Splash Art" />

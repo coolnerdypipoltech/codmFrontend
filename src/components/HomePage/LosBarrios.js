@@ -52,7 +52,7 @@ const LosBarrios = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
-        style={{ left: "2%" }}
+        style={{ left: "7%" }}
         onClick={() => onClick()}
       >
         <img
@@ -74,7 +74,7 @@ const LosBarrios = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
-        style={{ right: "2%" }}
+        style={{ right: "7%" }}
         onClick={() => onClick()}
       >
         <img

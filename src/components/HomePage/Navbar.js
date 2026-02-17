@@ -257,10 +257,11 @@ const Navbar = () => {
                 src={logoNavMenu}
                 style={{
                   width: "40%",
-                  minWidth: "150px",
+                  minWidth: "200px",
                   paddingBottom: "50px",
                   alignSelf: "center",
                   cursor: "pointer",
+                  
                 }}
                 alt="Close"
               />
