@@ -21,6 +21,28 @@
   position: relative;
   width: auto;
   left: 50px;
+  
+}
+
+.register-highlight{
+  height: 55px;
+  position: absolute;
+  width: auto;
+  right: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+  top: -30px;
+  width: 80%;
+}
+
+.register-container:hover .register-highlight{
+  opacity: 1;
+}
+
+.register-container:hover .register-text{
+  color: white;
 }
 
 .register-text{
@@ -28,7 +50,8 @@
   font-size: 10px;
   left: 27.5px;
   top: -52.5px;
-
+  transition: color 0.3s ease;
+  z-index: 2;
 }
 
 

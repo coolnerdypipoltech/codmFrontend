@@ -177,7 +177,7 @@ const MainHost = () => {
         </div>
       </div>
       <img loading="lazy" src={actualFondo} className="mainhost-background" alt="Splash Art" />
-      <div  style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse"}}> <img loading="lazy" id='participate2' alt="Band" className='participate-handler' /></div>
+      <div  style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse"}}> <div loading="lazy" id='participate2' className='participate-handler' /></div>
     </section>
   );
 };

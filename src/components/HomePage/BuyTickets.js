@@ -38,10 +38,10 @@ const BuyTickets = ({type}) => {
             marginBottom: "20px"
           }}
         >
-          <p className="buyTickets-text" style={{ marginTop: "0px" }}>
+          <p className="buyTickets-text" style={{ marginTop: "0px", color: "black" }}>
             DEL BARRIO PARA EL MUNDO,
           </p>
-          <p className="buyTickets-text">ESTO ES BARRIOS LATINOS</p>
+          <p className="buyTickets-text" style={{color: "black"}}>ESTO ES BARRIOS LATINOS</p>
           {false && <>
             <img
               loading="lazy"

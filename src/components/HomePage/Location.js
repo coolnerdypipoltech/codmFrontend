@@ -22,7 +22,7 @@ const Location = () => {
 
           </p>
           <p className="venue-address" style={{ paddingTop: "10px" }}>
-            Rubens 6, San Juan, Benito Juárez, 03730 Ciudad de México, CDMX
+            Rubens 6, San Juan, Benito Juárez, 03730 Ciudad de México, MX
           </p>
 
         </div>

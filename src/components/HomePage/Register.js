@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Register.css";
 import fondo from "../../assets/registration/Button_Continuar.png";
-
+import highlight from "../../assets/desktop/Header/Spray_graffbutton.png"
 import { useNavigate } from "react-router";
 const Footer = () => {
   const navigate = useNavigate();
@@ -39,6 +39,7 @@ const Footer = () => {
       }}
     >
       <img loading="lazy" src={fondo} alt="img" className="register-image"/>
+      <img loading="lazy" src={highlight} alt="" className="register-highlight"/>
       <p className="guild-font register-text">REGISTRO </p>
       <p className="guild-font register-text">AL TORNEO </p>
     </div>
