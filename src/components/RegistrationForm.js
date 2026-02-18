@@ -18,7 +18,7 @@ const RegistrationForm = () => {
     uid: "",
     name: "",
     surname: "",
-    username: "",
+    gamertag: "",
     discord: "",
     age: "",
     passport: false,
@@ -111,8 +111,8 @@ const RegistrationForm = () => {
       newErrors.uid = "El UID es requerido";
     }
 
-    if (!formData.username) {
-      newErrors.username = "El nombre de usuario es requerido";
+    if (!formData.gamertag) {
+      newErrors.gamertag = "El gamertag es requerido";
     }
 
     if (!formData.discord) {
@@ -130,6 +130,14 @@ const RegistrationForm = () => {
         "Se necesita aceptar los terminos y condiciones";
     }
 
+    if (!formData.passport) {
+      newErrors.passport =
+        "Se necesita cumplir con los requisitos para viajar en tu país";
+    }
+
+    if (!formData.availabilityToTravel) {
+      newErrors.availabilityToTravel = "Se necesita disponibilidad para viajar";
+    }
     if (!isVerified) {
       setCaptchaError(true);
     }
@@ -177,7 +185,7 @@ const RegistrationForm = () => {
       uid: formData.uid,
       name: formData.name,
       surname: formData.surname,
-      username: formData.username,
+      gamertag: formData.gamertag,
       discord: formData.discord,
       age: formData.age,
       travel: formData.availabilityToTravel,
@@ -208,7 +216,7 @@ const RegistrationForm = () => {
           name: "",
           surname: "",
           uid: "",
-          username: "",
+          gamertag: "",
           discord: "",
           age: "",
           passport: false,
@@ -439,7 +447,7 @@ const RegistrationForm = () => {
                 value={formData.surname}
                 onChange={handleChange}
                 placeholder=""
-                className={errors.surname ? "error" : ""}
+                className={errors.name ? "error" : ""}
               />
               {errors.surname && (
                 <span className="error-message">{errors.surname}</span>
@@ -455,13 +463,13 @@ const RegistrationForm = () => {
                 type="text"
                 id="username"
                 name="username"
-                value={formData.username}
+                value={formData.gamertag}
                 onChange={handleChange}
                 placeholder=""
-                className={errors.username ? "error" : ""}
+                className={errors.gamertag ? "error" : ""}
               />
-              {errors.username && (
-                <span className="error-message">{errors.username}</span>
+              {errors.gamertag && (
+                <span className="error-message">{errors.gamertag}</span>
               )}
             </div>
 
@@ -794,7 +802,7 @@ const RegistrationForm = () => {
             <p><strong>UID:</strong> {formData.uid}</p>
             <p><strong>Nombre:</strong> {formData.name}</p>
             <p><strong>Apellido:</strong> {formData.surname}</p>
-            <p><strong>Username:</strong> {formData.username}</p>
+            <p><strong>Username:</strong> {formData.gamertag}</p>
             <p><strong>Discord:</strong> {formData.discord}</p>
             <p><strong>Edad:</strong> {formData.age}</p>
             <p><strong>Email:</strong> {formData.email}</p>
