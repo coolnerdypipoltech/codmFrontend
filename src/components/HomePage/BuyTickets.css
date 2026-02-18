@@ -119,7 +119,7 @@
   }
   .buyTickets-background {
     height: 280px;
-    width: auto;
+    width: 100%;
   }
   .buyTickets-section{
     height: 183px;
@@ -127,3 +127,10 @@
 
 }
 
+
+@media screen and (max-width: 370px) {
+    .buyTickets-text{
+    font-size: 16px;
+    
+  }
+}

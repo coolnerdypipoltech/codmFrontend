@@ -23,6 +23,7 @@ import posterdesktop3 from "../../assets/desktop/PostersPais/3_Poster ARG.png";
 import posterdesktop4 from "../../assets/desktop/PostersPais/4_Poster CL.png";
 import posterdesktop5 from "../../assets/desktop/PostersPais/5_Poster PE_EC.png";
 import posterdesktop6 from "../../assets/desktop/PostersPais/6_host_and-main.png";
+import posterdesktop7 from "../../assets/desktop/PostersPais/7_Caster.png";
 import { useViewport } from "../../context/ViewportContext";
 const MainHost = () => {
 
@@ -39,6 +40,7 @@ const MainHost = () => {
     tempArray.push(postermobil4);
     tempArray.push(postermobil5);
     tempArray.push(postermobil6);
+    
   }else{
     tempArray.push(posterdesktop1)
     tempArray.push(posterdesktop2)
@@ -46,6 +48,7 @@ const MainHost = () => {
     tempArray.push(posterdesktop4);
     tempArray.push(posterdesktop5);
     tempArray.push(posterdesktop6);
+    tempArray.push(posterdesktop7);
   }
   
 

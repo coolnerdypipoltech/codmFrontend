@@ -4,9 +4,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import arrow from "../../assets/main/Icon_next-white.png";
-import actualFondo from "../../assets/main/IMG_Splash_RepresentaTuBarrio.jpg";
-import actualFondo1 from "../../assets/main/IMG_Splash_RepresentaTuBarrio_3.png";
-import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.jpg";
+import actualFondo from "../../assets/main/IMG_Splash_RepresentaTuBarrio1.png";
+import actualFondo1 from "../../assets/main/IMG_Splash_RepresentaTuBarrio.png";
+import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.png";
 import actualFondoDesktop1 from "../../assets/desktop/Main/Banner_desktop.webp";
 import imgband1 from "../../assets/main/IMG_Band.png";
 import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
