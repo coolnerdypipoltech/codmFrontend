@@ -23,9 +23,7 @@ const RegistrationForm = () => {
     age: "",
     passport: false,
     legalAge: false,
-    visa: true,
     availabilityToTravel: false,
-    codmEventCompletion: true,
     termsAndConditions: false,
   });
   const navigate = useNavigate();
@@ -185,11 +183,12 @@ const RegistrationForm = () => {
       uid: formData.uid,
       name: formData.name,
       surname: formData.surname,
-      username: formData.username,
+      gamertag: formData.username,
       discord: formData.discord,
       age: formData.age,
       travel: formData.availabilityToTravel,
-      passport: formData.passport
+      passport: formData.passport,
+      legalAge: formData.legalAge
     };
     
     try {
@@ -221,9 +220,7 @@ const RegistrationForm = () => {
           age: "",
           passport: false,
           legalAge: false,
-          visa: true,
           availabilityToTravel: false,
-          codmEventCompletion: true,
         });
       } else if (response.status === 400) {
         setPopup({
@@ -419,7 +416,7 @@ const RegistrationForm = () => {
             {/* Surname */}
             <div className="form-group">
               <label className="inter-font" htmlFor="name">
-                Nombre
+                Nombres
               </label>
               <input
                 type="text"
@@ -800,7 +797,7 @@ const RegistrationForm = () => {
           <div style={{ marginBottom: "15px" }}>
             <p style={{ fontWeight: "bold", marginBottom: "10px", textAlign: "center" }}>Por favor revisa tu información:</p>
             <p><strong>UID:</strong> {formData.uid}</p>
-            <p><strong>Nombre:</strong> {formData.name}</p>
+            <p><strong>Nombres:</strong> {formData.name}</p>
             <p><strong>Apellidos:</strong> {formData.surname}</p>
             <p><strong>Nombre de usuario:</strong> {formData.username}</p>
             <p><strong>Discord:</strong> {formData.discord}</p>
