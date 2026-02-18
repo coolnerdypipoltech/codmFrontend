@@ -413,7 +413,7 @@ const RegistrationForm = () => {
               )}
             </div>
 
-            {/* Surname */}
+            {/* name */}
             <div className="form-group">
               <label className="inter-font" htmlFor="name">
                 Nombres
@@ -426,6 +426,8 @@ const RegistrationForm = () => {
                 onChange={handleChange}
                 placeholder=""
                 className={errors.name ? "error" : ""}
+                autoComplete="off"
+                spellCheck="false"
               />
               {errors.name && (
                 <span className="error-message">{errors.name}</span>
@@ -710,6 +712,9 @@ const RegistrationForm = () => {
             onValidate={setIsVerified}
             showSuccessAnimation
             enableAudio={false}
+            autoFocus={false}
+            disableSpaceToHear={true}
+            
             i18n={{
               securityCheck: "Verificación de seguridad",
               listenToCaptcha: "Escuchar CAPTCHA",

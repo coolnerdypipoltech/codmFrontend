@@ -41,6 +41,7 @@ function App() {
             path="/codmFrontend/faqs"
             element={<FAQsPage />}
           />
+          <Route path="*" element={<HomePage />} />
         </Routes>
         <Footer/>
       </Router>
