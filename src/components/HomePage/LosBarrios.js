@@ -4,8 +4,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import arrow from "../../assets/main/Icon_next-white.png";
-import actualFondo from "../../assets/main/IMG_Splash_RepresentaTuBarrio.png";
-import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.png";
+import actualFondo from "../../assets/main/IMG_Splash_RepresentaTuBarrio.jpg";
+import actualFondo1 from "../../assets/main/IMG_Splash_RepresentaTuBarrio_3.png";
+import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.jpg";
+import actualFondoDesktop1 from "../../assets/desktop/Main/Banner_desktop.webp";
 import imgband1 from "../../assets/main/IMG_Band.png";
 import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
 
@@ -14,15 +16,21 @@ import { useViewport } from "../../context/ViewportContext";
 const LosBarrios = () => {
   const { isMobile } = useViewport();
 
-  const imageBackgrond = isMobile ? actualFondo : actualFondoDesktop;
   const imgband = isMobile ? imgband1 : imgband2; 
 
   let tempArray = [];
-  if (true) {
-    for (let index = 0; index < 3; index++) {
-      tempArray.push(imageBackgrond);
-    }
+  if (!isMobile) {
+    tempArray.push(actualFondoDesktop);
+    tempArray.push(actualFondoDesktop1);
+    tempArray.push(actualFondoDesktop);
+  }else{
+    tempArray.push(actualFondo);
+    tempArray.push(actualFondo1);
+    tempArray.push(actualFondo);
   }
+
+
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
