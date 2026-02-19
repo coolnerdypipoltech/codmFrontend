@@ -605,6 +605,56 @@ const RegistrationForm = () => {
 
             {/* Checkboxes */}
             <div className="checkbox-group">
+
+                
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="termsAndConditions"
+                  checked={formData.termsAndConditions}
+                  onChange={handleChange}
+                  className="inputDiamond"
+                />
+                <span
+                  className="checkmark"
+                  style={{
+                    marginBottom: "0px",
+                    backgroundImage: `url(${formData.termsAndConditions ? diamondOn : diamondOff})`,
+                  }}
+                ></span>
+                <p className="inputDiamond">
+                  He leído y acepto los{" "}
+                  <span
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      navigate("/terms");
+                    }}
+                    style={{ textDecoration: "underline", cursor: "pointer" }}
+                  >
+                    Términos y Condiciones
+                  </span>{" "}
+                  y{" "}
+                  <span
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      navigate("/privacy");
+                    }}
+                    style={{ textDecoration: "underline", cursor: "pointer" }}
+                  >
+                    Políticas de Privacidad
+                  </span>
+                  .
+                </p>
+              </label>
+              {errors.termsAndConditions && (
+                <span className="error-message">
+                  {errors.termsAndConditions}
+                </span>
+              )}
+
+
               <label className="checkbox-label">
                 <input
                   type="checkbox"
@@ -680,52 +730,6 @@ const RegistrationForm = () => {
                 </span>
               )}
 
-              <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  name="termsAndConditions"
-                  checked={formData.termsAndConditions}
-                  onChange={handleChange}
-                  className="inputDiamond"
-                />
-                <span
-                  className="checkmark"
-                  style={{
-                    marginBottom: "0px",
-                    backgroundImage: `url(${formData.termsAndConditions ? diamondOn : diamondOff})`,
-                  }}
-                ></span>
-                <p className="inputDiamond">
-                  He leído y acepto los{" "}
-                  <span
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      navigate("/terms");
-                    }}
-                    style={{ textDecoration: "underline", cursor: "pointer" }}
-                  >
-                    Términos y Condiciones
-                  </span>{" "}
-                  y{" "}
-                  <span
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      navigate("/privacy");
-                    }}
-                    style={{ textDecoration: "underline", cursor: "pointer" }}
-                  >
-                    Políticas de Privacidad
-                  </span>
-                  .
-                </p>
-              </label>
-              {errors.termsAndConditions && (
-                <span className="error-message">
-                  {errors.termsAndConditions}
-                </span>
-              )}
             </div>
           </form>
 

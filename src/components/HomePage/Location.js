@@ -28,32 +28,9 @@ const Location = () => {
 
         </div>
 
-        <div className="map-container" onClick={() => window.open("https://maps.app.goo.gl/Bq5pA4tYWyc6FVHQA")}>
+        <div className="map-container" >
           <img loading="lazy" src={venue} alt="Venue" className="venue-image" />
-          <div
-            style={{
-              position: "absolute",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <img
-              loading="lazy"
-              src={icon}
-              alt="Icon"
-              className="icon-image"
-              style={{ width: "60px" }}
-            />
-            <p
-              className="guild-regular-font"
-              style={{ position: "relative", color: "white", top: "-20px", fontSize: isMobile ? "28px" : "34px" }}
-            >
-              [ HOUSE OF VANS ]
-            </p>
-          </div>
-          <div
+                    <div
             className="graffiti-container"
           >
             <img
@@ -70,6 +47,31 @@ const Location = () => {
                 
             />
           </div>
+          <div
+            style={{
+              position: "absolute",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              loading="lazy"
+              onClick={() => window.open("https://maps.app.goo.gl/Bq5pA4tYWyc6FVHQA")}
+              src={icon}
+              alt="Icon"
+              className="icon-image"
+              style={{ width: "60px" }}
+            />
+            <p
+              className="guild-regular-font"
+              style={{ position: "relative", color: "white", top: "-20px", fontSize: isMobile ? "28px" : "34px" }}
+            >
+              [ HOUSE OF VANS ]
+            </p>
+          </div>
+
         </div>
       </div>
     </section>

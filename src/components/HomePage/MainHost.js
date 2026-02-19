@@ -1,5 +1,5 @@
 import "./MainHost.css";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -24,31 +24,45 @@ import posterdesktop6 from "../../assets/desktop/PostersPais/6_host_and-main.web
 import posterdesktop7 from "../../assets/desktop/PostersPais/7_Caster.webp";
 import { useViewport } from "../../context/ViewportContext";
 const MainHost = () => {
-
   const { isMobile } = useViewport();
   const actualFondo = isMobile ? actualFondo1 : actualFondoDesktop1;
   const carrousel = useRef(null);
+  const resumeAutoplayTimeoutRef = useRef(null);
+  const [isAutoPlayEnabled, setIsAutoPlayEnabled] = useState(true);
   let tempArray = [];
-  
-  if(isMobile){
-    tempArray.push(postermobil1)
-    tempArray.push(postermobil2)
+
+  useEffect(() => {
+    return () => {
+      if (resumeAutoplayTimeoutRef.current) {
+        clearTimeout(resumeAutoplayTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const pauseAutoplay = () => {
+    setIsAutoPlayEnabled(false);
+  };
+
+  const resumeAutoplay = () => {
+    setIsAutoPlayEnabled(true);
+  };
+
+  if (isMobile) {
+    tempArray.push(postermobil1);
+    tempArray.push(postermobil2);
     tempArray.push(postermobil3);
     tempArray.push(postermobil4);
     tempArray.push(postermobil5);
     tempArray.push(postermobil6);
-    
-  }else{
-    tempArray.push(posterdesktop1)
-    tempArray.push(posterdesktop2)
+  } else {
+    tempArray.push(posterdesktop1);
+    tempArray.push(posterdesktop2);
     tempArray.push(posterdesktop3);
     tempArray.push(posterdesktop4);
     tempArray.push(posterdesktop5);
     tempArray.push(posterdesktop6);
     tempArray.push(posterdesktop7);
   }
-  
-
 
   const responsive = {
     superLargeDesktop: {
@@ -70,22 +84,26 @@ const MainHost = () => {
     },
   };
 
-
-  const CustomLeftArrow = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      carouselState: { currentSlide, deviceType },
-    } = rest;
-    // onMove means if dragging or swiping in progress.
+  const CustomLeftArrow = ({ onClick }) => {
     return (
       <button
         className="react-multiple-carousel__arrow"
         style={{ left: isMobile ? "5px" : "2%" }}
-        onClick={() => onClick()}
+        onMouseEnter={pauseAutoplay}
+        onMouseLeave={resumeAutoplay}
+        onFocus={pauseAutoplay}
+        onBlur={resumeAutoplay}
+        onClick={onClick}
       >
         <img
           loading="lazy"
-          style={{ height: "40px", width: "40px" }}
+          style={{
+            height: isMobile ? "40px" : "70px",
+            width: isMobile ? "40px" : "70px",
+            position: "relative",
+            bottom: isMobile ? "40px" : "40px",
+            cursor: "pointer",
+          }}
           src={arrow}
           alt="Left Arrow"
         />
@@ -93,25 +111,26 @@ const MainHost = () => {
     );
   };
 
-  const CustomRightArrow = ({ onClick, ...rest }) => {
-    const {
-      onMove,
-      carouselState: { currentSlide, deviceType },
-    } = rest;
-    // onMove means if dragging or swiping in progress.
+  const CustomRightArrow = ({ onClick }) => {
     return (
       <button
         className="react-multiple-carousel__arrow"
         style={{ right: isMobile ? "5px" : "2%" }}
-        onClick={() => onClick()} 
+        onMouseEnter={pauseAutoplay}
+        onMouseLeave={resumeAutoplay}
+        onFocus={pauseAutoplay}
+        onBlur={resumeAutoplay}
+        onClick={onClick}
       >
         <img
           loading="lazy"
           style={{
-            height: "40px",
-            width: "40px",
+            height: isMobile ? "40px" : "70px",
+            width: isMobile ? "40px" : "70px",
             transform: "rotate(180deg)",
-            marginTop: "-15px",
+            position: "relative",
+            bottom: isMobile ? "40px" : "60px",
+            cursor: "pointer",
           }}
           src={arrow}
           alt="Left Arrow"
@@ -121,7 +140,7 @@ const MainHost = () => {
   };
 
   return (
-    <section  className="mainhost-section">
+    <section className="mainhost-section">
       <div
         style={{
           position: "absolute",
@@ -136,7 +155,13 @@ const MainHost = () => {
         }}
       >
         <div className="mainhost-container">
-          <><img src={losbarriosTitle} style={{height: "15vw", maxHeight: "100px"}} alt="Los Barrios" /></>
+          <>
+            <img
+              src={losbarriosTitle}
+              style={{ height: "15vw", maxHeight: "100px" }}
+              alt="Los Barrios"
+            />
+          </>
           <div
             className="heighModifier"
             style={{
@@ -148,8 +173,8 @@ const MainHost = () => {
               ref={carrousel}
               responsive={responsive}
               arrows
-              autoPlay
-          autoPlaySpeed={2000}
+              autoPlay={isAutoPlayEnabled}
+              autoPlaySpeed={2000}
               infinite
               customLeftArrow={<CustomLeftArrow />}
               customRightArrow={<CustomRightArrow />}
@@ -171,15 +196,40 @@ const MainHost = () => {
                     className="heighModifier"
                     alt={`Imagen ${index + 1}`}
                   />
+                  <div
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      backgroundColor: "red",
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      opacity: 0,
+                    }}
+                  ></div>
                 </div>
               ))}
             </Carousel>
           </div>
-
         </div>
       </div>
-      <img loading="lazy" src={actualFondo} className="mainhost-background" alt="Splash Art" />
-      <div  style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse"}}> <div loading="lazy" id='participate2' className='participate-handler' /></div>
+      <img
+        loading="lazy"
+        src={actualFondo}
+        className="mainhost-background"
+        alt="Splash Art"
+      />
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          display: "flex",
+          flexDirection: "row-reverse",
+        }}
+      >
+        {" "}
+        <div loading="lazy" id="participate2" className="participate-handler" />
+      </div>
     </section>
   );
 };

@@ -17,28 +17,42 @@ import imgband1 from "../../assets/main/IMG_Band.png";
 import imgband2 from "../../assets/desktop/Main/IMG_Band_web.webp";
 
 import { useViewport } from "../../context/ViewportContext";
+import { useEffect, useRef, useState } from "react";
 
 const LosBarrios = () => {
   const { isMobile } = useViewport();
+  const resumeAutoplayTimeoutRef = useRef(null);
+  const [isAutoPlayEnabled, setIsAutoPlayEnabled] = useState(true);
+  const imgband = isMobile ? imgband1 : imgband2;
 
-  const imgband = isMobile ? imgband1 : imgband2; 
+  useEffect(() => {
+    return () => {
+      if (resumeAutoplayTimeoutRef.current) {
+        clearTimeout(resumeAutoplayTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const pauseAutoplay = () => {
+    setIsAutoPlayEnabled(false);
+  };
+
+  const resumeAutoplay = () => {
+    setIsAutoPlayEnabled(true);
+  };
 
   let tempArray = [];
   if (!isMobile) {
     tempArray.push(actualFondoDesktop1);
     tempArray.push(actualFondoDesktop);
     tempArray.push(actualFondoDesktop2);
-    
-  }else{
+  } else {
     tempArray.push(actualFondo1);
     tempArray.push(actualFondo);
-    tempArray.push( actualFondo2);
-    tempArray.push( actualFondo3);
-    tempArray.push( actualFondo4);
-    
+    tempArray.push(actualFondo2);
+    tempArray.push(actualFondo3);
+    tempArray.push(actualFondo4);
   }
-
-
 
   const responsive = {
     superLargeDesktop: {
@@ -69,12 +83,22 @@ const LosBarrios = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
-        style={{ left: "10px" }}
-        onClick={() => onClick()}
+        style={{ left: isMobile ? "10px" : "60px", maxHeight: "0px" }}
       >
         <img
+          onClick={() => onClick()}
+                  onMouseEnter={pauseAutoplay}
+        onMouseLeave={resumeAutoplay}
+        onFocus={pauseAutoplay}
+        onBlur={resumeAutoplay}
           loading="lazy"
-          style={{ height: "40px", width: "40px", marginBottom: "40px"}}
+          style={{
+            height: isMobile ? "40px" : "70px",
+            width: isMobile ? "40px" : "70px",
+            position: "relative",
+            bottom: isMobile ? "40px" : "40px",
+            cursor: "pointer",
+          }}
           src={arrow}
           alt="Left Arrow"
         />
@@ -91,16 +115,22 @@ const LosBarrios = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
-        style={{ right: "10px" }}
-        onClick={() => onClick()}
+        style={{ right: isMobile ? "10px" : "60px", maxHeight: "0px" }}
       >
         <img
+          onClick={() => onClick()}
+                  onMouseEnter={pauseAutoplay}
+        onMouseLeave={resumeAutoplay}
+        onFocus={pauseAutoplay}
+        onBlur={resumeAutoplay}
           loading="lazy"
           style={{
-            height: "40px",
-            width: "40px",
+            cursor: "pointer",
+            height: isMobile ? "40px" : "70px",
+            width: isMobile ? "40px" : "70px",
             transform: "rotate(180deg)",
-            marginBottom: "60px"
+            position: "relative",
+            bottom: isMobile ? "40px" : "60px",
           }}
           src={arrow}
           alt="Left Arrow"
@@ -117,7 +147,7 @@ const LosBarrios = () => {
           infinite={true}
           showDots={true}
           arrows
-          autoPlay
+          autoPlay={isAutoPlayEnabled}
           autoPlaySpeed={2000}
           customLeftArrow={<CustomLeftArrow />}
           customRightArrow={<CustomRightArrow />}
@@ -146,6 +176,9 @@ const LosBarrios = () => {
                   paddingBottom: isMobile ? "20px" : "0px",
                 }}
               />
+              <div style={{height: "100%" , width: "100%", backgroundColor: "red", position: "absolute", top: 0, left: 0, opacity: 0}}>
+                
+              </div>
             </div>
           ))}
         </Carousel>

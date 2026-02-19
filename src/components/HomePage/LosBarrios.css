@@ -85,6 +85,7 @@
   border-width: 1px !important;
   height: 8px !important;
   width: 8px !important;
+  
 }
 
 .react-multi-carousel-dot--active button
@@ -95,6 +96,7 @@
 .react-multiple-carousel__arrow{
   background: transparent !important;
   z-index: 10 !important;
+  cursor:default !important;
 }
 
 .react-multiple-carousel__arrow:hover{
@@ -110,7 +112,7 @@
 
 
 .react-multi-carousel-dot-list{
-  bottom: 12vw !important;
+  bottom: 13vw !important;
 }
 
 @media (min-width: 1001px) {
