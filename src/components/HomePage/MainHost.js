@@ -148,6 +148,8 @@ const MainHost = () => {
               ref={carrousel}
               responsive={responsive}
               arrows
+              autoPlay
+          autoPlaySpeed={2000}
               infinite
               customLeftArrow={<CustomLeftArrow />}
               customRightArrow={<CustomRightArrow />}

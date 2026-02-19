@@ -25,16 +25,17 @@ const LosBarrios = () => {
 
   let tempArray = [];
   if (!isMobile) {
+    tempArray.push(actualFondoDesktop1);
     tempArray.push(actualFondoDesktop);
     tempArray.push(actualFondoDesktop2);
-    tempArray.push(actualFondoDesktop1);
-  }else{
-    tempArray.push(actualFondo);
     
+  }else{
+    tempArray.push(actualFondo1);
+    tempArray.push(actualFondo);
     tempArray.push( actualFondo2);
     tempArray.push( actualFondo3);
     tempArray.push( actualFondo4);
-    tempArray.push(actualFondo1);
+    
   }
 
 
@@ -116,6 +117,8 @@ const LosBarrios = () => {
           infinite={true}
           showDots={true}
           arrows
+          autoPlay
+          autoPlaySpeed={2000}
           customLeftArrow={<CustomLeftArrow />}
           customRightArrow={<CustomRightArrow />}
           itemClass="carousel-item-padding-40-px"
