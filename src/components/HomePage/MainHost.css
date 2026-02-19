@@ -108,8 +108,9 @@
 @media screen and (min-width: 1001px) {
   
   .heighModifier{
-    height: 35vw;
-    margin-top: 0.5vw;
+    height: 36vw;
+    width: auto;
+    margin-top: -20px;
   }
 
   .mainhost-background{

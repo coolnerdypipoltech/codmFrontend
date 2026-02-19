@@ -38,7 +38,7 @@ const Participate = () => {
         ))}
         <div style={{ minWidth: '5px' }}></div>
       </div>
-      <p className='text-participate' style={{color:"#CDCDCD", paddingLeft: "25px", paddingRight: "25px", paddingTop: "20px"}}>*Los participantes serán elegidos aleatoreamente</p>
+      <p className='text-participate' style={{ paddingLeft: "25px", paddingRight: "25px", paddingTop: "20px"}}>*Los participantes serán elegidos aleatoreamente</p>
     </section>
   );
 };

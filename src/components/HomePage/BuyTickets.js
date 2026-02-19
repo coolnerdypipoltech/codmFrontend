@@ -26,6 +26,7 @@ const BuyTickets = ({type}) => {
         
         <img
           className="buyTickets-background"
+          style={{maxHeight: type === "1" && isMobile ? "280px" : "",}}
           src={backgroundImage}
           alt="Background"
         ></img>
