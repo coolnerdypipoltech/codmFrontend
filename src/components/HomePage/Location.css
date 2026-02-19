@@ -200,15 +200,24 @@
   }
 }
 
+@media (max-width: 500px) {
+
+  .locacion-info{
+    padding-top: 100px;
+  }
+
+}
+
 
 @media (max-width: 425px) {
   .venue-image{
     min-height: 500px;
   }
   .locacion-info{
-    padding-top: 150px;
+    padding-top: 18vh;
   }
   .venue-address{
     font-size: 14px;
   }
 }
+

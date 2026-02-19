@@ -26,14 +26,15 @@ const LosBarrios = () => {
   let tempArray = [];
   if (!isMobile) {
     tempArray.push(actualFondoDesktop);
-    tempArray.push(actualFondoDesktop1);
     tempArray.push(actualFondoDesktop2);
+    tempArray.push(actualFondoDesktop1);
   }else{
     tempArray.push(actualFondo);
-    tempArray.push(actualFondo1);
+    
     tempArray.push( actualFondo2);
     tempArray.push( actualFondo3);
     tempArray.push( actualFondo4);
+    tempArray.push(actualFondo1);
   }
 
 
@@ -72,7 +73,7 @@ const LosBarrios = () => {
       >
         <img
           loading="lazy"
-          style={{ height: "40px", width: "40px" }}
+          style={{ height: "40px", width: "40px", marginBottom: "40px"}}
           src={arrow}
           alt="Left Arrow"
         />
@@ -98,7 +99,7 @@ const LosBarrios = () => {
             height: "40px",
             width: "40px",
             transform: "rotate(180deg)",
-            marginTop: "-15px",
+            marginBottom: "60px"
           }}
           src={arrow}
           alt="Left Arrow"

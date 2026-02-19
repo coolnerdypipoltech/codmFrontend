@@ -170,13 +170,13 @@ const Navbar = () => {
             loading="lazy"
             src={logoBarrios}
             style={{
-              height: "70px",
+              height: "84px",
               paddingLeft: "0px",
               cursor: "pointer",
               paddingTop: "10px",
               position: "relative",
-              left: isMobile ? "20px" : "60px",
-              bottom: "5px",
+              left: isMobile ? "-1px" : "50px",
+              bottom: "12px",
             }}
             alt="Logo"
             onClick={handleGoHome}
@@ -195,7 +195,7 @@ const Navbar = () => {
               className="menu-toggle"
               onClick={toggleDrawer}
               aria-label="Toggle menu"
-              style={{ paddingTop: "10px" }}
+              style={{ paddingBottom: "10px" }}
             >
               <div>
                 <img
@@ -256,7 +256,7 @@ const Navbar = () => {
                 src={logoNavMenu}
                 style={{
                   width: "40%",
-                  minWidth: "200px",
+                  minWidth: "330px",
                   paddingBottom: "50px",
                   alignSelf: "center",
                   cursor: "pointer",

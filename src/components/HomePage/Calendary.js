@@ -24,7 +24,7 @@ const Calendary = () => {
   });
 
   useEffect(() => {
-    const finalDate = new Date("2026-04-18T17:00:00-06:00").getTime();
+    const finalDate = new Date("2026-04-18T15:00:00-06:00").getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();

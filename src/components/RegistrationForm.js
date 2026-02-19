@@ -602,18 +602,6 @@ const RegistrationForm = () => {
               />
             </div>
 
-            <p
-              className="inter-font"
-              style={{
-                color: "grey",
-                textDecoration: "underline",
-                paddingTop: "10px",
-                fontSize: "14px",
-              }}
-            >
-              Consulta los requisitos para tu país
-            </p>
-
             {/* Checkboxes */}
             <div className="checkbox-group">
               <label className="checkbox-label">

@@ -11,7 +11,7 @@ function FAQsItem({title, text}) {
       <div >
         
         <div onClick={() => setSelected(!selected)}  style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
-          <p className="guild-regular-font" style={{fontSize: isMobile ? "16px" : "24px", paddingBottom: "8px"}}>{title}</p>
+          <p className="guild-regular-font" style={{color: "white", fontSize: isMobile ? "16px" : "24px", paddingBottom: "8px", paddingRight: "5px"}}>{title}</p>
           <img 
             loading="lazy"
             src={arrow} 
@@ -27,7 +27,7 @@ function FAQsItem({title, text}) {
             }}
           ></img>
         </div>
-        {selected && (<p className="inter-font" style={{fontSize: isMobile ? "14px" : "16px", paddingBottom: "0px"}}>{text}</p>)}
+        {selected && (<p className="inter-font" style={{color: "#D5D5D5", fontSize: isMobile ? "14px" : "16px", paddingBottom: "0px"}}>{text}</p>)}
       
     </div>
     </>
