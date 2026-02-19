@@ -157,10 +157,24 @@ const RegistrationForm = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+    setFormData((prev) => {
+      const updatedValue = type === "checkbox" ? checked : value;
+
+      if (name === "age") {
+        const ageNumber = Number(updatedValue);
+        return {
+          ...prev,
+          age: updatedValue,
+          legalAge: !Number.isNaN(ageNumber) && ageNumber >= 18,
+        };
+      }
+
+      return {
+        ...prev,
+        [name]: updatedValue,
+      };
+    });
+
 
     // Clear error when user starts typing
     if (errors[name]) {
@@ -632,7 +646,7 @@ const RegistrationForm = () => {
                   type="checkbox"
                   name="legalAge"
                   checked={formData.legalAge}
-                  onChange={handleChange}
+                  
                   className="inputDiamond"
                 />
                 <span
@@ -688,12 +702,34 @@ const RegistrationForm = () => {
                 <span
                   className="checkmark"
                   style={{
-                    marginBottom: "10px",
+                    marginBottom: "0px",
                     backgroundImage: `url(${formData.termsAndConditions ? diamondOn : diamondOff})`,
                   }}
                 ></span>
                 <p className="inputDiamond">
-                  He leído y acepto las Condiciones y Politícas de Privacidad
+                  He leído y acepto los{" "}
+                  <span
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      navigate("/terms");
+                    }}
+                    style={{ textDecoration: "underline", cursor: "pointer" }}
+                  >
+                    Términos y Condiciones
+                  </span>{" "}
+                  y{" "}
+                  <span
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      navigate("/privacy");
+                    }}
+                    style={{ textDecoration: "underline", cursor: "pointer" }}
+                  >
+                    Políticas de Privacidad
+                  </span>
+                  .
                 </p>
               </label>
               {errors.termsAndConditions && (
