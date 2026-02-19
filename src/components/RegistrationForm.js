@@ -199,9 +199,10 @@ const RegistrationForm = () => {
       surname: formData.surname,
       gamertag: formData.username,
       discord: formData.discord,
-      age: formData.age,
-      travel: formData.availabilityToTravel,
-      passport: formData.passport,
+      age: parseInt(formData.age, 10),
+      availabilityToTravel: formData.availabilityToTravel,
+      passport: true,
+      travel: formData.passport,
       legalAge: formData.legalAge
     };
     
