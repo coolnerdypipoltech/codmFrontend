@@ -35,6 +35,10 @@
   z-index: 1;
   top: -30px;
   width: 80%;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
 }
 
 .register-container:hover .register-highlight{
@@ -43,6 +47,16 @@
 
 .register-container:hover .register-text{
   color: white;
+}
+
+
+@media (max-width: 1000px) {
+  .register-highlight{
+    height: 35px;
+    top: -10px;
+    right: -30px;
+  }
+
 }
 
 .register-text{

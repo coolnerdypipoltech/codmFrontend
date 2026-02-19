@@ -1,7 +1,7 @@
 import React from "react";
-import imagen2 from "../../assets/main/IMG_texture_RGTM.png";
-import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_RegistrowebT.png";
-import comprarBoletos from "../../assets/desktop/Registro/Button_Registro al torneo_web.png";
+import imagen2 from "../../assets/main/IMG_texture_RGTM.webp";
+import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_RegistrowebT.webp";
+import comprarBoletos from "../../assets/desktop/Registro/Button_Registro al torneo_web.webp";
 
 import { useViewport } from "../../context/ViewportContext";
 import { useNavigate } from "react-router-dom";

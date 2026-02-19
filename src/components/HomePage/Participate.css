@@ -51,19 +51,11 @@
 }
 
 .participar-card {
-  background: #484848;
-  border: #707070 solid 0.5px;
-  border-radius: 35px;
-  padding: 2rem;
   transition: all 0.3s ease;
   overflow-y: visible;
-  min-width: 300px;
-  min-height: 400px;
+  min-width: 355px;
+  min-height: 483px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 35px;
-  -moz-border-radius: 35px;
-  -ms-border-radius: 35px;
-  -o-border-radius: 35px;
 }
 
 .participar-card:hover {

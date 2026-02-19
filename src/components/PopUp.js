@@ -1,5 +1,5 @@
 import React from "react";
-import buttonlayout from "../assets/registration/Button_Continuar.png";
+import buttonlayout from "../assets/registration/Button_Continuar.webp";
 const PopUp = ({ text, children, closePopUp, action }) => {
 
 

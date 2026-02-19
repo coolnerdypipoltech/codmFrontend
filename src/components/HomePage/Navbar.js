@@ -3,17 +3,16 @@ import { Toolbar } from "primereact/toolbar";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useNavigate } from "react-router";
-import brush from "../../assets/header/Brush_menu.png";
+import brush from "../../assets/header/Brush_menu.webp";
 import logoBarrios from "../../assets/logoBarrios.png";
-import fondoBarriosMobil from "../../assets/header/Header_70.png";
-import fondoMobile1 from "../../assets/navMenu/IMG_Background_Menu.png";
-import fondoMobile2 from "../../assets/desktop/Header/IMG_Background_Menu_web.png";
-import fondoBarriosDesktop from "../../assets/desktop/Header/Header_Desktop120.png";
+import fondoBarriosMobil from "../../assets/header/Header_70.webp";
+import fondoMobile1 from "../../assets/navMenu/IMG_Background_Menu.webp";
+import fondoMobile2 from "../../assets/desktop/Header/IMG_Background_Menu_web.webp";
+import fondoBarriosDesktop from "../../assets/desktop/Header/Header_Desktop120.webp";
 import logoNavMenu from "../../assets/logoBarrios.png";
-import brushNavMenu from "../../assets/navMenu/IMG_BRUSH.png";
-import buttonImage from "../../assets/navMenu/IMG_BUTTON_BACK.png";
-import infinixLogo from "../../assets/partners/Logo_Infinix_Black.png";
-import infinixLogoWhite from "../../assets/partners/INFINIX.png";
+import brushNavMenu from "../../assets/navMenu/IMG_BRUSH.webp";
+import buttonImage from "../../assets/navMenu/IMG_BUTTON_BACK.webp";
+import infinixLogoWhite from "../../assets/partners/INFINIX.webp";
 import { useViewport } from "../../context/ViewportContext";
 import { useLocation } from "react-router-dom";
 import NavBarItem from "../NavBarItem"; 
@@ -54,7 +53,7 @@ const Navbar = () => {
       height: "50px",
     },
     {
-      label: "UBICACIÓN",
+      label: "EVENTO IRL",
       command: () => handleScroll("location"),
       width: "200px",
       height: "50px",

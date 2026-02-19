@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 
 import "./InstructionsPage.css";
 import imageMobil from "../assets/instrucctions/Instrucciones_paso a paso UID.png";
-import imageDesktop from "../assets/desktop/Registro/InstruccionesUID.png"
-import buttonlayout from "../assets/registration/Button_Continuar.png";
+import imageDesktop from "../assets/desktop/Registro/InstruccionesUID.webp"
+import buttonlayout from "../assets/registration/Button_Continuar.webp";
 import { useViewport } from "../context/ViewportContext";
 import { useNavigate } from "react-router";
 const InstructionsPage = () => {

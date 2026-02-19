@@ -1,7 +1,7 @@
 import React from "react";
 import "./BarriosLatinos.css";
-import splashArt from "../../assets/main/IMG_Splash_1Home.png";
-import splashArtDesktop from "../../assets/desktop/Main/IMG_Splash_1Home_web.png";
+import splashArt from "../../assets/main/IMG_Splash_1Home.webp";
+import splashArtDesktop from "../../assets/desktop/Main/IMG_Splash_1Home_web.webp";
 import { useViewport } from "../../context/ViewportContext";
 
 const BarriosLatinos = () => {

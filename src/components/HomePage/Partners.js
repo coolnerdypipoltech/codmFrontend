@@ -1,6 +1,6 @@
 import React from 'react';
 import './Partners.css';
-import Icon from '../../assets/partners/INFINIX.png';
+import Icon from '../../assets/partners/INFINIX.webp';
 const Partners = () => {
   const sponsors = [
     { name: 'Sponsor 1' },

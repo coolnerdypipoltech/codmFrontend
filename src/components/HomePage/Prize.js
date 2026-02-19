@@ -2,9 +2,9 @@ import React from 'react';
 import './Prize.css';
 
 import video from "../../assets/videoPrize.mp4";
-import imgTitle from "../../assets/main/La gloriadelbarrio.png";
+import imgTitle from "../../assets/main/La gloriadelbarrio.webp";
 import imgband1 from "../../assets/main/IMG_Band.png";
-import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
+import imgband2 from "../../assets/desktop/Main/IMG_Band_web.webp";
 
 import { useViewport } from "../../context/ViewportContext";
 

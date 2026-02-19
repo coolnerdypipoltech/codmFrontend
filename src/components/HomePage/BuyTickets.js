@@ -1,9 +1,9 @@
 import React from "react";
-import imagen2 from "../../assets/main/IMG_texture_RG.png";
-import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_web.png";
-import image4 from "../../assets/main/IMG_texture_RG2.png";
-import image5 from "../../assets/desktop/Main/IMG_texture_RG_webT2.png";
-import comprarBoletos from "../../assets/main/Button_Comprar Boletos.png";
+import imagen2 from "../../assets/main/IMG_texture_RG.webp";
+import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_web.webp";
+import image4 from "../../assets/main/IMG_texture_RG2.webp";
+import image5 from "../../assets/desktop/Main/IMG_texture_RG_webT2.webp";
+import comprarBoletos from "../../assets/main/Button_Comprar Boletos.webp";
 
 import "./BuyTickets.css";
 import { useViewport } from "../../context/ViewportContext";

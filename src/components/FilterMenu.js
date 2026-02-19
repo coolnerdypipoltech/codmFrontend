@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./FilterMenu.css";
-import filterIcon from "../assets/registration/Icon_Desplegar.png";
-import checkMark from "../assets/registration/Icon_Desplegar.png";
+import filterIcon from "../assets/registration/Icon_Desplegar.webp";
+import checkMark from "../assets/registration/Icon_Desplegar.webp";
  
 function FilterMenu({
   selectedValue,

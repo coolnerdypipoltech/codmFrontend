@@ -1,4 +1,4 @@
-import trazado767 from ".././assets/registration/Icon_tooltip.png";
+import trazado767 from ".././assets/registration/Icon_tooltip.webp";
 import "./tooltip.css";
 
 function InfoTooltip({text}) {

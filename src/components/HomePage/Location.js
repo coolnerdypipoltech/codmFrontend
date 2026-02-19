@@ -1,13 +1,12 @@
 import React from "react";
 import "./Location.css";
-import venue1 from "../../assets/main/IMG_Venue.png";
-import venue2 from "../../assets/desktop/Main/IMG_Venue.png"
-import textura1 from "../../assets/main/Textura_UbicacionM.png";
-import textura2 from "../../assets/desktop/Main/Textura Ubicacion.png";
-import icon from "../../assets/main/Icon_Ubicación.png";
-import graffiti from "../../assets/main/TAGS_BLACK.png";
-import sticker1 from "../../assets/main/STICKER BOCA.png";
-import sticker2 from "../../assets/main/STICKERS_CODM_03.png";
+import venue1 from "../../assets/main/IMG_Venue.webp";
+import venue2 from "../../assets/desktop/Main/IMG_Venue.webp"
+import textura1 from "../../assets/main/Textura_UbicacionM.webp";
+import textura2 from "../../assets/desktop/Main/Textura Ubicacion.webp";
+import icon from "../../assets/main/Icon_Ubicación.webp";
+import sticker1 from "../../assets/main/STICKER BOCA.webp";
+import sticker2 from "../../assets/main/STICKERS_CODM_03.webp";
 import { useViewport } from "../../context/ViewportContext";
 const Location = () => {
 
@@ -29,7 +28,7 @@ const Location = () => {
 
         </div>
 
-        <div className="map-container">
+        <div className="map-container" onClick={() => window.open("https://maps.app.goo.gl/Bq5pA4tYWyc6FVHQA")}>
           <img loading="lazy" src={venue} alt="Venue" className="venue-image" />
           <div
             style={{

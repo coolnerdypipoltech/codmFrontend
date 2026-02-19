@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
 import "./PrivacyPage.css";
-import image from "../assets/registration/Background_Registro.png";
-import buttonlayout from "../assets/registration/Button_Continuar.png";
+import image from "../assets/registration/Background_Registro.webp";
+import buttonlayout from "../assets/registration/Button_Continuar.webp";
 import brushNavMenu from "../assets/navMenu/IMG_BRUSH.png";
 import { useNavigate } from "react-router";
 const PrivacyPage = () => {

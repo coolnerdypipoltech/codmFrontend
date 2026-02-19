@@ -3,13 +3,13 @@ import "./RegistrationForm.css";
 import diamondOff from "../assets/registration/diamondOff.svg";
 import diamondOn from "../assets/registration/diamondOn.svg";
 import { Captcha } from "recaptz";
-import buttonlayout from "../assets/registration/Button_Continuar.png";
+import buttonlayout from "../assets/registration/Button_Continuar.webp";
 import PopUp from "./PopUp";
-import icon from "../assets/registration/Icon_Importante.png";
+import icon from "../assets/registration/Icon_Importante.webp";
 import InfoTooltip from "./InfoTooltip";
 import { useNavigate } from "react-router";
-import semaforo_of from "../assets/registration/Semaforo_Of.png";
-import semaforo_on from "../assets/registration/Semaforo_On.png";
+import semaforo_of from "../assets/registration/Semaforo_Of.webp";
+import semaforo_on from "../assets/registration/Semaforo_On.webp";
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     email: "",

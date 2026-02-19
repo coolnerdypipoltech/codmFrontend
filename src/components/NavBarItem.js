@@ -1,5 +1,5 @@
 import { useState } from "react";
-import brushNavMenu from "../assets/desktop/Header/Brush_L.png";
+import brushNavMenu from "../assets/desktop/Header/Brush_L.webp";
 function NavBarItem({ text, command, index }) {
   const [hover, setHover] = useState(false);
   let width = 180;

@@ -1,9 +1,9 @@
 import React from 'react';
 import './Prize.css';
-import imagen2 from "../../assets/main/IMG_Regional Qualifiers.png";
-import imagen2Desktop from "../../assets/desktop/Main/IMG_Regional Qualifiers.png";
+import imagen2 from "../../assets/main/IMG_Regional Qualifiers.webp";
+import imagen2Desktop from "../../assets/desktop/Main/IMG_Regional Qualifiers.webp";
 import imgband1 from "../../assets/main/IMG_Band.png";
-import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
+import imgband2 from "../../assets/desktop/Main/IMG_Band_web.webp";
 
   import { useViewport } from "../../context/ViewportContext";
 

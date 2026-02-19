@@ -3,13 +3,18 @@ import "./LosBarrios.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import arrow from "../../assets/main/Icon_next-white.png";
-import actualFondo from "../../assets/main/IMG_Splash_RepresentaTuBarrio1.png";
-import actualFondo1 from "../../assets/main/IMG_Splash_RepresentaTuBarrio.png";
-import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.png";
+import arrow from "../../assets/main/Icon_next-white.webp";
+import actualFondo from "../../assets/main/IMG_Splash_RepresentaTuBarrio1.webp";
+import actualFondo1 from "../../assets/main/IMG_Splash_RepresentaTuBarrio.webp";
+import actualFondo2 from "../../assets/main/1.webp";
+import actualFondo3 from "../../assets/main/2.webp";
+import actualFondo4 from "../../assets/main/3.webp";
+
+import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.webp";
 import actualFondoDesktop1 from "../../assets/desktop/Main/Banner_desktop.webp";
+import actualFondoDesktop2 from "../../assets/desktop/Main/QUALI.webp";
 import imgband1 from "../../assets/main/IMG_Band.png";
-import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
+import imgband2 from "../../assets/desktop/Main/IMG_Band_web.webp";
 
 import { useViewport } from "../../context/ViewportContext";
 
@@ -22,11 +27,13 @@ const LosBarrios = () => {
   if (!isMobile) {
     tempArray.push(actualFondoDesktop);
     tempArray.push(actualFondoDesktop1);
-    tempArray.push(actualFondoDesktop);
+    tempArray.push(actualFondoDesktop2);
   }else{
     tempArray.push(actualFondo);
     tempArray.push(actualFondo1);
-    tempArray.push(actualFondo);
+    tempArray.push( actualFondo2);
+    tempArray.push( actualFondo3);
+    tempArray.push( actualFondo4);
   }
 
 
@@ -132,6 +139,7 @@ const LosBarrios = () => {
                   height: "auto",
                   objectFit: "fill",
                   maxWidth: "400px",
+                  paddingBottom: isMobile ? "20px" : "0px",
                 }}
               />
             </div>

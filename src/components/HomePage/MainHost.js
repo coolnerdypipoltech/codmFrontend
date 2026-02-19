@@ -1,34 +1,31 @@
 import "./MainHost.css";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import arrow from "../../assets/main/Icon_next.png";
-import actualFondo1 from "../../assets/main/IMG_Background_Los barrios.png";
-import actualFondoDesktop1 from "../../assets/desktop/Main/IMG_Background_Los barrios_WEB.png";
-import losbarriosTitle from "../../assets/main/Los barrios_web.png";
+import arrow from "../../assets/main/Icon_next.webp";
+import actualFondo1 from "../../assets/main/IMG_Background_Los barrios.webp";
+import actualFondoDesktop1 from "../../assets/desktop/Main/IMG_Background_Los barrios_WEB.webp";
+import losbarriosTitle from "../../assets/main/Los barrios_web.webp";
 
-import postermobil1 from "../../assets/posters/1_Poster MX.png";
-import postermobil2 from "../../assets/posters/2_Poster COL.png";
-import postermobil3 from "../../assets/posters/3_Poster ARG.png";
-import postermobil4 from "../../assets/posters/4_Poster CL.png";
-import postermobil5 from "../../assets/posters/5_Poster PE_EC.png";
-import postermobil6 from "../../assets/posters/6_host_and-main.png";
-import imgband1 from "../../assets/main/IMG_Band.png";
-import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
+import postermobil1 from "../../assets/posters/1_Poster MX.webp";
+import postermobil2 from "../../assets/posters/2_Poster COL.webp";
+import postermobil3 from "../../assets/posters/3_Poster ARG.webp";
+import postermobil4 from "../../assets/posters/4_Poster CL.webp";
+import postermobil5 from "../../assets/posters/5_Poster PE_EC.webp";
+import postermobil6 from "../../assets/posters/6_host_and-main.webp";
 
-import posterdesktop1 from "../../assets/desktop/PostersPais/1_Poster MX.png";
-import posterdesktop2 from "../../assets/desktop/PostersPais/2_Poster COL.png";
-import posterdesktop3 from "../../assets/desktop/PostersPais/3_Poster ARG.png";
-import posterdesktop4 from "../../assets/desktop/PostersPais/4_Poster CL.png";
-import posterdesktop5 from "../../assets/desktop/PostersPais/5_Poster PE_EC.png";
-import posterdesktop6 from "../../assets/desktop/PostersPais/6_host_and-main.png";
-import posterdesktop7 from "../../assets/desktop/PostersPais/7_Caster.png";
+import posterdesktop1 from "../../assets/desktop/PostersPais/1_Poster MX.webp";
+import posterdesktop2 from "../../assets/desktop/PostersPais/2_Poster COL.webp";
+import posterdesktop3 from "../../assets/desktop/PostersPais/3_Poster ARG.webp";
+import posterdesktop4 from "../../assets/desktop/PostersPais/4_Poster CL.webp";
+import posterdesktop5 from "../../assets/desktop/PostersPais/5_Poster PE_EC.webp";
+import posterdesktop6 from "../../assets/desktop/PostersPais/6_host_and-main.webp";
+import posterdesktop7 from "../../assets/desktop/PostersPais/7_Caster.webp";
 import { useViewport } from "../../context/ViewportContext";
 const MainHost = () => {
 
   const { isMobile } = useViewport();
-  const imgband = isMobile ? imgband1 : imgband2;
   const actualFondo = isMobile ? actualFondo1 : actualFondoDesktop1;
   const carrousel = useRef(null);
   let tempArray = [];

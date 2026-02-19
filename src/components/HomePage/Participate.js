@@ -1,12 +1,12 @@
-import React from 'react';
-import { Card } from 'primereact/card';
-import './Participate.css';
-import imagen2 from "../../assets/main/IMG_BATTLE ROYALE.png";
-import imagen1 from "../../assets/main/IMG_ENTRA AL JUEGO.png";
-import imagen3 from "../../assets/main/IMG_GRAN FINAL.png"
 
-import background from "../../assets/main/IMG_Background_comoparticipar.png"
-import backgroundDesktop from "../../assets/desktop/Main/IMG_Background_Participar.png"
+import './Participate.css';
+import imagen1 from "../../assets/cards/Tarjeta_1.webp";
+import imagen2 from "../../assets/cards/Tarjeta_2.webp";
+import imagen3 from "../../assets/cards/Tarjeta_3.webp";
+import imagen4 from "../../assets/cards/Tarjeta_4.webp";
+
+import background from "../../assets/main/IMG_Background_comoparticipar.webp"
+import backgroundDesktop from "../../assets/desktop/Main/IMG_Background_Participar.webp"
 import { useViewport } from "../../context/ViewportContext";
 const Participate = () => {
 
@@ -16,20 +16,15 @@ const Participate = () => {
 
   const steps = [
     {
-      imagen: imagen1,
-      title: 'ENTRA AL JUEGO',
-      description: '200 jugadores por país entran a las clasificatorias.'
-    },
+      imagen: imagen1,   },
     {
-      imagen: imagen2,
-      title: 'BATTLE ROYALE',
-      description: 'Juega 2 partidas de Battle Royale y llega al Top 20 para avanzar. Solo 5 sobreviven al enfrentamiento en Alcatraz.'
-    },
+      imagen: imagen2,  },
     {
       imagen: imagen3,
-      title: 'GRAN FINAL',
-      description: '3 partidas por país + Batalla Final de MC Freestyle. El primero en llegar a 5 puntos gana.'
-    }
+   },
+    {
+      imagen: imagen4,
+   }
   ];
 
   return (
@@ -39,14 +34,7 @@ const Participate = () => {
       <div className="participar-cards-container">
         <div style={{ minWidth: '5px' }}></div>
         {steps.map((step, index) => (
-          <Card key={index} className="participar-card">
-            <p className='guild-font' style={{color: "white", fontSize: "18px", textAlign: "left", paddingBottom: "16px"}}>{step.title}</p>
-            <div className="card-icon">
-              <img loading="lazy" className='imageCard-participate' src={step.imagen} alt={step.title} />
-            </div>
-
-            <p className='card-text-participate'>{step.description}</p>
-          </Card>
+          <img className="participar-card" src={step.imagen} alt={`Step ${index + 1}`} />
         ))}
         <div style={{ minWidth: '5px' }}></div>
       </div>

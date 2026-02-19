@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import RegistrationForm from '../components/RegistrationForm';
 import './RegistroPage.css';
-import backgroundImageMobile from "../assets/registration/Background_Registro.png";
-import backgroundImageDesktop from "../assets/desktop/Registro/Background_Registro_web.png";
-import graffiti1 from "../assets/registration/TAGS_graffitii_Barras.png"
-import graffiti2 from "../assets/registration/TAGS_graffitii_replica.png";
+import backgroundImageMobile from "../assets/registration/Background_Registro.webp";
+import backgroundImageDesktop from "../assets/desktop/Registro/Background_Registro_web.webp";
+import graffiti1 from "../assets/registration/TAGS_graffitii_Barras.webp"
+import graffiti2 from "../assets/registration/TAGS_graffitii_replica.webp";
 import { useViewport } from "../context/ViewportContext";
 const RegistroPage = () => {
 

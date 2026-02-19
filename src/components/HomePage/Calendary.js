@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Calendary.css";
-import fondo from "../../assets/main/IMG_Texture_Gran_final.png";
-import fondoDesktop from "../../assets/desktop/Main/IMG_Texture_Granfinal_web.png";
-import brushNavMenu from "../../assets/main/IMG_BRUSHCalendary.png";
-import fecha1 from "../../assets/main/IMG_Fecha.png";
-import fechaDesktop from "../../assets/desktop/Main/IMG_Fecha_web.png";
+import fondo from "../../assets/main/IMG_Texture_Gran_final.webp";
+import fondoDesktop from "../../assets/desktop/Main/IMG_Texture_Granfinal_web.webp";
+import brushNavMenu from "../../assets/main/IMG_BRUSHCalendary.webp";
+import fecha1 from "../../assets/main/IMG_Fecha.webp";
+import fechaDesktop from "../../assets/desktop/Main/IMG_Fecha_web.webp";
 import imgband1 from "../../assets/main/IMG_Band.png";
-import imgband2 from "../../assets/desktop/Main/IMG_Band_web.png";
+import imgband2 from "../../assets/desktop/Main/IMG_Band_web.webp";
 
 import { useViewport } from "../../context/ViewportContext";
 
