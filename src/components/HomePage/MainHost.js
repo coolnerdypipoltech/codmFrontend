@@ -80,7 +80,7 @@ const MainHost = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
-        style={{ left: isMobile ? "0%" : "2%" }}
+        style={{ left: isMobile ? "5px" : "2%" }}
         onClick={() => onClick()}
       >
         <img
@@ -102,8 +102,8 @@ const MainHost = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
-        style={{ right: isMobile ? "0%" : "2%" }}
-        onClick={() => onClick()}
+        style={{ right: isMobile ? "5px" : "2%" }}
+        onClick={() => onClick()} 
       >
         <img
           loading="lazy"
@@ -141,7 +141,7 @@ const MainHost = () => {
             className="heighModifier"
             style={{
               paddingBottom: "20px",
-              width: "90%",
+              width: "100%",
             }}
           >
             <Carousel
