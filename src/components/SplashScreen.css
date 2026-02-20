@@ -13,6 +13,12 @@
   -webkit-animation: splashFadeOut 0.5s ease 4.5s forwards;
 }
 
+@media (min-width: 1520px) {
+  .splash-screen{
+    background-size: cover !important;
+  }
+}
+
 .splash-logo {
   width: clamp(160px, 30vw, 320px);
   object-fit: contain;

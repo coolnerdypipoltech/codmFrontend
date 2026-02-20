@@ -23,18 +23,21 @@ function SplashScreen({ children }) {
     splashShown = true;
     const timer = setTimeout(() => {
       setVisible(false);
-    }, 4500);
+    }, 4000);
     return () => clearTimeout(timer);
   }, [visible]);
 
   if (visible) {
     return (
       <div
+              style={{ backgroundImage: `url(${fondoMobil})`, backgroundPosition: "center", backgroundSize: "auto 100%" }}
+   
         className="splash-screen"
-        style={{ backgroundImage: `url(${fondoMobil})`, backgroundPosition: "center", backgroundSize: "auto 100%" }}
-      >
+   >
         <div style={{ width: "100%", minHeight: "100px", position: "absolute", bottom: "100px", display: "flex", justifyContent: "center" }}>
-            <img src={loadingbg} alt="Loading" style={{position: "absolute"}}/>
+            <img src={loadingbg} alt="Loading" style={{position: "absolute", width: "300px", bottom: "-19px", 
+          
+            }}/>
             <p className="guild-font loading-text" style={{position: "absolute", bottom: "20px", color: "white", fontSize: "20px"}}>Loading</p>
         </div>
        
