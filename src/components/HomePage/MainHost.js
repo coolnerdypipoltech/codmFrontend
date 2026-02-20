@@ -14,6 +14,7 @@ import postermobil3 from "../../assets/posters/3_Poster ARG.webp";
 import postermobil4 from "../../assets/posters/4_Poster CL.webp";
 import postermobil5 from "../../assets/posters/5_Poster PE_EC.webp";
 import postermobil6 from "../../assets/posters/6_host_and-main.webp";
+import postermobil7 from "../../assets/posters/7_HostMov.webp";
 
 import posterdesktop1 from "../../assets/desktop/PostersPais/1_Poster MX.webp";
 import posterdesktop2 from "../../assets/desktop/PostersPais/2_Poster COL.webp";
@@ -22,6 +23,7 @@ import posterdesktop4 from "../../assets/desktop/PostersPais/4_Poster CL.webp";
 import posterdesktop5 from "../../assets/desktop/PostersPais/5_Poster PE_EC.webp";
 import posterdesktop6 from "../../assets/desktop/PostersPais/6_host_and-main.webp";
 import posterdesktop7 from "../../assets/desktop/PostersPais/7_Caster.webp";
+
 import { useViewport } from "../../context/ViewportContext";
 const MainHost = () => {
   const { isMobile } = useViewport();
@@ -54,6 +56,7 @@ const MainHost = () => {
     tempArray.push(postermobil4);
     tempArray.push(postermobil5);
     tempArray.push(postermobil6);
+    tempArray.push(postermobil7);
   } else {
     tempArray.push(posterdesktop1);
     tempArray.push(posterdesktop2);
