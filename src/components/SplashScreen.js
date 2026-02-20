@@ -38,7 +38,7 @@ function SplashScreen({ children }) {
             <img src={loadingbg} alt="Loading" style={{position: "absolute", width: "300px", bottom: "-19px", 
           
             }}/>
-            <p className="guild-font loading-text" style={{position: "absolute", bottom: "20px", color: "white", fontSize: "20px"}}>Loading</p>
+            <p className="guild-font loading-text" style={{position: "absolute", bottom: "20px", color: "white", fontSize: "20px"}}>Cargando</p>
         </div>
        
       </div>
