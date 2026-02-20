@@ -148,7 +148,7 @@ const LosBarrios = () => {
           showDots={true}
           arrows
           autoPlay={isAutoPlayEnabled}
-          autoPlaySpeed={2000}
+          autoPlaySpeed={3000}
           customLeftArrow={<CustomLeftArrow />}
           customRightArrow={<CustomRightArrow />}
           itemClass="carousel-item-padding-40-px"

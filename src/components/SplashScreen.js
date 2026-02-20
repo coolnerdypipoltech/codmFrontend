@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom";
 import "./SplashScreen.css";
 import loadingbg from "../assets/loading/Brush_Loading.webp";
 import fondoMobil from "../assets/loading/IMG_Background_Cargando.webp";
-import videoMobile from "../assets/CODMOBILEBL9_16.webm"
-import videoDesktop from "../assets/CODMOBILEBL_16_9.webm"
+import videoMobile from "../assets/CODMOBILEBL9_16.mp4"
+import videoDesktop from "../assets/CODMOBILEBL_16_9.mp4"
 import { useViewport } from "../context/ViewportContext";
 
 let introShown = false;
