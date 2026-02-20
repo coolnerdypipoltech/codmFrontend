@@ -174,7 +174,7 @@ const MainHost = () => {
               responsive={responsive}
               arrows
               autoPlay={isAutoPlayEnabled}
-              autoPlaySpeed={2000}
+              autoPlaySpeed={2500}
               infinite
               customLeftArrow={<CustomLeftArrow />}
               customRightArrow={<CustomRightArrow />}

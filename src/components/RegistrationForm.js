@@ -186,6 +186,16 @@ const RegistrationForm = () => {
     if (!validateForm()) {
       return;
     }
+
+    // Google Analytics: track form submission attempt
+    if (window.gtag) {
+      window.gtag('event', 'form_submit', {
+        event_category: 'Registration',
+        event_label: 'Registro Form Submit',
+        country: formData.country,
+      });
+    }
+
     setForceReloadCaptcha((prev) => prev + 1);
     setIsLoading(true);
     
@@ -216,6 +226,14 @@ const RegistrationForm = () => {
       });
 
       if (response.status === 200) {
+        // Google Analytics: track successful registration
+        if (window.gtag) {
+          window.gtag('event', 'registration_success', {
+            event_category: 'Registration',
+            event_label: 'Registro Exitoso',
+            country: formData.country,
+          });
+        }
         setPopup({
           show: true,
           type: "success",

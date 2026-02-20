@@ -141,8 +141,10 @@ const Calendary = () => {
               </div>
               <span className="countdown-label">SEG</span>
             </div>
+            
           </div>
-        </div>
+       <p className='text-participate2' style={{ color: "black", fontSize: isMobile ? "14px" : "18px" }}>Zona horaria central (CST)</p>
+      </div>
         <div id='location' style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse"}}> <img loading="lazy" src={imgband} alt="Band" className='image-band5' /></div>
       
       </section>

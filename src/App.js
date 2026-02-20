@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import SplashScreen from "./components/SplashScreen";
 import RegistroPage from "./pages/RegistroPage";
 
 import InstructionsPage from "./pages/InstructionsPage";
@@ -15,6 +16,7 @@ function App() {
   return (
     <ViewportProvider>
       <Router basename="/">
+        <SplashScreen>
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -44,6 +46,7 @@ function App() {
           <Route path="*" element={<HomePage />} />
         </Routes>
         <Footer/>
+        </SplashScreen>
       </Router>
     </ViewportProvider>
   );

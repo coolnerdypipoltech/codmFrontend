@@ -14,6 +14,12 @@ const RegistroPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_title: 'Registro',
+        page_path: '/registro',
+      });
+    }
   }, []);
   return (
     <div className="registro-page">
