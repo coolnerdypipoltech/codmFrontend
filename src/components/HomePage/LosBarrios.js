@@ -9,7 +9,7 @@ import actualFondo1 from "../../assets/main/IMG_Splash_RepresentaTuBarrio.webp";
 import actualFondo2 from "../../assets/main/1.webp";
 import actualFondo3 from "../../assets/main/2.webp";
 import actualFondo4 from "../../assets/main/3.webp";
-
+import actualFondo5 from "../../assets/main/4.webp";
 import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.webp";
 import actualFondoDesktop1 from "../../assets/desktop/Main/Banner_desktop.webp";
 import actualFondoDesktop2 from "../../assets/desktop/Main/QUALI.webp";
@@ -52,8 +52,8 @@ const LosBarrios = () => {
     tempArray.push(actualFondo2);
     tempArray.push(actualFondo3);
     tempArray.push(actualFondo4);
+    tempArray.push(actualFondo5);
   }
-
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.

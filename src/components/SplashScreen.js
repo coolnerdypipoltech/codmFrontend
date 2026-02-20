@@ -3,7 +3,8 @@ import { useLocation } from "react-router-dom";
 import "./SplashScreen.css";
 import loadingbg from "../assets/loading/Brush_Loading.webp";
 import fondoMobil from "../assets/loading/IMG_Background_Cargando.webp";
-import videoPrize from "../assets/videoPrize.mp4";
+import videoMobile from "../assets/CODMOBILEBL9_16.webm"
+import videoDesktop from "../assets/CODMOBILEBL_16_9.webm"
 import { useViewport } from "../context/ViewportContext";
 
 let introShown = false;
@@ -13,7 +14,7 @@ function SplashScreen({ children }) {
   const location = useLocation();
   const { isMobile } = useViewport();
   const videoRef = useRef(null);
-
+  const videoFinal = isMobile ? videoMobile : videoDesktop;
   const isHome =
     location.pathname === "/" ||
     location.pathname === "/codmFrontend" ||
@@ -21,6 +22,7 @@ function SplashScreen({ children }) {
 
   const [phase, setPhase] = useState(isHome && !introShown ? "splash" : "done");
   const [splashFading, setSplashFading] = useState(false);
+  const [muted, setMuted] = useState(true);
 
   // Splash phase: fade out at 3.5s, switch to video at 4s
   useEffect(() => {
@@ -39,6 +41,12 @@ function SplashScreen({ children }) {
 
   const handleVideoEnd = () => setPhase("done");
   const handleSkip = () => setPhase("done");
+  const handleUnmute = () => {
+    if (muted) {
+      setMuted(false);
+      if (videoRef.current) videoRef.current.muted = false;
+    }
+  };
 
   if (phase === "done") return children;
 
@@ -93,7 +101,7 @@ function SplashScreen({ children }) {
 
       {/* Video intro overlay */}
       {phase === "video" && (
-        <div className="video-intro">
+        <div className="video-intro" onClick={handleUnmute}>
           <video
             ref={videoRef}
             className="video-intro__player"
@@ -102,10 +110,15 @@ function SplashScreen({ children }) {
             muted
             onEnded={handleVideoEnd}
           >
-            <source src={videoPrize} type="video/mp4" />
+            <source src={videoFinal} type="video/mp4" />
           </video>
-          <button className="video-intro__skip" onClick={handleSkip}>
-            Skip ▶
+          {muted && (
+            <div className="video-intro__unmute-hint">
+             Toca para activar el sonido
+            </div>
+          )}
+          <button className="video-intro__skip" onClick={(e) => { e.stopPropagation(); handleSkip(); }}>
+            Saltar ▶
           </button>
         </div>
       )}

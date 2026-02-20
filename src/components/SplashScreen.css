@@ -130,3 +130,32 @@
   background: rgba(255, 255, 255, 0.2);
   border-color: #fff;
 }
+
+.video-intro__unmute-hint {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 32px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  animation: hintPulse 2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+
+@media (max-width:1000px) {
+  .video-intro__unmute-hint{
+    font-size: 18px;
+    padding: 6px 14px;
+  }
+}
+
+@keyframes hintPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
