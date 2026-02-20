@@ -84,9 +84,9 @@ const RegistrationForm = () => {
     const newErrors = {};
 
     if (!formData.email) {
-      newErrors.email = "El email es requerido";
+      newErrors.email = "El correo es requerido";
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = "El email no es válido";
+      newErrors.email = "El correo no es válido";
     }
 
     if (!formData.country) {
@@ -111,10 +111,6 @@ const RegistrationForm = () => {
 
     if (!formData.username) {
       newErrors.username = "El nombre de usuario es requerido";
-    }
-
-    if (!formData.discord) {
-      newErrors.discord = "El Discord es requerido";
     }
 
     if (!formData.age) {
@@ -151,7 +147,7 @@ const RegistrationForm = () => {
       successElement &&
       successElement.textContent === "Verification Successful!"
     ) {
-      successElement.textContent = "Verificación Exitosa";
+      successElement.textContent = "Captcha completado con éxito!";
     }
   };
 
@@ -198,6 +194,11 @@ const RegistrationForm = () => {
 
     setForceReloadCaptcha((prev) => prev + 1);
     setIsLoading(true);
+
+    let helperDiscord = "null"
+    if(formData.discord.trim() !== "") {
+      helperDiscord = formData.discord.trim();
+    }
     
     // Filtrar solo los campos no booleanos para enviar al servidor
     const dataToSend = {
@@ -208,7 +209,7 @@ const RegistrationForm = () => {
       name: formData.name,
       surname: formData.surname,
       gamertag: formData.username,
-      discord: formData.discord,
+      discord: helperDiscord,
       age: parseInt(formData.age, 10),
       availabilityToTravel: formData.availabilityToTravel,
       passport: true,
@@ -303,13 +304,15 @@ const RegistrationForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    console.log(isVerified)
-    if (isVerified && Object.keys(errors).length > 0) {
-      setIsFormCompleted(true);
+
+        e.preventDefault();
+
+    if (isVerified && !validateForm()) {
+      setIsFormCompleted(false);
       return;
     }
-    e.preventDefault();
-    validateForm();
+    
+
     if(!isVerified) {
       const captchaButton = document.querySelector(
       ".my-custom-captcha button.bg-blue-600",
@@ -411,7 +414,7 @@ const RegistrationForm = () => {
             <div className="form-group">
               <div style={{ display: "flex", flexDirection: "row" }}>
                 <label className="inter-font" htmlFor="uid">
-                  UID de CODM
+                  UID de CODM*
                 </label>
                 <InfoTooltip
                   text={
@@ -449,7 +452,7 @@ const RegistrationForm = () => {
             {/* name */}
             <div className="form-group">
               <label className="inter-font" htmlFor="name">
-                Nombres
+                Nombres*
               </label>
               <input
                 type="text"
@@ -470,7 +473,7 @@ const RegistrationForm = () => {
             {/* Surname */}
             <div className="form-group">
               <label className="inter-font" htmlFor="surname">
-                Apellidos
+                Apellidos*  
               </label>
               <input
                 type="text"
@@ -489,7 +492,7 @@ const RegistrationForm = () => {
             {/* Username */}
             <div className="form-group">
               <label className="inter-font" htmlFor="username">
-                Username
+                Username*
               </label>
               <input
                 type="text"
@@ -527,7 +530,7 @@ const RegistrationForm = () => {
             {/* Age */}
             <div className="form-group">
               <label className="inter-font" htmlFor="age">
-                Edad
+                Edad*
               </label>
               <input
                 type="number"
@@ -547,7 +550,7 @@ const RegistrationForm = () => {
             {/* Email */}
             <div className="form-group">
               <label className="inter-font" htmlFor="email">
-                Email{" "}
+                Correo*
               </label>
               <input
                 type="email"
@@ -566,7 +569,7 @@ const RegistrationForm = () => {
             {/* Country */}
             <div className="form-group">
               <label className="inter-font" htmlFor="country">
-                País
+                País*
               </label>
               <select
                 id="country"
@@ -592,7 +595,7 @@ const RegistrationForm = () => {
             {/* Zip Code */}
             <div className="form-group">
               <label className="inter-font" htmlFor="zipCode">
-                Código Postal
+                Código Postal*
               </label>
               <input
                 type="text"
@@ -786,6 +789,10 @@ const RegistrationForm = () => {
             </span>
           )}
 
+                    {Object.keys(errors).length > 0 && (
+            <span className="error-message">Por favor completa los datos obligatorios para completar tu registro</span>
+          )}
+
           <button
             disabled={isLoading}
             onClick={handleSubmit}
@@ -821,9 +828,7 @@ const RegistrationForm = () => {
 
           <div style={{ minHeight: "30px" }}></div>
 
-          {Object.keys(errors).length > 0 && (
-            <span className="error-message">Porfavor revisa sus datos</span>
-          )}
+
           <div style={{ display: "flex", flexDirection: "row", gap: "5px", justifyContent: "center" }}>
             <img
               loading="lazy"
@@ -854,7 +859,7 @@ const RegistrationForm = () => {
             <p><strong>Nombre de usuario:</strong> {formData.username}</p>
             <p><strong>Discord:</strong> {formData.discord}</p>
             <p><strong>Edad:</strong> {formData.age}</p>
-            <p><strong>Email:</strong> {formData.email}</p>
+            <p><strong>Correo:</strong> {formData.email}</p>
             <p><strong>País:</strong> {countries.find(c => c.value === formData.country)?.label || formData.country}</p>
             <p><strong>Código Postal:</strong> {formData.zipCode}</p>
           </div>
