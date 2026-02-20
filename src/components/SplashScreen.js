@@ -52,11 +52,15 @@ function SplashScreen({ children }) {
 
   return (
     <>
-      {/* Render children during video so homepage loads in background */}
-      {phase === "video" && (
-        <div style={{ position: "fixed", inset: 0, zIndex: 0 }}>
-          {children}
-        </div>
+      {/* Preload video silently during splash so it's ready instantly */}
+      {phase === "splash" && (
+        <video
+          src={videoFinal}
+          preload="auto"
+          muted
+          playsInline
+          style={{ display: "none" }}
+        />
       )}
 
       {/* Splash overlay */}

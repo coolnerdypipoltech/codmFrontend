@@ -754,7 +754,8 @@ const RegistrationForm = () => {
             </div>
           </form>
 
-          <Captcha
+          <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+            <Captcha
             key={forceReloadCaptcha}
             type="mixed"
             className="my-custom-captcha"
@@ -782,6 +783,7 @@ const RegistrationForm = () => {
             onError={() => setCaptchaError(true)}
             onFail={() => setCaptchaError(true)}
           />
+          </div>
 
           {captchaError && (
             <span className="error-message">
@@ -790,7 +792,7 @@ const RegistrationForm = () => {
           )}
 
                     {Object.keys(errors).length > 0 && (
-            <span className="error-message">Por favor completa los datos obligatorios para completar tu registro</span>
+            <span className="error-message">Por favor completa los campos obligatorios para marcados con * para completar tu registro</span>
           )}
 
           <button
