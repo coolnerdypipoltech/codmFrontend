@@ -22,8 +22,8 @@ const Location = () => {
           <p className="venue-name">CIUDAD DE MÉXICO, MX</p>
           <p className="venue-address">
             <strong>House of Vans</strong> no es cualquier recinto, es territorio sagrado del barrio: puro street art en las paredes, beats reventando el piso y la banda prendida al 100. <br></br> <br></br>
-            Aquí haremos historia con el primer torneo de Barrios Latinos <strong>Call of Duty: Mobile</strong> en Latinoamérica, con los jugadores más duros, capitanes que sí rifan y freestylers chingones soltando barras en vivo.
-            Es venir a sentir la vibra real, a gritar cada kill, a vivir la competencia cara a cara y a demostrar que el orgullo de barrio se juega, se rapea y se defiende en grande.
+            Aquí haremos historia con el primer torneo de Barrios Latinos <strong>Call of Duty: Mobile</strong> en Latinoamérica, con los jugadores más duros, capitanes que sí rifan y freestylers chingones soltando barras en vivo.  <br></br> <br></br>
+            Es venir a <strong>sentir la vibra real</strong>, a gritar cada kill, a vivir la competencia cara a cara y a demostrar que <strong> el orgullo de barrio, se rapea </strong> y se defiende en grande.
           </p>
 
         </div>
