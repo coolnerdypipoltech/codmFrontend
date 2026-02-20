@@ -28,11 +28,11 @@ function SplashScreen({ children }) {
   useEffect(() => {
     if (phase !== "splash") return;
     introShown = true;
-    const fadeTimer = setTimeout(() => setSplashFading(true), 3500);
+    const fadeTimer = setTimeout(() => setSplashFading(true), 4500);
     const switchTimer = setTimeout(() => {
       setSplashFading(false);
       setPhase("video");
-    }, 2000);
+    }, 4000);
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(switchTimer);
@@ -97,7 +97,7 @@ function SplashScreen({ children }) {
                 fontSize: "20px",
               }}
             >
-              Cargando
+              CARGANDO
             </p>
           </div>
         </div>
@@ -118,7 +118,7 @@ function SplashScreen({ children }) {
           </video>
           {muted && (
             <div className="video-intro__unmute-hint">
-             Toca para activar el sonido
+             🎤 Pushale pa´que suene 🎤
             </div>
           )}
           <button className="video-intro__skip" onClick={(e) => { e.stopPropagation(); handleSkip(); }}>

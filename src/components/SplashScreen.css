@@ -133,8 +133,9 @@
 
 .video-intro__unmute-hint {
   position: absolute;
-  top: 24px;
+  top: 20%;
   left: 50%;
+  border: #ffffff 2px solid;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
