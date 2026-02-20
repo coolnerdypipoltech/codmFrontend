@@ -8,8 +8,9 @@ import PopUp from "./PopUp";
 import icon from "../assets/registration/Icon_Importante.webp";
 import InfoTooltip from "./InfoTooltip";
 import { useNavigate } from "react-router";
-import semaforo_of from "../assets/registration/Semaforo_Of.webp";
-import semaforo_on from "../assets/registration/Semaforo_On.webp";
+import semaforo_of from "../assets/main/STICKER BOCA.webp";
+import semaforo_on from "../assets/main/STICKERS_CODM_03.webp";
+
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -34,10 +35,11 @@ const RegistrationForm = () => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [popup, setPopup] = useState({
-    show: false,
-    type: "",
-    message: "",
-  });
+          show: false,
+          type: "",
+          message:
+            "",
+        });
   const firstRender = React.useRef(true);
 
   useEffect(() => {
@@ -239,7 +241,7 @@ const RegistrationForm = () => {
           show: true,
           type: "success",
           message:
-            "¡Registro exitoso! Tu información ha sido guardada correctamente.",
+            "¡Registro exitoso! Tu información ha sido guardada correctamente. En caso de no haber recibido confirmación, revisa tu bandeja de spam.",
         });
         // Reset form
         setFormData({
@@ -366,7 +368,7 @@ const RegistrationForm = () => {
                   loading="lazy"
                   src={popup.type === "success" ? semaforo_on : semaforo_of}
                   alt="img"
-                  style={{ height: "100px" }}
+                  style={{ height: popup.type === "success" ? "180px" : "150px", rotate: popup.type === "success" ? "45deg" : "0deg" }}
                 ></img>
               </div>
               <p className="inter-font">{popup.message}</p>
