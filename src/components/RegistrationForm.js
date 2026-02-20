@@ -69,7 +69,7 @@ const RegistrationForm = () => {
   const countries = [
     { value: "MEX", label: "México" },
     { value: "ARG", label: "Argentina" },
-    { value: "BRA", label: "Brasil" },
+    { value: "ECU", label: "Ecuador" },
     { value: "COL", label: "Colombia" },
     { value: "CHL", label: "Chile" },
     { value: "PER", label: "Perú" },
