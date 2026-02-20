@@ -452,7 +452,7 @@ const RegistrationForm = () => {
             {/* name */}
             <div className="form-group">
               <label className="inter-font" htmlFor="name">
-                Nombres*
+                Nombre(s)*
               </label>
               <input
                 type="text"
@@ -473,7 +473,7 @@ const RegistrationForm = () => {
             {/* Surname */}
             <div className="form-group">
               <label className="inter-font" htmlFor="surname">
-                Apellidos*  
+                Apellidos*
               </label>
               <input
                 type="text"
@@ -492,7 +492,7 @@ const RegistrationForm = () => {
             {/* Username */}
             <div className="form-group">
               <label className="inter-font" htmlFor="username">
-                Username*
+                Username CODM*
               </label>
               <input
                 type="text"
@@ -511,7 +511,7 @@ const RegistrationForm = () => {
             {/* Discord */}
             <div className="form-group">
               <label className="inter-font" htmlFor="discord">
-                Discord
+                Discord Username
               </label>
               <input
                 type="text"
@@ -550,7 +550,7 @@ const RegistrationForm = () => {
             {/* Email */}
             <div className="form-group">
               <label className="inter-font" htmlFor="email">
-                Correo*
+                Correo Electrónico*
               </label>
               <input
                 type="email"
@@ -569,7 +569,7 @@ const RegistrationForm = () => {
             {/* Country */}
             <div className="form-group">
               <label className="inter-font" htmlFor="country">
-                País*
+                País de Residencia*
               </label>
               <select
                 id="country"
@@ -615,11 +615,11 @@ const RegistrationForm = () => {
                 className="inter-font"
                 style={{ fontWeight: "bold", fontSize: "15px" }}
               >
-                Requisitos de elegibilidad
+                Requisitos de Elegibilidad
               </p>
               <InfoTooltip
                 text={
-                  "Debes cumplir con los requisitos listados.\nSi resides fuera de México y resultas finalista,\ntambién deberás cumplir con los requisitos de viaje.\nConsulta el enlace “Requisitos para tu país”\npara más información."
+                  "Debes cumplir con los requisitos listados.\nSi resides fuera de México y resultas finalista,\ntambién deberás cumplir con los requisitos de viaje.\nConsulta los Términos y Condiciones para más información."
                 }
               />
             </div>
@@ -628,13 +628,14 @@ const RegistrationForm = () => {
             <div className="checkbox-group">
 
                 
-              <label className="checkbox-label">
+              <label className="checkbox-label" style={{marginBottom: "5px"}}>
                 <input
                   type="checkbox"
                   name="termsAndConditions"
                   checked={formData.termsAndConditions}
                   onChange={handleChange}
                   className="inputDiamond"
+                  
                 />
                 <span
                   className="checkmark"
@@ -666,17 +667,17 @@ const RegistrationForm = () => {
                   >
                     Políticas de Privacidad
                   </span>
-                  .
+                  
                 </p>
               </label>
               {errors.termsAndConditions && (
-                <span className="error-message">
+                <span className="error-message" style={{marginBottom: "10px"}}>
                   {errors.termsAndConditions}
                 </span>
               )}
 
 
-              <label className="checkbox-label">
+              <label className="checkbox-label" style={{marginBottom: "5px"}}>
                 <input
                   type="checkbox"
                   name="passport"
@@ -690,7 +691,7 @@ const RegistrationForm = () => {
                     backgroundImage: `url(${formData.passport ? diamondOn : diamondOff})`,
                   }}
                 ></span>
-                <p className="inputDiamond">Requisitos para viajar cumplidos</p>
+                <p className="inputDiamond">Cumplo con los requisitos migratorios para viajar a México</p>
               </label>
               {errors.passport && (
                 <span
@@ -715,7 +716,7 @@ const RegistrationForm = () => {
                     backgroundImage: `url(${formData.legalAge ? diamondOn : diamondOff})`,
                   }}
                 ></span>
-                <p className="inputDiamond">Soy mayor de edad</p>
+                <p className="inputDiamond">Confirmo que soy mayor de edad (18)</p>
               </label>
               {errors.legalAge && (
                 <span
@@ -726,7 +727,7 @@ const RegistrationForm = () => {
                 </span>
               )}
 
-              <label className="checkbox-label">
+              <label className="checkbox-label" style={{marginBottom: "5px"}}>
                 <input
                   type="checkbox"
                   name="availabilityToTravel"
@@ -740,16 +741,25 @@ const RegistrationForm = () => {
                     backgroundImage: `url(${formData.availabilityToTravel ? diamondOn : diamondOff})`,
                   }}
                 ></span>
-                <p className="inputDiamond">Disponibilidad para viajar</p>
+                <p className="inputDiamond">Estoy disponible para viajar al evento presencial en CDMX</p>
               </label>
               {errors.availabilityToTravel && (
                 <span
                   className="error-message"
-                  style={{ marginBottom: "10px" }}
+                  style={{ marginBottom: "20px" }}
                 >
                   {errors.availabilityToTravel}
                 </span>
               )}
+                        {captchaError && (
+            <span className="error-message">
+              Por favor completa la verificación CAPTCHA
+            </span>
+          )}
+
+                    {Object.keys(errors).length > 0 && (
+            <span className="error-message">Por favor completa los campos obligatorios marcados con * para completar tu registro</span>
+          )}
 
             </div>
           </form>
@@ -785,15 +795,7 @@ const RegistrationForm = () => {
           />
           </div>
 
-          {captchaError && (
-            <span className="error-message">
-              Por favor complete la verificación CAPTCHA
-            </span>
-          )}
 
-                    {Object.keys(errors).length > 0 && (
-            <span className="error-message">Por favor completa los campos obligatorios para marcados con * para completar tu registro</span>
-          )}
 
           <button
             disabled={isLoading}
