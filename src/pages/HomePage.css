@@ -81,3 +81,10 @@
     top: -400px;
   }
 }
+
+
+@media (max-width: 360px) {
+  .image-band5{
+    top: 57vw;
+  }
+}

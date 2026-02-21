@@ -11,6 +11,10 @@
   background-position: center;
   transition: opacity 0.5s ease;
   opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
 }
 
 .splash-screen.splash-fading {
@@ -23,6 +27,13 @@
     background-size: cover !important;
   }
 }
+
+@media (max-height: 822px) {
+  .splash-screen{
+    background-size: cover !important;
+  }
+}
+
 
 .splash-logo {
   width: clamp(160px, 30vw, 320px);

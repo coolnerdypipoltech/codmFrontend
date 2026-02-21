@@ -94,6 +94,11 @@
   background-position: center;
 }
 
+@media (min-width: 585px) {
+  .drawer.open{
+    background-size: cover;
+  }
+}
 
 .drawer-header {
   display: flex;
@@ -125,8 +130,9 @@
 .drawer-nav {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
   
+  flex-wrap: nowrap;
+  overflow-y: scroll;
 }
 
 .drawer-item {

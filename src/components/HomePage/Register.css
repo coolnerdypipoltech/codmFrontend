@@ -25,7 +25,7 @@
 }
 
 .register-highlight{
-  height: 55px;
+  height: 64px;
   position: absolute;
   width: auto;
   right: 5px;
@@ -33,7 +33,7 @@
   transition: opacity 0.3s ease;
   pointer-events: none;
   z-index: 1;
-  top: -30px;
+  top: -36px;
   width: 80%;
   -webkit-transition: opacity 0.3s ease;
   -moz-transition: opacity 0.3s ease;

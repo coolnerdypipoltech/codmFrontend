@@ -241,7 +241,7 @@ const RegistrationForm = () => {
           show: true,
           type: "success",
           message:
-            "¡Registro exitoso! Tu información ha sido guardada correctamente. En caso de no haber recibido confirmación, revisa tu bandeja de spam.",
+            "¡Ya casi estás dentro! Revisa tu correo para verificar tu registro, en caso de no haber recibido un correo porfa checa tu spam.",
         });
         // Reset form
         setFormData({
@@ -630,7 +630,7 @@ const RegistrationForm = () => {
             <div className="checkbox-group">
 
                 
-              <label className="checkbox-label" style={{marginBottom: "5px"}}>
+              <label className="checkbox-label" style={{marginBottom: "10px"}}>
                 <input
                   type="checkbox"
                   name="termsAndConditions"
@@ -673,13 +673,13 @@ const RegistrationForm = () => {
                 </p>
               </label>
               {errors.termsAndConditions && (
-                <span className="error-message" style={{marginBottom: "10px"}}>
+                <span className="error-message" style={{marginBottom: "px"}}>
                   {errors.termsAndConditions}
                 </span>
               )}
 
 
-              <label className="checkbox-label" style={{marginBottom: "5px"}}>
+              <label className="checkbox-label" style={{marginBottom: "10px"}}>
                 <input
                   type="checkbox"
                   name="passport"

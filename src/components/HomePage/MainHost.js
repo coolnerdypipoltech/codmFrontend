@@ -87,9 +87,13 @@ const MainHost = () => {
     },
   };
 
+  const debug = () => {
+    console.log("aqui");
+  }
+
   const CustomLeftArrow = ({ onClick }) => {
     return (
-      <button
+      <div
         className="react-multiple-carousel__arrow"
         style={{ left: isMobile ? "5px" : "2%" }}
         onMouseEnter={pauseAutoplay}
@@ -110,13 +114,13 @@ const MainHost = () => {
           src={arrow}
           alt="Left Arrow"
         />
-      </button>
+      </div>
     );
   };
 
   const CustomRightArrow = ({ onClick }) => {
     return (
-      <button
+      <div
         className="react-multiple-carousel__arrow"
         style={{ right: isMobile ? "5px" : "2%" }}
         onMouseEnter={pauseAutoplay}
@@ -138,7 +142,7 @@ const MainHost = () => {
           src={arrow}
           alt="Left Arrow"
         />
-      </button>
+      </div>
     );
   };
 
@@ -176,7 +180,7 @@ const MainHost = () => {
               ref={carrousel}
               responsive={responsive}
               arrows
-              autoPlay={isAutoPlayEnabled}
+              autoPlay={isMobile ? false : isAutoPlayEnabled}
               autoPlaySpeed={3000}
               infinite
               customLeftArrow={<CustomLeftArrow />}
@@ -208,6 +212,7 @@ const MainHost = () => {
                       top: 0,
                       left: 0,
                       opacity: 0,
+                      pointerEvents: "none",
                     }}
                   ></div>
                 </div>

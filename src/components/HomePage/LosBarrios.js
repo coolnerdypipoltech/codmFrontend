@@ -83,14 +83,15 @@ const LosBarrios = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
+        onClick={onClick}
         style={{ left: isMobile ? "10px" : "60px", maxHeight: "0px" }}
       >
         <img
-          onClick={() => onClick()}
-                  onMouseEnter={pauseAutoplay}
-        onMouseLeave={resumeAutoplay}
-        onFocus={pauseAutoplay}
-        onBlur={resumeAutoplay}
+          onClick={onClick}
+          onMouseEnter={pauseAutoplay}
+          onMouseLeave={resumeAutoplay}
+          onFocus={pauseAutoplay}
+          onBlur={resumeAutoplay}
           loading="lazy"
           style={{
             height: isMobile ? "40px" : "70px",
@@ -115,14 +116,15 @@ const LosBarrios = () => {
     return (
       <button
         className="react-multiple-carousel__arrow"
+        onClick={onClick}
         style={{ right: isMobile ? "10px" : "60px", maxHeight: "0px" }}
       >
         <img
-          onClick={() => onClick()}
-                  onMouseEnter={pauseAutoplay}
-        onMouseLeave={resumeAutoplay}
-        onFocus={pauseAutoplay}
-        onBlur={resumeAutoplay}
+          onClick={onClick}
+          onMouseEnter={pauseAutoplay}
+          onMouseLeave={resumeAutoplay}
+          onFocus={pauseAutoplay}
+          onBlur={resumeAutoplay}
           loading="lazy"
           style={{
             cursor: "pointer",
@@ -147,7 +149,7 @@ const LosBarrios = () => {
           infinite={true}
           showDots={true}
           arrows
-          autoPlay={isAutoPlayEnabled}
+          autoPlay={isMobile ? false : isAutoPlayEnabled}
           autoPlaySpeed={3000}
           customLeftArrow={<CustomLeftArrow />}
           customRightArrow={<CustomRightArrow />}
@@ -176,9 +178,17 @@ const LosBarrios = () => {
                   paddingBottom: isMobile ? "20px" : "0px",
                 }}
               />
-              <div style={{height: "100%" , width: "100%", backgroundColor: "red", position: "absolute", top: 0, left: 0, opacity: 0}}>
-                
-              </div>
+              <div
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  backgroundColor: "red",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  opacity: 0,
+                }}
+              ></div>
             </div>
           ))}
         </Carousel>

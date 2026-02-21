@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Location.css";
 import venue1 from "../../assets/main/IMG_Venue.webp";
 import venue2 from "../../assets/desktop/Main/IMG_Venue.webp"
@@ -8,23 +8,32 @@ import icon from "../../assets/main/Icon_Ubicación.webp";
 import sticker1 from "../../assets/main/STICKER BOCA.webp";
 import sticker2 from "../../assets/main/STICKERS_CODM_03.webp";
 import { useViewport } from "../../context/ViewportContext";
-const Location = () => {
 
+const getTextura = (width) => {
+  if ((width > 660 && width < 900) || width > 1300) {
+    return textura2;
+  }
+  return textura1;
+};
+
+const Location = () => {
+  
   const { isMobile } = useViewport();
-  const textura = isMobile ? textura1 : textura2;
+  const [textura, setTextura] = useState(() => getTextura(window.innerWidth));
+
+  useEffect(() => {
+    const handleResize = () => setTextura(getTextura(window.innerWidth));
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  
   const venue = isMobile ? venue2 : venue1; 
   return (
     <section id="locacion" className="locacion-section">
       <div className="locacion-container"  style={{ flexDirection: isMobile ? "column" : "row"}}>
-        <img loading="lazy" src={textura} alt="Venue" className="venue-image" />
+        <img loading="lazy" src={textura} alt="Venue" className="venue-image" style={{minHeight: "100px", height: "94%"}} />
         <div className="locacion-info">
-          <p className="venue-name2" style={{color: "#F201B7"}}>EVENTO IRL</p>
-          <p className="venue-name">CIUDAD DE MÉXICO, MX</p>
-          <p className="venue-address">
-            <strong>House of Vans</strong> no es cualquier recinto, es territorio sagrado del barrio: puro street art en las paredes, beats reventando el piso y la banda prendida al 100. <br></br> <br></br>
-            Aquí haremos historia con el primer torneo de Barrios Latinos <strong>Call of Duty: Mobile</strong> en Latinoamérica, con los jugadores más duros, capitanes que sí rifan y freestylers chingones soltando barras en vivo.  <br></br> <br></br>
-            Es venir a <strong>sentir la vibra real</strong>, a gritar cada kill, a vivir la competencia cara a cara y a demostrar que <strong> el orgullo de barrio, se rapea </strong> y se defiende en grande.
-          </p>
+
 
         </div>
 

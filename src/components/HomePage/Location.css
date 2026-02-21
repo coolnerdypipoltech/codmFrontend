@@ -222,7 +222,11 @@
   .locacion-info{
     padding-top: 18vh;
   }
-  .venue-address{
+
+}
+
+@media (max-width: 455px) {
+    .venue-address{
     font-size: 14px;
   }
 }

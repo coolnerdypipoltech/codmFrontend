@@ -33,13 +33,13 @@ const RegisterTournament = () => {
             SI LLEGASTE HASTA AQUÍ,
           </p>
           <p className="buyTickets-text" style={{ color: "black" }}>REGÍSTRATE EN EL TORNEO</p>
-          <div onClick={() => navigate('/registro')} style={{width: "100%"}}>
+          <div onClick={() => navigate('/registro')} style={{width: "100%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
             <img
               loading="lazy"
               src={comprarBoletos}
               className="buyTickets-Image"
               alt="Comprar Boletos"
-              style={{width: "100%"}}
+              style={{width: "100%", maxWidth: "300px"}}
             />
 
             <p className="buyTickets-buttonText">REGISTRO AL TORNEO</p>

@@ -251,6 +251,7 @@ const Navbar = () => {
             }}
           >
             <div className="drawer-nav">
+              <div style={{minHeight: "50px"}}></div>
               <img
                 loading="lazy"
                 src={logoNavMenu}
