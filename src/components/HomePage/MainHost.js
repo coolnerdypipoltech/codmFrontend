@@ -16,13 +16,13 @@ import postermobil5 from "../../assets/posters/5_Poster PE_EC.webp";
 import postermobil6 from "../../assets/posters/6_host_and-main.webp";
 import postermobil7 from "../../assets/posters/7_HostMov.webp";
 
-import posterdesktop1 from "../../assets/desktop/PostersPais/1_Poster MX.webp";
-import posterdesktop2 from "../../assets/desktop/PostersPais/2_Poster COL.webp";
-import posterdesktop3 from "../../assets/desktop/PostersPais/3_Poster ARG.webp";
-import posterdesktop4 from "../../assets/desktop/PostersPais/4_Poster CL.webp";
-import posterdesktop5 from "../../assets/desktop/PostersPais/5_Poster PE_EC.webp";
-import posterdesktop6 from "../../assets/desktop/PostersPais/6_host_and-main.webp";
-import posterdesktop7 from "../../assets/desktop/PostersPais/7_Caster.webp";
+import posterdesktop1 from "../../assets/desktop/PostersPais/1_Poster MX_ACZINO.webp";
+import posterdesktop2 from "../../assets/desktop/PostersPais/2_Poster COL_Marithea.webp";
+import posterdesktop3 from "../../assets/desktop/PostersPais/3_Poster ARG_Stuart.webp";
+import posterdesktop4 from "../../assets/desktop/PostersPais/4_Poster CL_ElMenor.webp";
+import posterdesktop5 from "../../assets/desktop/PostersPais/5_Poster PE_EC_Nekroos.webp";
+import posterdesktop6 from "../../assets/desktop/PostersPais/6_Caster.webp";
+import posterdesktop7 from "../../assets/desktop/PostersPais/7_Host.webp";
 
 import { useViewport } from "../../context/ViewportContext";
 const MainHost = () => {
