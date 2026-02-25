@@ -35,7 +35,7 @@ const RegistrationForm = () => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [popup, setPopup] = useState({
-    show: true,
+    show: false,
     type: "success",
     message: "",
   });
