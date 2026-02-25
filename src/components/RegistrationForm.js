@@ -36,7 +36,7 @@ const RegistrationForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [popup, setPopup] = useState({
     show: false,
-    type: "success",
+    type: "",
     message: "",
   });
   const firstRender = React.useRef(true);
