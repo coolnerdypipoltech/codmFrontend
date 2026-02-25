@@ -11,6 +11,7 @@ import FAQsPage from "./pages/FAQsPage";
 import { ViewportProvider } from "./context/ViewportContext";
 import Footer from "./components/HomePage/Footer";
 import TermsPage from "./pages/TermsPage";
+import RulesPage from "./pages/RulesPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/faqs" element={<FAQsPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/rules" element={<RulesPage />} />
           <Route path="/codmFrontend" element={<HomePage />} />
           <Route
             path="/codmFrontend/terms"
@@ -42,6 +44,10 @@ function App() {
           <Route
             path="/codmFrontend/faqs"
             element={<FAQsPage />}
+          />
+          <Route
+            path="/codmFrontend/rules"
+            element={<RulesPage />}
           />
           <Route path="*" element={<HomePage />} />
         </Routes>
