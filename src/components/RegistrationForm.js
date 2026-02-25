@@ -35,11 +35,10 @@ const RegistrationForm = () => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [popup, setPopup] = useState({
-          show: false,
-          type: "",
-          message:
-            "",
-        });
+    show: true,
+    type: "success",
+    message: "",
+  });
   const firstRender = React.useRef(true);
 
   useEffect(() => {
@@ -49,24 +48,21 @@ const RegistrationForm = () => {
     }
     if (isVerified && Object.keys(errors).length === 0 && !isFormCompleted) {
       setIsFormCompleted(true);
-      
     }
-
   }, [isVerified]);
 
   useEffect(() => {
-    const navbarElement = document.querySelector('.navbar-container');
-    
+    const navbarElement = document.querySelector(".navbar-container");
+
     if (navbarElement) {
       if (isFormCompleted) {
-        navbarElement.style.zIndex = '0';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        navbarElement.style.zIndex = "0";
+        window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        navbarElement.style.zIndex = '1000';
+        navbarElement.style.zIndex = "1000";
       }
     }
-  }, [isFormCompleted])
-  
+  }, [isFormCompleted]);
 
   const countries = [
     { value: "MEX", label: "México" },
@@ -173,7 +169,6 @@ const RegistrationForm = () => {
       };
     });
 
-
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
@@ -187,9 +182,9 @@ const RegistrationForm = () => {
 
     // Google Analytics: track form submission attempt
     if (window.gtag) {
-      window.gtag('event', 'form_submit', {
-        event_category: 'Registration',
-        event_label: 'Registro Form Submit',
+      window.gtag("event", "form_submit", {
+        event_category: "Registration",
+        event_label: "Registro Form Submit",
         country: formData.country,
       });
     }
@@ -197,11 +192,11 @@ const RegistrationForm = () => {
     setForceReloadCaptcha((prev) => prev + 1);
     setIsLoading(true);
 
-    let helperDiscord = "null"
-    if(formData.discord.trim() !== "") {
+    let helperDiscord = "null";
+    if (formData.discord.trim() !== "") {
       helperDiscord = formData.discord.trim();
     }
-    
+
     // Filtrar solo los campos no booleanos para enviar al servidor
     const dataToSend = {
       email: formData.email,
@@ -216,32 +211,33 @@ const RegistrationForm = () => {
       availabilityToTravel: formData.availabilityToTravel,
       passport: true,
       travel: formData.passport,
-      legalAge: formData.legalAge
+      legalAge: formData.legalAge,
     };
-    
+
     try {
-      const response = await fetch("https://api.codmbarrioslatinos.com/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://api.codmbarrioslatinos.com/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
         },
-        body: JSON.stringify(dataToSend),
-      });
+      );
 
       if (response.status === 200) {
         // Google Analytics: track successful registration
         if (window.gtag) {
-          window.gtag('event', 'registration_success', {
-            event_category: 'Registration',
-            event_label: 'Registro Exitoso',
+          window.gtag("event", "registration_success", {
+            event_category: "Registration",
+            event_label: "Registro Exitoso",
             country: formData.country,
           });
         }
         setPopup({
           show: true,
           type: "success",
-          message:
-            "¡Ya casi estás dentro! Revisa tu correo para verificar tu registro, en caso de no haber recibido un correo porfa checa tu spam.",
         });
         // Reset form
         setFormData({
@@ -306,18 +302,16 @@ const RegistrationForm = () => {
   };
 
   const handleSubmit = async (e) => {
-
-        e.preventDefault();
+    e.preventDefault();
 
     if (isVerified && !validateForm()) {
       setIsFormCompleted(false);
       return;
     }
-    
 
-    if(!isVerified) {
+    if (!isVerified) {
       const captchaButton = document.querySelector(
-      ".my-custom-captcha button.bg-blue-600",
+        ".my-custom-captcha button.bg-blue-600",
       );
       if (captchaButton) {
         captchaButton.click();
@@ -327,10 +321,9 @@ const RegistrationForm = () => {
     if (!validateForm()) {
       return;
     }
-    if(isVerified){
-       setIsFormCompleted(true);
+    if (isVerified) {
+      setIsFormCompleted(true);
     }
-   
   };
 
   const closePopup = () => {
@@ -368,19 +361,40 @@ const RegistrationForm = () => {
                   loading="lazy"
                   src={popup.type === "success" ? semaforo_on : semaforo_of}
                   alt="img"
-                  style={{ height: popup.type === "success" ? "180px" : "150px", rotate: popup.type === "success" ? "45deg" : "0deg" }}
+                  style={{
+                    height: popup.type === "success" ? "180px" : "150px",
+                    rotate: popup.type === "success" ? "45deg" : "0deg",
+                  }}
                 ></img>
               </div>
+              {popup.type === "success" ? (
+                <div>
+                  <p className="inter-font" style={{fontSize: "18px"}}>
+                    <strong >¡Falta un paso final parce!</strong>
+                  </p>
+                  <p className="inter-font">
+                    <strong style={{color: " #F201B7"}}>Verifica tu correo electrónico</strong> para
+                    completar tu registro y ser considerado participante oficial
+                  </p>
+                  <p>Si no ves el mensaje, porfa checa tu carpeta de spam.</p>
+                </div>
+              ) : (
+                <p className="inter-font">{popup.message}</p>
+              )}
               <p className="inter-font">{popup.message}</p>
-              <div onClick={closePopup} style={{
+              <div
+                onClick={closePopup}
+                style={{
                   width: "100%",
                   display: "flex",
                   justifyContent: "center",
-                }}>
-                <img                  loading="lazy"                  src={buttonlayout}
+                }}
+              >
+                <img
+                  loading="lazy"
+                  src={buttonlayout}
                   style={{ height: "64px" }}
                   alt="Cerrar"
-                  
                 />
                 ´
                 <p
@@ -538,7 +552,7 @@ const RegistrationForm = () => {
                 type="number"
                 id="age"
                 name="age"
-                style={{WebkitAppearance: "none"}}
+                style={{ WebkitAppearance: "none" }}
                 value={formData.age}
                 onChange={handleChange}
                 placeholder=""
@@ -628,16 +642,16 @@ const RegistrationForm = () => {
 
             {/* Checkboxes */}
             <div className="checkbox-group">
-
-                
-              <label className="checkbox-label" style={{marginBottom: "10px"}}>
+              <label
+                className="checkbox-label"
+                style={{ marginBottom: "10px" }}
+              >
                 <input
                   type="checkbox"
                   name="termsAndConditions"
                   checked={formData.termsAndConditions}
                   onChange={handleChange}
                   className="inputDiamond"
-                  
                 />
                 <span
                   className="checkmark"
@@ -669,17 +683,18 @@ const RegistrationForm = () => {
                   >
                     Políticas de Privacidad
                   </span>
-                  
                 </p>
               </label>
               {errors.termsAndConditions && (
-                <span className="error-message" style={{marginBottom: "px"}}>
+                <span className="error-message" style={{ marginBottom: "px" }}>
                   {errors.termsAndConditions}
                 </span>
               )}
 
-
-              <label className="checkbox-label" style={{marginBottom: "10px"}}>
+              <label
+                className="checkbox-label"
+                style={{ marginBottom: "10px" }}
+              >
                 <input
                   type="checkbox"
                   name="passport"
@@ -693,7 +708,9 @@ const RegistrationForm = () => {
                     backgroundImage: `url(${formData.passport ? diamondOn : diamondOff})`,
                   }}
                 ></span>
-                <p className="inputDiamond">Cumplo con los requisitos migratorios para viajar a México</p>
+                <p className="inputDiamond">
+                  Cumplo con los requisitos migratorios para viajar a México
+                </p>
               </label>
               {errors.passport && (
                 <span
@@ -709,7 +726,6 @@ const RegistrationForm = () => {
                   type="checkbox"
                   name="legalAge"
                   checked={formData.legalAge}
-                  
                   className="inputDiamond"
                 />
                 <span
@@ -718,7 +734,9 @@ const RegistrationForm = () => {
                     backgroundImage: `url(${formData.legalAge ? diamondOn : diamondOff})`,
                   }}
                 ></span>
-                <p className="inputDiamond">Confirmo que soy mayor de edad (18)</p>
+                <p className="inputDiamond">
+                  Confirmo que soy mayor de edad (18)
+                </p>
               </label>
               {errors.legalAge && (
                 <span
@@ -729,7 +747,7 @@ const RegistrationForm = () => {
                 </span>
               )}
 
-              <label className="checkbox-label" style={{marginBottom: "5px"}}>
+              <label className="checkbox-label" style={{ marginBottom: "5px" }}>
                 <input
                   type="checkbox"
                   name="availabilityToTravel"
@@ -743,7 +761,9 @@ const RegistrationForm = () => {
                     backgroundImage: `url(${formData.availabilityToTravel ? diamondOn : diamondOff})`,
                   }}
                 ></span>
-                <p className="inputDiamond">Estoy disponible para viajar al evento presencial en CDMX</p>
+                <p className="inputDiamond">
+                  Estoy disponible para viajar al evento presencial en CDMX
+                </p>
               </label>
               {errors.availabilityToTravel && (
                 <span
@@ -753,51 +773,52 @@ const RegistrationForm = () => {
                   {errors.availabilityToTravel}
                 </span>
               )}
-                        {captchaError && (
-            <span className="error-message">
-              Por favor completa la verificación CAPTCHA
-            </span>
-          )}
+              {captchaError && (
+                <span className="error-message">
+                  Por favor completa la verificación CAPTCHA
+                </span>
+              )}
 
-                    {Object.keys(errors).length > 0 && (
-            <span className="error-message">Por favor completa los campos obligatorios marcados con * para completar tu registro</span>
-          )}
-
+              {Object.keys(errors).length > 0 && (
+                <span className="error-message">
+                  Por favor completa los campos obligatorios marcados con * para
+                  completar tu registro
+                </span>
+              )}
             </div>
           </form>
 
-          <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <div
+            style={{ display: "flex", justifyContent: "center", width: "100%" }}
+          >
             <Captcha
-            key={forceReloadCaptcha}
-            type="mixed"
-            className="my-custom-captcha"
-            length={6}
-            onValidate={setIsVerified}
-            showSuccessAnimation
-            enableAudio={false}
-            autoFocus={false}
-            disableSpaceToHear={true}
-            
-            i18n={{
-              securityCheck: "Verificación de seguridad",
-              listenToCaptcha: "Escuchar CAPTCHA",
-              refreshCaptcha: "Actualizar CAPTCHA ",
-              inputPlaceholder: "Ingrese el código",
-              verifyButton: "Verificar",
-              verificationSuccessful: "¡Éxito!",
-              captchaRequired: "",
-              captchaDoesNotMatch: "El CAPTCHA no coincide",
-              error: " Error al cargar el CAPTCHA",
-              pressSpaceToHearCode: "",
-              enterToValidate: "",
-              escToClear: "",
-            }}
-            onError={() => setCaptchaError(true)}
-            onFail={() => setCaptchaError(true)}
-          />
+              key={forceReloadCaptcha}
+              type="mixed"
+              className="my-custom-captcha"
+              length={6}
+              onValidate={setIsVerified}
+              showSuccessAnimation
+              enableAudio={false}
+              autoFocus={false}
+              disableSpaceToHear={true}
+              i18n={{
+                securityCheck: "Verificación de seguridad",
+                listenToCaptcha: "Escuchar CAPTCHA",
+                refreshCaptcha: "Actualizar CAPTCHA ",
+                inputPlaceholder: "Ingrese el código",
+                verifyButton: "Verificar",
+                verificationSuccessful: "¡Éxito!",
+                captchaRequired: "",
+                captchaDoesNotMatch: "El CAPTCHA no coincide",
+                error: " Error al cargar el CAPTCHA",
+                pressSpaceToHearCode: "",
+                enterToValidate: "",
+                escToClear: "",
+              }}
+              onError={() => setCaptchaError(true)}
+              onFail={() => setCaptchaError(true)}
+            />
           </div>
-
-
 
           <button
             disabled={isLoading}
@@ -834,8 +855,14 @@ const RegistrationForm = () => {
 
           <div style={{ minHeight: "30px" }}></div>
 
-
-          <div style={{ display: "flex", flexDirection: "row", gap: "5px", justifyContent: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "5px",
+              justifyContent: "center",
+            }}
+          >
             <img
               loading="lazy"
               src={icon}
@@ -858,16 +885,44 @@ const RegistrationForm = () => {
           }}
         >
           <div style={{ marginBottom: "15px" }}>
-            <p style={{ fontWeight: "bold", marginBottom: "10px", textAlign: "center" }}>Por favor revisa tu información:</p>
-            <p><strong>UID:</strong> {formData.uid}</p>
-            <p><strong>Nombres:</strong> {formData.name}</p>
-            <p><strong>Apellidos:</strong> {formData.surname}</p>
-            <p><strong>Nombre de usuario:</strong> {formData.username}</p>
-            <p><strong>Discord:</strong> {formData.discord}</p>
-            <p><strong>Edad:</strong> {formData.age}</p>
-            <p><strong>Correo:</strong> {formData.email}</p>
-            <p><strong>País:</strong> {countries.find(c => c.value === formData.country)?.label || formData.country}</p>
-            <p><strong>Código Postal:</strong> {formData.zipCode}</p>
+            <p
+              style={{
+                fontWeight: "bold",
+                marginBottom: "10px",
+                textAlign: "center",
+              }}
+            >
+              Por favor revisa tu información:
+            </p>
+            <p>
+              <strong>UID:</strong> {formData.uid}
+            </p>
+            <p>
+              <strong>Nombres:</strong> {formData.name}
+            </p>
+            <p>
+              <strong>Apellidos:</strong> {formData.surname}
+            </p>
+            <p>
+              <strong>Nombre de usuario:</strong> {formData.username}
+            </p>
+            <p>
+              <strong>Discord:</strong> {formData.discord}
+            </p>
+            <p>
+              <strong>Edad:</strong> {formData.age}
+            </p>
+            <p>
+              <strong>Correo:</strong> {formData.email}
+            </p>
+            <p>
+              <strong>País:</strong>{" "}
+              {countries.find((c) => c.value === formData.country)?.label ||
+                formData.country}
+            </p>
+            <p>
+              <strong>Código Postal:</strong> {formData.zipCode}
+            </p>
           </div>
         </PopUp>
       )}
