@@ -439,7 +439,7 @@ Experiencia del público
             {termsText}
           </pre>
 
-          <div style={{width: "100%", display: "flex", justifyContent: "center"}}><img src={table} alt="Table" /></div>
+          <div style={{width: "100%", display: "flex", justifyContent: "center", marginBottom: "20px",}}><img src={table} alt="Table" /></div>
 
           <pre
             style={{

@@ -3,7 +3,9 @@ import "./Register.css";
 import fondo from "../../assets/registration/Button_Continuar.webp";
 import highlight from "../../assets/desktop/Header/Spray_graffbutton.webp"
 import { useNavigate } from "react-router";
+import { useViewport } from "../../context/ViewportContext";
 const Footer = () => {
+  const { isMobile } = useViewport();
   const navigate = useNavigate();
   const [isFooterVisible, setIsFooterVisible] = useState(false);
 
@@ -60,8 +62,8 @@ const Footer = () => {
       >
         <img loading="lazy" src={fondo} alt="volver arriba" className="register-image"/>
         <img loading="lazy" src={highlight} alt="" className="register-highlight"/>
-        <p className="guild-font register-text">VOLVER</p>
-        <p className="guild-font register-text">ARRIBA</p>
+        <p className="guild-font register-text" style={{left: isMobile ? "27.5px" : "-65px"}}>VOLVER</p>
+        <p className="guild-font register-text" style={{left: isMobile ? "27.5px" : "-65px"}}>ARRIBA</p>
       </div>
     </>
   );

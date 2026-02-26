@@ -34,7 +34,7 @@ const Footer = () => {
           <button className="footer-link-btn" onClick={() => navigate("/faqs")}>Preguntas frecuentes</button>
           <button className="footer-link-btn" onClick={() => navigate("/terms")} >Términos y condiciones</button>
           <button className="footer-link-btn" onClick={() => navigate("/privacy")}>Política de privacidad</button>
-          
+          <button className="footer-link-btn" onClick={() => navigate("/rules")}>Reglamento</button>
         </div>
         <div style={{minHeight: "10px"}}></div>
         <p className="footer-text">©/TM/®2026 Activision Publishing, Inc. </p>
