@@ -10,9 +10,14 @@ import actualFondo2 from "../../assets/main/1.webp";
 import actualFondo3 from "../../assets/main/2.webp";
 import actualFondo4 from "../../assets/main/3.webp";
 import actualFondo5 from "../../assets/main/4.webp";
+import actualFondo6 from "../../assets/main/IMG_PremiosMob1.webp";
+import actualFondo7 from "../../assets/main/IMG_PremiosMob2.webp";
+
+
 import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.webp";
 import actualFondoDesktop1 from "../../assets/desktop/Main/Banner_desktop.webp";
 import actualFondoDesktop2 from "../../assets/desktop/Main/QUALI.webp";
+import actualFondoDesktop3 from "../../assets/desktop/Main/IMG_PremiosDesk1.webp";
 import imgband1 from "../../assets/main/IMG_Band.png";
 import imgband2 from "../../assets/desktop/Main/IMG_Band_web.webp";
 
@@ -44,15 +49,20 @@ const LosBarrios = () => {
   let tempArray = [];
   if (!isMobile) {
     tempArray.push(actualFondoDesktop1);
+    tempArray.push(actualFondoDesktop3);
     tempArray.push(actualFondoDesktop);
     tempArray.push(actualFondoDesktop2);
+    
   } else {
     tempArray.push(actualFondo1);
+    tempArray.push(actualFondo6);
+    tempArray.push(actualFondo7);
     tempArray.push(actualFondo);
     tempArray.push(actualFondo2);
     tempArray.push(actualFondo3);
     tempArray.push(actualFondo4);
     tempArray.push(actualFondo5);
+
   }
   const responsive = {
     superLargeDesktop: {

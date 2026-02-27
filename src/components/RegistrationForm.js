@@ -11,6 +11,7 @@ import { useNavigate } from "react-router";
 import semaforo_of from "../assets/main/STICKER BOCA.webp";
 import semaforo_on from "../assets/main/STICKERS_CODM_03.webp";
 
+
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     email: "",
