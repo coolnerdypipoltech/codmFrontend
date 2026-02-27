@@ -382,7 +382,6 @@ const RegistrationForm = () => {
               ) : (
                 <p className="inter-font">{popup.message}</p>
               )}
-              <p className="inter-font">{popup.message}</p>
               <div
                 onClick={closePopup}
                 style={{
