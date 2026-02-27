@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 
 import "./Terms.css";
-import pdfFile from "../assets/Rules/CODM_Rulebook.pdf";
+
+const pdfFile = `https://codmbarrioslatinos.com/static/media/CODM_Rulebook.pdf`;
 
 
 const RulesPage = () => {
