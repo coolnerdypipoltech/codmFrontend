@@ -19,6 +19,7 @@ import buttonlayout from "../assets/registration/Button_Continuar.webp";
 import backgroundPopUp from "../assets/Home/PopUpMob.webp"
 import backgroundPopUDesktop from "../assets/Home/PopUpDesk.webp";
 import stickerPopUp from "../assets/Home/Hand_CODM.webp";
+import textImage from "../assets/Home/Text_pop_up.webp"
 import { useViewport } from "../context/ViewportContext";
 ///<MainHost />
 const HomePage = () => {
@@ -43,14 +44,8 @@ const HomePage = () => {
               
               style={{ textAlign: "left", width: "100%", padding: "0 10px",  }}
             >
-              <p className="guild-regular-font" style={{color: "#F201B7", fontSize: isMobile ? "32px" : "38px", textAlign: "center", marginBottom: "0px"}}> ¡Lo mero rico!</p>
-            </div>
-            <div
-              className="inter-font"
-              style={{ textAlign: "left", width: "100%", padding: "0 10px" }}
-            >
-              <p className="guild-regular-font" style={{textAlign: "center", fontSize: isMobile ? "20px" : "24px"}}> El primer torneo de COD:M <br></br> en Latinoamerica</p>
-            </div>
+ </div>
+ <img src={textImage} style={{marginBottom: "20px", maxWidth: isMobile ? "100%" : "350px", alignSelf: "center"}} alt="Text" />
             <div
               style={{
                 width: "100%",
