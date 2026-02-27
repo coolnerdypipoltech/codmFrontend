@@ -371,13 +371,13 @@ const RegistrationForm = () => {
               {popup.type === "success" ? (
                 <div>
                   <p className="inter-font" style={{fontSize: "18px"}}>
-                    <strong >¡Falta un paso final parce!</strong>
+                    <strong >¡Registro listo! 🔥</strong>
                   </p>
                   <p className="inter-font">
-                    <strong style={{color: " #F201B7"}}>Verifica tu correo electrónico</strong> para
-                    completar tu registro y ser considerado participante oficial
+                    Te enviamos un correo que
+                    <strong > confirma tu registro oficial.</strong> 
                   </p>
-                  <p>Si no ves el mensaje, porfa checa tu carpeta de spam.</p>
+                  <p className="inter-font">¿No lo ves? Revisa spam o correo no deseado. <br></br> Guárdalo. Lo necesitarás si avanzas a la siguiente etapa.</p>
                 </div>
               ) : (
                 <p className="inter-font">{popup.message}</p>
