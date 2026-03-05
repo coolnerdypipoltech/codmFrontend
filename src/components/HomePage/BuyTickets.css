@@ -47,7 +47,7 @@
 }
 
 .buyTickets-Image{
-  height: 80px;
+  height: 90px;
 }
 
 .buyTickets-buttonText{
@@ -60,11 +60,9 @@
 
 
 .buyTickets-buttonText2{
-  position: absolute;
-  font-family: "guildhall-wide", sans-serif;
-  color: #EDCC00;
-  margin-top: 130px;
+  position: relative;
   font-size: 16px;
+  bottom: 55px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -94,11 +92,11 @@
   .buyTickets-buttonText{
     bottom: 6vw;
   }
+  .buyTickets-buttonText2{
+    bottom: 10vw;
+  }
 }
 
-@media screen and (max-width: 750px) {
-
-}
 
 @media screen and (max-width: 1000px) {
   .buyTickets-text{
@@ -111,6 +109,10 @@
   .buyTickets-buttonText{
     bottom: 45px;
     font-size: 12px;
+  }
+
+  .buyTickets-buttonText2{
+    bottom: 50px;
   }
 
   .buyTickets-container {
@@ -132,6 +134,13 @@
 @media screen and (max-width: 370px) {
     .buyTickets-text{
     font-size: 16px;
+    
+  }
+}
+
+@media screen and (max-width: 400px) {
+    .buyTickets-text{
+    font-size: 17px;
     
   }
 }

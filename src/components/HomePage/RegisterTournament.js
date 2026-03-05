@@ -1,7 +1,9 @@
 import React from "react";
 import imagen2 from "../../assets/main/IMG_texture_RGTM.webp";
 import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_RegistrowebT.webp";
-import comprarBoletos from "../../assets/desktop/Registro/Button_Registro al torneo_web.webp";
+import comprarBoletos from "../../assets/main/button socialM.webp";
+import icon1 from "../../assets/main/Button_Youtube.webp";
+import icon2 from "../../assets/main/Button_Facebook.webp";
 
 import { useViewport } from "../../context/ViewportContext";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +17,7 @@ const RegisterTournament = () => {
 
      <section id="buyTickets" className="buyTickets-section" style={{backgroundColor: "#cbc1b7"}}>
       {!isMobile && <div style={{minHeight: "90px", width: "100%"}}></div>}
-      <div className="buyTickets-container" >
+      <div className="buyTickets-container" style={{paddingLeft: "30px", paddingRight: "30px"}} >
         <img
           className="buyTickets-background2"
           src={backgroundImage}
@@ -30,19 +32,27 @@ const RegisterTournament = () => {
           }}
         >
           <p className="buyTickets-text" style={{ marginTop: isMobile ? "40px" : "50px", color: "black" }}>
-            SI LLEGASTE HASTA AQUÍ,
+            NO TE PIERDAS LAS TRANSMISIONES <br></br> EN VIVO DE LOS REGIONAL QUALIFIERS
           </p>
-          <p className="buyTickets-text" style={{ color: "black" }}>REGÍSTRATE EN EL TORNEO</p>
-          <div onClick={() => navigate('/registro')} style={{width: "100%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
+          <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap"}}>
+            <div onClick={() => window.open("https://www.youtube.com/@LATAMCallOfDutyMobile", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
             <img
               loading="lazy"
-              src={comprarBoletos}
+              src={icon1}
               className="buyTickets-Image"
               alt="Comprar Boletos"
-              style={{width: "100%", maxWidth: "300px"}}
+              style={{width: "auto"}}
             />
-
-            <p className="buyTickets-buttonText">REGISTRO AL TORNEO</p>
+          </div>
+          <div onClick={() => window.open("https://www.facebook.com/LATAMCallOfDutyMobile", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
+            <img
+              loading="lazy"
+              src={icon2}
+              className="buyTickets-Image"
+              alt="Comprar Boletos"
+              style={{width: "auto"}}
+            />
+          </div>
           </div>
         </div>
       </div>
