@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/codmFrontend/static/css/main.6b525589.css",
-    "main.js": "/codmFrontend/static/js/main.6bb8d593.js",
+    "main.css": "/codmFrontend/static/css/main.e09f2989.css",
+    "main.js": "/codmFrontend/static/js/main.3b93956c.js",
     "static/js/453.261fb4ef.chunk.js": "/codmFrontend/static/js/453.261fb4ef.chunk.js",
     "static/media/CODMOBILEBL_16_9.mp4": "/codmFrontend/static/media/CODMOBILEBL_16_9.c47b846ed3b4f47820b0.mp4",
     "static/media/CODMOBILEBL9_16.mp4": "/codmFrontend/static/media/CODMOBILEBL9_16.f846f15b41ab3d216288.mp4",
@@ -43,7 +43,7 @@
     "static/media/1.webp": "/codmFrontend/static/media/1.e41a8d32e479bd707d48.webp",
     "static/media/Tarjeta_3.webp": "/codmFrontend/static/media/Tarjeta_3.99dc5f409cbbb0d3e882.webp",
     "static/media/4.webp": "/codmFrontend/static/media/4.6fecef0ab76ccd7640d3.webp",
-    "static/media/Tarjeta_1.webp": "/codmFrontend/static/media/Tarjeta_1.72452993aafa840e88d4.webp",
+    "static/media/Tarjeta_1.webp": "/codmFrontend/static/media/Tarjeta_1.fb935d6167db7060e68a.webp",
     "static/media/Tarjeta_2.webp": "/codmFrontend/static/media/Tarjeta_2.be458d802148ba90702b.webp",
     "static/media/3.webp": "/codmFrontend/static/media/3.dcecc2d0ee99b4b4f010.webp",
     "static/media/IMG_Splash_RepresentaTuBarrio1.webp": "/codmFrontend/static/media/IMG_Splash_RepresentaTuBarrio1.0a011bc400407d437256.webp",
@@ -84,6 +84,8 @@
     "static/media/Los barrios_web.webp": "/codmFrontend/static/media/Los barrios_web.eca6f34294e0fa2d2388.webp",
     "static/media/IMG_Fecha.webp": "/codmFrontend/static/media/IMG_Fecha.47bde87695f4cbdce20f.webp",
     "static/media/INFINIX.webp": "/codmFrontend/static/media/INFINIX.f8ff1526a8095b33b0f5.webp",
+    "static/media/Button_Facebook.webp": "/codmFrontend/static/media/Button_Facebook.cd3ca0d687f3c33286c6.webp",
+    "static/media/Button_Youtube.webp": "/codmFrontend/static/media/Button_Youtube.35537dbb17e8969b3c5d.webp",
     "static/media/IMG_Background_comoparticipar.webp": "/codmFrontend/static/media/IMG_Background_comoparticipar.a15ffae2bb2e2987e7ab.webp",
     "static/media/STICKERS_CODM_03.webp": "/codmFrontend/static/media/STICKERS_CODM_03.71116c7c27dbdca82a09.webp",
     "static/media/STICKER BOCA.webp": "/codmFrontend/static/media/STICKER BOCA.10b0848d04fc3d317043.webp",
@@ -104,9 +106,7 @@
     "static/media/Icon_Ubicación.webp": "/codmFrontend/static/media/Icon_Ubicación.2aaddf0124783d132ce9.webp",
     "static/media/Icon_next.webp": "/codmFrontend/static/media/Icon_next.3484a4caaa3a8861ddef.webp",
     "index.html": "/codmFrontend/index.html",
-    "static/media/Icon_Facebook.webp": "/codmFrontend/static/media/Icon_Facebook.e8f618ae2726fb081f1d.webp",
     "static/media/Icon_Importante.webp": "/codmFrontend/static/media/Icon_Importante.4a05e9cf957d460a6e58.webp",
-    "static/media/Icon_Youtube.webp": "/codmFrontend/static/media/Icon_Youtube.ba2a19071e1ebe3d7b37.webp",
     "static/media/Icon_instagram.svg": "/codmFrontend/static/media/Icon_instagram.1dd5ed5df8cbbf8b4849d30a3e8172bf.svg",
     "static/media/Icon_tooltip.webp": "/codmFrontend/static/media/Icon_tooltip.dbbe5b6e82243de3a52d.webp",
     "static/media/Icon_Desplegar.webp": "/codmFrontend/static/media/Icon_Desplegar.ffe20faa4a6d32ba15e2.webp",
@@ -117,12 +117,12 @@
     "static/media/diamondOff.svg": "/codmFrontend/static/media/diamondOff.5f97a279551eea0aeceab2d7fdc0a14e.svg",
     "static/media/arrow.svg": "/codmFrontend/static/media/arrow.7642281869f72253171e2b5cd0bb1320.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
-    "main.6b525589.css.map": "/codmFrontend/static/css/main.6b525589.css.map",
-    "main.6bb8d593.js.map": "/codmFrontend/static/js/main.6bb8d593.js.map",
+    "main.e09f2989.css.map": "/codmFrontend/static/css/main.e09f2989.css.map",
+    "main.3b93956c.js.map": "/codmFrontend/static/js/main.3b93956c.js.map",
     "453.261fb4ef.chunk.js.map": "/codmFrontend/static/js/453.261fb4ef.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b525589.css",
-    "static/js/main.6bb8d593.js"
+    "static/css/main.e09f2989.css",
+    "static/js/main.3b93956c.js"
   ]
 }
