@@ -2,7 +2,6 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SplashScreen from "./components/SplashScreen";
-import RegistroPage from "./pages/RegistroPage";
 
 import InstructionsPage from "./pages/InstructionsPage";
 import Navbar from "./components/HomePage/Navbar";
@@ -21,7 +20,6 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/registro" element={<RegistroPage />} />
           <Route path="/instructions" element={<InstructionsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/faqs" element={<FAQsPage />} />
@@ -31,7 +29,6 @@ function App() {
             path="/codmFrontend/terms"
             element={<TermsPage />}
           />
-          <Route path="/codmFrontend/registro" element={<RegistroPage />} />
           <Route
             path="/codmFrontend/instructions"
             element={<InstructionsPage />}
