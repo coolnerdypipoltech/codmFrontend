@@ -21,7 +21,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/registro" element={<RegistroPage />} />
+          
           <Route path="/instructions" element={<InstructionsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/faqs" element={<FAQsPage />} />
@@ -31,7 +31,7 @@ function App() {
             path="/codmFrontend/terms"
             element={<TermsPage />}
           />
-          <Route path="/codmFrontend/registro" element={<RegistroPage />} />
+          
           <Route
             path="/codmFrontend/instructions"
             element={<InstructionsPage />}
