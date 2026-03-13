@@ -10,7 +10,7 @@ import sticker2 from "../../assets/main/STICKERS_CODM_03.webp";
 import { useViewport } from "../../context/ViewportContext";
 
 const getTextura = (width) => {
-  if ((width > 660 && width < 900) || width > 1300) {
+  if ((width > 660 && width < 1000) || width > 1450) {
     return textura2;
   }
   return textura1;

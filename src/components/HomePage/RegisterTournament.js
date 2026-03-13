@@ -53,8 +53,11 @@ const RegisterTournament = () => {
               style={{width: "auto"}}
             />
           </div>
+          
           </div>
+          
         </div>
+        <div id="calendario" style={{position: "relative", top: "-200px"}}></div>
       </div>
     </section>
   );

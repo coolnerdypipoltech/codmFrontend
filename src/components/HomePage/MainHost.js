@@ -227,6 +227,7 @@ const MainHost = () => {
         className="mainhost-background"
         alt="Splash Art"
       />
+      <div id="participate2" style={{position: "relative", top: "-200px"}}></div>
       <div
         style={{
           position: "absolute",
@@ -236,7 +237,8 @@ const MainHost = () => {
         }}
       >
         {" "}
-        <div loading="lazy" id="participate2" className="participate-handler" />
+        <div loading="lazy"className="participate-handler" />
+        
       </div>
     </section>
   );

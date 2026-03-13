@@ -45,7 +45,13 @@ const Calendary = () => {
 
   return (
     <>
-      <div style={{ minHeight: isMobile ? "10px" : "100px", width: "100%", backgroundColor: "#FFB838" }}></div>
+      <div
+        style={{
+          minHeight: isMobile ? "10px" : "100px",
+          width: "100%",
+          backgroundColor: "#FFB838",
+        }}
+      ></div>
       <section
         id="calendario"
         className="calendario-section"
@@ -59,7 +65,9 @@ const Calendary = () => {
           padding: isMobile ? "40px 0px" : "40px 0px 0px",
         }}
       >
-        <div style={{ minHeight: isMobile ? "30px" : "60px", width: "100%" }}></div>
+        <div
+          style={{ minHeight: isMobile ? "30px" : "60px", width: "100%" }}
+        ></div>
         <div className="brush-text">
           <img
             loading="lazy"
@@ -141,12 +149,31 @@ const Calendary = () => {
               </div>
               <span className="countdown-label">SEG</span>
             </div>
-            
           </div>
-       <p className='text-participate2' style={{ color: "black", fontSize: isMobile ? "14px" : "18px" }}>Zona horaria central (CST)</p>
-      </div>
-        <div id='location' style={{position: "absolute", width: "100%", display: "flex", flexDirection: "row-reverse"}}> <img loading="lazy" src={imgband} alt="Band" className='image-band5' /></div>
-      
+          <p
+            className="text-participate2"
+            style={{ color: "black", fontSize: isMobile ? "14px" : "18px" }}
+          >
+            Zona horaria central (CST)
+          </p>
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            display: "flex",
+            flexDirection: "row-reverse",
+          }}
+        >
+          {" "}
+          <img
+            loading="lazy"
+            src={imgband}
+            alt="Band"
+            className="image-band5"
+          />
+        </div>
+        <div id="location" style={{position: "relative", top: "-100px"}}></div>
       </section>
     </>
   );
