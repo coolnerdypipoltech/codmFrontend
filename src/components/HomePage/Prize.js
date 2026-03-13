@@ -34,7 +34,7 @@ const Prize = () => {
             
           }}
         >
-          <source src={video} type="video/mp4" />
+          <source  src={video} type="video/mp4" />
         </video>
         <div style={{
           position: "absolute",
@@ -42,7 +42,7 @@ const Prize = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundColor: "#1d1d1dc7",
+          backgroundColor: "#1d1d1de5",
           zIndex: 1
         }}></div>
         <div style={{position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", padding: "0 20px"}}>
