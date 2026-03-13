@@ -35,7 +35,7 @@ const RegisterTournament = () => {
             ¡CHECA CÓMO SE PUSIERON  <br></br> LOS REGIONAL QUALIFIERS!
           </p>
           <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap"}}>
-            <div onClick={() => window.open("https://www.instagram.com/reel/DVw3Ux2Fqjs/?igsh=OWlvaGhoY3hvdGVz", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
+            <div onClick={() => window.open("https://www.instagram.com/reel/DVw3Ux2Fqjs/", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
             <img
               loading="lazy"
               src={icon1}
@@ -44,7 +44,7 @@ const RegisterTournament = () => {
               style={{width: "auto"}}
             />
           </div>
-          <div onClick={() => window.open("https://www.facebook.com/share/p/14XqoYqodfy/", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
+          <div onClick={() => window.open("https://www.facebook.com/share/r/1FrrDezaoq/", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
             <img
               loading="lazy"
               src={icon2}
