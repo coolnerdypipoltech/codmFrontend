@@ -2,7 +2,7 @@ import React from "react";
 import imagen2 from "../../assets/main/IMG_texture_RGTM.webp";
 import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_RegistrowebT.webp";
 import comprarBoletos from "../../assets/main/button socialM.webp";
-import icon1 from "../../assets/main/Button_Youtube.webp";
+import icon1 from "../../assets/main/Button_Instagram.webp";
 import icon2 from "../../assets/main/Button_Facebook.webp";
 
 import { useViewport } from "../../context/ViewportContext";
@@ -32,10 +32,10 @@ const RegisterTournament = () => {
           }}
         >
           <p className="buyTickets-text" style={{ marginTop: isMobile ? "40px" : "50px", color: "black" }}>
-            NO TE PIERDAS LAS TRANSMISIONES <br></br> EN VIVO DE LOS REGIONAL QUALIFIERS
+            ¡CHECA CÓMO SE PUSIERON  <br></br> LOS REGIONAL QUALIFIERS!
           </p>
           <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap"}}>
-            <div onClick={() => window.open("https://www.youtube.com/@LATAMCallOfDutyMobile", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
+            <div onClick={() => window.open("https://www.instagram.com/reel/DVw3Ux2Fqjs/?igsh=OWlvaGhoY3hvdGVz", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
             <img
               loading="lazy"
               src={icon1}
@@ -44,7 +44,7 @@ const RegisterTournament = () => {
               style={{width: "auto"}}
             />
           </div>
-          <div onClick={() => window.open("https://www.facebook.com/LATAMCallOfDutyMobile", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
+          <div onClick={() => window.open("https://www.facebook.com/share/p/14XqoYqodfy/", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
             <img
               loading="lazy"
               src={icon2}
