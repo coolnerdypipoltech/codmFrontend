@@ -65,6 +65,12 @@
   bottom: 55px;
 }
 
+@media screen and (max-width: 2000px){
+    .buyTickets-buttonText{
+    bottom: 60px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
 .buyTickets-container{
   background-size: 100% auto;
@@ -129,6 +135,7 @@
   }
 
 }
+
 
 
 @media screen and (max-width: 370px) {

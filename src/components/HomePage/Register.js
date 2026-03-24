@@ -37,7 +37,7 @@ const Footer = () => {
   return (
     <>
       <div
-        onClick={() => navigate('/registro')}
+        onClick={() => window.open("https://feverup.com/m/593821", "_blank")}
         className="register-container"
         style={{
           opacity: isFooterVisible ? 0 : 1,
@@ -47,8 +47,8 @@ const Footer = () => {
       >
         <img loading="lazy" src={fondo} alt="img" className="register-image"/>
         <img loading="lazy" src={highlight} alt="" className="register-highlight"/>
-        <p className="guild-font register-text">REGISTRO </p>
-        <p className="guild-font register-text">AL TORNEO </p>
+        <p className="guild-font register-text">COMPRAR </p>
+        <p className="guild-font register-text">BOLETOS</p>
       </div>
 
       <div

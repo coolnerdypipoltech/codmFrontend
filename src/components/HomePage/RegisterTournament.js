@@ -44,7 +44,7 @@ const RegisterTournament = () => {
               style={{width: "auto"}}
             />
           </div>
-          <div onClick={() => window.open("https://www.facebook.com/share/r/1FrrDezaoq/", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
+          <div onClick={() => window.open("https://www.facebook.com/reel/2194971667912499/", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
             <img
               loading="lazy"
               src={icon2}

@@ -40,19 +40,21 @@ const BuyTickets = ({type}) => {
           }}
         >
           <p className="buyTickets-text" style={{ marginTop: "30px", color: "black", lineHeight: "0.6" }}>
-            DEL BARRIO PARA EL MUNDO
+            COMPRA BOLETOS
           </p>
-          <p className="buyTickets-text" style={{color: "black"}}>ESTO ES BARRIOS LATINOS</p>
-          {false && <>
+          <p className="buyTickets-text" style={{color: "black"}}>PARA LA FINAL EN VIVO</p>
+          {true && <div onClick={() => window.open("https://feverup.com/m/593821", "_blank")} style={{width: "auto", cursor: "pointer"}}>
             <img
+              
               loading="lazy"
               src={comprarBoletos}
               className="buyTickets-Image"
+              style={{width: "100%"}}
               alt="Comprar Boletos"
             />
 
             <p className="buyTickets-buttonText">COMPRAR BOLETOS</p>
-          </>}
+          </div>}
         </div>
       </div>
     </section>
