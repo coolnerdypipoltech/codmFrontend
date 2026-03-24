@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/codmFrontend/static/css/main.7869c51c.css",
-    "main.js": "/codmFrontend/static/js/main.097b20e6.js",
+    "main.css": "/codmFrontend/static/css/main.da44e473.css",
+    "main.js": "/codmFrontend/static/js/main.fa9dbf28.js",
     "static/js/453.261fb4ef.chunk.js": "/codmFrontend/static/js/453.261fb4ef.chunk.js",
     "static/media/CODMOBILEBL9_16.mp4": "/codmFrontend/static/media/CODMOBILEBL9_16.6de8a562ade61a6b0ec0.mp4",
     "static/media/CODMOBILEBL_16_9.mp4": "/codmFrontend/static/media/CODMOBILEBL_16_9.56a4ff81ff34feb93059.mp4",
@@ -80,6 +80,7 @@
     "static/media/Términos y condiciones.webp": "/codmFrontend/static/media/Términos y condiciones.84508fba836272d3a1b8.webp",
     "static/media/IMG_Politicas de privacidad.webp": "/codmFrontend/static/media/IMG_Politicas de privacidad.48eee2848843869b031a.webp",
     "static/media/Brush_Loading.webp": "/codmFrontend/static/media/Brush_Loading.569d180d1c4d33870a12.webp",
+    "static/media/Spray_graffbutton.webp": "/codmFrontend/static/media/Spray_graffbutton.fb26ae76c3f8ff6ff30e.webp",
     "static/media/IMG_Fecha_web.webp": "/codmFrontend/static/media/IMG_Fecha_web.706f2c90e681a3ac7974.webp",
     "static/media/Los barrios_web.webp": "/codmFrontend/static/media/Los barrios_web.eca6f34294e0fa2d2388.webp",
     "static/media/IMG_Fecha.webp": "/codmFrontend/static/media/IMG_Fecha.47bde87695f4cbdce20f.webp",
@@ -117,12 +118,12 @@
     "static/media/diamondOff.svg": "/codmFrontend/static/media/diamondOff.5f97a279551eea0aeceab2d7fdc0a14e.svg",
     "static/media/arrow.svg": "/codmFrontend/static/media/arrow.7642281869f72253171e2b5cd0bb1320.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
-    "main.7869c51c.css.map": "/codmFrontend/static/css/main.7869c51c.css.map",
-    "main.097b20e6.js.map": "/codmFrontend/static/js/main.097b20e6.js.map",
+    "main.da44e473.css.map": "/codmFrontend/static/css/main.da44e473.css.map",
+    "main.fa9dbf28.js.map": "/codmFrontend/static/js/main.fa9dbf28.js.map",
     "453.261fb4ef.chunk.js.map": "/codmFrontend/static/js/453.261fb4ef.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7869c51c.css",
-    "static/js/main.097b20e6.js"
+    "static/css/main.da44e473.css",
+    "static/js/main.fa9dbf28.js"
   ]
 }
