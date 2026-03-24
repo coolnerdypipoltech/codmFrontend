@@ -42,7 +42,8 @@ const Footer = () => {
         style={{
           opacity: isFooterVisible ? 0 : 1,
           pointerEvents: isFooterVisible ? 'none' : 'auto',
-          transition: 'opacity 0.3s ease'
+          transition: 'opacity 0.3s ease',
+          cursor: "pointer"
         }}
       >
         <img loading="lazy" src={fondo} alt="img" className="register-image"/>
