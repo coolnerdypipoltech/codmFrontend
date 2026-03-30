@@ -5,7 +5,7 @@ import image4 from "../../assets/main/IMG_texture_RG2.webp";
 import image5 from "../../assets/desktop/Main/IMG_texture_RG_webT2.webp";
 import comprarBoletos from "../../assets/main/Button_Comprar Boletos.webp";
 import compraBoletoText from "../../assets/main/CompraBoleto.png";
-
+import highlight from "../../assets/desktop/Header/Spray_graffbutton.webp"
 import "./BuyTickets.css";
 import { useViewport } from "../../context/ViewportContext";
 const BuyTickets = ({type}) => {
@@ -32,6 +32,7 @@ const BuyTickets = ({type}) => {
           alt="Background"
         ></img>
         <div
+          id="button-buyTickets"
           style={{
             zIndex: "10",
             display: "flex",
@@ -43,6 +44,12 @@ const BuyTickets = ({type}) => {
           }}
         >
 
+          <img
+              loading="lazy"
+              src={highlight}
+              className="buyTickets-highlight"
+              alt="Highlight"
+            />
           <img
               
               loading="lazy"
@@ -59,6 +66,7 @@ const BuyTickets = ({type}) => {
               style={{width: "95%"}}
               alt="Comprar Boletos"
             />
+            
 
             <p className="buyTickets-buttonText">COMPRAR BOLETOS</p>
           </div>}

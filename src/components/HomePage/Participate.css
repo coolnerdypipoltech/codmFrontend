@@ -62,12 +62,10 @@
   overflow-y: visible;
   min-width: 355px;
   min-height: 483px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .participar-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .card-icon {

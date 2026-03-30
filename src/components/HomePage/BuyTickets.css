@@ -1,9 +1,31 @@
+.buyTickets-highlight{
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 11;
+  padding-top: 145px;
+  width: 65%;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+}
+
+#button-buyTickets:hover .buyTickets-highlight{
+  opacity: 1;
+}
+
+#button-buyTickets:hover .buyTickets-buttonText{
+  color: white;
+}
+
 .buyTickets-section{
   width: 100%;
   background: #d6ba00;
   text-align: center;
   height: 250px;
-  
+
 }
 
 
@@ -49,7 +71,7 @@
 .buyTickets-Image{
   height: 90px;
   position: relative;
-  bottom: -20px;
+  bottom: -9px;
 }
 
 .buyTicketsText-Image{
@@ -65,6 +87,8 @@
   color: #EDCC00;
   font-size: 16px;
   bottom: 35px;
+  position: absolute;
+  z-index: 11;
 }
 
 
@@ -76,7 +100,7 @@
 
 @media screen and (max-width: 2000px){
     .buyTickets-buttonText{
-    bottom: 40px;
+    bottom: 30px;
   }
 }
 
@@ -105,7 +129,7 @@
     font-size: 1.7vw;
   }
   .buyTickets-buttonText{
-    bottom: 4.4vw;
+    bottom: 3vw;
   }
   .buyTickets-buttonText2{
     bottom: 10vw;
@@ -122,7 +146,7 @@
     height: 64px;
   }
   .buyTickets-buttonText{
-    bottom: 25px;
+    bottom: 18px;
     font-size: 12px;
   }
 
