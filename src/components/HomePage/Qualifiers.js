@@ -9,6 +9,10 @@ import imgband2 from "../../assets/desktop/Main/IMG_Band_web.webp";
 
 const Qualifiers = () => {
 
+    const imgband1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553851/IMG_Band_lcpesy.png"
+    const imagen2 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553998/IMG_Regional_Qualifiers_ny0cwk.webp"
+
+
   const { isMobile } = useViewport();
   const imgband = isMobile ? imgband1 : imgband2;
   const splashImage = isMobile ? imagen2 : imagen2Desktop;

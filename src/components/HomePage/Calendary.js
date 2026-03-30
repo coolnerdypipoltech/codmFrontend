@@ -12,6 +12,10 @@ import { useViewport } from "../../context/ViewportContext";
 
 const Calendary = () => {
   const { isMobile } = useViewport();
+  const fondo = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553995/IMG_Texture_Gran_final_uyh9em.webp"
+  const fecha1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553852/IMG_Fecha_k4kjj6.webp"
+  const imgband1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553851/IMG_Band_lcpesy.png"
+  const brushNavMenu = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553853/IMG_BRUSHCalendary_wygrwn.webp"
 
   const backgroundImage = isMobile ? fondo : fondoDesktop;
   const fecha = isMobile ? fecha1 : fechaDesktop;

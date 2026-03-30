@@ -11,8 +11,13 @@ const RegisterTournament = () => {
   const navigate = useNavigate();
   const { isMobile } = useViewport();
 
+  const icon1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553978/IMG_texture_RGTM_ehi5qs.webp"
+  const icon2 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774554003/Button_Facebook_lk4xuc.webp"
+  const imagen2 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553978/IMG_texture_RGTM_ehi5qs.webp"
+
   const backgroundImage = isMobile ? imagen2 : imagen3;
 
+  
   return (
 
      <section id="buyTickets" className="buyTickets-section" style={{backgroundColor: "#cbc1b7"}}>

@@ -1,15 +1,18 @@
 
 import './Participate.css';
-import imagen1 from "../../assets/cards/Tarjeta_1.webp";
-import imagen2 from "../../assets/cards/Tarjeta_2.webp";
-import imagen3 from "../../assets/cards/Tarjeta_3.webp";
-import imagen4 from "../../assets/cards/Tarjeta_4.webp";
 
 import background from "../../assets/main/IMG_Background_comoparticipar.webp"
 import backgroundDesktop from "../../assets/desktop/Main/IMG_Background_Participar.webp"
 import { useViewport } from "../../context/ViewportContext";
 import { useNavigate } from "react-router";
 const Participate = () => {
+
+  const imagen1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774654843/Tarjeta_1_t8huha.webp"
+  const imagen2 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774654843/Tarjeta_1_t8huha.webp"
+  const imagen3 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774654843/Tarjeta_3_jzqspn.webp"
+  const imagen4 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774654843/Tarjeta_4_wxxz4y.webp"
+  const background = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553851/IMG_Background_comoparticipar_bn6jog.webp"
+
     const navigate = useNavigate();
   const { isMobile } = useViewport();
 

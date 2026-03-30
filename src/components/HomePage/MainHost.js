@@ -8,14 +8,6 @@ import actualFondo1 from "../../assets/main/IMG_Background_Los barrios.webp";
 import actualFondoDesktop1 from "../../assets/desktop/Main/IMG_Background_Los barrios_WEB.webp";
 import losbarriosTitle from "../../assets/main/Los barrios_web.webp";
 
-import postermobil1 from "../../assets/posters/1_Poster MX.webp";
-import postermobil2 from "../../assets/posters/2_Poster COL.webp";
-import postermobil3 from "../../assets/posters/3_Poster ARG.webp";
-import postermobil4 from "../../assets/posters/4_Poster CL.webp";
-import postermobil5 from "../../assets/posters/5_Poster PE_EC.webp";
-import postermobil6 from "../../assets/posters/6_host_and-main.webp";
-import postermobil7 from "../../assets/posters/7_HostMov.webp";
-
 import posterdesktop1 from "../../assets/desktop/PostersPais/1_Poster MX_AC.webp";
 import posterdesktop2 from "../../assets/desktop/PostersPais/2_Poster COL_MP.webp";
 import posterdesktop3 from "../../assets/desktop/PostersPais/3_Poster ARG_SS.webp";
@@ -26,6 +18,19 @@ import posterdesktop7 from "../../assets/desktop/PostersPais/7_Host.webp";
 
 import { useViewport } from "../../context/ViewportContext";
 const MainHost = () => {
+
+  const losbarriosTitle = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774554001/Los_barrios_web_t9imvs.webp"
+  const actualFondo1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553852/IMG_Background_Los_barrios_v7souo.webp"
+
+  const postermobil1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774655198/1_Poster_MX_kg4m8a.webp"
+  const postermobil2 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774655199/2_Poster_COL_joesgb.webp"
+  const postermobil3 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774655197/3_Poster_ARG_rgchdo.webp"
+  const postermobil4 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774655198/4_Poster_CL_z5u0om.webp"
+  const postermobil5 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774655201/5_Poster_PE_EC_iunnkh.webp"
+  const postermobil6 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774655200/6_host_and-main_mr6svu.webp"
+  const postermobil7 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774655200/7_HostMov_giav6i.webp"
+
+
   const { isMobile } = useViewport();
   const actualFondo = isMobile ? actualFondo1 : actualFondoDesktop1;
   const carrousel = useRef(null);

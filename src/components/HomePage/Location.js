@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Location.css";
 import venue1 from "../../assets/main/IMG_Venue.webp";
 import venue2 from "../../assets/desktop/Main/IMG_Venue.webp"
-import textura1 from "../../assets/main/Textura_UbicacionM.webp";
 import textura2 from "../../assets/desktop/Main/Textura Ubicacion.webp";
 import icon from "../../assets/main/Icon_Ubicación.webp";
 import sticker1 from "../../assets/main/STICKER BOCA.webp";
@@ -13,11 +12,15 @@ const getTextura = (width) => {
   if ((width > 660 && width < 1000) || width > 1450) {
     return textura2;
   }
-  return textura1;
+  return "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553985/Textura_UbicacionM_u16wic.webp";
 };
 
 const Location = () => {
-  
+  const venue2 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774656756/IMG_Venue_mzuwlj.webp"
+  const textura1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553985/Textura_UbicacionM_u16wic.webp"
+  const icon = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553850/Icon_Ubicaci%C3%B3n_sg9vzx.webp"
+  const sticker1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553998/STICKER_BOCA_br9pwt.webp"
+  const sticker2 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774554000/STICKERS_CODM_03_yualz6.webp"
   const { isMobile } = useViewport();
   const [textura, setTextura] = useState(() => getTextura(window.innerWidth));
 

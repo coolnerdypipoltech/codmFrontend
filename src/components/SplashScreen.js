@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import "./SplashScreen.css";
-import loadingbg from "../assets/loading/Brush_Loading.webp";
-import fondoMobil from "../assets/loading/IMG_Background_Cargando.webp";
-import videoMobile from "../assets/CODMOBILEBL9_16.mp4"
-import videoDesktop from "../assets/CODMOBILEBL_16_9.mp4"
+
 import { useViewport } from "../context/ViewportContext";
 
 let introShown = false;
 
 // phase: 'splash' | 'video' | 'done'
 function SplashScreen({ children }) {
+  const fondoMobil = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774655251/IMG_Background_Cargando_zi7lf3.webp";
+   const loadingbg = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774655249/Brush_Loading_hzrbg0.webp";
+   const videoMobile = "https://res.cloudinary.com/dqsdjfi92/video/upload/v1774570048/CODMOBILEBL9_16_iwiago.mp4";
+   const videoDesktop = "https://res.cloudinary.com/dqsdjfi92/video/upload/v1774570048/CODMOBILEBL_16_9_vfrkft.mp4";
   const location = useLocation();
   const { isMobile } = useViewport();
   const videoRef = useRef(null);

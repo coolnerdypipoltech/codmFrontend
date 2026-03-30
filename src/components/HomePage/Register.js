@@ -5,6 +5,7 @@ import highlight from "../../assets/desktop/Header/Spray_graffbutton.webp"
 import { useNavigate } from "react-router";
 import { useViewport } from "../../context/ViewportContext";
 const Footer = () => {
+
   const { isMobile } = useViewport();
   const navigate = useNavigate();
   const [isFooterVisible, setIsFooterVisible] = useState(false);

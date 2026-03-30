@@ -10,6 +10,10 @@ import { useViewport } from "../../context/ViewportContext";
 
 const Prize = () => {
 
+  const video = "https://res.cloudinary.com/dqsdjfi92/video/upload/v1774570047/videoPrize_urzvjs.mp4"
+  const imgTitle = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553976/La_gloriadelbarrio_ofookv.webp"
+  const imgband1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553851/IMG_Band_lcpesy.png"
+
     const { isMobile } = useViewport();
   const imgband = isMobile ? imgband1 : imgband2;
 

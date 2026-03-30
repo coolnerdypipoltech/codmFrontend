@@ -3,28 +3,28 @@ import "./LosBarrios.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import arrow from "../../assets/main/Icon_next-white.webp";
-import actualFondo from "../../assets/main/IMG_Splash_RepresentaTuBarrio1.webp";
-import actualFondo1 from "../../assets/main/IMG_Splash_RepresentaTuBarrio.webp";
-import actualFondo2 from "../../assets/main/1.webp";
-import actualFondo3 from "../../assets/main/2.webp";
-import actualFondo4 from "../../assets/main/3.webp";
-import actualFondo5 from "../../assets/main/4.webp";
-import actualFondo6 from "../../assets/main/IMG_PremiosMob1.webp";
-import actualFondo7 from "../../assets/main/IMG_PremiosMob2.webp";
-
-
 import actualFondoDesktop from "../../assets/desktop/Main/IMG_Splash_RepresentaTuBarrio_web.webp";
 import actualFondoDesktop1 from "../../assets/desktop/Main/Banner_desktop.webp";
 import actualFondoDesktop2 from "../../assets/desktop/Main/QUALI.webp";
 import actualFondoDesktop3 from "../../assets/desktop/Main/IMG_PremiosDesk1.webp";
-import imgband1 from "../../assets/main/IMG_Band.png";
+
 import imgband2 from "../../assets/desktop/Main/IMG_Band_web.webp";
 
 import { useViewport } from "../../context/ViewportContext";
 import { useEffect, useRef, useState } from "react";
 
 const LosBarrios = () => {
+  const imgband1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553851/IMG_Band_lcpesy.png"
+  const arrow = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553850/Icon_next-white_vpjvss.webp"
+  const actualFondo = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553996/IMG_Splash_RepresentaTuBarrio_ybxm68.webp"
+  const actualFondo1 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553996/IMG_Splash_RepresentaTuBarrio_ybxm68.webp"
+  const actualFondo2 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774554007/1_oke1b3.webp"
+  const actualFondo3 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774554006/2_difk2s.webp"
+  const actualFondo4 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774554006/3_kc0ye1.webp"
+  const actualFondo5 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774554004/4_rijfhr.webp"
+  const actualFondo6 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774554001/IMG_PremiosMob1_btplxg.webp"
+  const actualFondo7 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553978/IMG_PremiosMob2_ebjhtg.webp"
+  
   const { isMobile } = useViewport();
   const resumeAutoplayTimeoutRef = useRef(null);
   const [isAutoPlayEnabled, setIsAutoPlayEnabled] = useState(true);

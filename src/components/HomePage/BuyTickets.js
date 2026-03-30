@@ -1,13 +1,13 @@
 import React from "react";
-import imagen2 from "../../assets/main/IMG_texture_RG.webp";
 import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_web.webp";
-import image4 from "../../assets/main/IMG_texture_RG2.webp";
-import image5 from "../../assets/desktop/Main/IMG_texture_RG_webT2.webp";
 import comprarBoletos from "../../assets/main/Button_Comprar Boletos.webp";
 
 import "./BuyTickets.css";
 import { useViewport } from "../../context/ViewportContext";
 const BuyTickets = ({type}) => {
+  const image4 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553994/IMG_texture_RG2_xekfjn.webp"
+  const imagen2 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774553994/IMG_texture_RG_gbax0v.webp"
+  const image5 = "https://res.cloudinary.com/dqsdjfi92/image/upload/v1774554005/Button_Comprar_Boletos_clpbn0.webp"
   const { isMobile } = useViewport();
   let backgroundImage;
   if(type === "1"){
