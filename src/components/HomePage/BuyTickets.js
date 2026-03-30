@@ -38,7 +38,8 @@ const BuyTickets = ({type}) => {
             flexDirection: "column",
             justifyContent: "center",
             marginBottom: "20px",
-            alignItems: "center"
+            alignItems: "center",
+            position: "absolute"
           }}
         >
 
