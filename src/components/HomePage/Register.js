@@ -37,7 +37,7 @@ const Footer = () => {
   return (
     <>
       <div
-        onClick={() => window.open("https://feverup.com/m/593821", "_blank")}
+        onClick={() => { window.gtag?.('event', 'click_comprar_boletos', { event_category: 'engagement', event_label: 'floating_button' }); window.open("https://feverup.com/m/593821", "_blank"); }}
         className="register-container"
         style={{
           opacity: isFooterVisible ? 0 : 1,

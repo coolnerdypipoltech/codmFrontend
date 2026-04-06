@@ -57,7 +57,7 @@ const BuyTickets = ({type}) => {
               className="buyTicketsText-Image"
               alt="Comprar Boletos"
             />
-          {true && <div onClick={() => window.open("https://feverup.com/m/593821", "_blank")} style={{width: "auto", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          {true && <div onClick={() => { window.gtag?.('event', 'click_comprar_boletos', { event_category: 'engagement', event_label: 'buy_tickets_section' }); window.open("https://feverup.com/m/593821", "_blank"); }} style={{width: "auto", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center"}}>
             <img
               
               loading="lazy"
