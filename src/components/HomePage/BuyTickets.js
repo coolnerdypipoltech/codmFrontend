@@ -44,12 +44,14 @@ const BuyTickets = ({type}) => {
           }}
         >
 
-          <img
-              loading="lazy"
-              src={highlight}
-              className="buyTickets-highlight"
-              alt="Highlight"
-            />
+          {!isMobile && (
+  <img
+    loading="lazy"
+    src={highlight}
+    className="buyTickets-highlight"
+    alt="Highlight"
+  />
+)}
           <img
               
               loading="lazy"
