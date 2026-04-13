@@ -20,8 +20,7 @@ function SplashScreen({ children }) {
     location.pathname === "/codmFrontend" ||
     location.pathname === "/codmFrontend/";
 
-  // Video desactivado: ir directo a "done" sin splash ni video
-  const [phase, setPhase] = useState(/*isHome && !introShown ? "splash" :*/ "done");
+  const [phase, setPhase] = useState(isHome && !introShown ? "splash" : "done");
   const [splashFading, setSplashFading] = useState(false);
   const [muted, setMuted] = useState(true);
 
