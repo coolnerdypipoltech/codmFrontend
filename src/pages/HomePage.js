@@ -11,7 +11,7 @@ import "./HomePage.css";
 import BuyTickets from "../components/HomePage/BuyTickets";
 import RegisterTournament from "../components/HomePage/RegisterTournament";
 import Qualifiers from "../components/HomePage/Qualifiers";
-import Register from "../components/HomePage/Register";
+//import Register from "../components/HomePage/Register";
 const HomePage = () => {
 
   return (
@@ -28,7 +28,7 @@ const HomePage = () => {
       <Calendary />
       <Location />
       <BuyTickets type={"1"} />
-      <Register/>
+
     </div>
   );
 };
