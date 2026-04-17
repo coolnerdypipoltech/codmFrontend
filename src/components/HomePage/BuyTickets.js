@@ -65,7 +65,7 @@ const BuyTickets = ({type}) => {
               loading="lazy"
               src={comprarBoletos}
               className="buyTickets-Image"
-              style={{width: "95%"}}
+              style={{width: "95%", bottom: "-9px"}}
               alt="Comprar Boletos"
             />
             

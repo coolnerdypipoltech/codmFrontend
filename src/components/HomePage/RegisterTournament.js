@@ -2,8 +2,9 @@ import React from "react";
 import imagen2 from "../../assets/main/IMG_texture_RGTM.webp";
 import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_RegistrowebT.webp";
 import comprarBoletos from "../../assets/main/button socialM.webp";
-import icon1 from "../../assets/main/Button_Instagram.webp";
+import icon1 from "../../assets/main/Button_Youtube.webp";
 import icon2 from "../../assets/main/Button_Facebook.webp";
+import icon3 from "../../assets/main/Button_TikTok.png"
 
 import { useViewport } from "../../context/ViewportContext";
 import { useNavigate } from "react-router-dom";
@@ -35,21 +36,31 @@ const RegisterTournament = () => {
             ¡CHECA CÓMO SE PUSIERON  <br></br> LOS REGIONAL QUALIFIERS!
           </p>
           <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap"}}>
-            <div onClick={() => window.open("https://www.instagram.com/reel/DVw3Ux2Fqjs/", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
+            <div onClick={() => window.open("https://www.youtube.com/@LATAMCallOfDutyMobile", "_blank")} style={{display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
             <img
               loading="lazy"
               src={icon1}
               className="buyTickets-Image"
-              alt="Comprar Boletos"
+              alt="YouTube"
               style={{width: "auto"}}
             />
           </div>
-          <div onClick={() => window.open("https://www.facebook.com/reel/2194971667912499/", "_blank")} style={{width: "50%", display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
+          <div onClick={() => window.open("https://www.facebook.com/LATAMCallOfDutyMobile", "_blank")} style={{ display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
             <img
               loading="lazy"
               src={icon2}
               className="buyTickets-Image"
-              alt="Comprar Boletos"
+              alt="Facebook"
+              style={{width: "auto"}}
+            />
+          </div>
+
+            <div onClick={() => window.open("https://www.tiktok.com/@callofdutymobile_latam", "_blank")} style={{ display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>
+            <img
+              loading="lazy"
+              src={icon3}
+              className="buyTickets-Image"
+              alt="TikTok"
               style={{width: "auto"}}
             />
           </div>
