@@ -21,7 +21,7 @@ const BarriosLatinos = () => {
       
       
       <div
-        onClick={() => { window.gtag?.('event', 'click_promocion_comprar_entradas', { event_category: 'engagement', event_label: 'floating_button' }); window.open("https://feverup.com/m/593821", "_blank"); }}
+        onClick={() => { window.gtag?.('event', 'click_participar_encuesta', { event_category: 'engagement', event_label: 'floating_button' }); window.open("https://forms.gle/QGZghRzUyTB2kyHz6", "_blank"); }}
         className="survey-container"
         style={{
           opacity: 1,
@@ -32,7 +32,7 @@ const BarriosLatinos = () => {
       >
         <img loading="lazy" src={fondo} alt="img" className="survey-image"/>
         <img loading="lazy" src={highlight} alt="" className="survey-highlight"/>
-        <p className="guild-font survey-text">COMPRAR ENTRADAS</p>
+        <p className="guild-font survey-text">REGÍSTRATE AHORA</p>
       </div>
 
 

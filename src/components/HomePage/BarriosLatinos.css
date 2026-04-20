@@ -18,7 +18,7 @@
   position: absolute;
   right: 0px;
   left: 0px;
-  margin-top: 28%;
+  margin-top: 18%;
   height: 50px;
   width: auto;
   display: flex;
@@ -62,20 +62,9 @@
   -o-transition: opacity 0.3s ease;
 }
 
-@media (max-width: 1100px){
-  .survey-container{
-    margin-top: 32%;
-  }
-      .survey-text{
-    font-size: 12px;
-    top: -45.5px;
-  }
-}
-
-
 @media (max-width: 1000px){
   .survey-container{
-    margin-top: 60%;
+    margin-top: 40%;
   }
       .survey-text{
     font-size: 12px;
@@ -86,7 +75,7 @@
 
 @media (max-width: 600px){
   .survey-container{
-    margin-top: 65vw;
+    margin-top: 50vw;
   }
 
 
@@ -95,14 +84,14 @@
 
 @media (max-width: 435px){
   .survey-container{
-    margin-top: 73vw;
+    margin-top: 55vw;
   }
   
 }
 
 @media (max-width: 350px){
   .survey-container{
-    margin-top: 80vw;
+    margin-top: 60vw;
   }
 }
 
