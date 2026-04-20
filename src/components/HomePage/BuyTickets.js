@@ -4,7 +4,7 @@ import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_web.webp";
 import image4 from "../../assets/main/IMG_texture_RG2.webp";
 import image5 from "../../assets/desktop/Main/IMG_texture_RG_webT2.webp";
 import comprarBoletos from "../../assets/main/Button_Comprar Boletos.webp";
-import compraBoletoText from "../../assets/main/CompraBoleto.png";
+import compraBoletoText from "../../assets/main/La gloriadelbarrio.webp";
 import highlight from "../../assets/desktop/Header/Spray_graffbutton.webp"
 import "./BuyTickets.css";
 import { useViewport } from "../../context/ViewportContext";
@@ -59,7 +59,7 @@ const BuyTickets = ({type}) => {
               className="buyTicketsText-Image"
               alt="Comprar Boletos"
             />
-          {true && <div onClick={() => { window.gtag?.('event', 'click_comprar_boletos', { event_category: 'engagement', event_label: 'buy_tickets_section' }); window.open("https://feverup.com/m/593821", "_blank"); }} style={{width: "auto", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          {false && <div onClick={() => { window.gtag?.('event', 'click_comprar_boletos', { event_category: 'engagement', event_label: 'buy_tickets_section' }); window.open("https://feverup.com/m/593821", "_blank"); }} style={{width: "auto", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center"}}>
             <img
               
               loading="lazy"

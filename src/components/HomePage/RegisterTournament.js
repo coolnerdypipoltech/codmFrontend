@@ -33,7 +33,7 @@ const RegisterTournament = () => {
           }}
         >
           <p className="buyTickets-text" style={{ marginTop: isMobile ? "40px" : "50px", color: "black" }}>
-            ¡CHECA CÓMO SE PUSIERON  <br></br> LOS REGIONAL QUALIFIERS!
+            ¡CHECA CÓMO SE PUSO  <br></br> LA GRAN FINAL!
           </p>
           <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap"}}>
             <div onClick={() => window.open("https://www.youtube.com/@LATAMCallOfDutyMobile", "_blank")} style={{display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center", flexWrap: "wrap", flexDirection: "column",  cursor: "pointer"}}>

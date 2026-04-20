@@ -28,7 +28,6 @@ const HomePage = () => {
       <Calendary />
       <Location />
       <BuyTickets type={"1"} />
-      <Register/>
     </div>
   );
 };
