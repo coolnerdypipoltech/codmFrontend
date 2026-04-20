@@ -11,14 +11,22 @@ import { useNavigate } from "react-router";
 import semaforo_of from "../assets/main/STICKER BOCA.webp";
 import semaforo_on from "../assets/main/STICKERS_CODM_03.webp";
 
+
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     email: "",
+    country: "",
+    zipCode: "",
     uid: "",
     name: "",
-    last_name: "",
+    surname: "",
+    username: "",
+    discord: "",
+    age: "",
+    passport: false,
     legalAge: false,
-    question: "",
+    availabilityToTravel: false,
+    termsAndConditions: false,
   });
   const navigate = useNavigate();
   const [forceReloadCaptcha, setForceReloadCaptcha] = useState(0);
@@ -57,6 +65,15 @@ const RegistrationForm = () => {
     }
   }, [isFormCompleted]);
 
+  const countries = [
+    { value: "MEX", label: "México" },
+    { value: "ARG", label: "Argentina" },
+    { value: "ECU", label: "Ecuador" },
+    { value: "COL", label: "Colombia" },
+    { value: "CHL", label: "Chile" },
+    { value: "PER", label: "Perú" },
+  ];
+
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -70,28 +87,50 @@ const RegistrationForm = () => {
     } else if (!validateEmail(formData.email)) {
       newErrors.email = "El correo no es válido";
     }
-    
-    if (!formData.question) {
-      newErrors.question = "La respuesta es requerida";
+
+    if (!formData.country) {
+      newErrors.country = "El país es requerido";
+    }
+
+    if (!formData.zipCode) {
+      newErrors.zipCode = "El código postal es requerido";
     }
 
     if (!formData.name) {
       newErrors.name = "El nombre es requerido";
     }
 
-    if (!formData.last_name) {
-      newErrors.last_name = "El apellido es requerido";
+    if (!formData.surname) {
+      newErrors.surname = "El apellido es requerido";
     }
 
     if (!formData.uid) {
       newErrors.uid = "El UID es requerido";
     }
-    console.log(formData.legalAge)
 
-    if(!formData.legalAge){
-      newErrors.legalAge = "Debe ser mayor de edad";
+    if (!formData.username) {
+      newErrors.username = "El nombre de usuario es requerido";
     }
 
+    if (!formData.age) {
+      newErrors.age = "La edad es requerida";
+    } else if (isNaN(formData.age) || formData.age < 1 || formData.age > 120) {
+      newErrors.age = "La edad debe ser un número válido";
+    }
+
+    if (!formData.termsAndConditions) {
+      newErrors.termsAndConditions =
+        "Se necesita aceptar los terminos y condiciones";
+    }
+
+    if (!formData.passport) {
+      newErrors.passport =
+        "Se necesita cumplir con los requisitos para viajar en tu país";
+    }
+
+    if (!formData.availabilityToTravel) {
+      newErrors.availabilityToTravel = "Se necesita disponibilidad para viajar";
+    }
     if (!isVerified) {
       setCaptchaError(true);
     }
@@ -115,6 +154,16 @@ const RegistrationForm = () => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => {
       const updatedValue = type === "checkbox" ? checked : value;
+
+      if (name === "age") {
+        const ageNumber = Number(updatedValue);
+        return {
+          ...prev,
+          age: updatedValue,
+          legalAge: !Number.isNaN(ageNumber) && ageNumber >= 18,
+        };
+      }
+
       return {
         ...prev,
         [name]: updatedValue,
@@ -131,6 +180,7 @@ const RegistrationForm = () => {
     if (!validateForm()) {
       return;
     }
+
     // Google Analytics: track form submission attempt
     if (window.gtag) {
       window.gtag("event", "form_submit", {
@@ -143,11 +193,26 @@ const RegistrationForm = () => {
     setForceReloadCaptcha((prev) => prev + 1);
     setIsLoading(true);
 
+    let helperDiscord = "null";
+    if (formData.discord.trim() !== "") {
+      helperDiscord = formData.discord.trim();
+    }
+
+    // Filtrar solo los campos no booleanos para enviar al servidor
     const dataToSend = {
       email: formData.email,
+      country: formData.country,
+      zipCode: formData.zipCode,
       uid: formData.uid,
       name: formData.name,
-      last_name: formData.last_name,
+      surname: formData.surname,
+      gamertag: formData.username,
+      discord: helperDiscord,
+      age: parseInt(formData.age, 10),
+      availabilityToTravel: formData.availabilityToTravel,
+      passport: true,
+      travel: formData.passport,
+      legalAge: formData.legalAge,
     };
 
     try {
@@ -177,10 +242,18 @@ const RegistrationForm = () => {
         });
         // Reset form
         setFormData({
+          email: "",
+          country: "",
+          zipCode: "",
           name: "",
-          last_name: "",
+          surname: "",
           uid: "",
+          username: "",
+          discord: "",
+          age: "",
+          passport: false,
           legalAge: false,
+          availabilityToTravel: false,
         });
       } else if (response.status === 400) {
         setPopup({
@@ -297,17 +370,14 @@ const RegistrationForm = () => {
               </div>
               {popup.type === "success" ? (
                 <div>
-                  <p className="inter-font" style={{ fontSize: "18px" }}>
-                    <strong>¡Registro listo! 🔥</strong>
+                  <p className="inter-font" style={{fontSize: "18px"}}>
+                    <strong >¡Registro listo! 🔥</strong>
                   </p>
                   <p className="inter-font">
                     Te enviamos un correo que
-                    <strong> confirma tu registro oficial.</strong>
+                    <strong > confirma tu registro oficial.</strong> 
                   </p>
-                  <p className="inter-font">
-                    ¿No lo ves? Revisa spam o correo no deseado. <br></br>{" "}
-                    Guárdalo. Lo necesitarás si avanzas a la siguiente etapa.
-                  </p>
+                  <p className="inter-font">¿No lo ves? Revisa spam o correo no deseado. <br></br> Guárdalo. Lo necesitarás si avanzas a la siguiente etapa.</p>
                 </div>
               ) : (
                 <p className="inter-font">{popup.message}</p>
@@ -418,20 +488,78 @@ const RegistrationForm = () => {
 
             {/* Surname */}
             <div className="form-group">
-              <label className="inter-font" htmlFor="last_name">
+              <label className="inter-font" htmlFor="surname">
                 Apellidos*
               </label>
               <input
                 type="text"
-                id="last_name"
-                name="last_name"
-                value={formData.last_name}
+                id="surname"
+                name="surname"
+                value={formData.surname}
                 onChange={handleChange}
                 placeholder=""
-                className={errors.last_name ? "error" : ""}
+                className={errors.surname ? "error" : ""}
               />
-              {errors.last_name && (
-                <span className="error-message">{errors.last_name}</span>
+              {errors.surname && (
+                <span className="error-message">{errors.surname}</span>
+              )}
+            </div>
+
+            {/* Username */}
+            <div className="form-group">
+              <label className="inter-font" htmlFor="username">
+                Username CODM*
+              </label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                placeholder=""
+                className={errors.username ? "error" : ""}
+              />
+              {errors.username && (
+                <span className="error-message">{errors.username}</span>
+              )}
+            </div>
+
+            {/* Discord */}
+            <div className="form-group">
+              <label className="inter-font" htmlFor="discord">
+                Discord Username
+              </label>
+              <input
+                type="text"
+                id="discord"
+                name="discord"
+                value={formData.discord}
+                onChange={handleChange}
+                placeholder=""
+                className={errors.discord ? "error" : ""}
+              />
+              {errors.discord && (
+                <span className="error-message">{errors.discord}</span>
+              )}
+            </div>
+
+            {/* Age */}
+            <div className="form-group">
+              <label className="inter-font" htmlFor="age">
+                Edad*
+              </label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                style={{ WebkitAppearance: "none" }}
+                value={formData.age}
+                onChange={handleChange}
+                placeholder=""
+                className={errors.age ? "error" : ""}
+              />
+              {errors.age && (
+                <span className="error-message">{errors.age}</span>
               )}
             </div>
 
@@ -454,33 +582,150 @@ const RegistrationForm = () => {
               )}
             </div>
 
-            {/* Surname */}
+            {/* Country */}
             <div className="form-group">
-              <label className="inter-font" htmlFor="last_name">
-                Response esta pregunta*
+              <label className="inter-font" htmlFor="country">
+                País de Residencia*
+              </label>
+              <select
+                id="country"
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                className={errors.country ? "error" : ""}
+              >
+                <option className="inter-font" style={{ color: "grey" }}>
+                  Selecciona país
+                </option>
+                {countries.map((country) => (
+                  <option key={country.value} value={country.value}>
+                    {country.label}
+                  </option>
+                ))}
+              </select>
+              {errors.country && (
+                <span className="error-message">{errors.country}</span>
+              )}
+            </div>
+
+            {/* Zip Code */}
+            <div className="form-group">
+              <label className="inter-font" htmlFor="zipCode">
+                Código Postal*
               </label>
               <input
                 type="text"
-                id="question"
-                name="question"
-                value={formData.question}
+                id="zipCode"
+                name="zipCode"
+                value={formData.zipCode}
                 onChange={handleChange}
-                placeholder=""
-                className={errors.last_name ? "error" : ""}
+                placeholder="12345"
+                className={errors.zipCode ? "error" : ""}
               />
-              {errors.last_name && (
-                <span className="error-message">{errors.question}</span>
+              {errors.zipCode && (
+                <span className="error-message">{errors.zipCode}</span>
               )}
+            </div>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <p
+                className="inter-font"
+                style={{ fontWeight: "bold", fontSize: "15px" }}
+              >
+                Requisitos de Elegibilidad
+              </p>
+              <InfoTooltip
+                text={
+                  "Debes cumplir con los requisitos listados.\nSi resides fuera de México y resultas finalista,\ntambién deberás cumplir con los requisitos de viaje.\nConsulta los Términos y Condiciones para más información."
+                }
+              />
             </div>
 
             {/* Checkboxes */}
             <div className="checkbox-group">
+              <label
+                className="checkbox-label"
+                style={{ marginBottom: "10px" }}
+              >
+                <input
+                  type="checkbox"
+                  name="termsAndConditions"
+                  checked={formData.termsAndConditions}
+                  onChange={handleChange}
+                  className="inputDiamond"
+                />
+                <span
+                  className="checkmark"
+                  style={{
+                    marginBottom: "0px",
+                    backgroundImage: `url(${formData.termsAndConditions ? diamondOn : diamondOff})`,
+                  }}
+                ></span>
+                <p className="inputDiamond">
+                  He leído y acepto los{" "}
+                  <span
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      navigate("/terms");
+                    }}
+                    style={{ textDecoration: "underline", cursor: "pointer" }}
+                  >
+                    Términos y Condiciones
+                  </span>{" "}
+                  y{" "}
+                  <span
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      navigate("/privacy");
+                    }}
+                    style={{ textDecoration: "underline", cursor: "pointer" }}
+                  >
+                    Políticas de Privacidad
+                  </span>
+                </p>
+              </label>
+              {errors.termsAndConditions && (
+                <span className="error-message" style={{ marginBottom: "px" }}>
+                  {errors.termsAndConditions}
+                </span>
+              )}
+
+              <label
+                className="checkbox-label"
+                style={{ marginBottom: "10px" }}
+              >
+                <input
+                  type="checkbox"
+                  name="passport"
+                  checked={formData.passport}
+                  onChange={handleChange}
+                  className="inputDiamond"
+                />
+                <span
+                  className="checkmark"
+                  style={{
+                    backgroundImage: `url(${formData.passport ? diamondOn : diamondOff})`,
+                  }}
+                ></span>
+                <p className="inputDiamond">
+                  Cumplo con los requisitos migratorios para viajar a México
+                </p>
+              </label>
+              {errors.passport && (
+                <span
+                  className="error-message"
+                  style={{ marginBottom: "10px" }}
+                >
+                  {errors.passport}
+                </span>
+              )}
+
               <label className="checkbox-label">
                 <input
                   type="checkbox"
                   name="legalAge"
                   checked={formData.legalAge}
-                  onChange={handleChange}
                   className="inputDiamond"
                 />
                 <span
@@ -499,6 +744,33 @@ const RegistrationForm = () => {
                   style={{ marginBottom: "10px" }}
                 >
                   {errors.legalAge}
+                </span>
+              )}
+
+              <label className="checkbox-label" style={{ marginBottom: "5px" }}>
+                <input
+                  type="checkbox"
+                  name="availabilityToTravel"
+                  checked={formData.availabilityToTravel}
+                  onChange={handleChange}
+                  className="inputDiamond"
+                />
+                <span
+                  className="checkmark"
+                  style={{
+                    backgroundImage: `url(${formData.availabilityToTravel ? diamondOn : diamondOff})`,
+                  }}
+                ></span>
+                <p className="inputDiamond">
+                  Estoy disponible para viajar al evento presencial en CDMX
+                </p>
+              </label>
+              {errors.availabilityToTravel && (
+                <span
+                  className="error-message"
+                  style={{ marginBottom: "20px" }}
+                >
+                  {errors.availabilityToTravel}
                 </span>
               )}
               {captchaError && (
@@ -581,7 +853,26 @@ const RegistrationForm = () => {
             </p>
           </button>
 
+          <div style={{ minHeight: "30px" }}></div>
 
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "5px",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              loading="lazy"
+              src={icon}
+              alt="Importante"
+              style={{ height: "12px", marginTop: "5px" }}
+            />
+            <p className="inter-font">
+              No se solicitan documentos en esta etapa
+            </p>
+          </div>
         </div>
       </div>
       {isFormCompleted && (
@@ -610,12 +901,28 @@ const RegistrationForm = () => {
               <strong>Nombres:</strong> {formData.name}
             </p>
             <p>
-              <strong>Apellidos:</strong> {formData.last_name}
+              <strong>Apellidos:</strong> {formData.surname}
+            </p>
+            <p>
+              <strong>Nombre de usuario:</strong> {formData.username}
+            </p>
+            <p>
+              <strong>Discord:</strong> {formData.discord}
+            </p>
+            <p>
+              <strong>Edad:</strong> {formData.age}
             </p>
             <p>
               <strong>Correo:</strong> {formData.email}
             </p>
-
+            <p>
+              <strong>País:</strong>{" "}
+              {countries.find((c) => c.value === formData.country)?.label ||
+                formData.country}
+            </p>
+            <p>
+              <strong>Código Postal:</strong> {formData.zipCode}
+            </p>
           </div>
         </PopUp>
       )}
