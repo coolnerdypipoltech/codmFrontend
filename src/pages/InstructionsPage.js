@@ -17,14 +17,6 @@ const InstructionsPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleGoBack = () => {
-    navigate("/");
-
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
-  }
-
   return (
     <div className="instructions-page">
       <div style={{ width: "100%", minHeight: "100px" }}></div>
@@ -39,7 +31,7 @@ const InstructionsPage = () => {
       </div>
       <>
         <div
-          onClick={handleGoBack}
+          onClick={() => navigate("/registro")}
           style={{ maxHeight: "70px", display: "flex", justifyContent: "center" }}
           className="buttonLayoutInstructions"
         >
