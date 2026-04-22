@@ -14,7 +14,7 @@ const BarriosLatinos = () => {
       id="barrios-latinos"
       className="barrios-latinos-section"
     >
-      <img src={splash} style={{marginTop: "80px"}} alt="Splash Art" />
+      <img src={splash} style={{marginTop: "0px"}} alt="Splash Art" />
       
 
     </section>

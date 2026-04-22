@@ -12,11 +12,15 @@ import BuyTickets from "../components/HomePage/BuyTickets";
 import RegisterTournament from "../components/HomePage/RegisterTournament";
 import Qualifiers from "../components/HomePage/Qualifiers";
 import Register from "../components/HomePage/Register";
+import VideoScreen from "../components/VideoScreen";
 const HomePage = () => {
 
   return (
     <div className="home-page">
+      <VideoScreen />
       <BarriosLatinos />
+      <BuyTickets />
+       {/*
       <BuyTickets />
       <LosBarrios />
       <MainHost />
@@ -27,7 +31,8 @@ const HomePage = () => {
       <RegisterTournament />
       <Calendary />
       <Location />
-      <BuyTickets type={"1"} />
+      <BuyTickets type={"1"} /> */}
+      
     </div>
   );
 };

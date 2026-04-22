@@ -17,7 +17,8 @@ function App() {
   return (
     <ViewportProvider>
       <Router basename="/">
-        <SplashScreen>
+        {/* 
+        <SplashScreen> */}
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -47,7 +48,8 @@ function App() {
           <Route path="*" element={<HomePage />} />
         </Routes>
         <Footer/>
-        </SplashScreen>
+        {/* 
+        </SplashScreen> */}
       </Router>
     </ViewportProvider>
   );

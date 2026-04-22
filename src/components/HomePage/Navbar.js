@@ -184,28 +184,14 @@ const Navbar = () => {
         }
         center={
           !isMobileCalc ? (
-            itemsToolbar(items)
+            <></>
           ) : (
             <></>
           )
         }
         end={
           isMobileCalc ? (
-            <button
-              className="menu-toggle"
-              onClick={toggleDrawer}
-              aria-label="Toggle menu"
-              style={{ paddingBottom: "10px" }}
-            >
-              <div>
-                <img
-                  loading="lazy"
-                  src={brush}
-                  style={{ height: "45px", paddingLeft: "10px" }}
-                  alt="Logo"
-                />
-              </div>
-            </button>
+            <></>
           ) : (
             <></>
           )
@@ -265,7 +251,8 @@ const Navbar = () => {
                 }}
                 alt="Close"
               />
-
+{/* 
+        
               {items.map((item, index) => (
                 <div key={index} onClick={item.command} className="drawer-item">
                   <img
@@ -310,6 +297,7 @@ const Navbar = () => {
                   alt="Close"
                 />
               </button>
+               */}
             </div>
           </div>
         </>
