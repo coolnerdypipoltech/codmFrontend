@@ -4,8 +4,9 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 11;
-  padding-top: 10px;
-  width: 85%;
+  padding-top: 22px;
+  height: 77px;
+  width: 82%;
   -webkit-transition: opacity 0.3s ease;
   -moz-transition: opacity 0.3s ease;
   -ms-transition: opacity 0.3s ease;

@@ -165,7 +165,7 @@ const Navbar = () => {
           backgroundSize: "100% 100%",
           border: "none",
         }}
-        start={
+        center={
           <img
             loading="lazy"
             src={logoBarrios}
@@ -175,14 +175,14 @@ const Navbar = () => {
               cursor: "pointer",
               paddingTop: "10px",
               position: "relative",
-              left: isMobile ? "-1px" : "50px",
+              left: isMobile ? "-1px" : "0px",
               bottom: "12px",
             }}
             alt="Logo"
             onClick={handleGoHome}
           />
         }
-        center={
+        start={
           !isMobileCalc ? (
             <></>
           ) : (

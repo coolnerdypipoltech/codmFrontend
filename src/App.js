@@ -23,27 +23,26 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           
-          <Route path="/instructions" element={<InstructionsPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/faqs" element={<FAQsPage />} />
-          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<HomePage />} />
+          <Route path="/faqs" element={<HomePage />} />
+          <Route path="/terms" element={<HomePage />} />
           <Route path="/codmFrontend" element={<HomePage />} />
           <Route
             path="/codmFrontend/terms"
-            element={<TermsPage />}
+            element={<HomePage />}
           />
           
           <Route
             path="/codmFrontend/instructions"
-            element={<InstructionsPage />}
+            element={<HomePage />}
           />
           <Route
             path="/codmFrontend/privacy"
-            element={<PrivacyPage />}
+            element={<HomePage />}
           />
           <Route
             path="/codmFrontend/faqs"
-            element={<FAQsPage />}
+            element={<HomePage />}
           />
           <Route path="*" element={<HomePage />} />
         </Routes>

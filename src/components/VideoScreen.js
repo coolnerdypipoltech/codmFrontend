@@ -1,41 +1,48 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import "./VideoScreen.css";
-import videoMobile from "../assets/CODMOBILEBL9_16.mp4"
-import videoDesktop from "../assets/CODMOBILEBL_16_9.mp4"
+import videoMobile from "../assets/COD_MOBILE.mp4"
+import videoDesktop from "../assets/COD_DESKTOP.mp4"
+import thumbnailImage from "../assets/main/thumbnail.png"
 import { useViewport } from "../context/ViewportContext";
 
 function VideoScreen({ children }) {
   const { isMobile } = useViewport();
   const videoRef = useRef(null);
-  const [muted, setMuted] = useState(true);
+  const [thumbnailUp, setThumbnailUp] = useState(true);
   const videoFinal = isMobile ? videoMobile : videoDesktop;
-  const handleUnmute = () => {
-    if (muted) {
-      setMuted(false);
-      if (videoRef.current) videoRef.current.muted = false;
-    }
-  };
+
 
   return (
     <>
-      <div className="video-screen" onClick={handleUnmute} >
-          <video
+    <div style={{minHeight: "120px", width: "100%", height: "120px"}}></div>
+      <div className="video-screen" >
+        
+          {isMobile ? (<>
+          {thumbnailUp ? (<img src={thumbnailImage} alt="Thumbnail" onClick={ () => {setThumbnailUp(false)}} />) : (<video
             ref={videoRef}
             className="video-screen__player"
             autoPlay
-            playsInline
-            muted
             loop
-
+            controls={true}
+            playsInline
+            style={{width: isMobile ? "100%" : "auto", height: isMobile ? "auto" : "100%"}}
           >
             <source src={videoFinal} type="video/mp4" />
-          </video>
-       {muted && (
-            <div className="video-screen__unmute-hint">
-             🎤 Pushale pa´que suene 🎤
-            </div>
-          )}
+          </video>)}
+          
+          </>) : (<video
+            ref={videoRef}
+            className="video-screen__player"
+            autoPlay
+            muted
+            loop
+            controls={true}
+            playsInline
+            style={{width: isMobile ? "100%" : "auto", height: isMobile ? "auto" : "100%"}}
+          >
+            <source src={videoFinal} type="video/mp4" />
+          </video>)}
 
         </div>
     </>

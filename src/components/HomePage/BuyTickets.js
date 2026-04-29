@@ -4,8 +4,9 @@ import imagen3 from "../../assets/desktop/Main/IMG_texture_RG_web.webp";
 import image4 from "../../assets/main/IMG_texture_RG2.webp";
 import image5 from "../../assets/desktop/Main/IMG_texture_RG_webT2.webp";
 import comprarBoletos from "../../assets/main/Button_Comprar Boletos.webp";
-import compraBoletoText from "../../assets/main/La gloriadelbarrio.webp";
+import text from "../../assets/main/end_text.png";
 import highlight from "../../assets/desktop/Header/Spray_graffbutton.webp";
+import flecha from "../../assets/main/flecha.png";
 import "./BuyTickets.css";
 import { useViewport } from "../../context/ViewportContext";
 const BuyTickets = ({ type }) => {
@@ -27,7 +28,6 @@ const BuyTickets = ({ type }) => {
           alt="Background"
         ></img>
         <div
-          id="button-buyTickets"
           style={{
             zIndex: "10",
             display: "flex",
@@ -38,7 +38,43 @@ const BuyTickets = ({ type }) => {
             position: "absolute",
           }}
         >
-          {!isMobile && (
+
+
+          {true && (
+            <>
+              <img
+                loading="lazy"
+                src={text}
+                className="buyTickets-Image"
+                style={{ width: "95%", bottom: "-9px" }}
+                alt="Comprar Boletos"
+              />
+              <img
+                loading="lazy"
+                src={flecha}
+                className="buyTickets-Image"
+                style={{ width: "auto", bottom: "-9px", height: isMobile ? "20px" : "30px" }}
+                alt="Comprar Boletos"
+              />
+              
+              <div
+                id="button-buyTickets"
+                onClick={() => {
+                  window.gtag?.("event", "click_comprar_boletos", {
+                    event_category: "engagement",
+                    event_label: "buy_tickets_section",
+                  });
+                  window.open("https://codmatvi.onelink.me/jYL7/q47wt3t2", "_blank");
+                }}
+                style={{
+                  width: "100%",
+                  cursor: "pointer",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                          {!isMobile && (
             <img
               loading="lazy"
               src={highlight}
@@ -46,34 +82,19 @@ const BuyTickets = ({ type }) => {
               alt="Highlight"
             />
           )}
+                <img
+                  loading="lazy"
+                  src={comprarBoletos}
+                  className="buyTickets-Image"
+                  style={{ width: "95%", bottom: "-9px" }}
+                  alt="Comprar Boletos"
+                />
 
-          {true && (
-            <div
-              onClick={() => {
-                window.gtag?.("event", "click_comprar_boletos", {
-                  event_category: "engagement",
-                  event_label: "buy_tickets_section",
-                });
-                window.open("https://feverup.com/m/593821", "_blank");
-              }}
-              style={{
-                width: "auto",
-                cursor: "pointer",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <img
-                loading="lazy"
-                src={comprarBoletos}
-                className="buyTickets-Image"
-                style={{ width: "95%", bottom: "-9px" }}
-                alt="Comprar Boletos"
-              />
-
-              <p className="buyTickets-buttonText">COMPRAR BOLETOS</p>
-            </div>
+                <p className="buyTickets-buttonText">
+                  VISITA EL SITIO DE COD MOBILE
+                </p>
+              </div>
+            </>
           )}
         </div>
       </div>
