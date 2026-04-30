@@ -26,7 +26,7 @@ function VideoScreen({ children }) {
             loop
             controls={true}
             playsInline
-            style={{width: isMobile ? "100%" : "auto", height: isMobile ? "auto" : "100%"}}
+            style={{width: isMobile ? "100%" : "auto", height: isMobile ? "auto" : "100%", minHeight: "100vh", minWidth: "100%"}}
           >
             <source src={videoFinal} type="video/mp4" />
           </video>)}
@@ -39,7 +39,7 @@ function VideoScreen({ children }) {
             loop
             controls={true}
             playsInline
-            style={{width: isMobile ? "100%" : "auto", height: isMobile ? "auto" : "100%"}}
+            style={{width: isMobile ? "100%" : "auto", height: isMobile ? "auto" : "100%", minHeight: "100vh", minWidth: "100%"}}
           >
             <source src={videoFinal} type="video/mp4" />
           </video>)}
