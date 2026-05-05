@@ -12,14 +12,21 @@ export const useViewport = () => {
   return context;
 };
 
+// Detecta tablet por User Agent
+const detectTabletByUA = () => {
+  const ua = navigator.userAgent.toLowerCase();
+  const isTabletUA = /ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP)))/.test(ua);
+  return isTabletUA;
+};
+
 // Proveedor del contexto
 export const ViewportProvider = ({ children }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
-  const [isTablet, setIsTablet] = useState(window.innerWidth <= 1300);
+  const [isTablet, setIsTablet] = useState(detectTabletByUA() || window.innerWidth <= 1300);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1000);
-      setIsTablet(window.innerWidth <= 1300);
+      setIsTablet(detectTabletByUA() || window.innerWidth <= 1300);
     };
 
     // Agregar event listener
