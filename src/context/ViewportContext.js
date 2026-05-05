@@ -15,10 +15,11 @@ export const useViewport = () => {
 // Proveedor del contexto
 export const ViewportProvider = ({ children }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
-
+  const [isTablet, setIsTablet] = useState(window.innerWidth <= 1300);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1000);
+      setIsTablet(window.innerWidth <= 1300);
     };
 
     // Agregar event listener
@@ -31,7 +32,7 @@ export const ViewportProvider = ({ children }) => {
   }, []);
 
   return (
-    <ViewportContext.Provider value={{ isMobile }}>
+    <ViewportContext.Provider value={{ isMobile, isTablet }}>
       {children}
     </ViewportContext.Provider>
   );
