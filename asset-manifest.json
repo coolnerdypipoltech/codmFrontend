@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/codmFrontend/static/css/main.eb3e3f24.css",
-    "main.js": "/codmFrontend/static/js/main.ef9a3af8.js",
+    "main.js": "/codmFrontend/static/js/main.5043b0bd.js",
     "static/js/453.261fb4ef.chunk.js": "/codmFrontend/static/js/453.261fb4ef.chunk.js",
     "static/media/CODMOBILEBL9_16.mp4": "/codmFrontend/static/media/CODMOBILEBL9_16.6de8a562ade61a6b0ec0.mp4",
     "static/media/CODMOBILEBL_16_9.mp4": "/codmFrontend/static/media/CODMOBILEBL_16_9.56a4ff81ff34feb93059.mp4",
@@ -64,6 +64,7 @@
     "static/media/Tarjeta_2.webp": "/codmFrontend/static/media/Tarjeta_2.f67afd5ac34fbfada963.webp",
     "static/media/Textura_UbicacionM.webp": "/codmFrontend/static/media/Textura_UbicacionM.87bada35c2070ec2585f.webp",
     "static/media/IMG_Background_Los barrios.webp": "/codmFrontend/static/media/IMG_Background_Los barrios.ac7fc5a38aff18a34a2a.webp",
+    "static/media/CODM_Rulebook.pdf": "/codmFrontend/static/media/CODM_Rulebook.f796afe939ed602f1e64.pdf",
     "static/media/IMG_Background_Participar.webp": "/codmFrontend/static/media/IMG_Background_Participar.41734d149eaa4613371a.webp",
     "static/media/Button_TikTok.png": "/codmFrontend/static/media/Button_TikTok.c6335f1031abff2a67aa.png",
     "static/media/Texture_tail.webp": "/codmFrontend/static/media/Texture_tail.c3e37d96cc625d4b3ba6.webp",
@@ -120,11 +121,11 @@
     "static/media/arrow.svg": "/codmFrontend/static/media/arrow.7642281869f72253171e2b5cd0bb1320.svg",
     "static/media/diamondOn.svg": "/codmFrontend/static/media/diamondOn.b2c0501550a636c4936d997203203ac2.svg",
     "main.eb3e3f24.css.map": "/codmFrontend/static/css/main.eb3e3f24.css.map",
-    "main.ef9a3af8.js.map": "/codmFrontend/static/js/main.ef9a3af8.js.map",
+    "main.5043b0bd.js.map": "/codmFrontend/static/js/main.5043b0bd.js.map",
     "453.261fb4ef.chunk.js.map": "/codmFrontend/static/js/453.261fb4ef.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eb3e3f24.css",
-    "static/js/main.ef9a3af8.js"
+    "static/js/main.5043b0bd.js"
   ]
 }
